@@ -34,8 +34,11 @@ class Alphabet {
   // get the alphabet from a chain
   void GetAlphabetFromChain(Chain chain);
 
+  // operator <<
+  friend std::ostream& operator<<(std::ostream& os, const Alphabet& alphabet);
+
  private:
-  std::set<Symbol> alphabet;
+  std::set<Symbol> alphabet_;
 };
 
 #endif  // ALPHABET_H

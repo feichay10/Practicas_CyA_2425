@@ -23,6 +23,11 @@
 #include <string>
 #include <vector>
 
+#include "chain.h"
+#include "alphabet.h"
+
+const char SPACE = ' ';
+
 const std::string kHowUse =
     "How to use: ./p02_strings filein.txt fileout.txt opcode\n"
     "Try './p02_strings --help' for more information.";
@@ -37,5 +42,6 @@ const std::string kHelp =
 
 bool check_parameters(int argc, char *argv[]);
 std::vector<std::string> read_file(std::string file_name);
+void manage_entry(std::vector<std::string>& entry_lines, int opcode);
 
 #endif  // FUNCTIONS_H

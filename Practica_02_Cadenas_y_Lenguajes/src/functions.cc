@@ -17,7 +17,7 @@
 
 #include "../include/functions.h"
 
-bool check_parameters(int argc, char *argv[]) {
+bool check_parameters(int argc, char* argv[]) {
   if (argc == 1) {
     std::cerr << kHowUse << std::endl;
     return false;
@@ -27,7 +27,7 @@ bool check_parameters(int argc, char *argv[]) {
     std::cout << kHelp << std::endl;
     return false;
   }
-  
+
   if (argc < 4) {
     std::cerr << kHowUse << std::endl;
     return false;
@@ -44,8 +44,21 @@ std::vector<std::string> read_file(std::string file_name) {
   std::string line;
   while (std::getline(file, line)) {
     lines.push_back(line);
-    std::cout << line << std::endl;
   }
   file.close();
   return lines;
+}
+
+void manage_entry(std::vector<std::string>& entry_lines, int opcode) {
+  Alphabet alphabet;
+  Chain chain;
+
+  for (unsigned int i = 0; i < entry_lines.size(); i++) {
+    std::string line = entry_lines[i];
+    std::size_t found = line.find(SPACE);
+    std::string chain_string = line.substr(found + 1);
+    chain.SetChain(chain_string);
+    alphabet.GetAlphabetFromChain(chain);
+    std::cout << alphabet << std::endl;
+  }
 }

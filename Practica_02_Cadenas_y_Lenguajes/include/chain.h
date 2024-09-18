@@ -32,7 +32,7 @@ class Chain {
   void SetChain(std::string chain);
   std::string GetChain() const;
 
-  // Operations: Longitud, Inversa, Prefijos, Sufijos
+  // Chain operations
   int Length();
   Chain Reverse();
   std::set<Chain> Prefixes();

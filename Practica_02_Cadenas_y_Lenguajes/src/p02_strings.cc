@@ -27,6 +27,8 @@ int main(int argc, char* argv[]) {
   try {
     if (check_parameters(argc, argv)) {
       entry_lines = read_file(argv[1]);
+      manage_entry(entry_lines, atoi(argv[3]));
+      // write_file(argv[2], entry_lines);
     } else {
       exit(EXIT_FAILURE);
     }
