@@ -26,7 +26,16 @@ class Symbol {
   Symbol(char symbol);
 
   char GetSymbol() const;
-  void SetSymbol(char symbol);
+
+  bool operator<(const Symbol& other) const {
+    return symbol_ < other.symbol_;
+  }
+
+  // operator << 
+  friend std::ostream& operator<<(std::ostream& os, const Symbol& symbol) {
+    os << symbol.GetSymbol();
+    return os;
+  }
 
  private:
   char symbol_;

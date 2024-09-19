@@ -24,19 +24,29 @@
 
 #include "symbol.h"
 
+class Language;
+
 class Chain {
  public:
   Chain();
   Chain(std::string chain);
 
+  std::set<Symbol> GetChain() const;
   void SetChain(std::string chain);
-  std::string GetChain() const;
 
   // Chain operations
   int Length();
   Chain Reverse();
-  std::set<Chain> Prefixes();
-  std::set<Chain> Suffixes();
+  Language Prefixes();
+  Language Suffixes();
+
+  // operator << set
+  friend std::ostream& operator<<(std::ostream& os, const Chain& chain) {
+    for (const auto& symbol : chain.chain_) {
+      os << symbol;
+    }
+    return os;
+  }
 
  private:
   std::set<Symbol> chain_;
