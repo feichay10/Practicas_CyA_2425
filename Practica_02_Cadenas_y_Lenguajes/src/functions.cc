@@ -17,6 +17,15 @@
 
 #include "../include/functions.h"
 
+// std::ostream& operator<<(std::ostream& os, const std::set<Symbol>& symbolSet) {
+//     os << "{ ";
+//     for (const auto& symbol : symbolSet) {
+//         os << symbol << " "; // Usamos el operador << ya sobrecargado para Symbol
+//     }
+//     os << "}";
+//     return os;
+// }
+
 bool check_parameters(int argc, char* argv[]) {
   if (argc == 1) {
     std::cerr << kHowUse << std::endl;
@@ -50,15 +59,29 @@ std::vector<std::string> read_file(std::string file_name) {
 }
 
 void manage_entry(std::vector<std::string>& entry_lines, int opcode) {
-  Alphabet alphabet;
   Chain chain;
+  Alphabet alphabet;
 
+  // Example entry lines:
+  // abbab ab
+  // 6793836 123456789
+  // hola ahlo
+  // chain = abbab, alphabet = {a, b}
+  // chain = 6793836, alphabet = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+  // chain = hola, alphabet = {a, h, l, o}
   for (unsigned int i = 0; i < entry_lines.size(); i++) {
-    std::string line = entry_lines[i];
-    std::size_t found = line.find(SPACE);
-    std::string chain_string = line.substr(found + 1);
-    chain.SetChain(chain_string);
-    alphabet.GetAlphabetFromChain(chain);
-    std::cout << alphabet << std::endl;
+    for (int i = entry_lines.size() - 1; i >= 0; i--) {
+      for (int j = 0; j < entry_lines[i].size(); j++) {
+        if (entry_lines[i][j] == SPACE) {
+          std::string entry_chain = entry_lines[i].substr(i + 1, entry_lines[i].size() - 1);
+          chain.SetChain(entry_chain);
+          alphabet.GetAlphabetFromChain(chain);
+          break;
+        }
+      }
+    }
   }
+
+  std::cout << chain << std::endl;
+  std::cout << alphabet << std::endl;
 }

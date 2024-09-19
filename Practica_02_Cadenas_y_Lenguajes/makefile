@@ -36,3 +36,7 @@ run:
 clean:
 	@echo "🧹 Clearing..."
 	rm -f $(BIN)/* $(BUILD)/*
+
+tar:
+	@echo "📦 Compressing..."
+	tar -czvf p02_Cheuk_Kelly_Ng_Pante.tgz ./*
