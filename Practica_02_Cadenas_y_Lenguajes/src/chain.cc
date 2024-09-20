@@ -16,23 +16,24 @@
  */
 
 #include "../include/chain.h"
+#include "../include/language.h"
 
 Chain::Chain() {}
 
 Chain::Chain(std::string chain) {
-  for (char symbol : chain) {
-    chain_.insert(Symbol(symbol));
+  for (int i = 0; i < chain.size(); i++) {
+    chain_.push_back(Symbol(chain[i]));
   }
 }
 
-std::set<Symbol> Chain::GetChain() const {
+std::vector<Symbol> Chain::GetChain() const {
   return chain_;
 }
 
 void Chain::SetChain(std::string chain) {
   chain_.clear();
-  for (char symbol : chain) {
-    chain_.insert(Symbol(symbol));
+  for (int i = 0; i < chain.size(); i++) {
+    chain_.push_back(Symbol(chain[i]));
   }
 }
 
@@ -40,30 +41,34 @@ int Chain::Length() {
   return chain_.size();
 }
 
-// Chain Chain::Reverse() {
-//   std::set<Symbol> reversed_chain;
-//   for (auto it = chain_.rbegin(); it != chain_.rend(); ++it) {
-//     reversed_chain.insert(*it);
-//   }
-//   return Chain(reversed_chain);
-// }
+Chain Chain::Reverse() {
+  Chain reversed_chain;
+  for (int i = chain_.size() - 1; i >= 0; i--) {
+    reversed_chain.chain_.push_back(chain_[i]);
+  }
+  return reversed_chain;
+}
 
-// Language Chain::Prefixes() {
-//   std::set<Chain> prefixes;
-//   std::set<Symbol> prefix;
-//   for (Symbol symbol : chain_) {
-//     prefix.insert(symbol);
-//     prefixes.insert(Chain(prefix));
-//   }
-//   return Language(prefixes);
-// }
+Language Chain::Prefixes() {
+  std::set<Chain> prefixes;
+  for (int i = 0; i < chain_.size(); i++) {
+    Chain prefix;
+    for (int j = 0; j <= i; j++) {
+      prefix.chain_.push_back(chain_[j]);
+    }
+    prefixes.insert(prefix);
+  }
+  return Language(prefixes);
+}
 
-// Language Chain::Suffixes() {
-//   std::set<Chain> suffixes;
-//   std::set<Symbol> suffix;
-//   for (Symbol symbol : chain_) {
-//     suffix.insert(symbol);
-//     suffixes.insert(Chain(suffix));
-//   }
-//   return Language(suffixes);
-// }
+Language Chain::Suffixes() {
+  std::set<Chain> suffixes;
+  for (int i = 0; i < chain_.size(); i++) {
+    Chain suffix;
+    for (int j = i; j < chain_.size(); j++) {
+      suffix.chain_.push_back(chain_[j]);
+    }
+    suffixes.insert(suffix);
+  }
+  return Language(suffixes);
+}

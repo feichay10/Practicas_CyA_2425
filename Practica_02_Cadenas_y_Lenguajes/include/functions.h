@@ -25,6 +25,7 @@
 
 #include "chain.h"
 #include "alphabet.h"
+#include "language.h"
 
 const char SPACE = ' ';
 
@@ -42,6 +43,7 @@ const std::string kHelp =
 
 bool check_parameters(int argc, char *argv[]);
 std::vector<std::string> read_file(std::string file_name);
-void manage_entry(std::vector<std::string>& entry_lines, int opcode);
+void manage_entry(std::vector<std::string>& entry_lines, std::vector<Chain>& chains);
+void menu(int opcode, std::vector<Chain>& chains);
 
 #endif  // FUNCTIONS_H

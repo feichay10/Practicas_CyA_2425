@@ -19,8 +19,12 @@
 
 Alphabet::Alphabet() {}
 
-void Alphabet::SetAlphabet(std::set<Symbol> alphabet) {
-  alphabet_ = alphabet;
+Alphabet::Alphabet(std::string alphabet) {
+  std::set<Symbol> alphabet_set;
+  for (int i = 0; i < alphabet.size(); i++) {
+    alphabet_set.insert(Symbol(alphabet[i]));
+  }
+  alphabet_ = alphabet_set;
 }
 
 std::set<Symbol> Alphabet::GetAlphabet() const {
@@ -29,17 +33,8 @@ std::set<Symbol> Alphabet::GetAlphabet() const {
 
 void Alphabet::GetAlphabetFromChain(Chain chain) {
   std::set<Symbol> alphabet;
-  for (Symbol symbol : chain.GetChain()) {
-    alphabet.insert(symbol);
+  for (int i = 0; i < chain.GetChain().size(); i++) {
+    alphabet.insert(chain.GetChain()[i]);
   }
-  SetAlphabet(alphabet);
-}
-
-std::ostream& operator<<(std::ostream& os, const Alphabet& alphabet) {
-  os << "Alphabet: { ";
-  for (Symbol symbol : alphabet.GetAlphabet()) {
-    os << symbol.GetSymbol() << " ";
-  }
-  os << "}";
-  return os;
+  alphabet_ = alphabet;
 }

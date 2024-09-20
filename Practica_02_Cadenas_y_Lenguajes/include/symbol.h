@@ -31,9 +31,8 @@ class Symbol {
     return symbol_ < other.symbol_;
   }
 
-  // operator << 
   friend std::ostream& operator<<(std::ostream& os, const Symbol& symbol) {
-    os << symbol.GetSymbol();
+    os << symbol.symbol_;
     return os;
   }
 

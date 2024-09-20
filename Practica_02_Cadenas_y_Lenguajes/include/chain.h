@@ -21,6 +21,8 @@
 #include <iostream>
 #include <set>
 #include <string>
+#include <vector>
+#include <algorithm>
 
 #include "symbol.h"
 
@@ -31,7 +33,7 @@ class Chain {
   Chain();
   Chain(std::string chain);
 
-  std::set<Symbol> GetChain() const;
+  std::vector<Symbol> GetChain() const;
   void SetChain(std::string chain);
 
   // Chain operations
@@ -40,16 +42,25 @@ class Chain {
   Language Prefixes();
   Language Suffixes();
 
-  // operator << set
+  // operator << 
   friend std::ostream& operator<<(std::ostream& os, const Chain& chain) {
-    for (const auto& symbol : chain.chain_) {
-      os << symbol;
+    for (Symbol symbol : chain.GetChain()) {
+      os << symbol.GetSymbol();
     }
     return os;
   }
 
+  // operator <
+  friend bool operator<(const Chain& chain1, const Chain& chain2) {
+    return chain1.GetChain() < chain2.GetChain();
+  }
+
+  friend struct CompareByLength;
+
  private:
-  std::set<Symbol> chain_;
+  std::vector<Symbol> chain_;
 };
+
+
 
 #endif  // CHAIN_H
