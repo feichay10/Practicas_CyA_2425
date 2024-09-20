@@ -32,17 +32,17 @@ class Chain {
  public:
   Chain();
   Chain(std::string chain);
+  ~Chain() = default;
 
   std::vector<Symbol> GetChain() const;
   void SetChain(std::string chain);
 
-  // Chain operations
   int Length();
   Chain Reverse();
   Language Prefixes();
   Language Suffixes();
+  Language Subchains();
 
-  // operator << 
   friend std::ostream& operator<<(std::ostream& os, const Chain& chain) {
     for (Symbol symbol : chain.GetChain()) {
       os << symbol.GetSymbol();
@@ -50,12 +50,9 @@ class Chain {
     return os;
   }
 
-  // operator <
   friend bool operator<(const Chain& chain1, const Chain& chain2) {
-    return chain1.GetChain() < chain2.GetChain();
+    return chain1.GetChain().size() < chain2.GetChain().size();
   }
-
-  friend struct CompareByLength;
 
  private:
   std::vector<Symbol> chain_;

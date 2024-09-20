@@ -34,16 +34,17 @@ const std::string kHowUse =
     "Try './p02_strings --help' for more information.";
 
 const std::string kHelp =
-    "Los Opcodes son:\n"
-    "  1. Longitud\n"
-    "  2. Inversa\n"
-    "  3. Prefijos\n"
-    "  4. Sufijos\n"
-    "  5. Subcadenas\n";
+    "The Opcodes are:\n"
+    "  1. Alphabet\n"
+    "  2. Length\n"
+    "  3. Reverse\n"
+    "  4. Prefixes\n"
+    "  5. Suffixes\n"
+    "  6. Substrings\n";
 
 bool check_parameters(int argc, char *argv[]);
 std::vector<std::string> read_file(std::string file_name);
 void manage_entry(std::vector<std::string>& entry_lines, std::vector<Chain>& chains);
-void menu(int opcode, std::vector<Chain>& chains);
+void menu(std::string file_out, int opcode, std::vector<Chain>& chains);
 
 #endif  // FUNCTIONS_H

@@ -28,11 +28,11 @@ class Language {
  public:
   Language();
   Language(std::set<Chain> language);
+  ~Language() = default;
 
   std::set<Chain> GetLanguage() const;
   void SetLanguage(std::set<Chain> language);
 
-  // operator <<
   friend std::ostream& operator<<(std::ostream& os, const Language& language) {
     os << "{&, ";
     bool first = true;

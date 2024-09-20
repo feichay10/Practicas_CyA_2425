@@ -18,7 +18,7 @@
 #include "../include/chain.h"
 #include "../include/language.h"
 
-Chain::Chain() {}
+// Chain::Chain() {}
 
 Chain::Chain(std::string chain) {
   for (int i = 0; i < chain.size(); i++) {
@@ -71,4 +71,18 @@ Language Chain::Suffixes() {
     suffixes.insert(suffix);
   }
   return Language(suffixes);
+}
+
+Language Chain::Subchains() {
+  std::set<Chain> subchains;
+  for (int i = 0; i < chain_.size(); i++) {
+    for (int j = i; j < chain_.size(); j++) {
+      Chain subchain;
+      for (int k = i; k <= j; k++) {
+        subchain.chain_.push_back(chain_[k]);
+      }
+      subchains.insert(subchain);
+    }
+  }
+  return Language(subchains);
 }

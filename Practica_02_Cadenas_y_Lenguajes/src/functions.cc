@@ -32,6 +32,12 @@ bool check_parameters(int argc, char* argv[]) {
     std::cerr << kHowUse << std::endl;
     return false;
   }
+
+  if (atoi(argv[3]) < 1 || atoi(argv[3]) > 6) {
+    std::cerr << "Invalid opcode" << std::endl;
+    return false;
+  }
+
   return true;
 }
 
@@ -59,35 +65,41 @@ void manage_entry(std::vector<std::string>& entry_lines, std::vector<Chain>& cha
         std::string str_chain = entry_lines[i].substr(0, j);
         chain.SetChain(str_chain);
         chains.push_back(chain);
-        // alphabet.GetAlphabetFromChain(chain);
         std::string str_alphabet = entry_lines[i].substr(j + 1, entry_lines[i].size());
         alphabet = Alphabet(str_alphabet);
-        std::cout << "Cadena: " << str_chain << std::endl;
-        std::cout << "Alfabeto: " << str_alphabet << std::endl << std::endl;
+        std::cout << "Chain: " << str_chain << std::endl;
+        std::cout << "Alphabet: " << str_alphabet << std::endl << std::endl;
         break;
       }
     }
   }
 }
 
-void menu(int opcode, std::vector<Chain>& chains) {
+void menu(std::string file_out, int opcode, std::vector<Chain>& chains) {
+  std::ofstream file(file_out);
+  if (!file.is_open()) {
+    throw std::runtime_error("Could not open file");
+  }
+
   switch (opcode) {
     case 1: {
-      // Obtener el alfabeto de una cadena
       Alphabet alphabet;
       for (int i = 0; i < chains.size(); i++) {
         alphabet.GetAlphabetFromChain(chains[i]);
         std::cout << alphabet << std::endl;
+        file << alphabet << std::endl;
       }
     } break;
     case 2:
       for (int i = 0; i < chains.size(); i++) {
         std::cout << chains[i].Length() << std::endl;
+        file << chains[i].Length() << std::endl;
       }
       break;
     case 3:
       for (int i = 0; i < chains.size(); i++) {
         std::cout << chains[i].Reverse() << std::endl;
+        file << chains[i].Reverse() << std::endl;
       }
       break;
     case 4: {
@@ -95,6 +107,7 @@ void menu(int opcode, std::vector<Chain>& chains) {
       for (int i = 0; i < chains.size(); i++) {
         prefixes = chains[i].Prefixes();
         std::cout << prefixes << std::endl;
+        file << prefixes << std::endl;
       }
     } break;
     case 5: {
@@ -102,6 +115,15 @@ void menu(int opcode, std::vector<Chain>& chains) {
       for (int i = 0; i < chains.size(); i++) {
         suffixes = chains[i].Suffixes();
         std::cout << suffixes << std::endl;
+        file << suffixes << std::endl;
+      }
+    } break;
+    case 6: {
+      Language subchains;
+      for (int i = 0; i < chains.size(); i++) {
+        subchains = chains[i].Subchains();
+        std::cout << subchains << std::endl;
+        file << subchains << std::endl;
       }
     } break;
     default:

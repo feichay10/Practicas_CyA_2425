@@ -29,16 +29,15 @@ class Alphabet {
  public:
   Alphabet();
   Alphabet(std::string alphabet);
+  ~Alphabet() = default;
 
   // void SetAlphabet(std::string alphabet);
   std::set<Symbol> GetAlphabet() const;
 
-  // Get the alphabet from a chain
   void GetAlphabetFromChain(Chain chain);
 
-  // operator <<
   friend std::ostream& operator<<(std::ostream& os, const Alphabet& alphabet) {
-    os << "Alphabet: {";
+    os << "{";
     for (auto it = alphabet.alphabet_.begin(); it != alphabet.alphabet_.end(); ++it) {
       if (it != alphabet.alphabet_.begin()) {
         os << ", ";

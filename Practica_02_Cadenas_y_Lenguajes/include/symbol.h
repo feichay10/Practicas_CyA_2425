@@ -22,8 +22,9 @@
 
 class Symbol {
  public:
-  Symbol();
+  // Symbol();
   Symbol(char symbol);
+  ~Symbol() = default;
 
   char GetSymbol() const;
 
