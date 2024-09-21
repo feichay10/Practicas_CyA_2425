@@ -24,10 +24,10 @@
 int main(int argc, char* argv[]) {
   std::vector<std::string> entry_lines;
   std::vector<Chain> chains;
-  std::string file_out = argv[2];
 
   try {
     if (check_parameters(argc, argv)) {
+      std::string file_out = argv[2];
       entry_lines = read_file(argv[1]);
       manage_entry(entry_lines, chains);
       menu(file_out, atoi(argv[3]), chains);

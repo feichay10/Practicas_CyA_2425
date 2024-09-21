@@ -18,7 +18,7 @@
 #include "../include/chain.h"
 #include "../include/language.h"
 
-// Chain::Chain() {}
+Chain::Chain() {}
 
 Chain::Chain(std::string chain) {
   for (int i = 0; i < chain.size(); i++) {
