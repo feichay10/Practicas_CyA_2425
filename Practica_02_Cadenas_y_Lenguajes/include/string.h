@@ -42,14 +42,13 @@ class String {
   void SetString(std::string String);
 
   void InsertSymbol(Symbol& symbol);
+  int CountSymbols();
 
   int Length();
   String Reverse();
   Language Prefixes();
   Language Suffixes();
   Language Substrings();
-
-  int CountSymbols();
 
   friend std::ostream& operator<<(std::ostream& os, const String& string) {
     for (Symbol symbol : string.GetString()) {

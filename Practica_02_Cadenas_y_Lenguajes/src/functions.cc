@@ -121,20 +121,20 @@ void manage_entry(std::vector<std::string>& entry_lines, std::vector<String>& st
         std::string str_alphabet = entry_lines[i].substr(j + 1, entry_lines[i].size());
         alphabet = Alphabet(str_alphabet);
 
-        bool valid_String = true;
+        bool valid_string = true;
         for (unsigned int k = 0; k < str_string.size(); ++k) {
           if (str_string[k] == '&') {
             std::cerr << "The String " << PURPLE_BOLD << str_string << RESET << " contains the symbol '&' and cannot be used." << std::endl << std::endl;
-            valid_String = false;
+            valid_string = false;
             break;
           }
           if (!alphabet.IsSymbolInAlphabet(str_string[k])) {
-            valid_String = false;
+            valid_string = false;
             break;
           }
         }
 
-        if (valid_String) {
+        if (valid_string) {
           string.SetString(str_string);
           strings.push_back(string);
           std::cout << "String: " << str_string << " - " << string.CountSymbols() << "/" << string.Length() << std::endl;
@@ -211,15 +211,15 @@ void menu(std::string file_out, int opcode, std::vector<String>& strings) {
       write_file(file_out, suffixes_vector);
     } break;
     case 6: {
-      Language subStrings;
-      std::vector<Language> subStrings_vector;
-      std::cout << BOLD << "SubStrings:" << RESET << std::endl;
+      Language substrings;
+      std::vector<Language> substrings_vector;
+      std::cout << BOLD << "Substrings:" << RESET << std::endl;
       for (int i = 0; i < strings.size(); i++) {
-        subStrings = strings[i].Substrings();
-        subStrings_vector.push_back(subStrings);
-        std::cout << subStrings << std::endl;
+        substrings = strings[i].Substrings();
+        substrings_vector.push_back(substrings);
+        std::cout << substrings << std::endl;
       }
-      write_file(file_out, subStrings_vector);
+      write_file(file_out, substrings_vector);
     }
     default:
       break;
