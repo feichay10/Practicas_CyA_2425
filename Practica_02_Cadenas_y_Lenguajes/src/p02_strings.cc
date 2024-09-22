@@ -21,16 +21,17 @@
 
 #include "../include/functions.h"
 
+// Posible modificacion, contar el numero de simbolos diferentes en una cadena
+
 int main(int argc, char* argv[]) {
   std::vector<std::string> entry_lines;
   std::vector<Chain> chains;
 
   try {
     if (check_parameters(argc, argv)) {
-      std::string file_out = argv[2];
       entry_lines = read_file(argv[1]);
       manage_entry(entry_lines, chains);
-      menu(file_out, atoi(argv[3]), chains);
+      menu(argv[2], atoi(argv[3]), chains);
     } else {
       exit(EXIT_FAILURE);
     }

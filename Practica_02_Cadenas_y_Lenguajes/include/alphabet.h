@@ -35,6 +35,7 @@ class Alphabet {
   std::set<Symbol> GetAlphabet() const;
 
   void GetAlphabetFromChain(Chain chain);
+  bool IsSymbolInAlphabet(Symbol symbol) const;
 
   friend std::ostream& operator<<(std::ostream& os, const Alphabet& alphabet) {
     os << "{";

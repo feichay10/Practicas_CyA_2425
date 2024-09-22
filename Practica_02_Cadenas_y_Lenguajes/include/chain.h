@@ -37,6 +37,8 @@ class Chain {
   std::vector<Symbol> GetChain() const;
   void SetChain(std::string chain);
 
+  void InsertSymbol(Symbol& symbol);
+
   int Length();
   Chain Reverse();
   Language Prefixes();

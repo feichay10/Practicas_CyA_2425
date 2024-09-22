@@ -67,26 +67,6 @@ std::vector<std::string> read_file(std::string file_name) {
   return lines;
 }
 
-void manage_entry(std::vector<std::string>& entry_lines, std::vector<Chain>& chains) {
-  Chain chain;
-  Alphabet alphabet;
-
-  for (unsigned int i = 0; i < entry_lines.size(); i++) {      // Bucle que recorre las líneas de entrada, cada pos del vector es una línea
-    for (unsigned int j = 0; j < entry_lines[i].size(); j++) { // Bucle que recorre los caracteres de la línea
-      if (entry_lines[i][j] == SPACE) {
-        std::string str_chain = entry_lines[i].substr(0, j);
-        chain.SetChain(str_chain);
-        chains.push_back(chain);
-        std::string str_alphabet = entry_lines[i].substr(j + 1, entry_lines[i].size());
-        alphabet = Alphabet(str_alphabet);
-        std::cout << "Chain: " << str_chain << std::endl;
-        std::cout << "Alphabet: " << str_alphabet << std::endl << std::endl;
-        break;
-      }
-    }
-  }
-}
-
 template <typename T>
 void write_file(std::string file_name, T& data) {
   std::ofstream file(file_name);
@@ -96,6 +76,46 @@ void write_file(std::string file_name, T& data) {
   file.close();
 }
 
+// Comprobar que la cadena tiene el simbolo &
+void manage_entry(std::vector<std::string>& entry_lines, std::vector<Chain>& chains) {
+  Chain chain;
+  Alphabet alphabet;
+
+  for (unsigned int i = 0; i < entry_lines.size(); i++) {      // Bucle que recorre las líneas de entrada, cada pos del vector es una línea
+    for (unsigned int j = 0; j < entry_lines[i].size(); j++) { // Bucle que recorre los caracteres de la línea
+      if (entry_lines[i][j] == SPACE) {
+        std::string str_chain = entry_lines[i].substr(0, j);
+        std::string str_alphabet = entry_lines[i].substr(j + 1, entry_lines[i].size());
+        alphabet = Alphabet(str_alphabet);
+
+        // Comprobar que la cadena tiene los símbolos que pertenecen al alfabeto
+        bool valid_chain = true;
+        for (unsigned int k = 0; k < str_chain.size(); ++k) {
+          if (str_chain[k] == '&') {
+            std::cerr << "The chain " << PURPLE_BOLD << str_chain << RESET << " contains the symbol '&' and cannot be used." << std::endl << std::endl;
+            valid_chain = false;
+            break;
+          }
+          if (!alphabet.IsSymbolInAlphabet(str_chain[k])) {
+            valid_chain = false;
+            break;
+          }
+        }
+
+        if (valid_chain) {
+          chain.SetChain(str_chain);
+          chains.push_back(chain);
+          std::cout << "Chain: " << str_chain << std::endl;
+          std::cout << "Alphabet: " << str_alphabet << std::endl << std::endl;
+        } else if (!str_chain.empty() && str_chain.find('&') == std::string::npos) {
+          std::cerr << "The chain " << PURPLE_BOLD << str_chain << RESET << " does not belong to the alphabet " << CYAN_BOLD << str_alphabet << RESET << std::endl << std::endl;
+        }
+        break;
+      }
+    }
+  }
+}
+
 void menu(std::string file_out, int opcode, std::vector<Chain>& chains) {
   std::ofstream file(file_out);
 
@@ -103,6 +123,7 @@ void menu(std::string file_out, int opcode, std::vector<Chain>& chains) {
     case 1: {
       Alphabet alphabet;
       std::vector<Alphabet> alphabets;
+      std::cout << BOLD << "Alphabets:" << RESET << std::endl;
       for (int i = 0; i < chains.size(); i++) {
         alphabet.GetAlphabetFromChain(chains[i]);
         alphabets.push_back(alphabet);
@@ -112,6 +133,7 @@ void menu(std::string file_out, int opcode, std::vector<Chain>& chains) {
     } break;
     case 2: {
       std::vector<int> lengths;
+      std::cout << BOLD << "Lengths:" << RESET << std::endl;
       for (int i = 0; i < chains.size(); i++) {
         lengths.push_back(chains[i].Length());
         std::cout << chains[i].Length() << std::endl;
@@ -120,6 +142,7 @@ void menu(std::string file_out, int opcode, std::vector<Chain>& chains) {
     } break;
     case 3: {
       std::vector<Chain> reversed;
+      std::cout << BOLD << "Reversed chains:" << RESET << std::endl;
       for (int i = 0; i < chains.size(); i++) {
         reversed.push_back(chains[i].Reverse());
         std::cout << chains[i].Reverse() << std::endl;
@@ -130,6 +153,7 @@ void menu(std::string file_out, int opcode, std::vector<Chain>& chains) {
     case 4: {
       Language prefixes;
       std::vector<Language> prefixes_vector;
+      std::cout << BOLD << "Prefixes:" << RESET << std::endl;
       for (int i = 0; i < chains.size(); i++) {
         prefixes = chains[i].Prefixes();
         prefixes_vector.push_back(prefixes);
@@ -140,6 +164,7 @@ void menu(std::string file_out, int opcode, std::vector<Chain>& chains) {
     case 5: {
       Language suffixes;
       std::vector<Language> suffixes_vector;
+      std::cout << BOLD << "Suffixes:" << RESET << std::endl;
       for (int i = 0; i < chains.size(); i++) {
         suffixes = chains[i].Suffixes();
         suffixes_vector.push_back(suffixes);
@@ -150,13 +175,14 @@ void menu(std::string file_out, int opcode, std::vector<Chain>& chains) {
     case 6: {
       Language subchains;
       std::vector<Language> subchains_vector;
+      std::cout << BOLD << "Subchains:" << RESET << std::endl;
       for (int i = 0; i < chains.size(); i++) {
         subchains = chains[i].Subchains();
         subchains_vector.push_back(subchains);
         std::cout << subchains << std::endl;
       }
       write_file(file_out, subchains_vector);
-    } break;
+    }
     default:
       break;
   }

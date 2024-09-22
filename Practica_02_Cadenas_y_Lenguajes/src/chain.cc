@@ -37,6 +37,10 @@ void Chain::SetChain(std::string chain) {
   }
 }
 
+void Chain::InsertSymbol(Symbol& symbol) {
+  chain_.push_back(symbol);
+}
+
 int Chain::Length() {
   return chain_.size();
 }
@@ -51,25 +55,27 @@ Chain Chain::Reverse() {
 
 Language Chain::Prefixes() {
   std::set<Chain> prefixes;
+  Chain prefix;
+  // prefixes.insert(Chain("&")); // Agregamos el símbolo "&"
+
   for (int i = 0; i < chain_.size(); i++) {
-    Chain prefix;
-    for (int j = 0; j <= i; j++) {
-      prefix.chain_.push_back(chain_[j]);
-    }
+    prefix.InsertSymbol(chain_[i]);
     prefixes.insert(prefix);
   }
+
   return Language(prefixes);
 }
 
 Language Chain::Suffixes() {
   std::set<Chain> suffixes;
-  for (int i = 0; i < chain_.size(); i++) {
-    Chain suffix;
-    for (int j = i; j < chain_.size(); j++) {
-      suffix.chain_.push_back(chain_[j]);
-    }
+  Chain suffix;
+  // suffixes.insert(Chain("&")); // Agregamos el símbolo "&"
+
+  for (int i = chain_.size() - 1; i >= 0; i--) {
+    suffix.InsertSymbol(chain_[i]);
     suffixes.insert(suffix);
   }
+
   return Language(suffixes);
 }
 

@@ -38,3 +38,7 @@ void Alphabet::GetAlphabetFromChain(Chain chain) {
   }
   alphabet_ = alphabet;
 }
+
+bool Alphabet::IsSymbolInAlphabet(Symbol symbol) const {
+  return alphabet_.find(symbol) != alphabet_.end();
+}
