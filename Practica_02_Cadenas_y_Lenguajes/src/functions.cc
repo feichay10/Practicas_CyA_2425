@@ -124,7 +124,7 @@ void manage_entry(std::vector<std::string>& entry_lines, std::vector<String>& st
         bool valid_string = true;
         for (unsigned int k = 0; k < str_string.size(); ++k) {
           if (str_string[k] == '&') {
-            std::cerr << "The String " << PURPLE_BOLD << str_string << RESET << " contains the symbol '&' and cannot be used." << std::endl << std::endl;
+            std::cerr << RED_BOLD << "The string " << RESET << PURPLE_BOLD << str_string << RED_BOLD << " contains the symbol '&' and cannot be used." << std::endl << std::endl;
             valid_string = false;
             break;
           }
@@ -140,7 +140,7 @@ void manage_entry(std::vector<std::string>& entry_lines, std::vector<String>& st
           std::cout << "String: " << str_string << " - " << string.CountSymbols() << "/" << string.Length() << std::endl;
           std::cout << "Alphabet: " << str_alphabet << std::endl << std::endl;
         } else if (!str_string.empty() && str_string.find('&') == std::string::npos) {
-          std::cerr << "The String " << PURPLE_BOLD << str_string << RESET << " does not belong to the alphabet " << CYAN_BOLD << str_alphabet << RESET << std::endl << std::endl;
+          std::cerr << "The string " << PURPLE_BOLD << str_string << RED_BOLD << " does not belong to the alphabet " << CYAN_BOLD << str_alphabet << RESET << std::endl << std::endl;
         }
         break;
       }

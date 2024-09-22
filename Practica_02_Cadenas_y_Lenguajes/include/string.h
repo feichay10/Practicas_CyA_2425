@@ -35,11 +35,11 @@ class Language;
 class String {
  public:
   String();
-  String(std::string String);
+  String(std::string string);
   ~String() = default;
 
   std::vector<Symbol> GetString() const;
-  void SetString(std::string String);
+  void SetString(std::string string);
 
   void InsertSymbol(Symbol& symbol);
   int CountSymbols();

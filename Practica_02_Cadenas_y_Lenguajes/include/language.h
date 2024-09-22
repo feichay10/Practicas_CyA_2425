@@ -40,11 +40,11 @@ class Language {
   friend std::ostream& operator<<(std::ostream& os, const Language& language) {
     os << "{&, ";
     bool first = true;
-    for (const String& String : language.GetLanguage()) {
+    for (const String& string : language.GetLanguage()) {
       if (!first) {
         os << ", ";
       }
-      os << String;
+      os << string;
       first = false;
     }
     os << "}";

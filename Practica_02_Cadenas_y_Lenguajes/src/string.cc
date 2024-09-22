@@ -109,12 +109,10 @@ String String::Reverse() {
 Language String::Prefixes() {
   std::set<String> prefixes;
   String prefix;
-
   for (int i = 0; i < string_.size(); i++) {
     prefix.InsertSymbol(string_[i]);
     prefixes.insert(prefix);
   }
-
   return Language(prefixes);
 }
 
@@ -126,12 +124,10 @@ Language String::Prefixes() {
 Language String::Suffixes() {
   std::set<String> suffixes;
   String suffix; 
-
   for (int i = string_.size() - 1; i >= 0; i--) {
     suffix.InsertSymbol(string_[i]);
     suffixes.insert(suffix);
   }
-
   return Language(suffixes);
 }
 

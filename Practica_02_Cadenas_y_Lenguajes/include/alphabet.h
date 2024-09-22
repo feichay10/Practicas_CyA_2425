@@ -48,7 +48,7 @@ class Alphabet {
       }
       os << *it;
     }
-    os << "}" << std::flush;
+    os << "}";
     return os;
   }
 
