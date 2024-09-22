@@ -26,6 +26,10 @@ Chain::Chain(std::string chain) {
   }
 }
 
+Chain::Chain(char symbol) {
+  chain_.push_back(Symbol(symbol));
+}
+
 std::vector<Symbol> Chain::GetChain() const {
   return chain_;
 }
@@ -56,7 +60,6 @@ Chain Chain::Reverse() {
 Language Chain::Prefixes() {
   std::set<Chain> prefixes;
   Chain prefix;
-  // prefixes.insert(Chain("&")); // Agregamos el símbolo "&"
 
   for (int i = 0; i < chain_.size(); i++) {
     prefix.InsertSymbol(chain_[i]);
@@ -68,8 +71,7 @@ Language Chain::Prefixes() {
 
 Language Chain::Suffixes() {
   std::set<Chain> suffixes;
-  Chain suffix;
-  // suffixes.insert(Chain("&")); // Agregamos el símbolo "&"
+  Chain suffix; 
 
   for (int i = chain_.size() - 1; i >= 0; i--) {
     suffix.InsertSymbol(chain_[i]);
@@ -91,4 +93,13 @@ Language Chain::Subchains() {
     }
   }
   return Language(subchains);
+}
+
+// Contar el numero de simbolos diferentes en una cadena -> aba = 2/3 (numero de simbolos diferentes/longitud de la cadena)
+int Chain::CountSymbols() {
+  std::set<Symbol> symbols;
+  for (int i = 0; i < chain_.size(); i++) {
+    symbols.insert(chain_[i]);
+  }
+  return symbols.size();
 }

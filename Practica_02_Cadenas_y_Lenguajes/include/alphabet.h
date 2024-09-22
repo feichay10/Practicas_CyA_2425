@@ -31,7 +31,6 @@ class Alphabet {
   Alphabet(std::string alphabet);
   ~Alphabet() = default;
 
-  // void SetAlphabet(std::string alphabet);
   std::set<Symbol> GetAlphabet() const;
 
   void GetAlphabetFromChain(Chain chain);
@@ -45,7 +44,7 @@ class Alphabet {
       }
       os << *it;
     }
-    os << "}" << std::flush;  // Forzando la escritura en el buffer
+    os << "}" << std::flush;
     return os;
   }
 

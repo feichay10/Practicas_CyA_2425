@@ -32,6 +32,7 @@ class Chain {
  public:
   Chain();
   Chain(std::string chain);
+  Chain(char symbol);
   ~Chain() = default;
 
   std::vector<Symbol> GetChain() const;
@@ -44,6 +45,8 @@ class Chain {
   Language Prefixes();
   Language Suffixes();
   Language Subchains();
+
+  int CountSymbols();
 
   friend std::ostream& operator<<(std::ostream& os, const Chain& chain) {
     for (Symbol symbol : chain.GetChain()) {

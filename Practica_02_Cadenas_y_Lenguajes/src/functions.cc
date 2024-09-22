@@ -105,7 +105,7 @@ void manage_entry(std::vector<std::string>& entry_lines, std::vector<Chain>& cha
         if (valid_chain) {
           chain.SetChain(str_chain);
           chains.push_back(chain);
-          std::cout << "Chain: " << str_chain << std::endl;
+          std::cout << "Chain: " << str_chain << " - " << chain.CountSymbols() << "/" << chain.Length() << std::endl;
           std::cout << "Alphabet: " << str_alphabet << std::endl << std::endl;
         } else if (!str_chain.empty() && str_chain.find('&') == std::string::npos) {
           std::cerr << "The chain " << PURPLE_BOLD << str_chain << RESET << " does not belong to the alphabet " << CYAN_BOLD << str_alphabet << RESET << std::endl << std::endl;
@@ -118,7 +118,6 @@ void manage_entry(std::vector<std::string>& entry_lines, std::vector<Chain>& cha
 
 void menu(std::string file_out, int opcode, std::vector<Chain>& chains) {
   std::ofstream file(file_out);
-
   switch (opcode) {
     case 1: {
       Alphabet alphabet;

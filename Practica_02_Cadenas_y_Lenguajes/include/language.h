@@ -34,7 +34,7 @@ class Language {
   void SetLanguage(std::set<Chain> language);
 
   friend std::ostream& operator<<(std::ostream& os, const Language& language) {
-    os << "{";
+    os << "{&, ";
     bool first = true;
     for (const Chain& chain : language.GetLanguage()) {
       if (!first) {
