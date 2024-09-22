@@ -28,16 +28,16 @@ Language::Language() {}
  * 
  * @param language 
  */
-Language::Language(std::set<Chain> language) {
+Language::Language(std::set<String> language) {
   language_ = language;
 }
 
 /**
  * @brief Get the Language object
  * 
- * @return std::set<Chain> 
+ * @return std::set<String> 
  */
-std::set<Chain> Language::GetLanguage() const {
+std::set<String> Language::GetLanguage() const {
   return language_;
 }
 
@@ -46,6 +46,6 @@ std::set<Chain> Language::GetLanguage() const {
  * 
  * @param language 
  */
-void Language::SetLanguage(std::set<Chain> language) {
+void Language::SetLanguage(std::set<String> language) {
   language_ = language;
 }

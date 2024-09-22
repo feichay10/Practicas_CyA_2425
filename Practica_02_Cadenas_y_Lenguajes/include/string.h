@@ -5,7 +5,7 @@
  * Asignatura: Computabilidad y Algoritmia
  * Curso: 2º
  * Práctica 2: Cadenas y lenguajes
- * @file chain.h
+ * @file String.h
  * @author Cheuk Kelly Ng Pante (alu0101364544@ull.edu.es)
  * @brief
  * @version 0.1
@@ -15,8 +15,8 @@
  *
  */
 
-#ifndef CHAIN_H
-#define CHAIN_H
+#ifndef STRING_H
+#define STRING_H
 
 #include <iostream>
 #include <set>
@@ -28,40 +28,44 @@
 
 class Language;
 
-class Chain {
+/**
+ * @brief Class that represents a String
+ * 
+ */
+class String {
  public:
-  Chain();
-  Chain(std::string chain);
-  ~Chain() = default;
+  String();
+  String(std::string String);
+  ~String() = default;
 
-  std::vector<Symbol> GetChain() const;
-  void SetChain(std::string chain);
+  std::vector<Symbol> GetString() const;
+  void SetString(std::string String);
 
   void InsertSymbol(Symbol& symbol);
 
   int Length();
-  Chain Reverse();
+  String Reverse();
   Language Prefixes();
   Language Suffixes();
-  Language Subchains();
+  Language Substrings();
 
   int CountSymbols();
 
-  friend std::ostream& operator<<(std::ostream& os, const Chain& chain) {
-    for (Symbol symbol : chain.GetChain()) {
+  friend std::ostream& operator<<(std::ostream& os, const String& string) {
+    for (Symbol symbol : string.GetString()) {
       os << symbol.GetSymbol();
     }
     return os;
   }
 
-  friend bool operator<(const Chain& chain1, const Chain& chain2) {
-    return chain1.GetChain().size() < chain2.GetChain().size();
+  friend bool operator<(const String& string1, const String& string2) {
+    return string1.GetString().size() < string2.GetString().size();
   }
 
  private:
-  std::vector<Symbol> chain_;
+  std::vector<Symbol> string_;
 };
 
 
 
-#endif  // CHAIN_H
+#endif  // STRING_H

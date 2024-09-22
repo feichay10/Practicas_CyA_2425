@@ -22,9 +22,13 @@
 #include <set>
 #include <string>
 
-#include "chain.h"
+#include "string.h"
 #include "symbol.h"
 
+/**
+ * @brief Class that represents an alphabet
+ * 
+ */
 class Alphabet {
  public:
   Alphabet();
@@ -33,7 +37,7 @@ class Alphabet {
 
   std::set<Symbol> GetAlphabet() const;
 
-  void GetAlphabetFromChain(Chain chain);
+  void GetAlphabetFromString(String string);
   bool IsSymbolInAlphabet(Symbol symbol) const;
 
   friend std::ostream& operator<<(std::ostream& os, const Alphabet& alphabet) {

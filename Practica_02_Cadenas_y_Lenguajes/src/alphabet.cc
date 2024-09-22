@@ -46,14 +46,14 @@ std::set<Symbol> Alphabet::GetAlphabet() const {
 }
 
 /**
- * @brief Get the Alphabet From Chain object
+ * @brief Get the Alphabet From string object
  * 
- * @param chain 
+ * @param string 
  */
-void Alphabet::GetAlphabetFromChain(Chain chain) {
+void Alphabet::GetAlphabetFromString(String string) {
   std::set<Symbol> alphabet;
-  for (int i = 0; i < chain.GetChain().size(); i++) {
-    alphabet.insert(chain.GetChain()[i]);
+  for (int i = 0; i < string.GetString().size(); i++) {
+    alphabet.insert(string.GetString()[i]);
   }
   alphabet_ = alphabet;
 }

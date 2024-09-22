@@ -23,13 +23,13 @@
 
 int main(int argc, char* argv[]) {
   std::vector<std::string> entry_lines;
-  std::vector<Chain> chains;
+  std::vector<String> strings;
 
   try {
     if (check_parameters(argc, argv)) {
       entry_lines = read_file(argv[1]);
-      manage_entry(entry_lines, chains);
-      menu(argv[2], atoi(argv[3]), chains);
+      manage_entry(entry_lines, strings);
+      menu(argv[2], atoi(argv[3]), strings);
     } else {
       exit(EXIT_FAILURE);
     }

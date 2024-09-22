@@ -1,5 +1,5 @@
-{&, b, ba, bab, babb, babba}
-{&, 6, 63, 638, 6383, 63839, 638397, 6383976}
-{&, a, al, alo, aloh}
-{&, a, aa, aaa, aaaa, aaaaa, aaaaaa}
-{&, b}
+{a, b}
+{3, 6, 7, 8, 9}
+{a, h, l, o}
+{a}
+{b}

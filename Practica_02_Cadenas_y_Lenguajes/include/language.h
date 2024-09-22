@@ -22,25 +22,29 @@
 #include <set>
 
 #include "symbol.h"
-#include "chain.h"
+#include "string.h"
 
+/**
+ * @brief Class that represents a language
+ * 
+ */
 class Language {
  public:
   Language();
-  Language(std::set<Chain> language);
+  Language(std::set<String> language);
   ~Language() = default;
 
-  std::set<Chain> GetLanguage() const;
-  void SetLanguage(std::set<Chain> language);
+  std::set<String> GetLanguage() const;
+  void SetLanguage(std::set<String> language);
 
   friend std::ostream& operator<<(std::ostream& os, const Language& language) {
     os << "{&, ";
     bool first = true;
-    for (const Chain& chain : language.GetLanguage()) {
+    for (const String& String : language.GetLanguage()) {
       if (!first) {
         os << ", ";
       }
-      os << chain;
+      os << String;
       first = false;
     }
     os << "}";
@@ -49,7 +53,7 @@ class Language {
   }
 
  private:
-  std::set<Chain> language_;
+  std::set<String> language_;
 };
 
 #endif  // LANGUAGE_H

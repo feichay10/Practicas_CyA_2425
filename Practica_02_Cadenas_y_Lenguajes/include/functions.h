@@ -24,7 +24,7 @@
 #include <vector>
 
 #include "alphabet.h"
-#include "chain.h"
+#include "string.h"
 #include "colors.h"
 #include "language.h"
 
@@ -57,7 +57,7 @@ std::vector<std::string> read_file(std::string file_name);
 template <typename T>
 void write_file(std::string file_name, T& data);
 void manage_entry(std::vector<std::string>& entry_lines,
-                  std::vector<Chain>& chains);
-void menu(std::string file_out, int opcode, std::vector<Chain>& chains);
+                  std::vector<String>& strings);
+void menu(std::string file_out, int opcode, std::vector<String>& strings);
 
 #endif  // FUNCTIONS_H
