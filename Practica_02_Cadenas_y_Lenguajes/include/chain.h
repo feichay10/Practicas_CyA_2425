@@ -32,7 +32,6 @@ class Chain {
  public:
   Chain();
   Chain(std::string chain);
-  Chain(char symbol);
   ~Chain() = default;
 
   std::vector<Symbol> GetChain() const;

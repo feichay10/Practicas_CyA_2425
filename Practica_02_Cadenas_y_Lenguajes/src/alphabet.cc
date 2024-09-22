@@ -17,8 +17,17 @@
 
 #include "../include/alphabet.h"
 
+/**
+ * @brief Construct a new Alphabet:: Alphabet object
+ * 
+ */
 Alphabet::Alphabet() {}
 
+/**
+ * @brief Construct a new Alphabet:: Alphabet object
+ * 
+ * @param alphabet 
+ */
 Alphabet::Alphabet(std::string alphabet) {
   std::set<Symbol> alphabet_set;
   for (int i = 0; i < alphabet.size(); i++) {
@@ -27,10 +36,20 @@ Alphabet::Alphabet(std::string alphabet) {
   alphabet_ = alphabet_set;
 }
 
+/**
+ * @brief Get the Alphabet object
+ * 
+ * @return std::set<Symbol> 
+ */
 std::set<Symbol> Alphabet::GetAlphabet() const {
   return alphabet_;
 }
 
+/**
+ * @brief Get the Alphabet From Chain object
+ * 
+ * @param chain 
+ */
 void Alphabet::GetAlphabetFromChain(Chain chain) {
   std::set<Symbol> alphabet;
   for (int i = 0; i < chain.GetChain().size(); i++) {
@@ -39,6 +58,13 @@ void Alphabet::GetAlphabetFromChain(Chain chain) {
   alphabet_ = alphabet;
 }
 
+/**
+ * @brief Check if a symbol is in the alphabet
+ * 
+ * @param symbol 
+ * @return true 
+ * @return false 
+ */
 bool Alphabet::IsSymbolInAlphabet(Symbol symbol) const {
   return alphabet_.find(symbol) != alphabet_.end();
 }

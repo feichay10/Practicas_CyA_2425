@@ -21,8 +21,6 @@
 
 #include "../include/functions.h"
 
-// Posible modificacion, contar el numero de simbolos diferentes en una cadena
-
 int main(int argc, char* argv[]) {
   std::vector<std::string> entry_lines;
   std::vector<Chain> chains;

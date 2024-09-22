@@ -42,13 +42,13 @@ const std::string kHelp =
         "This program reads a file with a list of strings and performs "
         "operations on them.\n"
         "Those operations are determined by the opcode. The Opcodes are:\n"
-        "  1. Alphabet\n"
-        "  2. Length\n"
-        "  3. Reverse\n"
-        "  4. Prefixes\n"
-        "  5. Suffixes\n"
-        "  6. Substrings\n\n"
-        "Example: ./p02_strings filein.txt fileout.txt 1") +
+        "  1. Alphabet - Displays the alphabet of the strings.\n"
+        "  2. Length - Calculates the length of each string.\n"
+        "  3. Reverse - Reverses each string.\n"
+        "  4. Prefixes - Lists all prefixes of each string.\n"
+        "  5. Suffixes - Lists all suffixes of each string.\n"
+        "  6. Substrings - Lists all substrings of each string.\n\n"
+        "Example: ./bin/p02_strings data/filein.txt data/fileout.txt 1") +
     RESET;
 
 bool check_parameters(int argc, char* argv[]);
@@ -56,7 +56,8 @@ bool check_file(std::string file_name);
 std::vector<std::string> read_file(std::string file_name);
 template <typename T>
 void write_file(std::string file_name, T& data);
-void manage_entry(std::vector<std::string>& entry_lines, std::vector<Chain>& chains);
+void manage_entry(std::vector<std::string>& entry_lines,
+                  std::vector<Chain>& chains);
 void menu(std::string file_out, int opcode, std::vector<Chain>& chains);
 
 #endif  // FUNCTIONS_H

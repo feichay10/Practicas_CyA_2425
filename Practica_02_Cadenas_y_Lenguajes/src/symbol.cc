@@ -17,12 +17,26 @@
 
 #include "../include/symbol.h"
 
+/**
+ * @brief Construct a new Symbol:: Symbol object
+ * 
+ */
 Symbol::Symbol() {}
 
+/**
+ * @brief Construct a new Symbol:: Symbol object
+ * 
+ * @param symbol 
+ */
 Symbol::Symbol(char symbol) {
   symbol_ = symbol;
 }
 
+/**
+ * @brief Get the Symbol object
+ * 
+ * @return char 
+ */
 char Symbol::GetSymbol() const {
   return symbol_;
 }

@@ -17,6 +17,13 @@
 
 #include "../include/functions.h"
 
+/**
+ * @brief Check if the file exists and can be opened
+ * 
+ * @param file_name 
+ * @return true 
+ * @return false 
+ */
 bool check_file(std::string file_name) {
   std::ifstream file(file_name);
   if (!file.is_open()) {
@@ -27,6 +34,14 @@ bool check_file(std::string file_name) {
   return true;
 }
 
+/**
+ * @brief Check if the parameters are correct
+ * 
+ * @param argc 
+ * @param argv 
+ * @return true 
+ * @return false 
+ */
 bool check_parameters(int argc, char* argv[]) {
   if (argc == 1 || (std::string(argv[1]) == "--help" && argc == 2)) {
     std::cerr << (argc == 1 ? kHowUse : kHelp) << std::endl;
@@ -55,6 +70,12 @@ bool check_parameters(int argc, char* argv[]) {
   return true;
 }
 
+/**
+ * @brief Read the file and store the lines in a vector
+ * 
+ * @param file_name 
+ * @return std::vector<std::string> 
+ */
 std::vector<std::string> read_file(std::string file_name) {
   std::vector<std::string> lines;
   std::ifstream file(file_name);
@@ -67,6 +88,13 @@ std::vector<std::string> read_file(std::string file_name) {
   return lines;
 }
 
+/**
+ * @brief Write the data in a file
+ * 
+ * @tparam T 
+ * @param file_name 
+ * @param data 
+ */
 template <typename T>
 void write_file(std::string file_name, T& data) {
   std::ofstream file(file_name);
@@ -76,19 +104,23 @@ void write_file(std::string file_name, T& data) {
   file.close();
 }
 
-// Comprobar que la cadena tiene el simbolo &
+/**
+ * @brief Manage the entry lines and store the chains in a vector
+ * 
+ * @param entry_lines 
+ * @param chains 
+ */
 void manage_entry(std::vector<std::string>& entry_lines, std::vector<Chain>& chains) {
   Chain chain;
   Alphabet alphabet;
 
-  for (unsigned int i = 0; i < entry_lines.size(); i++) {      // Bucle que recorre las líneas de entrada, cada pos del vector es una línea
-    for (unsigned int j = 0; j < entry_lines[i].size(); j++) { // Bucle que recorre los caracteres de la línea
+  for (unsigned int i = 0; i < entry_lines.size(); i++) {      
+    for (unsigned int j = 0; j < entry_lines[i].size(); j++) { 
       if (entry_lines[i][j] == SPACE) {
         std::string str_chain = entry_lines[i].substr(0, j);
         std::string str_alphabet = entry_lines[i].substr(j + 1, entry_lines[i].size());
         alphabet = Alphabet(str_alphabet);
 
-        // Comprobar que la cadena tiene los símbolos que pertenecen al alfabeto
         bool valid_chain = true;
         for (unsigned int k = 0; k < str_chain.size(); ++k) {
           if (str_chain[k] == '&') {
@@ -116,6 +148,13 @@ void manage_entry(std::vector<std::string>& entry_lines, std::vector<Chain>& cha
   }
 }
 
+/**
+ * @brief Menu that performs the operations on the chains deoending on the opcode
+ * 
+ * @param file_out 
+ * @param opcode 
+ * @param chains 
+ */
 void menu(std::string file_out, int opcode, std::vector<Chain>& chains) {
   std::ofstream file(file_out);
   switch (opcode) {

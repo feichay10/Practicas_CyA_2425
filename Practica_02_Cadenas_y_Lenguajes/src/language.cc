@@ -17,16 +17,35 @@
 
 #include "../include/language.h"
 
+/**
+ * @brief Construct a new Language:: Language object
+ * 
+ */
 Language::Language() {}
 
+/**
+ * @brief Construct a new Language:: Language object
+ * 
+ * @param language 
+ */
 Language::Language(std::set<Chain> language) {
   language_ = language;
 }
 
+/**
+ * @brief Get the Language object
+ * 
+ * @return std::set<Chain> 
+ */
 std::set<Chain> Language::GetLanguage() const {
   return language_;
 }
 
+/**
+ * @brief Set the Language object
+ * 
+ * @param language 
+ */
 void Language::SetLanguage(std::set<Chain> language) {
   language_ = language;
 }
