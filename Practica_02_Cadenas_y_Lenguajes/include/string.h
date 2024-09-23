@@ -25,6 +25,7 @@
 #include <algorithm>
 
 #include "symbol.h"
+#include "alphabet.h"
 
 class Language;
 
@@ -44,6 +45,7 @@ class String {
   void InsertSymbol(Symbol& symbol);
   int CountSymbols();
 
+  Alphabet GetAlphabetFromString(String string);
   int Length();
   String Reverse();
   Language Prefixes();

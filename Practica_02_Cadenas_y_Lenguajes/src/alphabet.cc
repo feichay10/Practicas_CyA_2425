@@ -36,6 +36,10 @@ Alphabet::Alphabet(std::string alphabet) {
   alphabet_ = alphabet_set;
 }
 
+Alphabet::Alphabet(std::set<Symbol> alphabet) {
+  alphabet_ = alphabet;
+}
+
 /**
  * @brief Get the Alphabet object
  * 
@@ -43,19 +47,6 @@ Alphabet::Alphabet(std::string alphabet) {
  */
 std::set<Symbol> Alphabet::GetAlphabet() const {
   return alphabet_;
-}
-
-/**
- * @brief Get the Alphabet From string object
- * 
- * @param string 
- */
-void Alphabet::GetAlphabetFromString(String string) {
-  std::set<Symbol> alphabet;
-  for (int i = 0; i < string.GetString().size(); i++) {
-    alphabet.insert(string.GetString()[i]);
-  }
-  alphabet_ = alphabet;
 }
 
 /**

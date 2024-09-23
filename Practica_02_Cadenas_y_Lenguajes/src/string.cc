@@ -80,6 +80,20 @@ int String::CountSymbols() {
 }
 
 /**
+ * @brief Get the Alphabet From string object
+ * 
+ * @param string 
+ * @return Alphabet 
+ */
+Alphabet String::GetAlphabetFromString(String string) {
+  std::set<Symbol> alphabet;
+  for (int i = 0; i < string.GetString().size(); i++) {
+    alphabet.insert(string.GetString()[i]);
+  }
+  return Alphabet(alphabet);
+}
+
+/**
  * @brief Get the Length object
  * 
  * @return int 
@@ -91,7 +105,7 @@ int String::Length() {
 /**
  * @brief Reverse the String object
  * 
- * @return String 
+ * @return Reverse String object
  */
 String String::Reverse() {
   String reversed_string;
@@ -104,7 +118,7 @@ String String::Reverse() {
 /**
  * @brief Get the Prefixes from a String object
  * 
- * @return Language 
+ * @return Language of chains of prefixes
  */
 Language String::Prefixes() {
   std::set<String> prefixes;
@@ -119,13 +133,15 @@ Language String::Prefixes() {
 /**
  * @brief Get the Suffixes from a String object
  * 
- * @return Language 
+ * @return Language of chains of suffixes
  */
 Language String::Suffixes() {
   std::set<String> suffixes;
-  String suffix; 
-  for (int i = string_.size() - 1; i >= 0; i--) {
-    suffix.InsertSymbol(string_[i]);
+  for (int i = 0; i < string_.size(); i++) {
+    String suffix;
+    for (int j = i; j < string_.size(); j++) {
+      suffix.string_.push_back(string_[j]);
+    }
     suffixes.insert(suffix);
   }
   return Language(suffixes);
@@ -134,7 +150,7 @@ Language String::Suffixes() {
 /**
  * @brief Get the SubStrings from a String object
  * 
- * @return Language 
+ * @return Language of chains of substrings
  */
 Language String::Substrings() {
   std::set<String> substrings;

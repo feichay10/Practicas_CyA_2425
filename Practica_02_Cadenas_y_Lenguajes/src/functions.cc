@@ -21,8 +21,7 @@
  * @brief Check if the file exists and can be opened
  * 
  * @param file_name 
- * @return true 
- * @return false 
+ * @return True if the file exists and can be opened 
  */
 bool check_file(std::string file_name) {
   std::ifstream file(file_name);
@@ -39,8 +38,7 @@ bool check_file(std::string file_name) {
  * 
  * @param argc 
  * @param argv 
- * @return true 
- * @return false 
+ * @return True if the parameters are correct
  */
 bool check_parameters(int argc, char* argv[]) {
   if (argc == 1 || (std::string(argv[1]) == "--help" && argc == 2)) {
@@ -74,7 +72,7 @@ bool check_parameters(int argc, char* argv[]) {
  * @brief Read the file and store the lines in a vector
  * 
  * @param file_name 
- * @return std::vector<std::string> 
+ * @return A vector with the lines of the file
  */
 std::vector<std::string> read_file(std::string file_name) {
   std::vector<std::string> lines;
@@ -92,8 +90,8 @@ std::vector<std::string> read_file(std::string file_name) {
  * @brief Write the data in a file
  * 
  * @tparam T 
- * @param file_name 
- * @param data 
+ * @param file_name The name of the file
+ * @param data The data to be written 
  */
 template <typename T>
 void write_file(std::string file_name, T& data) {
@@ -107,15 +105,15 @@ void write_file(std::string file_name, T& data) {
 /**
  * @brief Manage the entry lines and store the strings in a vector
  * 
- * @param entry_lines 
- * @param strings 
+ * @param entry_lines Lines of the file
+ * @param strings Vector of strings
  */
 void manage_entry(std::vector<std::string>& entry_lines, std::vector<String>& strings) {
   String string;
   Alphabet alphabet;
 
   for (unsigned int i = 0; i < entry_lines.size(); i++) {      
-    for (unsigned int j = 0; j < entry_lines[i].size(); j++) { 
+    for (unsigned int j = 0; j < entry_lines[i].size(); j++) { // abbab ab
       if (entry_lines[i][j] == SPACE) {
         std::string str_string = entry_lines[i].substr(0, j);
         std::string str_alphabet = entry_lines[i].substr(j + 1, entry_lines[i].size());
@@ -151,21 +149,19 @@ void manage_entry(std::vector<std::string>& entry_lines, std::vector<String>& st
 /**
  * @brief Menu that performs the operations on the Strings deoending on the opcode
  * 
- * @param file_out 
- * @param opcode 
- * @param Strings 
+ * @param file_out File to write the results
+ * @param opcode   The operation to be performed
+ * @param Strings  The vector of Strings
  */
 void menu(std::string file_out, int opcode, std::vector<String>& strings) {
   std::ofstream file(file_out);
   switch (opcode) {
     case 1: {
-      Alphabet alphabet;
       std::vector<Alphabet> alphabets;
       std::cout << BOLD << "Alphabets:" << RESET << std::endl;
       for (int i = 0; i < strings.size(); i++) {
-        alphabet.GetAlphabetFromString(strings[i]);
-        alphabets.push_back(alphabet);
-        std::cout << alphabet << std::endl;
+        alphabets.push_back(strings[i].GetAlphabetFromString(strings[i]));
+        std::cout << alphabets[i] << std::endl;
       }
       write_file(file_out, alphabets);
     } break;

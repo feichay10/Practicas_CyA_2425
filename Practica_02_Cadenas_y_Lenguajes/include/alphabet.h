@@ -22,8 +22,9 @@
 #include <set>
 #include <string>
 
-#include "string.h"
 #include "symbol.h"
+
+class String;
 
 /**
  * @brief Class that represents an alphabet
@@ -33,11 +34,11 @@ class Alphabet {
  public:
   Alphabet();
   Alphabet(std::string alphabet);
+  Alphabet(std::set<Symbol> alphabet);
   ~Alphabet() = default;
 
   std::set<Symbol> GetAlphabet() const;
 
-  void GetAlphabetFromString(String string);
   bool IsSymbolInAlphabet(Symbol symbol) const;
 
   friend std::ostream& operator<<(std::ostream& os, const Alphabet& alphabet) {
