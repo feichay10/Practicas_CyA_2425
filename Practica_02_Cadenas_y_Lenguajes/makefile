@@ -6,6 +6,7 @@ SRC     := src
 BUILD	:= build
 INCLUDE := include
 LIB     := lib
+DATA    := data
 LIBRARIES   := 
 EXECUTABLE  := p02_strings
 PARAMS	:= 
@@ -39,4 +40,4 @@ clean:
 
 tar:
 	@echo "📦 Compressing..."
-	tar -czvf p02_Cheuk_Kelly_Ng_Pante.tgz ./*
+	tar -czvf p02_Cheuk_Kelly_Ng_Pante.tgz $(SRC) $(INCLUDE) $(BIN) $(BUILD) $(DATA) makefile 
