@@ -43,7 +43,6 @@ class String {
   void SetString(std::string string);
 
   void InsertSymbol(Symbol& symbol);
-  int CountSymbols();
 
   Alphabet GetAlphabetFromString(String string);
   int Length();
@@ -51,6 +50,9 @@ class String {
   Language Prefixes();
   Language Suffixes();
   Language Substrings();
+
+  // Modification
+  bool IsPalindrome(String string);
 
   friend std::ostream& operator<<(std::ostream& os, const String& string) {
     for (Symbol symbol : string.GetString()) {

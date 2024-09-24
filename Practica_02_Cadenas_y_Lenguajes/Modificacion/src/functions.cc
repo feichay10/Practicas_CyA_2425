@@ -103,6 +103,16 @@ void write_file(std::string file_name, T& data) {
 }
 
 /**
+ * Modification
+ */
+void write_file_palindrome(std::string file_name, std::vector<bool> & data) {
+  std::ofstream file(file_name);
+  for (int i = 0; i < data.size(); i++) {
+    file << (data[i] ? "true" : "false") << std::endl;
+  }
+}
+
+/**
  * @brief Manage the entry lines and store the strings in a vector
  * 
  * @param entry_lines Lines of the file
@@ -113,7 +123,7 @@ void manage_entry(std::vector<std::string>& entry_lines, std::vector<String>& st
   Alphabet alphabet;
 
   for (unsigned int i = 0; i < entry_lines.size(); i++) {      
-    for (unsigned int j = 0; j < entry_lines[i].size(); j++) { // abbab ab
+    for (unsigned int j = 0; j < entry_lines[i].size(); j++) {
       if (entry_lines[i][j] == SPACE) {
         std::string str_string = entry_lines[i].substr(0, j);
         std::string str_alphabet = entry_lines[i].substr(j + 1, entry_lines[i].size());
@@ -135,7 +145,7 @@ void manage_entry(std::vector<std::string>& entry_lines, std::vector<String>& st
         if (valid_string) {
           string.SetString(str_string);
           strings.push_back(string);
-          std::cout << "String: " << str_string << " - " << string.CountSymbols() << "/" << string.Length() << std::endl;
+          std::cout << "String: " << str_string << std::endl;
           std::cout << "Alphabet: " << str_alphabet << std::endl << std::endl;
         } else if (!str_string.empty() && str_string.find('&') == std::string::npos) {
           std::cerr << "The string " << PURPLE_BOLD << str_string << RED_BOLD << " does not belong to the alphabet " << CYAN_BOLD << str_alphabet << RESET << std::endl << std::endl;
@@ -206,17 +216,16 @@ void menu(std::string file_out, int opcode, std::vector<String>& strings) {
       }
       write_file(file_out, suffixes_vector);
     } break;
-    case 6: {
-      Language substrings;
-      std::vector<Language> substrings_vector;
-      std::cout << BOLD << "Substrings:" << RESET << std::endl;
+    case 6: { // Modification
+      String palindrome;
+      std::vector<bool> palindromes;
+      std::cout << BOLD << "Palindromes:" << RESET << std::endl;
       for (int i = 0; i < strings.size(); i++) {
-        substrings = strings[i].Substrings();
-        substrings_vector.push_back(substrings);
-        std::cout << substrings << std::endl;
+        palindromes.push_back(strings[i].IsPalindrome(strings[i]));
+        std::cout << strings[i] << ": " << (strings[i].IsPalindrome(strings[i]) ? GREEN_BOLD + std::string("true") + RESET : RED_BOLD + std::string("false") + RESET) << std::endl;
       }
-      write_file(file_out, substrings_vector);
-    }
+      write_file_palindrome(file_out, palindromes);
+    } break;
     default:
       break;
   }

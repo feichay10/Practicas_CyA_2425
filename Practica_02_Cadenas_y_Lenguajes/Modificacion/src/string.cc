@@ -65,20 +65,6 @@ void String::InsertSymbol(Symbol& symbol) {
   string_.push_back(symbol);
 }
 
-// Contar el numero de simbolos diferentes en una cadena -> aba = 2/3 (numero de simbolos diferentes/longitud de la cadena)
-/**
- * @brief Count the number of different symbols in a String object
- * 
- * @return int 
- */
-int String::CountSymbols() {
-  std::set<Symbol> symbols;
-  for (int i = 0; i < string_.size(); i++) {
-    symbols.insert(string_[i]);
-  }
-  return symbols.size();
-}
-
 /**
  * @brief Get the Alphabet From string object
  * 
@@ -165,3 +151,13 @@ Language String::Substrings() {
   }
   return Language(substrings);
 }
+
+// Modification: Comprobar que una cadena es palíndroma
+bool String::IsPalindrome(String string) {
+  for (int i = 0; i < string_.size() / 2; i++) {
+    if (string_[i].GetSymbol() != string_[string_.size() - i - 1].GetSymbol()) {
+      return false;
+    }
+  }
+  return true;
+} 
