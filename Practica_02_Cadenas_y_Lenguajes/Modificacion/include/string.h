@@ -44,7 +44,6 @@ class String {
 
   void InsertSymbol(Symbol& symbol);
 
-  Alphabet GetAlphabetFromString(String string);
   int Length();
   String Reverse();
   Language Prefixes();

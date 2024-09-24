@@ -24,12 +24,13 @@
 int main(int argc, char* argv[]) {
   std::vector<std::string> entry_lines;
   std::vector<String> strings;
+  std::vector<Alphabet> alphabets;
 
   try {
     if (check_parameters(argc, argv)) {
       entry_lines = read_file(argv[1]);
-      manage_entry(entry_lines, strings);
-      menu(argv[2], atoi(argv[3]), strings);
+      manage_entry(entry_lines, strings, alphabets);
+      menu(argv[2], atoi(argv[3]), strings, alphabets);
     } else {
       exit(EXIT_FAILURE);
     }

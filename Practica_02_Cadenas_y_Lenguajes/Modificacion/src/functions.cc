@@ -115,27 +115,34 @@ void write_file_palindrome(std::string file_name, std::vector<bool> & data) {
 /**
  * @brief Manage the entry lines and store the strings in a vector
  * 
- * @param entry_lines Lines of the file
- * @param strings Vector of strings
+ * @param entry_lines 
+ * @param strings 
+ * @param alphabets 
  */
-void manage_entry(std::vector<std::string>& entry_lines, std::vector<String>& strings) {
+void manage_entry(std::vector<std::string>& entry_lines, std::vector<String>& strings, std::vector<Alphabet>& alphabets) {
   String string;
   Alphabet alphabet;
 
   for (unsigned int i = 0; i < entry_lines.size(); i++) {      
+    bool found_space = false;
     for (unsigned int j = 0; j < entry_lines[i].size(); j++) {
       if (entry_lines[i][j] == SPACE) {
+        found_space = true;
         std::string str_string = entry_lines[i].substr(0, j);
         std::string str_alphabet = entry_lines[i].substr(j + 1, entry_lines[i].size());
         alphabet = Alphabet(str_alphabet);
 
         bool valid_string = true;
         for (unsigned int k = 0; k < str_string.size(); ++k) {
-          if (str_string[k] == '&') {
-            std::cerr << RED_BOLD << "The string " << RESET << PURPLE_BOLD << str_string << RED_BOLD << " contains the symbol '&' and cannot be used." << std::endl << std::endl;
+          if (str_string[k] == '&' && str_string.size() > 1) {
+            std::cerr << RED_BOLD << "The string " << RESET << PURPLE_BOLD << str_string << RED_BOLD << " contains the symbol '&' and cannot be used." << RESET << std::endl << std::endl;
             valid_string = false;
             break;
-          }
+          } else if (str_string[k] == '&' && str_string.size() == 1) {
+            valid_string = true;
+            break;
+          } 
+
           if (!alphabet.IsSymbolInAlphabet(str_string[k])) {
             valid_string = false;
             break;
@@ -145,32 +152,35 @@ void manage_entry(std::vector<std::string>& entry_lines, std::vector<String>& st
         if (valid_string) {
           string.SetString(str_string);
           strings.push_back(string);
+          alphabets.push_back(alphabet);
           std::cout << "String: " << str_string << std::endl;
           std::cout << "Alphabet: " << str_alphabet << std::endl << std::endl;
         } else if (!str_string.empty() && str_string.find('&') == std::string::npos) {
-          std::cerr << "The string " << PURPLE_BOLD << str_string << RED_BOLD << " does not belong to the alphabet " << CYAN_BOLD << str_alphabet << RESET << std::endl << std::endl;
+          std::cerr << RED_BOLD << "The string " << PURPLE_BOLD << str_string << RED_BOLD << " does not belong to the alphabet " << CYAN_BOLD << str_alphabet << RESET << std::endl << std::endl;
         }
         break;
       }
+    }
+    if (!found_space) {
+      std::cerr << RED_BOLD << "Error: The entry " << PURPLE_BOLD << entry_lines[i] << RED_BOLD << " does not contain a valid alphabet." << RESET << std::endl << std::endl;
     }
   }
 }
 
 /**
- * @brief Menu that performs the operations on the Strings deoending on the opcode
+ * @brief Menu that performs the operations on the Strings depending on the opcode
  * 
- * @param file_out File to write the results
- * @param opcode   The operation to be performed
- * @param Strings  The vector of Strings
+ * @param file_out 
+ * @param opcode 
+ * @param strings 
+ * @param alphabets 
  */
-void menu(std::string file_out, int opcode, std::vector<String>& strings) {
+void menu(std::string file_out, int opcode, std::vector<String>& strings, std::vector<Alphabet>& alphabets) {
   std::ofstream file(file_out);
   switch (opcode) {
     case 1: {
-      std::vector<Alphabet> alphabets;
       std::cout << BOLD << "Alphabets:" << RESET << std::endl;
       for (int i = 0; i < strings.size(); i++) {
-        alphabets.push_back(strings[i].GetAlphabetFromString(strings[i]));
         std::cout << alphabets[i] << std::endl;
       }
       write_file(file_out, alphabets);

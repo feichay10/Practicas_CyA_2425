@@ -58,7 +58,7 @@ template <typename T>
 void write_file(std::string file_name, T& data, int opcode);
 void write_file_palindrome(std::string file_name, std::vector<bool>& data);
 void manage_entry(std::vector<std::string>& entry_lines,
-                  std::vector<String>& strings);
-void menu(std::string file_out, int opcode, std::vector<String>& strings);
+                  std::vector<String>& strings, std::vector<Alphabet>& alphabets);
+void menu(std::string file_out, int opcode, std::vector<String>& strings, std::vector<Alphabet>& alphabets);
 
 #endif  // FUNCTIONS_H

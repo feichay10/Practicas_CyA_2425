@@ -1,6 +1,7 @@
-{&, b, ab, bab, bbab, abbab}
-{&, 6, 36, 836, 3836, 93836, 793836, 6793836}
-{&, a, la, ola, hola}
-{&, a, aa, aaa, aaaa, aaaaa, aaaaaa}
-{&, b}
-{&, a, ba, bba, abba}
+5
+7
+4
+6
+1
+4
+0

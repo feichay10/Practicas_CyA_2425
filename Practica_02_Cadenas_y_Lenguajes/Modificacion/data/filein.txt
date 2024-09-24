@@ -6,3 +6,4 @@ b ba
 &aabaabbbb ab
 abbbaac ab
 abba ab
+& ac
