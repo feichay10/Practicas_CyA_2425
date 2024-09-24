@@ -42,6 +42,9 @@ class String {
   std::vector<Symbol> GetString() const;
   void SetString(std::string string);
 
+  Alphabet GetAlphabet() const;
+  void SetAlphabet(Alphabet alphabet);
+
   void InsertSymbol(Symbol& symbol);
 
   int Length();
@@ -66,6 +69,7 @@ class String {
 
  private:
   std::vector<Symbol> string_;
+  Alphabet alphabet_;
 };
 
 

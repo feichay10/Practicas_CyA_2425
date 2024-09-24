@@ -40,3 +40,15 @@ Symbol::Symbol(char symbol) {
 char Symbol::GetSymbol() const {
   return symbol_;
 }
+
+/**
+ * @brief Overload the << operator
+ * 
+ * @param os 
+ * @param symbol 
+ * @return std::ostream& 
+ */
+std::ostream& operator<<(std::ostream& os, const Symbol& symbol) {
+  os << symbol.GetSymbol();
+  return os;
+}

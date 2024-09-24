@@ -41,20 +41,10 @@ class Alphabet {
 
   bool IsSymbolInAlphabet(Symbol symbol) const;
 
-  friend std::ostream& operator<<(std::ostream& os, const Alphabet& alphabet) {
-    os << "{";
-    for (auto it = alphabet.alphabet_.begin(); it != alphabet.alphabet_.end(); ++it) {
-      if (it != alphabet.alphabet_.begin()) {
-        os << ", ";
-      }
-      os << *it;
-    }
-    os << "}";
-    return os;
-  }
-
  private:
   std::set<Symbol> alphabet_;
 };
+
+std::ostream &operator<<(std::ostream &os, const Alphabet &alphabet);
 
 #endif  // ALPHABET_H

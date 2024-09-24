@@ -56,6 +56,14 @@ void String::SetString(std::string string) {
   }
 }
 
+void String::SetAlphabet(Alphabet alphabet) {
+  alphabet_ = alphabet;
+}
+
+Alphabet String::GetAlphabet() const {
+  return alphabet_;
+}
+
 /**
  * @brief Insert a Symbol object
  * 

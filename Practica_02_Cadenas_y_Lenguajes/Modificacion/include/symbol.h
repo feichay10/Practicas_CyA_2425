@@ -36,13 +36,14 @@ class Symbol {
     return symbol_ < other.symbol_;
   }
 
-  friend std::ostream& operator<<(std::ostream& os, const Symbol& symbol) {
-    os << symbol.symbol_;
-    return os;
+  bool operator==(const Symbol& other) const {
+    return symbol_ == other.symbol_;
   }
 
  private:
   char symbol_;
 };
+
+std::ostream& operator<<(std::ostream& os, const Symbol& symbol);
 
 #endif  // SYMBOL_H

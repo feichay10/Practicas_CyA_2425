@@ -179,9 +179,11 @@ void menu(std::string file_out, int opcode, std::vector<String>& strings, std::v
   std::ofstream file(file_out);
   switch (opcode) {
     case 1: {
+      String alphabet;
       std::cout << BOLD << "Alphabets:" << RESET << std::endl;
       for (int i = 0; i < strings.size(); i++) {
-        std::cout << alphabets[i] << std::endl;
+        alphabet.SetAlphabet(alphabets[i]);
+        std::cout << alphabet.GetAlphabet() << std::endl;
       }
       write_file(file_out, alphabets);
     } break;
