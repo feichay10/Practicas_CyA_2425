@@ -65,6 +65,20 @@ void String::InsertSymbol(Symbol& symbol) {
   string_.push_back(symbol);
 }
 
+// Contar el numero de simbolos diferentes en una cadena -> aba = 2/3 (numero de simbolos diferentes/longitud de la cadena)
+/**
+ * @brief Count the number of different symbols in a String object
+ * 
+ * @return int 
+ */
+int String::CountSymbols() {
+  std::set<Symbol> symbols;
+  for (int i = 0; i < string_.size(); i++) {
+    symbols.insert(string_[i]);
+  }
+  return symbols.size();
+}
+
 /**
  * @brief Get the Alphabet From string object
  * 

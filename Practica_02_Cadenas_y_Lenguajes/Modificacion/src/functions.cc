@@ -135,7 +135,7 @@ void manage_entry(std::vector<std::string>& entry_lines, std::vector<String>& st
         if (valid_string) {
           string.SetString(str_string);
           strings.push_back(string);
-          std::cout << "String: " << str_string << std::endl;
+          std::cout << "String: " << str_string << " - " << string.CountSymbols() << "/" << string.Length() << std::endl;
           std::cout << "Alphabet: " << str_alphabet << std::endl << std::endl;
         } else if (!str_string.empty() && str_string.find('&') == std::string::npos) {
           std::cerr << "The string " << PURPLE_BOLD << str_string << RED_BOLD << " does not belong to the alphabet " << CYAN_BOLD << str_alphabet << RESET << std::endl << std::endl;

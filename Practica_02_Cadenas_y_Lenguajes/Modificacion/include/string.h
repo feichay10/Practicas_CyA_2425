@@ -43,6 +43,7 @@ class String {
   void SetString(std::string string);
 
   void InsertSymbol(Symbol& symbol);
+  int CountSymbols();
 
   Alphabet GetAlphabetFromString(String string);
   int Length();
