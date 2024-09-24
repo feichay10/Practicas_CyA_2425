@@ -59,7 +59,17 @@
     "list": "cpp",
     "optional": "cpp",
     "unordered_map": "cpp",
-    "xhash": "cpp"
+    "xhash": "cpp",
+    "array": "cpp",
+    "*.tcc": "cpp",
+    "cstdarg": "cpp",
+    "cwctype": "cpp",
+    "deque": "cpp",
+    "memory_resource": "cpp",
+    "numeric": "cpp",
+    "random": "cpp",
+    "string_view": "cpp",
+    "numbers": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",

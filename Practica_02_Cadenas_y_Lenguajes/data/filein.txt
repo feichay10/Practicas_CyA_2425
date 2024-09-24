@@ -5,3 +5,5 @@ aaaaaa ab
 b ba
 &aabaabbbb ab
 abbbaac ab
+& ab
+ab

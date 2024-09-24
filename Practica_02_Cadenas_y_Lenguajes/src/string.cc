@@ -66,25 +66,15 @@ void String::InsertSymbol(Symbol& symbol) {
 }
 
 /**
- * @brief Get the Alphabet From string object
- * 
- * @param string 
- * @return Alphabet 
- */
-Alphabet String::GetAlphabetFromString(String string) {
-  std::set<Symbol> alphabet;
-  for (int i = 0; i < string.GetString().size(); i++) {
-    alphabet.insert(string.GetString()[i]);
-  }
-  return Alphabet(alphabet);
-}
-
-/**
  * @brief Get the Length object
  * 
  * @return int 
  */
 int String::Length() {
+  if (string_.size() == 1 && string_[0].GetSymbol() == '&') {
+    return 0;
+  }
+
   return string_.size();
 }
 

@@ -46,8 +46,7 @@ const std::string kHelp =
         "  2. Length - Calculates the length of each string.\n"
         "  3. Reverse - Reverses each string.\n"
         "  4. Prefixes - Lists all prefixes of each string.\n"
-        "  5. Suffixes - Lists all suffixes of each string.\n"
-        "  6. Substrings - Lists all substrings of each string.\n\n"
+        "  5. Suffixes - Lists all suffixes of each string.\n\n"
         "Example: ./bin/p02_strings data/filein.txt data/fileout.txt 1") +
     RESET;
 
@@ -57,7 +56,7 @@ std::vector<std::string> read_file(std::string file_name);
 template <typename T>
 void write_file(std::string file_name, T& data);
 void manage_entry(std::vector<std::string>& entry_lines,
-                  std::vector<String>& strings);
-void menu(std::string file_out, int opcode, std::vector<String>& strings);
+                  std::vector<String>& strings, std::vector<Alphabet>& alphabets);
+void menu(std::string file_out, int opcode, std::vector<String>& strings, std::vector<Alphabet>& alphabets);
 
 #endif  // FUNCTIONS_H
