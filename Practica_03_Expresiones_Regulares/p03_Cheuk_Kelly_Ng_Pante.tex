@@ -187,7 +187,10 @@
 \section{Cadenas sobre el alfabeto \texorpdfstring{$\{a, b\}$}{\{a, b\}} con longitud impar}
 \begin{itemize}
   \item \textbf{Expresión regular:} $(a|b)^*(a|b)$
-  \item date
+    \begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.9]{img/op_basicos_01.png}
+    \end{figure}
   \item \textbf{Cadenas que pertenecen al lenguaje: }
   \begin{itemize}
     \item $w_1 = a$
@@ -204,6 +207,33 @@
     \item $w_9 = aaaaaaaab$
     \item $w_{10} = ababababababab$
   \end{itemize}
+\end{itemize}
+
+\newpage
+
+\section{Cadenas sobre el alfabeto \texorpdfstring{$\{a, b\}$}{\{a, b\}} con longitud igual a 5}
+\begin{itemize}
+  \item \textbf{Expresión regular:} $(a|b)(a|b)(a|b)(a|b)(a|b)$
+    \begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.9]{img/op_basicos_02.png}
+    \end{figure}
+  \item \textbf{Cadenas que pertenecen al lenguaje: }
+    \begin{itemize}
+      \item $w_1 = aaaaa$
+      \item $w_2 = bbbbb$
+      \item $w_3 = ababa$
+      \item $w_4 = babab$
+      \item $w_5 = abbbb$
+    \end{itemize}
+  \item \textbf{Cadenas que no pertenecen al lenguaje: }
+    \begin{itemize}
+      \item $w_6 = aaaa$
+      \item $w_7 = bbb$
+      \item $w_8 = ababab$
+      \item $w_9 = bababa$
+      \item $w_{10} = abababab$
+    \end{itemize}
 \end{itemize}
 
 \end{document}
