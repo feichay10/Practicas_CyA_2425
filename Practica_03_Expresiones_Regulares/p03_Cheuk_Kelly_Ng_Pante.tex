@@ -267,10 +267,10 @@
 
 \section{Cadenas sobre el alfabeto \texorpdfstring{$\{a, b\}$}{\{a, b\}} con número de “a”s par o número de “b”s impar.}
 \begin{itemize}
-  \item \textbf{Expresión regular:} $b^*(ab^*ab^*)^*|(a^*ba^*)^*(a*ba^*a^*)b$
+  \item \textbf{Expresión regular:} $b^*(ab^*ab^*)^*|(a^*ba^*)(ba^*ba^*)^*$
     \begin{figure}[H]
       \centering
-      % \includegraphics[scale=0.9]{img/op_basicos_04.png}
+      \includegraphics[scale=0.9]{img/op_basicos_04.png}
     \end{figure}
   \item \textbf{Cadenas que pertenecen al lenguaje: }
     \begin{itemize}
@@ -281,6 +281,13 @@
       \item $w_5 = bbaabbaabbaabbaa$
     \end{itemize}
   \item \textbf{Cadenas que no pertenecen al lenguaje: }
+    \begin{itemize}
+      \item $w_6 = a$
+      \item $w_7 = bb$
+      \item $w_8 = abb$
+      \item $w_9 = aaaaabbbbbb$
+      \item $w_{10} = bbaaabb$
+    \end{itemize}
 
 \end{itemize}
 
@@ -369,10 +376,10 @@
 
 \section{Cadenas $w$ sobre el alfabeto \texorpdfstring{$\{0, 1\}$}{\{0, 1\}} tal que $w = 0^n1^m$ con $n + m$ impar.}
 \begin{itemize}
-  \item \textbf{Expresión regular:} $(0^*1^*)^*0(0^*1^*)^*1(0^*1^*)^*$
+  \item \textbf{Expresión regular:} $(0(00)^*)(11(11)^*)|(00(00)^*)(1(11)^*)$
     \begin{figure}[H]
       \centering
-      % \includegraphics[scale=0.9]{img/op_basicos_08.png}
+      \includegraphics[scale=0.9]{img/op_basicos_08.png}
     \end{figure}
   \item \textbf{Cadenas que pertenecen al lenguaje: }
     \begin{itemize}
@@ -511,7 +518,7 @@
 \section{Fecha en formato \texttt{DD/MM/AAAA}.}
 \textbf{Expresión regular:}
 \begin{verbatim}
-^([0-2][0-9]|3[01])\/(0[1-9]|1[0-2])\/[0-9]{4}$
+^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/[0-9]{4}$
 \end{verbatim}
   \begin{figure}[H]
     \centering
