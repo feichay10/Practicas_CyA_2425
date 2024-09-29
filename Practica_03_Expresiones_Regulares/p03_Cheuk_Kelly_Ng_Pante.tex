@@ -184,7 +184,7 @@
 % Secciones del informe
 % Capitulo 1
 \chapter{Ejercicios sobre operadores básicos}
-\section{Cadenas sobre el alfabeto \texorpdfstring{$\{a, b\}$}{\{a, b\}} con longitud impar}
+\section{Cadenas sobre el alfabeto \texorpdfstring{$\{a, b\}$}{\{a, b\}} con longitud impar.}
 \begin{itemize}
   \item \textbf{Expresión regular:} $(a|b)^*(a|b)$
     \begin{figure}[H]
@@ -211,7 +211,7 @@
 
 \newpage
 
-\section{Cadenas sobre el alfabeto \texorpdfstring{$\{a, b\}$}{\{a, b\}} con longitud igual a 5}
+\section{Cadenas sobre el alfabeto \texorpdfstring{$\{a, b\}$}{\{a, b\}} con longitud igual a 5.}
 \begin{itemize}
   \item \textbf{Expresión regular:} $(a|b)(a|b)(a|b)(a|b)(a|b)$
     \begin{figure}[H]
@@ -235,5 +235,303 @@
       \item $w_{10} = abababab$
     \end{itemize}
 \end{itemize}
+
+\newpage
+
+\section{Cadenas sobre el alfabeto \texorpdfstring{$\{a, b, c\}$}{\{a, b, c\}} con una “a” en la antepenúltima posición.}
+\begin{itemize}
+  \item \textbf{Expresión regular:} $(a|b|c)^*a(a|b|c)(a|b|c)$
+    \begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.9]{img/op_basicos_03.png}
+    \end{figure}
+  \item \textbf{Cadenas que pertenecen al lenguaje: }
+    \begin{itemize}
+      \item $w_1 = abc$
+      \item $w_2 = acbaabc$
+      \item $w_3 = aaaaaaabb$
+      \item $w_4 = abbaccbbccacaaa$
+      \item $w_5 = abbbacbbbbacacb$
+    \end{itemize}
+  \item \textbf{Cadenas que no pertenecen al lenguaje: }
+    \begin{itemize}
+      \item $w_6 = a$
+      \item $w_7 = bbb$
+      \item $w_8 = aaaccabaabbc$
+      \item $w_9 = abccdacc$
+      \item $w_{10} = ababacccbabab$
+    \end{itemize}
+\end{itemize}
+
+\newpage
+
+\section{Cadenas sobre el alfabeto \texorpdfstring{$\{a, b\}$}{\{a, b\}} con número de “a”s par o número de “b”s impar.}
+\begin{itemize}
+  \item \textbf{Expresión regular:} $b^*(ab^*ab^*)^*|(a^*ba^*)^*(a*ba^*a^*)b$
+    \begin{figure}[H]
+      \centering
+      % \includegraphics[scale=0.9]{img/op_basicos_04.png}
+    \end{figure}
+  \item \textbf{Cadenas que pertenecen al lenguaje: }
+    \begin{itemize}
+      \item $w_1 = baa$
+      \item $w_2 = bbaa$
+      \item $w_3 = bbaabbaa$
+      \item $w_4 = bbaabbaabbaa$
+      \item $w_5 = bbaabbaabbaabbaa$
+    \end{itemize}
+  \item \textbf{Cadenas que no pertenecen al lenguaje: }
+
+\end{itemize}
+
+\newpage
+
+\section{Cadenas $w$ sobre el alfabeto \texorpdfstring{$\{0, 1\}$}{\{0, 1\}} tales que $2\leq |w| \leq 5$.}
+\begin{itemize}
+  \item \textbf{Expresión regular:} $(0|1)(0|1) \ | \ (0|1)(0|1)(0|1) \ | \ (0|1)(0|1)(0|1)(0|1) \ | \ (0|1)(0|1)(0|1)(0|1)(0|1)$
+    \begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.7]{img/op_basicos_05.png}
+    \end{figure}
+  \item \textbf{Cadenas que pertenecen al lenguaje: }
+    \begin{itemize}
+      \item $w_1 = 00$
+      \item $w_2 = 111$
+      \item $w_3 = 0011$
+      \item $w_4 = 001$
+      \item $w_5 = 10011$
+    \end{itemize}
+  \item \textbf{Cadenas que no pertenecen al el lenguaje: }
+    \begin{itemize}
+      \item $w_6 = 1$
+      \item $w_7 = 0$
+      \item $w_8 = 11001100$
+      \item $w_9 = 0000000$
+      \item $w_{10} = 1000101111000$
+    \end{itemize}
+\end{itemize}
+
+\newpage
+
+\section{Cadenas sobre el alfabeto \texorpdfstring{$\{0, 1\}$}{\{0, 1\}} con longitud multiplo de 3.}
+\begin{itemize}
+  \item \textbf{Expresión regular:} $((0|1)(0|1)(0|1))^*$
+    \begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.8]{img/op_basicos_06.png}
+    \end{figure}
+  \item \textbf{Cadenas que pertenecen al lenguaje: }
+    \begin{itemize}
+      \item $w_1 = 000$
+      \item $w_2 = 111000$
+      \item $w_3 = 101010$
+      \item $w_4 = 001001001$
+      \item $w_5 = 110110110110$
+    \end{itemize}
+  \item \textbf{Cadenas que no pertenecen al lenguaje: }
+    \begin{itemize}
+      \item $w_6 = 0$
+      \item $w_7 = 11$
+      \item $w_8 = 1010$
+      \item $w_9 = 00111$
+      \item $w_{10} = 1001001$
+    \end{itemize}
+\end{itemize}
+
+\newpage
+
+\section{Cadenas sobre el alfabeto \texorpdfstring{$\{0, 1\}$}{\{0, 1\}} con una longitud que no sea múltiplo de 3.}
+\begin{itemize}
+  \item \textbf{Expresión regular:} $((0|1)(0|1)(0|1))^*(0|1)|(0|1)(0|1)$
+    \begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.9]{img/op_basicos_07.png}
+    \end{figure}
+  \item \textbf{Cadenas que pertenecen al lenguaje: }
+    \begin{itemize}
+      \item $w_1 = 0$
+      \item $w_2 = 1$
+      \item $w_3 = 00$
+      \item $w_4 = 1100$
+      \item $w_5 = 0000110$
+    \end{itemize}
+  \item \textbf{Cadenas que no pertenecen al lenguaje: }
+    \begin{itemize}
+      \item $w_6 = 000$
+      \item $w_7 = 111000$
+      \item $w_8 = 101010$
+      \item $w_9 = 001001001$
+      \item $w_{10} = 110110110110$
+    \end{itemize}
+\end{itemize}
+
+\newpage
+
+\section{Cadenas $w$ sobre el alfabeto \texorpdfstring{$\{0, 1\}$}{\{0, 1\}} tal que $w = 0^n1^m$ con $n + m$ impar.}
+\begin{itemize}
+  \item \textbf{Expresión regular:} $(0^*1^*)^*0(0^*1^*)^*1(0^*1^*)^*$
+    \begin{figure}[H]
+      \centering
+      % \includegraphics[scale=0.9]{img/op_basicos_08.png}
+    \end{figure}
+  \item \textbf{Cadenas que pertenecen al lenguaje: }
+    \begin{itemize}
+      \item $w_1 = 01$
+      \item $w_2 = 000111$
+      \item $w_3 = 0000111$
+      \item $w_4 = 000001111$
+      \item $w_5 = 00000011111$
+    \end{itemize}
+  \item \textbf{Cadenas que no pertenecen al lenguaje: }
+    \begin{itemize}
+      \item $w_6 = 0$
+      \item $w_7 = 1$
+      \item $w_8 = 0000$
+      \item $w_9 = 1111$
+      \item $w_{10} = 000011$
+    \end{itemize}
+\end{itemize}
+
+\newpage
+
+\section{Cadenas sobre el alfabeto \texorpdfstring{$\{0,1,2,3,4,5,6,7,8,9\}$}{\{0,1,2,3,4,5,6,7,8,9\}} que tengan como máximo dos ceros.}
+\begin{itemize}
+  \item \textbf{Expresión regular:} $(1|2|3|4|5|6|7|8|9)^*|(1|2|3|4|5|6|7|8|9)^*0(1|2|3|4|5|6|7|8|9)^*|$ \newline $(1|2|3|4|5|6|7|8|9)^*0(1|2|3|4|5|6|7|8|9)^*0(1|2|3|4|5|6|7|8|9)^*$
+    \begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.5]{img/op_basicos_09.png}
+    \end{figure}
+    \newpage
+  \item \textbf{Cadenas que pertenecen al lenguaje: }
+    \begin{itemize}
+      \item $w_1 = 0$
+      \item $w_2 = 00$
+      \item $w_3 = 012310$
+      \item $w_4 = 28720099172$
+      \item $w_5 = 123987087871230$
+    \end{itemize}
+  \item \textbf{Cadenas que no pertenecen al lenguaje: }
+    \begin{itemize}
+      \item $w_6 = 000$
+      \item $w_7 = 013208780$
+      \item $w_8 = 023001003$
+      \item $w_9 = 0289000000134$
+      \item $w_{10} = 00788432100$
+    \end{itemize}
+\end{itemize}
+
+\newpage
+
+\section{Cadenas sobre el alfabeto \texorpdfstring{$\{x,y,z\}$}{\{x,y,z\}} que no contenga dos símbolos x consecutivos.}
+\begin{itemize}
+  \item \textbf{Expresión regular:} $(x|y|z)(y|z)^+(x|y|z)$
+    \begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.9]{img/op_basicos_10.png}
+    \end{figure}
+  \item \textbf{Cadenas que pertenecen al lenguaje: }
+    \begin{itemize}
+      \item $w_1 = x$
+      \item $w_2 = xyz$
+      \item $w_3 = yzzzzy$
+      \item $w_4 = xzzzy$
+      \item $w_5 = zy$
+    \end{itemize}
+  \item \textbf{Cadenas que no pertenecen al lenguaje: }
+    \begin{itemize}
+      \item $w_6 = xx$
+      \item $w_7 = xyx$
+      \item $w_8 = zxx$
+      \item $w_9 = yxx$
+      \item $w_{10} = zxyx$
+    \end{itemize}
+\end{itemize}
+
+\newpage
+
+\chapter{Ejercicios sobre operadores extendidos}
+\section{Direcciones de correos electrónicos de estudiantes de la Universidad de La Laguna.}
+\textbf{Expresión regular:} \verb|^alu\d{10}@ull\.edu\.es$|
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.67]{img/op_extendidos_01.png}
+  \end{figure}
+
+\section{Palabras que terminen por una vocal.}
+\textbf{Expresión regular:} \verb|^[a-zA-Z]*[aeiouAEIOU]$|
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.75]{img/op_extendidos_02.png}
+  \end{figure}
+
+\newpage
+
+\section{Números enteros.}
+\textbf{Expresión regular:} \verb|^[+-]?\d+$|
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.75]{img/op_extendidos_03.png}
+  \end{figure}
+
+\section{Texto que se encuentre entre paréntesis.}
+\textbf{Expresión regular:} \verb|\(.*\)|
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.75]{img/op_extendidos_04.png}
+  \end{figure}
+
+\newpage
+
+\section{Código postal en España.}
+\textbf{Expresión regular:}
+\begin{verbatim}
+^(0[1-9]\d{3}|\[1-4]\d{4}|\5[0-2]\d{3})$
+\end{verbatim}
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.75]{img/op_extendidos_05.png}
+\end{figure}
+
+\section{Palabras que contienen solo letras mayúsculas.}
+\textbf{Expresión regular:} \verb|^(?=.*[A-Z])[a-zA-Z]+$|
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.75]{img/op_extendidos_06.png} 
+  \end{figure}
+
+\newpage
+
+\section{Número de teléfono en formato \texttt{prefijo XXX-XXX-XXX}, donde el prefijo del país puede indicarse empezando por 00 o bien con un símbolo \texttt{+}; por ejemplo, 0034 o +34 para España.}
+\textbf{Expresión regular:} \texttt{\textasciicircum(00|\textbackslash+)\textbackslash d\{1,3\}-\textbackslash d\{3\}-\textbackslash d\{3\}-\textbackslash d\{3\}\$}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.75]{img/op_extendidos_07.png}
+  \end{figure}
+
+\section{Fecha en formato \texttt{DD/MM/AAAA}.}
+\textbf{Expresión regular:}
+\begin{verbatim}
+^([0-2][0-9]|3[01])\/(0[1-9]|1[0-2])\/[0-9]{4}$
+\end{verbatim}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.75]{img/op_extendidos_08.png}
+  \end{figure}
+
+\newpage
+
+\section{Palabras de al menos 10 letras de longitud.}
+\textbf{Expresión regular:} \verb|^[a-zA-Z]{10,}$|
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.75]{img/op_extendidos_09.png}
+  \end{figure}
+
+\section{Palabras que terminen con “ing” o “ed”.}
+\textbf{Expresión regular:} 
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.75]{img/op_extendidos_10.png}
+  \end{figure}
 
 \end{document}
