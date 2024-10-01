@@ -23,13 +23,11 @@
 #include "../include/variables.h"
 
 int main(int argc, char* argv[]) {
-  Variables variables;
+  Match_result match_result;
 
   try {
     if (check_parameters(argc, argv)) {
-      // entry_lines = read_file(argv[1]);
-      // manage_entry(entry_lines, strings, alphabets);
-      // menu(argv[2], atoi(argv[3]), strings, alphabets);
+      read_code(argv[1], match_result);
     } else {
       exit(EXIT_FAILURE);
     }

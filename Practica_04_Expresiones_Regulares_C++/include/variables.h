@@ -30,6 +30,9 @@ class Variables {
   Variables() = default;
   ~Variables() = default;
 
+  void SearchInt(std::string line, int line_number);
+  void SearchDouble(std::string line, int line_number);
+
  private:
   std::string name_;
   std::string type_;

@@ -25,3 +25,21 @@ bool check_parameters(int argc, char* argv[]) {
 
   return true;
 }
+
+void read_code(std::string file_name, Match_result& match_result) {
+  std::ifstream file(file_name);
+  std::string line;
+
+  if (!file.is_open()) {
+    throw std::string("File not found.");
+  }
+  
+  while (std::getline(file, line)) {
+    std::cout << match_result.line_number_++ << ": " << line << std::endl;
+    match_result.variable_.SearchInt(line, match_result.line_number_);
+    match_result.variable_.SearchDouble(line, match_result.line_number_);
+  }
+
+  file.close();
+
+}

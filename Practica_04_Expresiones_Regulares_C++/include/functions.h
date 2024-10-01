@@ -24,6 +24,8 @@
 #include <vector>
 
 #include "colors.h"
+#include "variables.h"
+#include "loops.h"
 
 const std::string kHowUse =
     RED_BOLD +
@@ -45,9 +47,13 @@ const std::string kHelp =
         "Example: ./bin/p02_strings data/filein.txt data/fileout.txt 1") +
     RESET;
 
+struct Match_result {
+  Variables variable_;
+  Loops loop_;
+  int line_number_ = 1;
+};
+
 bool check_parameters(int argc, char* argv[]);
-// bool check_file(std::string file_name);
-// std::vector<std::string> read_file(std::string file_name);
-// void write_file(std::string file_name, T& data);
+void read_code(std::string file_name, Match_result& match_result);
 
 #endif  // FUNCTIONS_H
