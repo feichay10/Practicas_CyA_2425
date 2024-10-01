@@ -163,7 +163,7 @@
 \begin{document}
 
 % Portada del informe
-\title{Expresiones regulares}
+\title{Práctica 03: Expresiones regulares}
 \subtitle{Computabilidad y Algoritmia}
 \author{Cheuk Kelly Ng Pante (alu0101364544@ull.edu.es)}
 \date{01/10/2024}
@@ -186,7 +186,7 @@
 \chapter{Ejercicios sobre operadores básicos}
 \section{Cadenas sobre el alfabeto \texorpdfstring{$\{a, b\}$}{\{a, b\}} con longitud impar.}
 \begin{itemize}
-  \item \textbf{Expresión regular:} $(a|b)^*(a|b)$
+  \item \textbf{Expresión regular:} $(a|b)((a|b)(a|b))^*$
     \begin{figure}[H]
       \centering
       \includegraphics[scale=0.9]{img/op_basicos_01.png}
@@ -204,7 +204,7 @@
     \item $w_6 = aa$
     \item $w_7 = abab$
     \item $w_8 = bbbbbb$
-    \item $w_9 = aaaaaaaab$
+    \item $w_9 = baaaaaaaab$
     \item $w_{10} = ababababababab$
   \end{itemize}
 \end{itemize}
@@ -535,10 +535,50 @@
   \end{figure}
 
 \section{Palabras que terminen con “ing” o “ed”.}
-\textbf{Expresión regular:} 
+\textbf{Expresión regular:}  
+\begin{verbatim}
+^\D+(ing|ed)$
+\end{verbatim}
   \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.75]{img/op_extendidos_10.png}
+    \includegraphics[scale=0.5]{img/op_extendidos_10.png}
+  \end{figure}
+
+\newpage
+
+\chapter{Modificación}
+\section{Etiquetas HTML en un documento $< \ >$}
+\textbf{Expresión regular:} 
+\begin{verbatim}
+<\s*\/?\s*[a-zA-Z][a-zA-Z0-9]*\s*[^>]*>
+\end{verbatim}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{img/modificacion_01.png} 
+  \end{figure}
+
+\section{Número decimal}
+\textbf{Expresión regular:} 
+\begin{verbatim}
+^[+-]?(\d+(\.\d+)?|\.\d+)$
+\end{verbatim}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{img/modificacion_02.png} 
+  \end{figure}
+
+\newpage
+
+\section{Cadenas binarias con longitud impar que empiecen por 0 y terminen por 1}
+\textbf{Expresión regular:} $0(0|1)((0|1)(0|1))^*1$
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.75]{img/modificacion_03.png} 
+  \end{figure}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{img/modificacion_03_2.png} 
   \end{figure}
 
 \end{document}

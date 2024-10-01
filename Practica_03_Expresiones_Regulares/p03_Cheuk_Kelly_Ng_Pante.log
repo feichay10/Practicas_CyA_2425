@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.10)  29 SEP 2024 23:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.10)  1 OCT 2024 17:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -761,11 +761,11 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <14.4> on input line 187.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 187.
-<img/op_basicos_01.png, id=135, 259.97125pt x 124.465pt>
+<img/op_basicos_01.png, id=155, 287.0725pt x 126.4725pt>
 File: img/op_basicos_01.png Graphic file (type png)
 <use img/op_basicos_01.png>
 Package pdftex.def Info: img/op_basicos_01.png  used on input line 192.
-(pdftex.def)             Requested size: 233.97195pt x 112.01746pt.
+(pdftex.def)             Requested size: 258.36285pt x 113.82419pt.
 
 
 
@@ -776,7 +776,7 @@ l.212 \newpage
                [1
 
  <./img/op_basicos_01.png>]
-<img/op_basicos_02.png, id=146, 514.92375pt x 104.39pt>
+<img/op_basicos_02.png, id=166, 514.92375pt x 104.39pt>
 File: img/op_basicos_02.png Graphic file (type png)
 <use img/op_basicos_02.png>
 Package pdftex.def Info: img/op_basicos_02.png  used on input line 219.
@@ -784,7 +784,7 @@ Package pdftex.def Info: img/op_basicos_02.png  used on input line 219.
 
 
 [2 <./img/op_basicos_02.png>]
-<img/op_basicos_03.png, id=153, 389.455pt x 153.57375pt>
+<img/op_basicos_03.png, id=173, 389.455pt x 153.57375pt>
 File: img/op_basicos_03.png Graphic file (type png)
 <use img/op_basicos_03.png>
 Package pdftex.def Info: img/op_basicos_03.png  used on input line 246.
@@ -792,7 +792,7 @@ Package pdftex.def Info: img/op_basicos_03.png  used on input line 246.
 
 
 [3 <./img/op_basicos_03.png>]
-<img/op_basicos_04.png, id=160, 513.92pt x 215.80624pt>
+<img/op_basicos_04.png, id=180, 513.92pt x 215.80624pt>
 File: img/op_basicos_04.png Graphic file (type png)
 <use img/op_basicos_04.png>
 Package pdftex.def Info: img/op_basicos_04.png  used on input line 273.
@@ -824,7 +824,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 296.
 
-<img/op_basicos_05.png, id=167, 555.07375pt x 372.39125pt>
+<img/op_basicos_05.png, id=187, 555.07375pt x 372.39125pt>
 File: img/op_basicos_05.png Graphic file (type png)
 <use img/op_basicos_05.png>
 Package pdftex.def Info: img/op_basicos_05.png  used on input line 301.
@@ -832,7 +832,7 @@ Package pdftex.def Info: img/op_basicos_05.png  used on input line 301.
 
 
 [5 <./img/op_basicos_05.png>]
-<img/op_basicos_06.png, id=175, 375.4025pt x 155.58125pt>
+<img/op_basicos_06.png, id=195, 375.4025pt x 155.58125pt>
 File: img/op_basicos_06.png Graphic file (type png)
 <use img/op_basicos_06.png>
 Package pdftex.def Info: img/op_basicos_06.png  used on input line 328.
@@ -840,7 +840,7 @@ Package pdftex.def Info: img/op_basicos_06.png  used on input line 328.
 
 
 [6 <./img/op_basicos_06.png>]
-<img/op_basicos_07.png, id=182, 509.905pt x 244.915pt>
+<img/op_basicos_07.png, id=202, 509.905pt x 244.915pt>
 File: img/op_basicos_07.png Graphic file (type png)
 <use img/op_basicos_07.png>
 Package pdftex.def Info: img/op_basicos_07.png  used on input line 355.
@@ -880,7 +880,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 377.
 
-<img/op_basicos_08.png, id=189, 378.41376pt x 237.88875pt>
+<img/op_basicos_08.png, id=209, 378.41376pt x 237.88875pt>
 File: img/op_basicos_08.png Graphic file (type png)
 <use img/op_basicos_08.png>
 Package pdftex.def Info: img/op_basicos_08.png  used on input line 382.
@@ -888,7 +888,7 @@ Package pdftex.def Info: img/op_basicos_08.png  used on input line 382.
 
 
 [8 <./img/op_basicos_08.png>]
-<img/op_basicos_09.png, id=196, 524.96124pt x 954.56625pt>
+<img/op_basicos_09.png, id=216, 524.96124pt x 954.56625pt>
 File: img/op_basicos_09.png Graphic file (type png)
 <use img/op_basicos_09.png>
 Package pdftex.def Info: img/op_basicos_09.png  used on input line 409.
@@ -898,7 +898,7 @@ Package pdftex.def Info: img/op_basicos_09.png  used on input line 409.
 [9 <./img/op_basicos_09.png>]
 
 [10]
-<img/op_basicos_10.png, id=207, 348.30125pt x 133.49875pt>
+<img/op_basicos_10.png, id=227, 348.30125pt x 133.49875pt>
 File: img/op_basicos_10.png Graphic file (type png)
 <use img/op_basicos_10.png>
 Package pdftex.def Info: img/op_basicos_10.png  used on input line 437.
@@ -906,12 +906,12 @@ Package pdftex.def Info: img/op_basicos_10.png  used on input line 437.
 
 
 [11 <./img/op_basicos_10.png>]
-<img/op_extendidos_01.png, id=215, 477.28313pt x 276.28218pt>
+<img/op_extendidos_01.png, id=235, 477.28313pt x 276.28218pt>
 File: img/op_extendidos_01.png Graphic file (type png)
 <use img/op_extendidos_01.png>
 Package pdftex.def Info: img/op_extendidos_01.png  used on input line 464.
 (pdftex.def)             Requested size: 319.77803pt x 185.1081pt.
-<img/op_extendidos_02.png, id=216, 479.54156pt x 277.78781pt>
+<img/op_extendidos_02.png, id=236, 479.54156pt x 277.78781pt>
 File: img/op_extendidos_02.png Graphic file (type png)
 <use img/op_extendidos_02.png>
 Package pdftex.def Info: img/op_extendidos_02.png  used on input line 471.
@@ -919,12 +919,12 @@ Package pdftex.def Info: img/op_extendidos_02.png  used on input line 471.
 
 
 [12 <./img/op_extendidos_01.png> <./img/op_extendidos_02.png>]
-<img/op_extendidos_03.png, id=225, 481.04718pt x 275.52937pt>
+<img/op_extendidos_03.png, id=245, 481.04718pt x 275.52937pt>
 File: img/op_extendidos_03.png Graphic file (type png)
 <use img/op_extendidos_03.png>
 Package pdftex.def Info: img/op_extendidos_03.png  used on input line 480.
 (pdftex.def)             Requested size: 360.7845pt x 206.64651pt.
-<img/op_extendidos_04.png, id=226, 477.28313pt x 277.035pt>
+<img/op_extendidos_04.png, id=246, 477.28313pt x 277.035pt>
 File: img/op_extendidos_04.png Graphic file (type png)
 <use img/op_extendidos_04.png>
 Package pdftex.def Info: img/op_extendidos_04.png  used on input line 487.
@@ -932,12 +932,12 @@ Package pdftex.def Info: img/op_extendidos_04.png  used on input line 487.
 
 
 [13 <./img/op_extendidos_03.png> <./img/op_extendidos_04.png>]
-<img/op_extendidos_05.png, id=235, 480.29437pt x 273.27094pt>
+<img/op_extendidos_05.png, id=255, 480.29437pt x 273.27094pt>
 File: img/op_extendidos_05.png Graphic file (type png)
 <use img/op_extendidos_05.png>
 Package pdftex.def Info: img/op_extendidos_05.png  used on input line 499.
 (pdftex.def)             Requested size: 360.21988pt x 204.95268pt.
-<img/op_extendidos_06.png, id=236, 478.78876pt x 286.82156pt>
+<img/op_extendidos_06.png, id=256, 478.78876pt x 286.82156pt>
 File: img/op_extendidos_06.png Graphic file (type png)
 <use img/op_extendidos_06.png>
 Package pdftex.def Info: img/op_extendidos_06.png  used on input line 506.
@@ -959,12 +959,12 @@ LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 5
 (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmtt.fd
 File: ts1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
-<img/op_extendidos_07.png, id=245, 484.05844pt x 274.77657pt>
+<img/op_extendidos_07.png, id=265, 484.05844pt x 274.77657pt>
 File: img/op_extendidos_07.png Graphic file (type png)
 <use img/op_extendidos_07.png>
 Package pdftex.def Info: img/op_extendidos_07.png  used on input line 515.
 (pdftex.def)             Requested size: 363.04294pt x 206.08191pt.
-<img/op_extendidos_08.png, id=246, 481.8pt x 292.09125pt>
+<img/op_extendidos_08.png, id=266, 481.8pt x 292.09125pt>
 File: img/op_extendidos_08.png Graphic file (type png)
 <use img/op_extendidos_08.png>
 Package pdftex.def Info: img/op_extendidos_08.png  used on input line 525.
@@ -972,19 +972,53 @@ Package pdftex.def Info: img/op_extendidos_08.png  used on input line 525.
 
 
 [15 <./img/op_extendidos_07.png> <./img/op_extendidos_08.png>]
-<img/op_extendidos_09.png, id=257, 479.54156pt x 273.27094pt>
+<img/op_extendidos_09.png, id=277, 479.54156pt x 273.27094pt>
 File: img/op_extendidos_09.png Graphic file (type png)
 <use img/op_extendidos_09.png>
 Package pdftex.def Info: img/op_extendidos_09.png  used on input line 534.
 (pdftex.def)             Requested size: 359.65529pt x 204.95268pt.
-<img/op_extendidos_10.png, id=258, 478.78876pt x 271.0125pt>
+<img/op_extendidos_10.png, id=278, 937.5025pt x 365.365pt>
 File: img/op_extendidos_10.png Graphic file (type png)
 <use img/op_extendidos_10.png>
-Package pdftex.def Info: img/op_extendidos_10.png  used on input line 541.
-(pdftex.def)             Requested size: 359.09068pt x 203.25887pt.
+Package pdftex.def Info: img/op_extendidos_10.png  used on input line 544.
+(pdftex.def)             Requested size: 468.7501pt x 182.68205pt.
 
 
-[16 <./img/op_extendidos_09.png> <./img/op_extendidos_10.png>] (p03_Cheuk_Kelly_Ng_Pante.aux
+[16 <./img/op_extendidos_09.png> <./img/op_extendidos_10.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 550.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 550.
+
+<img/modificacion_01.png, id=287, 937.5025pt x 347.2975pt>
+File: img/modificacion_01.png Graphic file (type png)
+<use img/modificacion_01.png>
+Package pdftex.def Info: img/modificacion_01.png  used on input line 557.
+(pdftex.def)             Requested size: 468.7501pt x 173.64832pt.
+<img/modificacion_02.png, id=288, 937.5025pt x 363.3575pt>
+File: img/modificacion_02.png Graphic file (type png)
+<use img/modificacion_02.png>
+Package pdftex.def Info: img/modificacion_02.png  used on input line 567.
+(pdftex.def)             Requested size: 468.7501pt x 181.6783pt.
+
+
+[17 <./img/modificacion_01.png> <./img/modificacion_02.png>]
+<img/modificacion_03.png, id=298, 444.66125pt x 159.59625pt>
+File: img/modificacion_03.png Graphic file (type png)
+<use img/modificacion_03.png>
+Package pdftex.def Info: img/modificacion_03.png  used on input line 576.
+(pdftex.def)             Requested size: 333.49512pt x 119.69687pt.
+<img/modificacion_03_2.png, id=299, 937.5025pt x 365.365pt>
+File: img/modificacion_03_2.png Graphic file (type png)
+<use img/modificacion_03_2.png>
+Package pdftex.def Info: img/modificacion_03_2.png  used on input line 581.
+(pdftex.def)             Requested size: 468.7501pt x 182.68205pt.
+
+
+[18 <./img/modificacion_03.png> <./img/modificacion_03_2.png>] (p03_Cheuk_Kelly_Ng_Pante.aux
 LaTeX Info: Redefining \. on input line 12.
 LaTeX Info: Redefining \% on input line 12.
 )
@@ -997,20 +1031,20 @@ L3 programming layer <2024-05-27>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `p03_Cheuk_Kelly_Ng_Pante.out' has not changed.
-(rerunfilecheck)             Checksum: F415FFCF2EDED8B5966A16613ACC742B;8302.
+(rerunfilecheck)             Checksum: BC217C6FA5D826B6622A3374D24AC810;9229.
  ) 
 Here is how much of TeX's memory you used:
- 27888 strings out of 473904
- 535460 string characters out of 5726600
- 1938908 words of memory out of 5000000
- 50246 multiletter control sequences out of 15000+600000
+ 27938 strings out of 473904
+ 536587 string characters out of 5726600
+ 1940908 words of memory out of 5000000
+ 50286 multiletter control sequences out of 15000+600000
  566058 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,8n,117p,1387b,514s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\cheuk\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tctt1095.pk> <C:\Users\cheuk\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on p03_Cheuk_Kelly_Ng_Pante.pdf (18 pages, 516937 bytes).
+Output written on p03_Cheuk_Kelly_Ng_Pante.pdf (20 pages, 620309 bytes).
 PDF statistics:
- 344 PDF objects out of 1000 (max. 8388607)
- 60 named destinations out of 1000 (max. 500000)
- 289 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 387 PDF objects out of 1000 (max. 8388607)
+ 70 named destinations out of 1000 (max. 500000)
+ 341 words of extra memory for PDF output out of 10000 (max. 10000000)
 

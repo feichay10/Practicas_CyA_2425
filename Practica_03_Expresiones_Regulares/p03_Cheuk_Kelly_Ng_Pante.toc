@@ -21,3 +21,7 @@
 \contentsline {section}{\numberline {2.8}Fecha en formato \texttt {DD/MM/AAAA}.}{15}{section.2.8}%
 \contentsline {section}{\numberline {2.9}Palabras de al menos 10 letras de longitud.}{16}{section.2.9}%
 \contentsline {section}{\numberline {2.10}Palabras que terminen con “ing” o “ed”.}{16}{section.2.10}%
+\contentsline {chapter}{\numberline {3}Modificación}{17}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Etiquetas HTML en un documento $< \ >$}{17}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Número decimal}{17}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Cadenas binarias con longitud impar que empiecen por 0 y terminen por 1}{18}{section.3.3}%
