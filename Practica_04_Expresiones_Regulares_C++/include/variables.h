@@ -21,6 +21,7 @@
 #ifndef VARIABLES_H_
 #define VARIABLES_H_
 
+#include <iostream>
 #include <regex>
 #include <string>
 #include <vector>
@@ -30,17 +31,27 @@ class Variables {
   Variables() = default;
   ~Variables() = default;
 
+  std::string GetName() const;
+  std::string GetType() const;
+  int GetLine() const;
+  bool GetInitialized() const;
+  int GetIntCount();
+  int GetDoubleCount();
+  std::vector<Variables> GetVariables();
+
   void SearchInt(std::string line, int line_number);
   void SearchDouble(std::string line, int line_number);
+  void PrintInt();
+  void PrintDouble();
 
  private:
   std::string name_;
   std::string type_;
   int line_;
   bool initialized_;
-  static int int_count_;
-  static int double_count_;
-  static std::vector<Variables> variables_;
+  int int_count_ = 0;
+  int double_count_ = 0;
+  std::vector<Variables> variables_;
 };
 
 #endif  // VARIABLES_H_

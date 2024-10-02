@@ -36,10 +36,15 @@ void read_code(std::string file_name, Match_result& match_result) {
   
   while (std::getline(file, line)) {
     std::cout << match_result.line_number_++ << ": " << line << std::endl;
-    match_result.variable_.SearchInt(line, match_result.line_number_);
-    match_result.variable_.SearchDouble(line, match_result.line_number_);
+    match_result.variable_.SearchInt(line, match_result.line_number_ - 1);
+    match_result.variable_.SearchDouble(line, match_result.line_number_ - 1);
   }
 
   file.close();
+}
 
+void print_results(Match_result& match_result) {
+  std::cout << "\nVARIABLES: " << std::endl;
+  match_result.variable_.PrintInt();
+  match_result.variable_.PrintDouble();
 }

@@ -28,6 +28,7 @@ int main(int argc, char* argv[]) {
   try {
     if (check_parameters(argc, argv)) {
       read_code(argv[1], match_result);
+      print_results(match_result);
     } else {
       exit(EXIT_FAILURE);
     }
