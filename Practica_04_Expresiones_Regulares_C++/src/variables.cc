@@ -41,34 +41,6 @@
 
 #include "../include/variables.h"
 
-std::string Variables::GetName() const {
-  return name_;
-}
-
-std::string Variables::GetType() const {
-  return type_;
-}
-
-int Variables::GetLine() const {
-  return line_;
-}
-
-bool Variables::GetInitialized() const {
-  return initialized_;
-}
-
-int Variables::GetIntCount() {
-  return int_count_;
-}
-
-int Variables::GetDoubleCount() {
-  return double_count_;
-}
-
-std::vector<Variables> Variables::GetVariables() {
-  return variables_;
-}
-
 void Variables::SearchInt(std::string line, int line_number) {
   std::regex int_regex(R"(^\s*int\s+(\w+)\s*(=|\{)?\s*(\d+)?\s*[};]\s*$)");
   std::smatch match;

@@ -50,6 +50,7 @@ const std::string kHelp =
 struct Match_result {
   Variables variable_;
   Loops loop_;
+  bool main_found_ = false;
   int line_number_ = 1;
 };
 

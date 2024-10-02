@@ -21,6 +21,7 @@
 #ifndef LOOPS_H_
 #define LOOPS_H_
 
+#include <iostream>
 #include <regex>
 #include <string>
 #include <vector>
@@ -29,6 +30,11 @@ class Loops {
  public:
   Loops() = default;
   ~Loops() = default;
+
+  void SearchFor(std::string line, int line_number);
+  void SearchWhile(std::string line, int line_number);
+  void PrintFor();
+  void PrintWhile();
 
  private:
   std::string type_;

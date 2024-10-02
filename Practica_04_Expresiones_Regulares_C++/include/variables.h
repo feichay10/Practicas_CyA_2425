@@ -31,14 +31,6 @@ class Variables {
   Variables() = default;
   ~Variables() = default;
 
-  std::string GetName() const;
-  std::string GetType() const;
-  int GetLine() const;
-  bool GetInitialized() const;
-  int GetIntCount();
-  int GetDoubleCount();
-  std::vector<Variables> GetVariables();
-
   void SearchInt(std::string line, int line_number);
   void SearchDouble(std::string line, int line_number);
   void PrintInt();
