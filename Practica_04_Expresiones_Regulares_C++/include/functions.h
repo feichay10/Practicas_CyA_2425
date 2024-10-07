@@ -26,6 +26,7 @@
 #include "colors.h"
 #include "variables.h"
 #include "loops.h"
+#include "comments.h"
 
 const std::string kHowUse =
     RED_BOLD +
@@ -52,6 +53,8 @@ struct Match_result {
   Loops loop_;
   bool main_found_ = false;
   int line_number_ = 1;
+  Comments line_comment_;
+  Comments multiple_comment_;
 };
 
 bool check_parameters(int argc, char* argv[]);

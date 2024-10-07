@@ -40,6 +40,9 @@ void read_code(std::string file_name, Match_result& match_result) {
     match_result.variable_.SearchDouble(line, match_result.line_number_ - 1);
     match_result.loop_.SearchFor(line, match_result.line_number_ - 1);
     match_result.loop_.SearchWhile(line, match_result.line_number_ - 1);
+    match_result.main_found_ = match_result.main_found_ || line.find("main") != std::string::npos;
+    match_result.line_comment_.SearchSingle(line, match_result.line_number_ - 1);
+    match_result.line_comment_.SearchMultiple(line, match_result.line_number_ - 1);
   }
 
   file.close();
@@ -52,4 +55,8 @@ void print_results(Match_result& match_result) {
   std::cout << "\nSTATEMENTS: " << std::endl;
   match_result.loop_.PrintFor();
   match_result.loop_.PrintWhile();
+  std::cout << "\nCOMMENTS: " << std::endl;
+  match_result.line_comment_.PrintSingle();
+  match_result.line_comment_.PrintMultiple();
+  std::cout << "\nMAIN FUNCTION: " << (match_result.main_found_ ? "Found" : "Not found") << std::endl;
 }
