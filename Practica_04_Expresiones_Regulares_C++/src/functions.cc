@@ -35,28 +35,46 @@ void read_code(std::string file_name, Match_result& match_result) {
   }
   
   while (std::getline(file, line)) {
-    std::cout << match_result.line_number_++ << ": " << line << std::endl;
-    match_result.variable_.SearchInt(line, match_result.line_number_ - 1);
-    match_result.variable_.SearchDouble(line, match_result.line_number_ - 1);
-    match_result.loop_.SearchFor(line, match_result.line_number_ - 1);
-    match_result.loop_.SearchWhile(line, match_result.line_number_ - 1);
     match_result.main_found_ = match_result.main_found_ || line.find("main") != std::string::npos;
-    match_result.line_comment_.SearchSingle(line, match_result.line_number_ - 1);
-    match_result.line_comment_.SearchMultiple(line, match_result.line_number_ - 1);
+    match_result.line_number_++;
+    match_result.variable_.SearchVariable(line, match_result.line_number_ - 1);
+    match_result.loop_.SearchLoops(line, match_result.line_number_ - 1);
+    match_result.line_comment_.SearchComments(line, match_result.line_number_ - 1);
   }
 
   file.close();
 }
 
 void print_results(Match_result& match_result) {
+  std::cout << "PROGRAM: " << match_result.program_name_ << std::endl;
+  std::cout << "DESCRIPTION: " << std::endl;
+  std::cout << match_result.line_comment_.PrintDescription() << std::endl;
   std::cout << "\nVARIABLES: " << std::endl;
-  match_result.variable_.PrintInt();
-  match_result.variable_.PrintDouble();
+  std::cout << match_result.variable_;
   std::cout << "\nSTATEMENTS: " << std::endl;
-  match_result.loop_.PrintFor();
-  match_result.loop_.PrintWhile();
+  std::cout << match_result.loop_;
+  std::cout << "\nMAIN FUNCTION:\n" << (match_result.main_found_ ? "True" : "False") << std::endl;
   std::cout << "\nCOMMENTS: " << std::endl;
-  match_result.line_comment_.PrintSingle();
-  match_result.line_comment_.PrintMultiple();
-  std::cout << "\nMAIN FUNCTION: " << (match_result.main_found_ ? "Found" : "Not found") << std::endl;
+  std::cout << match_result.line_comment_;
+}
+
+void write_results(std::string file_name, Match_result& match_result) {
+  std::ofstream file(file_name);
+
+  if (!file.is_open()) {
+    throw std::string("File not found.");
+  }
+
+  file << "PROGRAM: " << match_result.program_name_ << std::endl;
+  file << "DESCRIPTION: " << std::endl;
+  file << match_result.line_comment_.PrintDescription();
+  file << "\nVARIABLES: " << std::endl;
+  file << match_result.variable_;
+  file << "\nSTATEMENTS: " << std::endl;
+  file << match_result.loop_;
+  file << "\nMAIN FUNCTION:\n" << (match_result.main_found_ ? "True" : "False") << std::endl;
+  file << "\nCOMMENTS: " << std::endl;
+  file << match_result.line_comment_;
+
+  file.close();
 }

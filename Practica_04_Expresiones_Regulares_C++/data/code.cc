@@ -9,8 +9,8 @@
  * @see https :// github.com/IB -2023 -2024/IB-class -code -examples/
  */
 
-#include <cassert >
-#include <iostream >
+#include <cassert>
+#include <iostream>
 
 // Returns the factorial of the argument
 int Factorial(int number) {
@@ -27,6 +27,11 @@ int Factorial(int number) {
   }
 }
 
+/*
+Prueba comentario multilinea
+Hola
+pepe
+*/
 int main() {
   std::cout << "Introduzca el numero de factoriales a calcular: ";
   int limit;

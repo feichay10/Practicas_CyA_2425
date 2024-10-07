@@ -31,18 +31,31 @@ class Variables {
   Variables() = default;
   ~Variables() = default;
 
-  void SearchInt(std::string line, int line_number);
-  void SearchDouble(std::string line, int line_number);
-  void PrintInt();
-  void PrintDouble();
+  void SearchVariable(std::string line, int line_number);
+
+  // void SearchInt(std::string line, int line_number);
+  // void SearchDouble(std::string line, int line_number);
+
+  friend std::ostream& operator<<(std::ostream& os, const Variables& variable) {
+    for (auto variable : variable.variables_) {
+      if (variable.type_ == "int") {
+        os << "[Line " << variable.line_ << "] INT: " << variable.name_;
+      } else {
+        os << "[Line " << variable.line_ << "] DOUBLE: " << variable.name_;
+      }
+      if (variable.initialized_) {
+        os << " = " << variable.initialized_;
+      }
+      os << std::endl;
+    }
+    return os;
+  }
 
  private:
   std::string name_;
   std::string type_;
   int line_;
   bool initialized_;
-  int int_count_ = 0;
-  int double_count_ = 0;
   std::vector<Variables> variables_;
 };
 

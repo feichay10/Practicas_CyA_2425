@@ -20,48 +20,20 @@
 
 #include "../include/loops.h"
 
-int Loops::for_count_ = 0;
-int Loops::while_count_ = 0;
 std::vector<Loops> Loops::loops_;
 
-void Loops::SearchFor(std::string line, int line_number) {
-  std::regex for_regex(R"(^\s*for\s*\(\s*.*\s*;\s*.*\s*;\s*.*\s*\)\s*\{)");
+void Loops::SearchLoops(std::string line, int line_number) {
+  std::regex loop_regex(R"(^\s*(for\s*\(\s*.*\s*;\s*.*\s*;\s*.*\s*\)|while\s*\(\s*.*\s*\))\s*\{)");
   std::smatch match;
 
-  if (std::regex_search(line, match, for_regex)) {
+  if (std::regex_search(line, match, loop_regex)) {
     Loops loop;
-    loop.type_ = "for";
+    if (line.find("for") != std::string::npos) {
+      loop.type_ = "for";
+    } else if (line.find("while") != std::string::npos) {
+      loop.type_ = "while";
+    }
     loop.line_ = line_number;
     loops_.push_back(loop);
-    for_count_++;
-  }
-}
-
-void Loops::SearchWhile(std::string line, int line_number) {
-  std::regex while_regex(R"(^\s*while\s*\(\s*.*\s*\)\s*\{)");
-  std::smatch match;
-
-  if (std::regex_search(line, match, while_regex)) {
-    Loops loop;
-    loop.type_ = "while";
-    loop.line_ = line_number;
-    loops_.push_back(loop);
-    while_count_++;
-  }
-}
-
-void Loops::PrintFor() {
-  for (auto loop : loops_) {
-    if (loop.type_ == "for") {
-      std::cout << "For loop found at line " << loop.line_ << std::endl;
-    }
-  }
-}
-
-void Loops::PrintWhile() {
-  for (auto loop : loops_) {
-    if (loop.type_ == "while") {
-      std::cout << "While loop found at line " << loop.line_ << std::endl;
-    }
   }
 }

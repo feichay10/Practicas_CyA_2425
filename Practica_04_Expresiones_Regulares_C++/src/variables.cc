@@ -22,73 +22,16 @@
 
 #include "../include/variables.h"
 
-/**
- * Universidad de La Laguna
- * Escuela Superior de Ingeniería y Tecnología
- * Grado en Ingeniería Informática
- * Asignatura: Computabilidad y Algoritmia
- * Curso: 2º
- * Práctica 4: Expresiones Regulares en C++
- * @file variables.cc
- * @author Cheuk Kelly Ng Pante (alu0101364544@ull.edu.es)
- * @brief 
- * @version 0.1
- * @date 2024-09-24
- *
- * @copyright Copyright (c) 2024
- *
- */
-
-#include "../include/variables.h"
-
-void Variables::SearchInt(std::string line, int line_number) {
-  std::regex int_regex(R"(^\s*int\s+(\w+)\s*(=|\{)?\s*(\d+)?\s*[};]\s*$)");
+void Variables::SearchVariable(std::string line, int line_number) {
+  std::regex variable_regex(R"(^\s*(int|double)\s+(\w+)\s*(=|\{)?\s*(\d+)?\s*[};]\s*$)");
   std::smatch match;
 
-  if (std::regex_search(line, match, int_regex)) {
+  if (std::regex_search(line, match, variable_regex)) {
     Variables variable;
-    variable.type_ = "int";
-    variable.name_ = match[1];
+    variable.type_ = match[1];
+    variable.name_ = match[2];
     variable.line_ = line_number;
-    variable.initialized_ = match[2] == "=" || match[2] == "{";
+    variable.initialized_ = match[3] == "=" || match[3] == "{";
     variables_.push_back(variable);
-    int_count_++;
-  }
-}
-
-void Variables::SearchDouble(std::string line, int line_number) {
-  std::regex double_regex(R"(^\s*double\s+(\w+)\s*(=|\{)?\s*(\d+)?\s*[};]\s*$)");
-  std::smatch match;
-
-  if (std::regex_search(line, match, double_regex)) {
-    Variables variable;
-    variable.type_ = "double";
-    variable.name_ = match[1];
-    variable.line_ = line_number;
-    variable.initialized_ = match[2] == "=" || match[2] == "{";
-    variables_.push_back(variable);
-    double_count_++;
-  }
-}
-
-void Variables::PrintInt() {
-  for (auto variable : variables_) {
-    if (variable.type_ == "int") {
-      std::cout << variable.type_ << " " << variable.name_ << " in line "
-                << variable.line_ << " is "
-                << (variable.initialized_ ? "initialized" : "not initialized")
-                << std::endl;
-    }
-  }
-}
-
-void Variables::PrintDouble() {
-  for (auto variable : variables_) {
-    if (variable.type_ == "double") {
-      std::cout << variable.type_ << " " << variable.name_ << " in line "
-                << variable.line_ << " is "
-                << (variable.initialized_ ? "initialized" : "not initialized")
-                << std::endl;
-    }
   }
 }

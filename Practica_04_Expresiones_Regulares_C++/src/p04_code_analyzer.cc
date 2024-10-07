@@ -28,7 +28,9 @@ int main(int argc, char* argv[]) {
   try {
     if (check_parameters(argc, argv)) {
       read_code(argv[1], match_result);
+      match_result.program_name_ = argv[1];
       print_results(match_result);
+      write_results(argv[2], match_result);
     } else {
       exit(EXIT_FAILURE);
     }

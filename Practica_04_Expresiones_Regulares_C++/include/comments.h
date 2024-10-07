@@ -28,6 +28,8 @@
 #include <string>
 #include <vector>
 
+// enum comment_type { SINGLE, MULTIPLE, DESCRIPTION };
+
 class Comments {
  public:
   Comments() = default;
@@ -35,12 +37,28 @@ class Comments {
 
   void SearchSingle(std::string line, int line_number);
   void SearchMultiple(std::string line, int line_number);
-  void PrintSingle();
-  void PrintMultiple();
+  void SearchComments(std::string line, int line_number);
+  void SearchDescription(std::string line, int line_number);
+
+  std::string PrintDescription();
+
+  friend std::ostream& operator<<(std::ostream& os, const Comments& comments) {
+    for (auto comment : comments.comments_) {
+      if (comment.type_ == "Single") {
+        os << "[Line " << comment.line_start_ << "] //" << comment.content_ << std::endl;
+      } else if (comment.type_ == "Description") {
+        os << "[Line " << comment.line_start_ << "-" << comment.line_end_ << "] DESCRIPTION "<< std::endl;
+      } else if (comment.type_ == "Multiple") {
+        os << "[Line " << comment.line_start_ << "-" << comment.line_end_ << "] MULTIPLE" << std::endl;
+      }
+    }
+    return os;
+  }
 
  private:
   std::string type_;
   std::string content_;
+  std::vector<std::string> content_lines_;
   int line_start_;
   int line_end_;
   static std::vector<Comments> comments_;

@@ -31,16 +31,18 @@ class Loops {
   Loops() = default;
   ~Loops() = default;
 
-  void SearchFor(std::string line, int line_number);
-  void SearchWhile(std::string line, int line_number);
-  void PrintFor();
-  void PrintWhile();
+  void SearchLoops(std::string line, int line_number);
+
+  friend std::ostream& operator<<(std::ostream& os, const Loops& loop) {
+    for (auto loop : loop.loops_) {
+      os << "[Line " << loop.line_ << "] LOOP: " << loop.type_ << std::endl;
+    }
+    return os;
+  }
 
  private:
   std::string type_;
   int line_;
-  static int for_count_;
-  static int while_count_;
   static std::vector<Loops> loops_;
 };
 
