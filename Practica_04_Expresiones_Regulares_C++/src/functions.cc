@@ -29,13 +29,14 @@ bool check_parameters(int argc, char* argv[]) {
 void read_code(std::string file_name, Match_result& match_result) {
   std::ifstream file(file_name);
   std::string line;
+  std::regex expresion_main("\\s*int\\s*main\\s*\\(.*\\).*");
 
   if (!file.is_open()) {
     throw std::string("File not found.");
   }
   
   while (std::getline(file, line)) {
-    match_result.main_found_ = match_result.main_found_ || line.find("main") != std::string::npos;
+    match_result.main_found_ = match_result.main_found_ || std::regex_search(line, expresion_main);
     match_result.line_number_++;
     match_result.variable_.SearchVariable(line, match_result.line_number_ - 1);
     match_result.loop_.SearchLoops(line, match_result.line_number_ - 1);
