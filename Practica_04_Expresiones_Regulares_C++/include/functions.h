@@ -24,9 +24,9 @@
 #include <vector>
 
 #include "colors.h"
-#include "variables.h"
-#include "loops.h"
 #include "comments.h"
+#include "loops.h"
+#include "variables.h"
 
 const std::string kHowUse =
     RED_BOLD +
@@ -36,16 +36,15 @@ const std::string kHowUse =
     RESET;
 
 const std::string kHelp =
-    BOLD + std::string(
-        "This program reads a file with a list of strings and performs "
-        "operations on them.\n"
-        "Those operations are determined by the opcode. The Opcodes are:\n"
-        "  1. Alphabet - Displays the alphabet of the strings.\n"
-        "  2. Length - Calculates the length of each string.\n"
-        "  3. Reverse - Reverses each string.\n"
-        "  4. Prefixes - Lists all prefixes of each string.\n"
-        "  5. Suffixes - Lists all suffixes of each string.\n\n"
-        "Example: ./bin/p02_strings data/filein.txt data/fileout.txt 1") +
+    BOLD +
+    std::string(
+        "This program reads a C++ code and parses it using regular "
+        "expressions. It will receive by command line the name of the input "
+        "file (C++ code to be parsed) and the name of the output file "
+        "(containing the parsed file). The information that this program will "
+        "extract is the declaration of int and double variables, for and while "
+        "loops, it will detect if it contains a main() function and the "
+        "different comments of one line or multiple lines.") +
     RESET;
 
 struct Match_result {
@@ -58,6 +57,7 @@ struct Match_result {
   Comments multiple_comment_;
 };
 
+bool check_file(std::string file_name);
 bool check_parameters(int argc, char* argv[]);
 void read_code(std::string file_name, Match_result& match_result);
 void print_results(Match_result& match_result);

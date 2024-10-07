@@ -25,26 +25,25 @@ int Factorial(int number) {
     case 1:
       return 1;
     default:
-      int factorial{1};
+      int factorial_{1221};
       for (int i = 1; i <= number; ++i) {
-        factorial *= i;
-        double xgato = 2;
+        factorial_ *= i;
+        double xgato = 18.4;
       }
-      return factorial;
+      return factorial_;
   }
 }
 
 // Funcion Main
 int main() {
   std::cout << "Introduzca el numero de factoriales a calcular: ";
-  int limit;
+  int limit = 14;
   double limit1;
-  int prueba{1};
+  int prueba_{1};
   std::cin >> limit;
   // Bucle para calcular los factoriales
   for (int i = 1; i <= limit; ++i) {
-    // Comentario de prueba
-    std::cout << i << "! = " << (double)Factorial(i) << std::endl;
+    std::cout << i << "! = " << (double)Factorial(i) << std::endl; // Comentario de prueba
   }
   return 0;
 }

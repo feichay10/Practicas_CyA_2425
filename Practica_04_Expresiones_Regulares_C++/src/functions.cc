@@ -17,11 +17,35 @@
 
 #include "../include/functions.h"
 
+bool check_file(std::string file_name) {
+  std::ifstream file(file_name);
+  if (!file.is_open()) {
+    throw std::runtime_error("Could not open file" + file_name);
+    return false;
+  }
+  file.close();
+  return true;
+}
+
 bool check_parameters(int argc, char* argv[]) {
   if (argc == 1 || (std::string(argv[1]) == "--help" && argc == 2)) {
     std::cerr << (argc == 1 ? kHowUse : kHelp) << std::endl;
     return false;
   }
+
+  if (argc < 3 || argc > 3) {
+    std::cerr << kHowUse << std::endl;
+    return false;
+  }
+  
+  try {
+    check_file(argv[1]);
+    check_file(argv[2]);
+  } catch (const std::runtime_error& e) {
+    std::cerr << e.what() << std::endl;
+    return false;
+  }
+  
 
   return true;
 }
@@ -30,10 +54,6 @@ void read_code(std::string file_name, Match_result& match_result) {
   std::ifstream file(file_name);
   std::string line;
   std::regex expresion_main("\\s*int\\s*main\\s*\\(.*\\).*");
-
-  if (!file.is_open()) {
-    throw std::string("File not found.");
-  }
   
   while (std::getline(file, line)) {
     match_result.main_found_ = match_result.main_found_ || std::regex_search(line, expresion_main);
@@ -49,7 +69,8 @@ void read_code(std::string file_name, Match_result& match_result) {
 void print_results(Match_result& match_result) {
   std::cout << "PROGRAM: " << match_result.program_name_ << std::endl;
   std::cout << "DESCRIPTION: " << std::endl;
-  std::cout << match_result.line_comment_.PrintDescription() << std::endl;
+  std::string description = match_result.line_comment_.PrintDescription();
+  std::cout << (description.empty() ? "False" : description) << std::endl;
   std::cout << "\nVARIABLES: " << std::endl;
   std::cout << match_result.variable_;
   std::cout << "\nSTATEMENTS: " << std::endl;
@@ -62,13 +83,10 @@ void print_results(Match_result& match_result) {
 void write_results(std::string file_name, Match_result& match_result) {
   std::ofstream file(file_name);
 
-  if (!file.is_open()) {
-    throw std::string("File not found.");
-  }
-
   file << "PROGRAM: " << match_result.program_name_ << std::endl;
   file << "DESCRIPTION: " << std::endl;
-  file << match_result.line_comment_.PrintDescription();
+  std::string description = match_result.line_comment_.PrintDescription();
+  file << (description.empty() ? "False" : description) << std::endl;
   file << "\nVARIABLES: " << std::endl;
   file << match_result.variable_;
   file << "\nSTATEMENTS: " << std::endl;

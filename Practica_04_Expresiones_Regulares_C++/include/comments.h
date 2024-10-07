@@ -7,12 +7,7 @@
  * Práctica 4: Expresiones Regulares en C++
  * @file variables.h
  * @author Cheuk Kelly Ng Pante (alu0101364544@ull.edu.es)
- * @brief Se detectaran todos los comentarios de una linea (//) y de mútliples
- * lineas (/* *\) presentes en el fichero. Se almacenar ́a el tipo de cada
- * comentario, la/s linea/s en la que se encuentra cada uno asi como el
- * contenido del propio comentario. Adem ́as, se tendr ́a en cuenta que si al
- * comienzo del fichero se encuentra un comentario, ese comentario se tomara por
- * defecto como descripci ́on del programa.
+ * @brief 
  * @version 0.1
  * @date 2024-09-24
  *
@@ -28,18 +23,12 @@
 #include <string>
 #include <vector>
 
-// enum comment_type { SINGLE, MULTIPLE, DESCRIPTION };
-
 class Comments {
  public:
   Comments() = default;
   ~Comments() = default;
 
-  void SearchSingle(std::string line, int line_number);
-  void SearchMultiple(std::string line, int line_number);
   void SearchComments(std::string line, int line_number);
-  void SearchDescription(std::string line, int line_number);
-
   std::string PrintDescription();
 
   friend std::ostream& operator<<(std::ostream& os, const Comments& comments) {
@@ -57,11 +46,11 @@ class Comments {
 
  private:
   std::string type_;
-  std::string content_;
-  std::vector<std::string> content_lines_;
   int line_start_;
   int line_end_;
-  static std::vector<Comments> comments_;
+  std::string content_;
+  std::vector<std::string> content_lines_;
+  std::vector<Comments> comments_; 
 };
 
 #endif  // COMMENTS_H_

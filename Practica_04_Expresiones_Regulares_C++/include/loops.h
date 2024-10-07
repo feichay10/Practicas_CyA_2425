@@ -7,10 +7,7 @@
  * Práctica 4: Expresiones Regulares en C++
  * @file loops.h
  * @author Cheuk Kelly Ng Pante (alu0101364544@ull.edu.es)
- * @brief Se detectar ́an los bucles de tipo for y los bucles de tipo while. Para 
- * cada bucle detectado se almacenara el tipo de bucle y la l ́ınea del codigo
- * en la que se ha encontrado. Ademas, se llevara un control del numero de 
- * bucles de cada tipo que se han utilizado en el programa.
+ * @brief 
  * @version 0.1
  * @date 2024-10-08
  *
@@ -43,7 +40,9 @@ class Loops {
  private:
   std::string type_;
   int line_;
-  static std::vector<Loops> loops_;
+  int for_count_ = 0;
+  int while_count_ = 0;
+  std::vector<Loops> loops_;
 };
 
 #endif  // LOOPS_H_

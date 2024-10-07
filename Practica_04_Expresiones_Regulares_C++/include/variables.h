@@ -7,10 +7,7 @@
  * Práctica 4: Expresiones Regulares en C++
  * @file variables.h
  * @author Cheuk Kelly Ng Pante (alu0101364544@ull.edu.es)
- * @brief Para cada variable se almacenara, ademas de su tipo (int y double), 
- * su nombre, la linea en la que se declara y si se ha inicializado o no en la 
- * propia declaracíon. Se llevará un control de cuantas variables de cada tipo 
- * se han definido en el programa.
+ * @brief 
  * @version 0.1
  * @date 2024-09-24
  *
@@ -33,9 +30,6 @@ class Variables {
 
   void SearchVariable(std::string line, int line_number);
 
-  // void SearchInt(std::string line, int line_number);
-  // void SearchDouble(std::string line, int line_number);
-
   friend std::ostream& operator<<(std::ostream& os, const Variables& variable) {
     for (auto variable : variable.variables_) {
       if (variable.type_ == "int") {
@@ -44,7 +38,7 @@ class Variables {
         os << "[Line " << variable.line_ << "] DOUBLE: " << variable.name_;
       }
       if (variable.initialized_) {
-        os << " = " << variable.initialized_;
+        os << " = " << variable.initialized_value_;
       }
       os << std::endl;
     }
@@ -52,10 +46,13 @@ class Variables {
   }
 
  private:
-  std::string name_;
   std::string type_;
+  std::string name_;
   int line_;
   bool initialized_;
+  std::string initialized_value_;
+  int int_count_ = 0;
+  int double_count_ = 0;
   std::vector<Variables> variables_;
 };
 
