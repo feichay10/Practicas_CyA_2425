@@ -229,7 +229,6 @@ void menu(std::string file_out, int opcode, std::vector<String>& strings, std::v
       write_file(file_out, suffixes_vector);
     } break;
     case 6: { // Modification
-      String palindrome;
       std::vector<bool> palindromes;
       std::cout << BOLD << "Palindromes:" << RESET << std::endl;
       for (int i = 0; i < strings.size(); i++) {
