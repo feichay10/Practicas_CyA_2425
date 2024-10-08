@@ -45,7 +45,6 @@ bool check_parameters(int argc, char* argv[]) {
     std::cerr << e.what() << std::endl;
     return false;
   }
-  
 
   return true;
 }

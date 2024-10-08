@@ -33,6 +33,8 @@ void Variables::SearchVariable(std::string line, int line_number) {
       } else if (match.str(6) != "") {
         variable.initialized_value_ = match.str(6);
       }
+    } else {
+      variable.initialized_ = false;
     }
     if (variable.type_ == "int") {
       int_count_++;
