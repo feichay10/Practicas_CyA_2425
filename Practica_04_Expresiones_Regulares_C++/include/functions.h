@@ -60,6 +60,7 @@ struct Match_result {
 bool check_file(std::string file_name);
 bool check_parameters(int argc, char* argv[]);
 void read_code(std::string file_name, Match_result& match_result);
+void output_results(std::ostream& out, Match_result& match_result);
 void print_results(Match_result& match_result);
 void write_results(std::string file_name, Match_result& match_result);
 

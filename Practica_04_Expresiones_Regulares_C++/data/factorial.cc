@@ -13,6 +13,10 @@
 
 #include <cassert>
 #include <iostream>
+#include "../include/functions.h"
+
+#define PRUEBA 1
+#define PI 3.14159265358979323846
 
 // Returns the factorial of the argument
 int Factorial(int number) {

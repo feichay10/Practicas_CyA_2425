@@ -68,46 +68,36 @@ void read_code(std::string file_name, Match_result& match_result) {
   file.close();
 }
 
-void print_results(Match_result& match_result) {
-  std::cout << "PROGRAM: " << match_result.program_name_ << std::endl;
-  std::cout << "DESCRIPTION: " << std::endl;
+void output_results(std::ostream& out, Match_result& match_result) {
+  out << "PROGRAM: " << match_result.program_name_ << std::endl;
+  out << "DESCRIPTION: " << std::endl;
   std::string description = match_result.line_comment_.PrintDescription();
-  std::cout << (description.empty() ? "False" : description) << std::endl;
-  std::cout << "\nVARIABLES: " << std::endl;
-  std::cout << match_result.variable_;
-  std::cout << "\nSTATEMENTS: " << std::endl;
-  std::cout << match_result.loop_;
-  std::cout << "\nMAIN FUNCTION:\n" << (match_result.main_found_ ? "True" : "False") << std::endl;
-  std::cout << "\nCOMMENTS: " << std::endl;
-  std::cout << match_result.line_comment_;
-  std::cout << "\nRETURNS: " << std::endl;
-  std::cout << match_result.return_;
-  std::cout << "\nINCLUDES: " << std::endl;
-  std::cout << match_result.include_;
-  std::cout << "\nDEFINES: " << std::endl;
-  std::cout << match_result.define_;
+  out << (description.empty() ? "False" : description) << std::endl;
+  out << "\nVARIABLES: " << std::endl;
+  out << match_result.variable_;
+  out << "\nSTATEMENTS: " << std::endl;
+  out << match_result.loop_;
+  out << "\nMAIN FUNCTION:\n" << (match_result.main_found_ ? "True" : "False") << std::endl;
+  out << "\nCOMMENTS: " << std::endl;
+  out << match_result.line_comment_;
+  out << "\nRETURNS: " << std::endl;
+  out << match_result.return_;
+  out << "\nINCLUDES: " << std::endl;
+  out << match_result.include_;
+  out << "\nDEFINES: " << std::endl;
+  out << match_result.define_;
+}
+
+void print_results(Match_result& match_result) {
+  output_results(std::cout, match_result);
 }
 
 void write_results(std::string file_name, Match_result& match_result) {
   std::ofstream file(file_name);
-
-  file << "PROGRAM: " << match_result.program_name_ << std::endl;
-  file << "DESCRIPTION: " << std::endl;
-  std::string description = match_result.line_comment_.PrintDescription();
-  file << (description.empty() ? "False" : description) << std::endl;
-  file << "\nVARIABLES: " << std::endl;
-  file << match_result.variable_;
-  file << "\nSTATEMENTS: " << std::endl;
-  file << match_result.loop_;
-  file << "\nMAIN FUNCTION:\n" << (match_result.main_found_ ? "True" : "False") << std::endl;
-  file << "\nCOMMENTS: " << std::endl;
-  file << match_result.line_comment_;
-  file << "\nRETURNS: " << std::endl;
-  file << match_result.return_;
-  file << "\nINCLUDES: " << std::endl;
-  file << match_result.include_;
-  file << "\nDEFINES: " << std::endl;
-  file << match_result.define_;
-
-  file.close();
+  if (file.is_open()) {
+    output_results(file, match_result);
+    file.close();
+  } else {
+    throw std::runtime_error("Could not open file " + file_name);
+  }
 }

@@ -16,23 +16,23 @@ DESCRIPTION:
 
 
 VARIABLES: 
-[Line 23] INT: gato
-[Line 28] INT: factorial_ = 1221
-[Line 31] DOUBLE: xgato = 18.4
-[Line 40] INT: limit = 14
-[Line 41] DOUBLE: limit1
-[Line 42] INT: prueba_ = 1
+[Line 27] INT: gato
+[Line 32] INT: factorial_ = 1221
+[Line 35] DOUBLE: xgato = 18.4
+[Line 44] INT: limit = 14
+[Line 45] DOUBLE: limit1
+[Line 46] INT: prueba_ = 1
 
 STATEMENTS: 
-[Line 22] LOOP: while
-[Line 29] LOOP: for
-[Line 45] LOOP: for
+[Line 26] LOOP: while
+[Line 33] LOOP: for
+[Line 49] LOOP: for
 
 MAIN FUNCTION:
 True
 
 COMMENTS: 
 [Line 1-12] DESCRIPTION 
-[Line 17] // Returns the factorial of the argument
-[Line 37] // Funcion Main
-[Line 44] // Bucle para calcular los factoriales
+[Line 21] // Returns the factorial of the argument
+[Line 41] // Funcion Main
+[Line 48] // Bucle para calcular los factoriales
