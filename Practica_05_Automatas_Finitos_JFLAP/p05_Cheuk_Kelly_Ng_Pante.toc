@@ -6,3 +6,7 @@
 \contentsline {section}{\numberline {1.4}Diseñar un DFA que reconozca cadenas sobre el alfabeto $\Sigma = \{a, b\}$ con número de “a's” par y longitud impar.}{4}{section.1.4}%
 \contentsline {section}{\numberline {1.5}Diseñar un DFA que reconozca cadenas $w$ sobre el alfabeto $\Sigma = \{0, 1\}$ tales que $2\leq |w| \leq 5$.}{5}{section.1.5}%
 \contentsline {section}{\numberline {1.6}Diseñar un DFA que reconozca cadenas sobre el alfabeto $\Sigma = \{0, 1\}$ que tengan como minimo dos ceros consecutivos.}{6}{section.1.6}%
+\contentsline {section}{\numberline {1.7}Diseñar un DFA que reconozca cadenas sobre el alfabeto $\Sigma = \{0, 1\}$ que tengan como máximo dos ceros.}{7}{section.1.7}%
+\contentsline {section}{\numberline {1.8}Diseñar un DFA que reconozca cadenas sobre el alfabeto $\Sigma = \{0, 1\}$ con longitud múltiplo de 3.}{8}{section.1.8}%
+\contentsline {section}{\numberline {1.9}Diseñar un DFA que reconozca cadenas sobre el alfabeto $\Sigma = \{0, 1\}$ con longitud que no sea múltiplo de 3.}{9}{section.1.9}%
+\contentsline {section}{\numberline {1.10}Diseñar un DFA que reconozca cadenas sobre el alfabeto $\Sigma = \{x, y, z\}$ que no contengan dos símbolos iguales consecutivos.}{10}{section.1.10}%

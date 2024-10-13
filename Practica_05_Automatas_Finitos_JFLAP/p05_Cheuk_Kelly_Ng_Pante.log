@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.10)  13 OCT 2024 15:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.10)  13 OCT 2024 20:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -926,12 +926,12 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 199.
 
-<img/DFA_02.png, id=64, 438.8897pt x 360.59718pt>
+<img/DFA_02.png, id=89, 438.8897pt x 360.59718pt>
 File: img/DFA_02.png Graphic file (type png)
 <use img/DFA_02.png>
 Package pdftex.def Info: img/DFA_02.png  used on input line 202.
 (pdftex.def)             Requested size: 307.22069pt x 252.4163pt.
-<img/DFA_02_test.png, id=66, 744.53156pt x 362.10281pt>
+<img/DFA_02_test.png, id=91, 744.53156pt x 362.10281pt>
 File: img/DFA_02_test.png Graphic file (type png)
 <use img/DFA_02_test.png>
 Package pdftex.def Info: img/DFA_02_test.png  used on input line 208.
@@ -966,12 +966,12 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 218.
 
-<img/DFA_04.png, id=79, 441.14813pt x 362.85562pt>
+<img/DFA_04.png, id=104, 441.14813pt x 362.85562pt>
 File: img/DFA_04.png Graphic file (type png)
 <use img/DFA_04.png>
 Package pdftex.def Info: img/DFA_04.png  used on input line 221.
 (pdftex.def)             Requested size: 308.80157pt x 253.99721pt.
-<img/DFA_04_test.png, id=80, 746.03719pt x 362.85562pt>
+<img/DFA_04_test.png, id=105, 746.03719pt x 362.85562pt>
 File: img/DFA_04_test.png Graphic file (type png)
 <use img/DFA_04_test.png>
 Package pdftex.def Info: img/DFA_04_test.png  used on input line 227.
@@ -1015,12 +1015,12 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 233.
 
-<img/DFA_05.png, id=89, 1444.64719pt x 776.14969pt>
+<img/DFA_05.png, id=114, 1444.64719pt x 776.14969pt>
 File: img/DFA_05.png Graphic file (type png)
 <use img/DFA_05.png>
 Package pdftex.def Info: img/DFA_05.png  used on input line 236.
 (pdftex.def)             Requested size: 491.17355pt x 263.8874pt.
-<img/DFA_05_test.png, id=90, 1094.58937pt x 363.60844pt>
+<img/DFA_05_test.png, id=115, 1094.58937pt x 363.60844pt>
 File: img/DFA_05_test.png Graphic file (type png)
 <use img/DFA_05_test.png>
 Package pdftex.def Info: img/DFA_05_test.png  used on input line 242.
@@ -1040,9 +1040,99 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 248.
 
+<img/DFA_06.png, id=125, 498.36188pt x 438.13687pt>
+File: img/DFA_06.png Graphic file (type png)
+<use img/DFA_06.png>
+Package pdftex.def Info: img/DFA_06.png  used on input line 251.
+(pdftex.def)             Requested size: 299.01942pt x 262.88414pt.
+<img/DFA_06_test.png, id=126, 743.02594pt x 353.82187pt>
+File: img/DFA_06_test.png Graphic file (type png)
+<use img/DFA_06_test.png>
+Package pdftex.def Info: img/DFA_06_test.png  used on input line 257.
+(pdftex.def)             Requested size: 482.96114pt x 229.98148pt.
 
 
-[6] 
+[6 <./img/DFA_06.png> <./img/DFA_06_test.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 263.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Sigma' on input line 263.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 263.
+
+
+
+[7]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 267.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Sigma' on input line 267.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 267.
+
+<img/DFA_08.png, id=139, 496.10344pt x 362.85562pt>
+File: img/DFA_08.png Graphic file (type png)
+<use img/DFA_08.png>
+Package pdftex.def Info: img/DFA_08.png  used on input line 270.
+(pdftex.def)             Requested size: 297.66435pt x 217.71504pt.
+<img/DFA_08_test.png, id=140, 651.18282pt x 362.10281pt>
+File: img/DFA_08_test.png Graphic file (type png)
+<use img/DFA_08_test.png>
+Package pdftex.def Info: img/DFA_08_test.png  used on input line 276.
+(pdftex.def)             Requested size: 423.26381pt x 235.36403pt.
+
+
+[8 <./img/DFA_08.png> <./img/DFA_08_test.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 282.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Sigma' on input line 282.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 282.
+
+<img/DFA_09.png, id=149, 469.755pt x 362.85562pt>
+File: img/DFA_09.png Graphic file (type png)
+<use img/DFA_09.png>
+Package pdftex.def Info: img/DFA_09.png  used on input line 285.
+(pdftex.def)             Requested size: 281.85518pt x 217.71504pt.
+<img/DFA_09_test.png, id=150, 697.10437pt x 362.10281pt>
+File: img/DFA_09_test.png Graphic file (type png)
+<use img/DFA_09_test.png>
+Package pdftex.def Info: img/DFA_09_test.png  used on input line 291.
+(pdftex.def)             Requested size: 453.11247pt x 235.36403pt.
+
+
+[9 <./img/DFA_09.png> <./img/DFA_09_test.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 297.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Sigma' on input line 297.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 297.
+
+
+
+[10] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (p05_Cheuk_Kelly_Ng_Pante.aux
 LaTeX Info: Redefining \. on input line 9.
@@ -1052,31 +1142,21 @@ LaTeX Info: Redefining \% on input line 9.
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `p05_Cheuk_Kelly_Ng_Pante.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `p05_Cheuk_Kelly_Ng_Pante.out':
-(rerunfilecheck)             Before: 63A0CD2FC274087B82887901EABC7999;3549
-(rerunfilecheck)             After:  A7F574DDB6DB2359C1510C4F3EC516EB;3703.
+Package rerunfilecheck Info: File `p05_Cheuk_Kelly_Ng_Pante.out' has not changed.
+(rerunfilecheck)             Checksum: 2CFDF4245EB078EAC641D13DEC402A55;6223.
  ) 
 Here is how much of TeX's memory you used:
- 30730 strings out of 473904
- 613312 string characters out of 5726600
- 1932908 words of memory out of 5000000
- 53094 multiletter control sequences out of 15000+600000
+ 30792 strings out of 473904
+ 614533 string characters out of 5726600
+ 1935908 words of memory out of 5000000
+ 53142 multiletter control sequences out of 15000+600000
  565082 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,7n,117p,1389b,484s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on p05_Cheuk_Kelly_Ng_Pante.pdf (8 pages, 283729 bytes).
+Output written on p05_Cheuk_Kelly_Ng_Pante.pdf (12 pages, 437102 bytes).
 PDF statistics:
- 145 PDF objects out of 1000 (max. 8388607)
- 21 named destinations out of 1000 (max. 500000)
- 99 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 206 PDF objects out of 1000 (max. 8388607)
+ 35 named destinations out of 1000 (max. 500000)
+ 161 words of extra memory for PDF output out of 10000 (max. 10000000)
 
