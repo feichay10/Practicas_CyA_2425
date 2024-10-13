@@ -344,20 +344,122 @@ Algoritmo de construcción de subconjuntos:
 \newpage
 
 Algoritmo de construcción de subconjuntos:
-\begin{itemize}
-  \item $\epsilon$-clausura$(\{q_0\}) = \{q_0\} = A$
-  \item $\delta(A, a) = \{q_0\} = A$
-  \item $\delta(A, b) = \{q_0, q_1\} = B$
-  \item $\delta(B, a) = \{q_0\} = A$
-  \item $\delta(B, b) = \{q_0, q_1, q_2\} = C$
-  \item $\delta(C, a) = \{q_0\} = A$
-  \item $\delta(C, b) = \{q_0, q_1, q_2\} = C$
-\end{itemize}
+\begin{multicols}{2}
+  \begin{itemize}
+    \item $\epsilon$-clausura$(\{q_0\}) = \{q_0\} = A$
+    \item $\delta(A, a) = \{q_0\} = A$
+    \item $\delta(A, b) = \{q_0, q_1\} = B$
+    \item $\delta(B, a) = \{q_0\} = A$
+  \end{itemize}
+
+  \columnbreak
+
+  \begin{itemize}
+    \item $\delta(B, b) = \{q_0, q_1, q_2\} = C$
+    \item $\delta(C, a) = \{q_0\} = A$
+    \item $\delta(C, b) = \{q_0, q_1, q_2\} = C$ 
+  \end{itemize}
+\end{multicols}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.6]{img/NFA_to_DFA_02.png}
+  \includegraphics[scale=0.45]{img/NFA_to_DFA_02.png}
   \caption{DFA equivalente al NFA}
+\end{figure}
+
+Algoritmo de minimización de DFA:
+\begin{itemize}
+  \item $\{C\} \{A, B\}$
+  \item $\{C\} \{A\} \{B\}$
+\end{itemize}
+
+El DFA ya está minimizado.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.4]{img/DFA_to_DFA_minimized_02.png}
+  \caption{DFA mínimo equivalente al NFA}
+\end{figure}
+
+\newpage
+
+\section{Diseñar un NFA que reconozca cadenas sobre el alfabeto $\Sigma = \{a, b\}$ que empiecen por “a” o terminen en “bb”. A partir del NFA diseñado, obtenga un DFA mínimo equivalente.}
+
+\newpage
+
+\section{Diseñar un NFA que reconozca cadenas sobre el alfabeto $\Sigma = \{a, b\}$ que empiecen por “a” y terminen en “bb”. A partir del NFA diseñado, obtenga un DFA mínimo equivalente.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.6]{img/NFA_04.png}
+  \caption{NFA que reconoce cadenas que empiecen por "a" y terminen en "bb"}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.55]{img/NFA_04_test.png}
+  \caption{Cadenas de prueba para el NFA}
+\end{figure}
+
+\newpage
+
+Algoritmo de construcción de subconjuntos:
+\begin{multicols}{2}
+  \begin{itemize}
+    \item $\epsilon$-clausura$(\{q_0\}) = \{q_0\} = A$
+    \item $\delta(A, a) = \{q_1\} = B$
+    \item $\delta(A, b) = \emptyset$
+    \item $\delta(B, a) = \{q_1\} = B$
+    \item $\delta(B, b) = \{q_1, q_2\} = C$
+  \end{itemize}
+
+  \columnbreak
+
+  \begin{itemize}
+    \item $\delta(C, a) = \{q_1\} = B$
+    \item $\delta(C, b) = \{q_1, q_2, q_3\} = D$
+    \item $\delta(D, a) = \{q_1\} = B$
+    \item $\delta(D, b) = \{q_1, q_2, q_3\} = D$
+  \end{itemize}  
+\end{multicols}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.4]{img/NFA_to_DFA_04.png}
+  \caption{DFA equivalente al NFA}
+\end{figure}
+
+Algoritmo de minimización de DFA:
+\begin{itemize}
+  \item $\{D\} \{A, B, C\}$
+  \item $\{D\} \{A\} \{B, C\}$
+  \item $\{D\} \{A\} \{B\} \{C\}$
+\end{itemize}
+
+El DFA ya está minimizado.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.4]{img/DFA_to_DFA_minimized_04.png}
+  \caption{DFA mínimo equivalente al NFA}
+\end{figure}
+
+\newpage
+
+\section{Diseñar un NFA que reconozca cadenas sobre el alfabeto $\Sigma = \{a, b\}$ con número de “a's” par o longitud impar. A partir del NFA diseñado, obtenga un DFA mínimo equivalente.}
+
+\newpage
+
+\section{Diseñar un NFA que reconozca cadenas sobre el alfabeto $\Sigma = \{x, y, z\}$ que contenga al menos dos símbolos iguales consecutivos. A partir del NFA diseñado, obtenga un DFA mínimo equivalente.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.6]{img/NFA_06.png}
+  \caption{NFA que reconoce cadenas con al menos dos símbolos iguales consecutivos}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.6]{img/NFA_06_test.png}
+  \caption{Cadenas de prueba para el NFA}
 \end{figure}
 
 \end{document}
