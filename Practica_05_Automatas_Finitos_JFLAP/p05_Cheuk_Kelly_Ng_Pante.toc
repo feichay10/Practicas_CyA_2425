@@ -10,3 +10,6 @@
 \contentsline {section}{\numberline {1.8}Diseñar un DFA que reconozca cadenas sobre el alfabeto $\Sigma = \{0, 1\}$ con longitud múltiplo de 3.}{8}{section.1.8}%
 \contentsline {section}{\numberline {1.9}Diseñar un DFA que reconozca cadenas sobre el alfabeto $\Sigma = \{0, 1\}$ con longitud que no sea múltiplo de 3.}{9}{section.1.9}%
 \contentsline {section}{\numberline {1.10}Diseñar un DFA que reconozca cadenas sobre el alfabeto $\Sigma = \{x, y, z\}$ que no contengan dos símbolos iguales consecutivos.}{10}{section.1.10}%
+\contentsline {chapter}{\numberline {2}Diseño de NFAs}{11}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Diseñar un NFA que reconozca cadenas sobre el alfabeto $\Sigma = \{a, b\}$ que empiecen por “a”. A partir del NFA diseñado, obtenga un DFA mínimo equivalente.}{11}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Diseñar un NFA que reconozca cadenas sobre el alfabeto $\Sigma = \{a, b\}$ que terminen en “bb”. A partir del NFA diseñado, obtenga un DFA mínimo equivalente.}{12}{section.2.2}%

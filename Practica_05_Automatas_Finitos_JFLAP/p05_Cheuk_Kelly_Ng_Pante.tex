@@ -295,6 +295,69 @@
 \newpage
 
 \section{Diseñar un DFA que reconozca cadenas sobre el alfabeto $\Sigma = \{x, y, z\}$ que no contengan dos símbolos iguales consecutivos.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.55]{img/DFA_10.png}
+  \caption{DFA que reconoce cadenas que no contengan dos símbolos iguales consecutivos}
+\end{figure}
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5]{img/DFA_10_test.png}
+  \caption{Cadenas de prueba para el DFA}
+\end{figure}
+
+\newpage
+
+\chapter{Diseño de NFAs}
+\section{Diseñar un NFA que reconozca cadenas sobre el alfabeto $\Sigma = \{a, b\}$ que empiecen por “a”. A partir del NFA diseñado, obtenga un DFA mínimo equivalente.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.6]{img/NFA_01.png}
+  \caption{NFA que reconoce cadenas que empiecen por "a"}
+\end{figure}
+
+Algoritmo de construcción de subconjuntos:
+\begin{itemize}
+  \item $\epsilon$-clausura$(\{q_0\}) = \{q_0\} = A$
+  \item $\delta(A, a) = \{q_1\} = B$ 
+  \item $\delta(A, b) = \emptyset$
+  \item $\delta(B, a) = \{q_1\} = B$
+  \item $\delta(B, b) = \{q_1\} = B$
+\end{itemize}
+
+\newpage
+
+\section{Diseñar un NFA que reconozca cadenas sobre el alfabeto $\Sigma = \{a, b\}$ que terminen en “bb”. A partir del NFA diseñado, obtenga un DFA mínimo equivalente.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.6]{img/NFA_02.png}
+  \caption{NFA que reconoce cadenas que terminen en "bb"}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.6]{img/NFA_02_test.png}
+  \caption{Cadenas de prueba para el NFA}
+\end{figure}
+
+\newpage
+
+Algoritmo de construcción de subconjuntos:
+\begin{itemize}
+  \item $\epsilon$-clausura$(\{q_0\}) = \{q_0\} = A$
+  \item $\delta(A, a) = \{q_0\} = A$
+  \item $\delta(A, b) = \{q_0, q_1\} = B$
+  \item $\delta(B, a) = \{q_0\} = A$
+  \item $\delta(B, b) = \{q_0, q_1, q_2\} = C$
+  \item $\delta(C, a) = \{q_0\} = A$
+  \item $\delta(C, b) = \{q_0, q_1, q_2\} = C$
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.6]{img/NFA_to_DFA_02.png}
+  \caption{DFA equivalente al NFA}
+\end{figure}
 
 \end{document}
