@@ -452,14 +452,145 @@ El DFA ya está minimizado.
 \section{Diseñar un NFA que reconozca cadenas sobre el alfabeto $\Sigma = \{x, y, z\}$ que contenga al menos dos símbolos iguales consecutivos. A partir del NFA diseñado, obtenga un DFA mínimo equivalente.}
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.6]{img/NFA_06.png}
+  \includegraphics[scale=0.55]{img/NFA_06.png}
   \caption{NFA que reconoce cadenas con al menos dos símbolos iguales consecutivos}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.6]{img/NFA_06_test.png}
+  \includegraphics[scale=0.5]{img/NFA_06_test.png}
   \caption{Cadenas de prueba para el NFA}
+\end{figure}
+
+\newpage
+
+Algoritmo de construcción de subconjuntos:
+\begin{multicols}{2}
+  \begin{itemize}
+    \item $\epsilon$-clausura$(\{q_0\}) = \{q_0\} = A$
+    \item $\delta(A, x) = \{q_0, q_1\}$ = B
+    \item $\delta(A, y) = \{q_0, q_2\}$ = C
+    \item $\delta(A, z) = \{q_0, q_3\}$ = D
+    \item $\delta(B, x) = \{q_0, q_1, q_4\}$ = E
+    \item $\delta(B, y) = \{q_0, q_2\}$ = C
+    \item $\delta(B, z) = \{q_0, q_3\}$ = D
+    \item $\delta(C, x) = \{q_0, q_1\}$ = B
+    \item $\delta(C, y) = \{q_0, q_2, q_4\}$ = F
+    \item $\delta(C, z) = \{q_0, q_3\}$ = D
+    \item $\delta(D, x) = \{q_0, q_1\}$ = B
+  \end{itemize}
+  
+  \columnbreak
+
+  \begin{itemize}
+    \item $\delta(D, y) = \{q_0, q_2\}$ = C
+    \item $\delta(D, z) = \{q_0, q_3, q_4\}$ = G
+    \item $\delta(E, x) = \{q_0, q_1, q_4\}$ = E
+    \item $\delta(E, y) = \{q_0, q_2, q_4\}$ = F
+    \item $\delta(E, z) = \{q_0, q_3, q_4\}$ = G
+    \item $\delta(F, x) = \{q_0, q_1, q_4\}$ = E
+    \item $\delta(F, y) = \{q_0, q_2, q_4\}$ = F
+    \item $\delta(F, z) = \{q_0, q_3, q_4\}$ = G
+    \item $\delta(G, x) = \{q_0, q_1, q_4\}$ = E
+    \item $\delta(G, y) = \{q_0, q_2, q_4\}$ = F
+    \item $\delta(G, z) = \{q_0, q_3, q_4\}$ = G
+  \end{itemize}
+\end{multicols}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.45]{img/NFA_to_DFA_06.png}
+  \caption{DFA equivalente al NFA}
+\end{figure}
+
+Algoritmo de minimización de DFA:
+\begin{itemize}
+  \item $\{E, F, G\} \{A, B, C, D\}$
+  \item $\{E, F, G\} \{B\} \{A, C, D\}$
+  \item $\{E, F, G\} \{B\} \{C\} \{A, D\}$
+  \item $\{E, F, G\} \{B\} \{C\} \{D\} \{A\}$
+\end{itemize}
+
+El DFA minimizado es el siguiente:
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.3]{img/DFA_to_DFA_minimized_06.png}
+  \caption{DFA mínimo equivalente al NFA}
+\end{figure}
+
+\newpage
+
+\section{Diseñar un NFA que reconozca cadenas $w$ sobre el alfabeto $\Sigma = \{x, y, z\}$ con $|w| \geq 2$, tales que $w$ empieza y termina por el mismo símbolo. A partir del NFA diseñado, obtenga un DFA mínimo equivalente.}
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.4]{img/NFA_07.png}
+  \caption{NFA que reconoce cadenas que empiezan y terminan por el mismo símbolo}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.45]{img/NFA_07_test.png}
+  \caption{Cadenas de prueba para el NFA}
+\end{figure}
+
+\newpage
+
+Algoritmo de construcción de subconjuntos:
+\begin{multicols}{2}
+  \begin{itemize}
+    \item $\epsilon$-clausura$(\{q_0\}) = \{q_0\} = A$
+    \item $\delta(A, x) = \{q_1\}$ = B
+    \item $\delta(A, y) = \{q_2\}$ = C
+    \item $\delta(A, z) = \{q_3\}$ = D
+    \item $\delta(B, x) = \{q_1, q_4\}$ = E
+    \item $\delta(B, y) = \{q_1\}$ = B
+    \item $\delta(B, z) = \{q_1\}$ = B
+    \item $\delta(C, x) = \{q_2\}$ = C
+    \item $\delta(C, y) = \{q_2, q_4\}$ = F
+    \item $\delta(C, z) = \{q_2\}$ = C
+    \item $\delta(D, x) = \{q_3\}$ = D
+  \end{itemize}
+
+  \columnbreak
+
+  \begin{itemize}
+    \item $\delta(D, y) = \{q_3\}$ = D
+    \item $\delta(D, z) = \{q_3, q_4\}$ = G
+    \item $\delta(E, x) = \{q_1, q_4\}$ = E
+    \item $\delta(E, y) = \{q_1\}$ = B
+    \item $\delta(E, z) = \{q_1\}$ = B
+    \item $\delta(F, x) = \{q_2\}$ = C
+    \item $\delta(F, y) = \{q_2, q_4\}$ = F
+    \item $\delta(F, z) = \{q_2\}$ = C
+    \item $\delta(G, x) = \{q_3\}$ = D
+    \item $\delta(G, y) = \{q_3\}$ = D
+    \item $\delta(G, z) = \{q_3, q_4\}$ = G
+  \end{itemize}
+\end{multicols}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.4]{img/NFA_to_DFA_07.png}
+  \caption{DFA equivalente al NFA}
+\end{figure}
+
+\newpage
+
+Algoritmo de minimización de DFA:
+\begin{itemize}
+  \item $\{E, F, G\} \{A, B, C, D\}$
+  \item $\{E, F, G\} \{B\} \{A, C, D\}$
+  \item $\{E, F, G\} \{B\} \{C\} \{A, D\}$
+  \item $\{E, F, G\} \{B\} \{C\} \{D\} \{A\}$
+  \item $\{E, G\} \{F\} \{B\} \{C\} \{D\} \{A\}$
+  \item $\{E\} \{G\} \{F\} \{B\} \{C\} \{D\} \{A\}$
+\end{itemize}
+
+El DFA ya está minimizado.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.45]{img/DFA_to_DFA_minimized_07.png}
+  \caption{DFA mínimo equivalente al NFA}
 \end{figure}
 
 \end{document}
