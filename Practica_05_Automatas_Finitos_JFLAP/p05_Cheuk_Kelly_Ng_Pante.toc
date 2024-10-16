@@ -18,3 +18,5 @@
 \contentsline {section}{\numberline {2.5}Diseñar un NFA que reconozca cadenas sobre el alfabeto $\Sigma = \{a, b\}$ con número de “a's” par o longitud impar. A partir del NFA diseñado, obtenga un DFA mínimo equivalente.}{17}{section.2.5}%
 \contentsline {section}{\numberline {2.6}Diseñar un NFA que reconozca cadenas sobre el alfabeto $\Sigma = \{x, y, z\}$ que contenga al menos dos símbolos iguales consecutivos. A partir del NFA diseñado, obtenga un DFA mínimo equivalente.}{18}{section.2.6}%
 \contentsline {section}{\numberline {2.7}Diseñar un NFA que reconozca cadenas $w$ sobre el alfabeto $\Sigma = \{x, y, z\}$ con $|w| \geq 2$, tales que $w$ empieza y termina por el mismo símbolo. A partir del NFA diseñado, obtenga un DFA mínimo equivalente.}{21}{section.2.7}%
+\contentsline {chapter}{\numberline {3}Modificación.}{24}{chapter.3}%
+\contentsline {section}{\numberline {3.1}DFA mínimo sobre el alfabeto $\Sigma = \{0, 1\}$ que reconozca cadenas que no empiezan y terminan por el mismo símbolo o tienen longitud impar.}{24}{section.3.1}%

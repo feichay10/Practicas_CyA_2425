@@ -1,6 +1,0 @@
-\babel@toc {spanish}{}\relax 
-\contentsline {chapter}{\numberline {1}Diseño de DFAs}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Diseñar un DFA que reconozca cadenas sobre el alfabeto $\Sigma = \{a, b\}$ con número de “a's” par.}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Diseñar un DFA que reconozca cadenas sobre el alfabeto $\Sigma = \{a, b\}$ con longitud impar.}{2}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Diseñar un DFA que reconozca cadenas sobre el alfabeto $\Sigma = \{a, b\}$ con número de “a's” par o longitud impar.}{3}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Diseñar un DFA que reconozca cadenas sobre el alfabeto $\Sigma = \{a, b\}$ que contengan la subcadena “ab”.}{4}{section.1.4}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.10)  15 OCT 2024 12:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.10)  16 OCT 2024 17:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -251,4 +251,1228 @@ Package: titling 2009/09/04 v2.1d maketitle typesetting
 \droptitle=\skip56
 ) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/parskip\parskip.sty
 Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
-) (C:\Us
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/wasysym\wasysym.sty
+Package: wasysym 2020/01/19 v2.4 Wasy-2 symbol support package
+\symwasy=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
+(Font)                  U/wasy/m/n --> U/wasy/b/n on input line 93.
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/tikzsymbols\tikzsymbols.sty (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xparse.sty (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2024-05-27 L3 programming layer (loader) 
+ (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count290
+\l__pdf_internal_box=\box57
+))
+Package: xparse 2024-05-08 L3 Experimental document command parser
+)
+Package: tikzsymbols 2021/12/14 v4.12a Some symbols created using tikz and LaTeX3.
+ (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.sty (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.sty (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-common.tex
+\pgfutil@everybye=\toks24
+\pgfutil@tempdima=\dimen183
+\pgfutil@tempdimb=\dimen184
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-latex.def
+\pgfutil@abb=\box58
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs.code.tex (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.tex)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+))
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+ (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.sty (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.sty (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys.code.tex
+Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
+ (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks25
+\pgfkeys@temptoks=\toks26
+ (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeyslibraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks27
+))
+\pgf@x=\dimen185
+\pgf@y=\dimen186
+\pgf@xa=\dimen187
+\pgf@ya=\dimen188
+\pgf@xb=\dimen189
+\pgf@yb=\dimen190
+\pgf@xc=\dimen191
+\pgf@yc=\dimen192
+\pgf@xd=\dimen193
+\pgf@yd=\dimen194
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count291
+\c@pgf@countb=\count292
+\c@pgf@countc=\count293
+\c@pgf@countd=\count294
+\t@pgf@toka=\toks28
+\t@pgf@tokb=\toks29
+\t@pgf@tokc=\toks30
+\pgf@sys@id@count=\count295
+ (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.cfg
+File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
+)
+Driver file for pgf: pgfsys-pdftex.def
+ (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
+ (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+))) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfsyssoftpath@smallbuffer@items=\count296
+\pgfsyssoftpath@bigbuffer@items=\count297
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
+ (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+ (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
+Package xcolor Info: Model `RGB' extended on input line 1366.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore.code.tex
+Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+ (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathutil.code.tex) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparser.code.tex
+\pgfmath@dimen=\dimen195
+\pgfmath@count=\count298
+\pgfmath@box=\box59
+\pgfmath@toks=\toks31
+\pgfmath@stack@operand=\toks32
+\pgfmath@stack@operation=\toks33
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.code.tex) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.basic.code.tex) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.trigonometric.code.tex) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.random.code.tex) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.comparison.code.tex) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.base.code.tex) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.round.code.tex) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.misc.code.tex) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.integerarithmetics.code.tex) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcalc.code.tex) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count299
+)) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.tex) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@picminx=\dimen196
+\pgf@picmaxx=\dimen197
+\pgf@picminy=\dimen198
+\pgf@picmaxy=\dimen199
+\pgf@pathminx=\dimen256
+\pgf@pathmaxx=\dimen257
+\pgf@pathminy=\dimen258
+\pgf@pathmaxy=\dimen259
+\pgf@xx=\dimen260
+\pgf@xy=\dimen261
+\pgf@yx=\dimen262
+\pgf@yy=\dimen263
+\pgf@zx=\dimen264
+\pgf@zy=\dimen265
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@path@lastx=\dimen266
+\pgf@path@lasty=\dimen267
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@shorten@end@additional=\dimen268
+\pgf@shorten@start@additional=\dimen269
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfpic=\box60
+\pgf@hbox=\box61
+\pgf@layerbox@main=\box62
+\pgf@picture@serial@count=\count300
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgflinewidth=\dimen270
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@pt@x=\dimen271
+\pgf@pt@y=\dimen272
+\pgf@pt@temp=\dimen273
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowsep=\dimen274
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@max=\dimen275
+\pgf@sys@shading@range@num=\count301
+\pgf@shadingcount=\count302
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfexternal@startupbox=\box63
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box64
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen276
+\pgf@nodesepend=\dimen277
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+))
+(C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.sty (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.sty (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex)) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex)) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor.code.tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen278
+\pgffor@skip=\dimen279
+\pgffor@stack=\toks34
+\pgffor@toks=\toks35
+)) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz\tikz.code.tex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+ (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count303
+\pgfplotmarksize=\dimen280
+)
+\tikz@lastx=\dimen281
+\tikz@lasty=\dimen282
+\tikz@lastxsaved=\dimen283
+\tikz@lastysaved=\dimen284
+\tikz@lastmovetox=\dimen285
+\tikz@lastmovetoy=\dimen286
+\tikzleveldistance=\dimen287
+\tikzsiblingdistance=\dimen288
+\tikz@figbox=\box65
+\tikz@figbox@bg=\box66
+\tikz@tempbox=\box67
+\tikz@tempbox@bg=\box68
+\tikztreelevel=\count304
+\tikznumberofchildren=\count305
+\tikznumberofcurrentchild=\count306
+\tikz@fig@count=\count307
+ (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count308
+\pgfmatrixcurrentcolumn=\count309
+\pgf@matrix@numberofcolumns=\count310
+)
+\tikz@expandcount=\count311
+ (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/tools\xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/l3keys2e\l3keys2e.sty
+Package: l3keys2e 2024-05-08 LaTeX2e option processing using LaTeX3 keys
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryarrows.code.tex
+File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\arrowsize=\dimen289
+)) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.pathmorphing.code.tex (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.code.tex (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduledecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen290
+\pgfdecoratedremainingdistance=\dimen291
+\pgfdecoratedinputsegmentcompleteddistance=\dimen292
+\pgfdecoratedinputsegmentremainingdistance=\dimen293
+\pgf@decorate@distancetomove=\dimen294
+\pgf@decorate@repeatstate=\count312
+\pgfdecorationsegmentamplitude=\dimen295
+\pgfdecorationsegmentlength=\dimen296
+)
+\tikz@lib@dec@box=\box69
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decorations\pgflibrarydecorations.pathmorphing.code.tex)) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarytrees.code.tex
+File: tikzlibrarytrees.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+\l__tikzsymbols_Moai_thickness_dim=\dimen297
+\l__tikzsymbols_Kochtopf_nr_arguments_int=\count313
+\l__tikzsymbols_Bratpfanne_nr_arguments_int=\count314
+\l__tikzsymbols_Schneebesen_nr_arguments_int=\count315
+\l__tikzsymbols_Sieb_nr_arguments_int=\count316
+\l__tikzsymbols_Purierstab_nr_arguments_int=\count317
+\l__tikzsymbols_Dreizack_nr_arguments_int=\count318
+\l__tikzsymbols_Backblech_nr_arguments_int=\count319
+\l__tikzsymbols_Ofen_nr_arguments_int=\count320
+\l__tikzsymbols_Pfanne_nr_arguments_int=\count321
+\l__tikzsymbols_Herd_nr_arguments_int=\count322
+\l__tikzsymbols_Saftpresse_nr_arguments_int=\count323
+\l__tikzsymbols_Schussel_nr_arguments_int=\count324
+\l__tikzsymbols_Schaler_nr_arguments_int=\count325
+\l__tikzsymbols_Reibe_nr_arguments_int=\count326
+\l__tikzsymbols_Flasche_nr_arguments_int=\count327
+\l__tikzsymbols_Nudelholz_nr_arguments_int=\count328
+\l__tikzsymbols_Knoblauchpresse_nr_arguments_int=\count329
+\l__tikzsymbols_Sadey_nr_arguments_int=\count330
+\l__tikzsymbols_dSadey_nr_arguments_int=\count331
+\l__tikzsymbols_Changey_nr_arguments_int=\count332
+\l__tikzsymbols_dChangey_nr_arguments_int=\count333
+\l__tikzsymbols_cChangey_nr_arguments_int=\count334
+\l__tikzsymbols_dcChangey_nr_arguments_int=\count335
+\l__tikzsymbols_Annoey_nr_arguments_int=\count336
+\l__tikzsymbols_dAnnoey_nr_arguments_int=\count337
+\l__tikzsymbols_Smiley_nr_arguments_int=\count338
+\l__tikzsymbols_dSmiley_nr_arguments_int=\count339
+\l__tikzsymbols_Laughey_nr_arguments_int=\count340
+\l__tikzsymbols_dLaughey_nr_arguments_int=\count341
+\l__tikzsymbols_Neutrey_nr_arguments_int=\count342
+\l__tikzsymbols_dNeutrey_nr_arguments_int=\count343
+\l__tikzsymbols_Winkey_nr_arguments_int=\count344
+\l__tikzsymbols_oldWinkey_nr_arguments_int=\count345
+\l__tikzsymbols_dWinkey_nr_arguments_int=\count346
+\l__tikzsymbols_olddWinkey_nr_arguments_int=\count347
+\l__tikzsymbols_Sey_nr_arguments_int=\count348
+\l__tikzsymbols_dSey_nr_arguments_int=\count349
+\l__tikzsymbols_Xey_nr_arguments_int=\count350
+\l__tikzsymbols_dXey_nr_arguments_int=\count351
+\l__tikzsymbols_Innocey_nr_arguments_int=\count352
+\l__tikzsymbols_wInnocey_nr_arguments_int=\count353
+\l__tikzsymbols_dInnocey_nr_arguments_int=\count354
+\l__tikzsymbols_Cooley_nr_arguments_int=\count355
+\l__tikzsymbols_dCooley_nr_arguments_int=\count356
+\l__tikzsymbols_Tongey_nr_arguments_int=\count357
+\l__tikzsymbols_dTongey_nr_arguments_int=\count358
+\l__tikzsymbols_Nursey_nr_arguments_int=\count359
+\l__tikzsymbols_dNursey_nr_arguments_int=\count360
+\l__tikzsymbols_Vomey_nr_arguments_int=\count361
+\l__tikzsymbols_dVomey_nr_arguments_int=\count362
+\l__tikzsymbols_Walley_nr_arguments_int=\count363
+\l__tikzsymbols_rWalley_nr_arguments_int=\count364
+\l__tikzsymbols_dWalley_nr_arguments_int=\count365
+\l__tikzsymbols_drWalley_nr_arguments_int=\count366
+\l__tikzsymbols_Cat_nr_arguments_int=\count367
+\l__tikzsymbols_SchrodingersCat_nr_arguments_int=\count368
+\l__tikzsymbols_Ninja_nr_arguments_int=\count369
+\l__tikzsymbols_dNinja_nr_arguments_int=\count370
+\l__tikzsymbols_Sleepey_nr_arguments_int=\count371
+\l__tikzsymbols_dSleepey_nr_arguments_int=\count372
+\l__tikzsymbols_Maskey_nr_arguments_int=\count373
+\l__tikzsymbols_NiceReapey_nr_arguments_int=\count374
+\l__tikzsymbols_Strichmaxerl_nr_arguments_int=\count375
+\l__tikzsymbols_Person_nr_arguments_int=\count376
+\l__tikzsymbols_Heart_nr_arguments_int=\count377
+\l__tikzsymbols_dHeart_nr_arguments_int=\count378
+\l__tikzsymbols_HeartBroken_nr_arguments_int=\count379
+\l__tikzsymbols_Candle_nr_arguments_int=\count380
+\l__tikzsymbols_Fire_nr_arguments_int=\count381
+\l__tikzsymbols_Coffeecup_nr_arguments_int=\count382
+\l__tikzsymbols_Chair_nr_arguments_int=\count383
+\l__tikzsymbols_Bed_nr_arguments_int=\count384
+\l__tikzsymbols_Tribar_nr_arguments_int=\count385
+\l__tikzsymbols_Moai_nr_arguments_int=\count386
+\l__tikzsymbols_Snowman_nr_arguments_int=\count387
+\l__tikzsymbols_BasicTree_nr_arguments_int=\count388
+\l__tikzsymbols_WorstTree_nr_arguments_int=\count389
+\l__tikzsymbols_Springtree_nr_arguments_int=\count390
+\l__tikzsymbols_Summertree_nr_arguments_int=\count391
+\l__tikzsymbols_Autumntree_nr_arguments_int=\count392
+\l__tikzsymbols_Wintertree_nr_arguments_int=\count393
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/fancyvrb\fancyvrb.sty
+Package: fancyvrb 2024/01/20 4.5c verbatim text (tvz,hv)
+\FV@CodeLineNo=\count394
+\FV@InFile=\read3
+\FV@TabBox=\box70
+\c@FancyVerbLine=\count395
+\FV@StepNumber=\count396
+\FV@OutFile=\write4
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/xurl\xurl.sty
+Package: xurl 2022/01/09 v 0.10 modify URL breaks
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/caption\subcaption.sty
+Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
+Package caption Info: New subtype `subfigure' on input line 238.
+\c@subfigure=\count397
+Package caption Info: New subtype `subtable' on input line 238.
+\c@subtable=\count398
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
+\lst@mode=\count399
+\lst@gtempboxa=\box71
+\lst@token=\toks36
+\lst@length=\count400
+\lst@currlwidth=\dimen298
+\lst@column=\count401
+\lst@pos=\count402
+\lst@lostspace=\dimen299
+\lst@width=\dimen300
+\lst@newlines=\count403
+\lst@lineno=\count404
+\lst@maxwidth=\dimen301
+ (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.sty
+File: lstpatch.sty 2024/05/25 1.10b (Carsten Heinz)
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+File: lstmisc.sty 2024/05/25 1.10b (Carsten Heinz)
+\c@lstnumber=\count405
+\lst@skipnumbers=\count406
+\lst@framebox=\box72
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
+File: listings.cfg 2024/05/25 1.10b listings configuration
+))
+Package: listings 2024/05/25 1.10b (Carsten Heinz)
+ (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+Package: babel 2024/06/26 v24.7 The Babel package
+\babel@savecnt=\count407
+\U@D=\dimen302
+\l@unhyphenated=\language79
+ (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
+\bbl@readstream=\read4
+\bbl@dirlevel=\count408
+
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of babel
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/babel-spanish\spanish.ldf
+Language: spanish.ldf 2021/05/27 v5.0q Spanish support from the babel system
+\es@quottoks=\toks37
+\es@quotdepth=\count409
+)) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/es\babel-spanish.tex
+Package babel Info: Importing font and identification data for spanish
+(babel)             from babel-es.ini. Reported on input line 11.
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/lastpage\lastpage.sty
+Package: lastpage 2024/07/03 v2.1b lastpage: 2.09 or 2e? (HMM)
+ (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/lastpage\lastpage2e.sty
+Package: lastpage2e 2024/07/03 v2.1b Decide which 2e lastpage version to use (HMM)
+ (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/lastpage\lastpagemodern.sty
+Package: lastpagemodern 2024-07-03 v2.1b Refers to last page's name (HMM; JPG)
+\c@lastpagecount=\count410
+) 
+)) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip57
+\enit@outerparindent=\dimen303
+\enit@toks=\toks38
+\enit@inbox=\box73
+\enit@count@id=\count411
+\enitdp@description=\count412
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcolorbox.sty
+Package: tcolorbox 2024/01/10 version 6.2.0 text color boxes
+ (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/tools\verbatim.sty
+Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks39
+\verbatim@line=\toks40
+\verbatim@in@stream=\read5
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/environ\environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+ (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/trimspaces\trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+)
+\@envbody=\toks41
+)
+\tcb@titlebox=\box74
+\tcb@upperbox=\box75
+\tcb@lowerbox=\box76
+\tcb@phantombox=\box77
+\c@tcbbreakpart=\count413
+\c@tcblayer=\count414
+\c@tcolorbox@number=\count415
+\l__tcobox_tmpa_box=\box78
+\l__tcobox_tmpa_dim=\dimen304
+\tcb@temp=\box79
+\tcb@temp=\box80
+\tcb@temp=\box81
+\tcb@temp=\box82
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/tools\multicol.sty
+Package: multicol 2024/05/23 v1.9h multicolumn formatting (FMi)
+\c@tracingmulticols=\count416
+\mult@box=\box83
+\multicol@leftmargin=\dimen305
+\c@unbalance=\count417
+\c@collectmore=\count418
+\doublecol@number=\count419
+\multicoltolerance=\count420
+\multicolpretolerance=\count421
+\full@width=\dimen306
+\page@free=\dimen307
+\premulticols=\dimen308
+\postmulticols=\dimen309
+\multicolsep=\skip58
+\multicolbaselineskip=\skip59
+\partial@page=\box84
+\last@line=\box85
+\mc@boxedresult=\box86
+\maxbalancingoverflow=\dimen310
+\mult@rightbox=\box87
+\mult@grightbox=\box88
+\mult@firstbox=\box89
+\mult@gfirstbox=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\@tempa=\box94
+\@tempa=\box95
+\@tempa=\box96
+\@tempa=\box97
+\@tempa=\box98
+\@tempa=\box99
+\@tempa=\box100
+\@tempa=\box101
+\@tempa=\box102
+\@tempa=\box103
+\@tempa=\box104
+\@tempa=\box105
+\@tempa=\box106
+\@tempa=\box107
+\@tempa=\box108
+\@tempa=\box109
+\@tempa=\box110
+\@tempa=\box111
+\@tempa=\box112
+\@tempa=\box113
+\@tempa=\box114
+\@tempa=\box115
+\@tempa=\box116
+\@tempa=\box117
+\@tempa=\box118
+\@tempa=\box119
+\@tempa=\box120
+\@tempa=\box121
+\@tempa=\box122
+\@tempa=\box123
+\@tempa=\box124
+\@tempa=\box125
+\@tempa=\box126
+\c@minrows=\count422
+\c@columnbadness=\count423
+\c@finalcolumnbadness=\count424
+\last@try=\dimen311
+\multicolovershoot=\dimen312
+\multicolundershoot=\dimen313
+\mult@nat@firstbox=\box127
+\colbreak@box=\box128
+\mc@col@check@num=\count425
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryautomata.code.tex
+File: tikzlibraryautomata.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryshapes.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes\pgflibraryshapes.multipart.code.tex
+File: pgflibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodepartlowerbox=\box129
+\pgfnodeparttwobox=\box130
+\pgfnodepartthreebox=\box131
+\pgfnodepartfourbox=\box132
+\pgfnodeparttwentybox=\box133
+\pgfnodepartnineteenbox=\box134
+\pgfnodeparteighteenbox=\box135
+\pgfnodepartseventeenbox=\box136
+\pgfnodepartsixteenbox=\box137
+\pgfnodepartfifteenbox=\box138
+\pgfnodepartfourteenbox=\box139
+\pgfnodepartthirteenbox=\box140
+\pgfnodeparttwelvebox=\box141
+\pgfnodepartelevenbox=\box142
+\pgfnodeparttenbox=\box143
+\pgfnodepartninebox=\box144
+\pgfnodeparteightbox=\box145
+\pgfnodepartsevenbox=\box146
+\pgfnodepartsixbox=\box147
+\pgfnodepartfivebox=\box148
+))) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (p05_Cheuk_Kelly_Ng_Pante.aux
+LaTeX Info: Redefining \. on input line 9.
+LaTeX Info: Redefining \% on input line 9.
+)
+\openout1 = `p05_Cheuk_Kelly_Ng_Pante.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 170.
+LaTeX Font Info:    ... okay on input line 170.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 170.
+LaTeX Font Info:    ... okay on input line 170.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 170.
+LaTeX Font Info:    ... okay on input line 170.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 170.
+LaTeX Font Info:    ... okay on input line 170.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 170.
+LaTeX Font Info:    ... okay on input line 170.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 170.
+LaTeX Font Info:    ... okay on input line 170.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 170.
+LaTeX Font Info:    ... okay on input line 170.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 170.
+LaTeX Font Info:    ... okay on input line 170.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 170.
+LaTeX Font Info:    ... okay on input line 170.
+ (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count426
+\scratchdimen=\dimen314
+\scratchbox=\box149
+\nofMPsegments=\count427
+\nofMParguments=\count428
+\everyMPshowfont=\toks42
+\MPscratchCnt=\count429
+\MPscratchDim=\dimen315
+\MPnumerator=\count430
+\makeMPintoPDFobject=\count431
+\everyMPtoPDFconversion=\toks43
+) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: End \AtBeginDocument code.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(56.9055pt, 500.484pt, 56.9055pt)
+* v-part:(T,H,B)=(85.35826pt, 624.25346pt, 85.35826pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=500.484pt
+* \textheight=624.25346pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-23.91173pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=59.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package hyperref Info: Link coloring OFF on input line 170.
+(p05_Cheuk_Kelly_Ng_Pante.out) (p05_Cheuk_Kelly_Ng_Pante.out)
+\@outlinefile=\write5
+\openout5 = `p05_Cheuk_Kelly_Ng_Pante.out'.
+
+\c@lstlisting=\count432
+LaTeX Info: Redefining \. on input line 170.
+LaTeX Info: Redefining \% on input line 170.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 178.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 178.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 178.
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 178.
+ (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/wasysym\uwasy.fd
+File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
+)
+
+[1
+
+{C:/Users/cheuk/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (p05_Cheuk_Kelly_Ng_Pante.toc
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 3.
+)
+\tf@toc=\write6
+\openout6 = `p05_Cheuk_Kelly_Ng_Pante.toc'.
+
+
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.186 \cleardoublepage
+                       [1]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 194.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 194.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 194.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Sigma' on input line 194.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 194.
+
+<img/DFA_01.png, id=145, 663.22781pt x 361.35pt>
+File: img/DFA_01.png Graphic file (type png)
+<use img/DFA_01.png>
+Package pdftex.def Info: img/DFA_01.png  used on input line 197.
+(pdftex.def)             Requested size: 397.93976pt x 216.81168pt.
+<img/DFA_01_test.png, id=147, 663.98062pt x 362.85562pt>
+File: img/DFA_01_test.png Graphic file (type png)
+<use img/DFA_01_test.png>
+Package pdftex.def Info: img/DFA_01_test.png  used on input line 203.
+(pdftex.def)             Requested size: 431.58228pt x 235.85336pt.
+
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.207 \newpage
+               [1
+
+ <./img/DFA_01.png> <./img/DFA_01_test.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 209.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Sigma' on input line 209.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 209.
+
+<img/DFA_02.png, id=156, 438.8897pt x 360.59718pt>
+File: img/DFA_02.png Graphic file (type png)
+<use img/DFA_02.png>
+Package pdftex.def Info: img/DFA_02.png  used on input line 212.
+(pdftex.def)             Requested size: 307.22069pt x 252.4163pt.
+<img/DFA_02_test.png, id=157, 744.53156pt x 362.10281pt>
+File: img/DFA_02_test.png Graphic file (type png)
+<use img/DFA_02_test.png>
+Package pdftex.def Info: img/DFA_02_test.png  used on input line 218.
+(pdftex.def)             Requested size: 483.93977pt x 235.36403pt.
+
+
+[2 <./img/DFA_02.png> <./img/DFA_02_test.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 224.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Sigma' on input line 224.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 224.
+
+<img/DFA_03.png, id=166, 603.0028pt x 362.85562pt>
+File: img/DFA_03.png Graphic file (type png)
+<use img/DFA_03.png>
+Package pdftex.def Info: img/DFA_03.png  used on input line 227.
+(pdftex.def)             Requested size: 361.80447pt x 217.71504pt.
+<img/DFA_03_test.png, id=167, 781.41937pt x 362.85562pt>
+File: img/DFA_03_test.png Graphic file (type png)
+<use img/DFA_03_test.png>
+Package pdftex.def Info: img/DFA_03_test.png  used on input line 233.
+(pdftex.def)             Requested size: 468.85524pt x 217.71504pt.
+
+
+[3 <./img/DFA_03.png> <./img/DFA_03_test.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 239.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Sigma' on input line 239.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 239.
+
+<img/DFA_04.png, id=176, 441.14813pt x 362.85562pt>
+File: img/DFA_04.png Graphic file (type png)
+<use img/DFA_04.png>
+Package pdftex.def Info: img/DFA_04.png  used on input line 242.
+(pdftex.def)             Requested size: 308.80157pt x 253.99721pt.
+<img/DFA_04_test.png, id=177, 746.03719pt x 362.85562pt>
+File: img/DFA_04_test.png Graphic file (type png)
+<use img/DFA_04_test.png>
+Package pdftex.def Info: img/DFA_04_test.png  used on input line 248.
+(pdftex.def)             Requested size: 484.91843pt x 235.85336pt.
+
+
+[4 <./img/DFA_04.png> <./img/DFA_04_test.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 254.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 254.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 254.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Sigma' on input line 254.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 254.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 254.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leq' on input line 254.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leq' on input line 254.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 254.
+
+<img/DFA_05.png, id=186, 1444.64719pt x 776.14969pt>
+File: img/DFA_05.png Graphic file (type png)
+<use img/DFA_05.png>
+Package pdftex.def Info: img/DFA_05.png  used on input line 257.
+(pdftex.def)             Requested size: 491.17355pt x 263.8874pt.
+<img/DFA_05_test.png, id=187, 1094.58937pt x 363.60844pt>
+File: img/DFA_05_test.png Graphic file (type png)
+<use img/DFA_05_test.png>
+Package pdftex.def Info: img/DFA_05_test.png  used on input line 263.
+(pdftex.def)             Requested size: 492.56067pt x 163.62228pt.
+
+
+[5 <./img/DFA_05.png> <./img/DFA_05_test.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 269.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Sigma' on input line 269.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 269.
+
+<img/DFA_06.png, id=197, 498.36188pt x 438.13687pt>
+File: img/DFA_06.png Graphic file (type png)
+<use img/DFA_06.png>
+Package pdftex.def Info: img/DFA_06.png  used on input line 272.
+(pdftex.def)             Requested size: 299.01942pt x 262.88414pt.
+<img/DFA_06_test.png, id=198, 743.02594pt x 353.82187pt>
+File: img/DFA_06_test.png Graphic file (type png)
+<use img/DFA_06_test.png>
+Package pdftex.def Info: img/DFA_06_test.png  used on input line 278.
+(pdftex.def)             Requested size: 482.96114pt x 229.98148pt.
+
+
+[6 <./img/DFA_06.png> <./img/DFA_06_test.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 284.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Sigma' on input line 284.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 284.
+
+<img/DFA_07.png, id=207, 554.82281pt x 360.59718pt>
+File: img/DFA_07.png Graphic file (type png)
+<use img/DFA_07.png>
+Package pdftex.def Info: img/DFA_07.png  used on input line 287.
+(pdftex.def)             Requested size: 332.89626pt x 216.35997pt.
+<img/DFA_07_test.png, id=208, 762.59906pt x 360.59718pt>
+File: img/DFA_07_test.png Graphic file (type png)
+<use img/DFA_07_test.png>
+Package pdftex.def Info: img/DFA_07_test.png  used on input line 293.
+(pdftex.def)             Requested size: 495.68352pt x 234.38539pt.
+
+
+[7 <./img/DFA_07.png> <./img/DFA_07_test.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 299.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Sigma' on input line 299.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 299.
+
+<img/DFA_08.png, id=217, 496.10344pt x 362.85562pt>
+File: img/DFA_08.png Graphic file (type png)
+<use img/DFA_08.png>
+Package pdftex.def Info: img/DFA_08.png  used on input line 302.
+(pdftex.def)             Requested size: 297.66435pt x 217.71504pt.
+<img/DFA_08_test.png, id=218, 651.18282pt x 362.10281pt>
+File: img/DFA_08_test.png Graphic file (type png)
+<use img/DFA_08_test.png>
+Package pdftex.def Info: img/DFA_08_test.png  used on input line 308.
+(pdftex.def)             Requested size: 423.26381pt x 235.36403pt.
+
+
+[8 <./img/DFA_08.png> <./img/DFA_08_test.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 314.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Sigma' on input line 314.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 314.
+
+<img/DFA_09.png, id=227, 469.755pt x 362.85562pt>
+File: img/DFA_09.png Graphic file (type png)
+<use img/DFA_09.png>
+Package pdftex.def Info: img/DFA_09.png  used on input line 317.
+(pdftex.def)             Requested size: 281.85518pt x 217.71504pt.
+<img/DFA_09_test.png, id=228, 697.10437pt x 362.10281pt>
+File: img/DFA_09_test.png Graphic file (type png)
+<use img/DFA_09_test.png>
+Package pdftex.def Info: img/DFA_09_test.png  used on input line 323.
+(pdftex.def)             Requested size: 453.11247pt x 235.36403pt.
+
+
+[9 <./img/DFA_09.png> <./img/DFA_09_test.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 329.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Sigma' on input line 329.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 329.
+
+<img/DFA_10.png, id=237, 630.10406pt x 483.30562pt>
+File: img/DFA_10.png Graphic file (type png)
+<use img/DFA_10.png>
+Package pdftex.def Info: img/DFA_10.png  used on input line 332.
+(pdftex.def)             Requested size: 346.5583pt x 265.81891pt.
+<img/DFA_10_test.png, id=238, 886.06032pt x 462.22687pt>
+File: img/DFA_10_test.png Graphic file (type png)
+<use img/DFA_10_test.png>
+Package pdftex.def Info: img/DFA_10_test.png  used on input line 338.
+(pdftex.def)             Requested size: 443.02908pt x 231.11287pt.
+
+
+[10 <./img/DFA_10.png> <./img/DFA_10_test.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 345.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Sigma' on input line 345.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 345.
+
+<img/NFA_01.png, id=247, 440.39531pt x 362.85562pt>
+File: img/NFA_01.png Graphic file (type png)
+<use img/NFA_01.png>
+Package pdftex.def Info: img/NFA_01.png  used on input line 348.
+(pdftex.def)             Requested size: 264.23921pt x 217.71504pt.
+
+
+[11 <./img/NFA_01.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 363.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Sigma' on input line 363.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 363.
+
+<img/NFA_02.png, id=256, 572.89032pt x 340.27126pt>
+File: img/NFA_02.png Graphic file (type png)
+<use img/NFA_02.png>
+Package pdftex.def Info: img/NFA_02.png  used on input line 366.
+(pdftex.def)             Requested size: 343.73683pt x 204.16432pt.
+<img/NFA_02_test.png, id=257, 712.91344pt x 338.76563pt>
+File: img/NFA_02_test.png Graphic file (type png)
+<use img/NFA_02_test.png>
+Package pdftex.def Info: img/NFA_02_test.png  used on input line 372.
+(pdftex.def)             Requested size: 427.75136pt x 203.26093pt.
+
+
+[12 <./img/NFA_02.png> <./img/NFA_02_test.png>]
+<img/NFA_to_DFA_02.png, id=266, 700.86844pt x 408.77719pt>
+File: img/NFA_to_DFA_02.png Graphic file (type png)
+<use img/NFA_to_DFA_02.png>
+Package pdftex.def Info: img/NFA_to_DFA_02.png  used on input line 398.
+(pdftex.def)             Requested size: 315.38788pt x 183.94803pt.
+<img/DFA_to_DFA_minimized_02.png, id=267, 700.11563pt x 411.78844pt>
+File: img/DFA_to_DFA_minimized_02.png Graphic file (type png)
+<use img/DFA_to_DFA_minimized_02.png>
+Package pdftex.def Info: img/DFA_to_DFA_minimized_02.png  used on input line 412.
+(pdftex.def)             Requested size: 280.04129pt x 164.71245pt.
+
+
+[13 <./img/NFA_to_DFA_02.png> <./img/DFA_to_DFA_minimized_02.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 418.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Sigma' on input line 418.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 418.
+
+
+
+[14]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 422.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Sigma' on input line 422.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 422.
+
+<img/NFA_04.png, id=280, 758.835pt x 389.95688pt>
+File: img/NFA_04.png Graphic file (type png)
+<use img/NFA_04.png>
+Package pdftex.def Info: img/NFA_04.png  used on input line 425.
+(pdftex.def)             Requested size: 455.30452pt x 233.97592pt.
+<img/NFA_04_test.png, id=281, 757.32938pt x 269.50688pt>
+File: img/NFA_04_test.png Graphic file (type png)
+<use img/NFA_04_test.png>
+Package pdftex.def Info: img/NFA_04_test.png  used on input line 431.
+(pdftex.def)             Requested size: 416.53244pt x 148.22923pt.
+
+
+[15 <./img/NFA_04.png> <./img/NFA_04_test.png>]
+<img/NFA_to_DFA_04.png, id=290, 925.95938pt x 389.20406pt>
+File: img/NFA_to_DFA_04.png Graphic file (type png)
+<use img/NFA_to_DFA_04.png>
+Package pdftex.def Info: img/NFA_to_DFA_04.png  used on input line 459.
+(pdftex.def)             Requested size: 370.3772pt x 155.67886pt.
+<img/DFA_to_DFA_minimized_04.png, id=291, 924.45375pt x 387.69844pt>
+File: img/DFA_to_DFA_minimized_04.png Graphic file (type png)
+<use img/DFA_to_DFA_minimized_04.png>
+Package pdftex.def Info: img/DFA_to_DFA_minimized_04.png  used on input line 474.
+(pdftex.def)             Requested size: 369.77495pt x 155.07661pt.
+
+
+[16 <./img/NFA_to_DFA_04.png> <./img/DFA_to_DFA_minimized_04.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 480.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Sigma' on input line 480.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 480.
+
+
+
+[17]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 484.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Sigma' on input line 484.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 484.
+
+<img/NFA_06.png, id=305, 578.91281pt x 463.7325pt>
+File: img/NFA_06.png Graphic file (type png)
+<use img/NFA_06.png>
+Package pdftex.def Info: img/NFA_06.png  used on input line 487.
+(pdftex.def)             Requested size: 318.40303pt x 255.05365pt.
+<img/NFA_06_test.png, id=306, 746.79pt x 466.74374pt>
+File: img/NFA_06_test.png Graphic file (type png)
+<use img/NFA_06_test.png>
+Package pdftex.def Info: img/NFA_06_test.png  used on input line 493.
+(pdftex.def)             Requested size: 373.39407pt x 233.37129pt.
+
+
+[18 <./img/NFA_06.png> <./img/NFA_06_test.png>]
+<img/NFA_to_DFA_06.png, id=315, 1017.04968pt x 496.85625pt>
+File: img/NFA_to_DFA_06.png Graphic file (type png)
+<use img/NFA_to_DFA_06.png>
+Package pdftex.def Info: img/NFA_to_DFA_06.png  used on input line 534.
+(pdftex.def)             Requested size: 457.66812pt x 223.58324pt.
+<img/DFA_to_DFA_minimized_06.png, id=316, 1444.64719pt x 773.13844pt>
+File: img/DFA_to_DFA_minimized_06.png Graphic file (type png)
+<use img/DFA_to_DFA_minimized_06.png>
+Package pdftex.def Info: img/DFA_to_DFA_minimized_06.png  used on input line 549.
+(pdftex.def)             Requested size: 433.3975pt x 231.94333pt.
+
+
+[19 <./img/NFA_to_DFA_06.png>]
+
+[20 <./img/DFA_to_DFA_minimized_06.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 555.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 555.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 555.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Sigma' on input line 555.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 555.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 555.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\geq' on input line 555.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 555.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 555.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 555.
+
+<img/NFA_07.png, id=329, 721.94719pt x 535.2497pt>
+File: img/NFA_07.png Graphic file (type png)
+<use img/NFA_07.png>
+Package pdftex.def Info: img/NFA_07.png  used on input line 558.
+(pdftex.def)             Requested size: 288.77376pt x 214.09608pt.
+<img/NFA_07_test.png, id=330, 721.94719pt x 534.49687pt>
+File: img/NFA_07_test.png Graphic file (type png)
+<use img/NFA_07_test.png>
+Package pdftex.def Info: img/NFA_07_test.png  used on input line 564.
+(pdftex.def)             Requested size: 324.87323pt x 240.52136pt.
+
+
+[21 <./img/NFA_07.png> <./img/NFA_07_test.png>]
+<img/NFA_to_DFA_07.png, id=339, 1164.60094pt x 536.75531pt>
+File: img/NFA_to_DFA_07.png Graphic file (type png)
+<use img/NFA_to_DFA_07.png>
+Package pdftex.def Info: img/NFA_to_DFA_07.png  used on input line 605.
+(pdftex.def)             Requested size: 465.83212pt x 214.6983pt.
+
+
+[22 <./img/NFA_to_DFA_07.png>]
+<img/DFA_to_DFA_minimized_07.png, id=346, 1047.16219pt x 536.0025pt>
+File: img/DFA_to_DFA_minimized_07.png Graphic file (type png)
+<use img/DFA_to_DFA_minimized_07.png>
+Package pdftex.def Info: img/DFA_to_DFA_minimized_07.png  used on input line 624.
+(pdftex.def)             Requested size: 471.21863pt x 241.1989pt.
+
+
+[23 <./img/DFA_to_DFA_minimized_07.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 631.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Sigma' on input line 631.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 631.
+
+<img/nfa_mod.png, id=354, 1858.945pt x 1057.9525pt>
+File: img/nfa_mod.png Graphic file (type png)
+<use img/nfa_mod.png>
+Package pdftex.def Info: img/nfa_mod.png  used on input line 635.
+(pdftex.def)             Requested size: 371.78242pt x 211.58675pt.
+<img/Mod_test.png, id=355, 1858.945pt x 1057.9525pt>
+File: img/Mod_test.png Graphic file (type png)
+<use img/Mod_test.png>
+Package pdftex.def Info: img/Mod_test.png  used on input line 641.
+(pdftex.def)             Requested size: 371.78242pt x 211.58675pt.
+
+
+[24 <./img/nfa_mod.png> <./img/Mod_test.png>]
+<img/mod_nfa_to_dfa.png, id=364, 1858.945pt x 1057.9525pt>
+File: img/mod_nfa_to_dfa.png Graphic file (type png)
+<use img/mod_nfa_to_dfa.png>
+Package pdftex.def Info: img/mod_nfa_to_dfa.png  used on input line 650.
+(pdftex.def)             Requested size: 371.78242pt x 211.58675pt.
+
+
+[25 <./img/mod_nfa_to_dfa.png>]
+<img/mod_minimized.png, id=371, 1858.945pt x 1057.9525pt>
+File: img/mod_minimized.png Graphic file (type png)
+<use img/mod_minimized.png>
+Package pdftex.def Info: img/mod_minimized.png  used on input line 668.
+(pdftex.def)             Requested size: 371.78242pt x 211.58675pt.
+
+
+[26 <./img/mod_minimized.png>] 
+enddocument/afterlastpage: lastpage setting LastPage.
+(p05_Cheuk_Kelly_Ng_Pante.aux
+LaTeX Info: Redefining \. on input line 9.
+LaTeX Info: Redefining \% on input line 9.
+)
+ ***********
+LaTeX2e <2024-06-01> patch level 2
+L3 programming layer <2024-05-27>
+ ***********
+Package rerunfilecheck Info: File `p05_Cheuk_Kelly_Ng_Pante.out' has not changed.
+(rerunfilecheck)             Checksum: 00B1B17EDB91464FCD8C270842AFFCC1;14259.
+ ) 
+Here is how much of TeX's memory you used:
+ 31066 strings out of 473904
+ 620830 string characters out of 5726600
+ 1944908 words of memory out of 5000000
+ 53361 multiletter control sequences out of 15000+600000
+ 565082 words of font info for 61 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 99i,8n,117p,1389b,484s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on p05_Cheuk_Kelly_Ng_Pante.pdf (28 pages, 1934130 bytes).
+PDF statistics:
+ 437 PDF objects out of 1000 (max. 8388607)
+ 90 named destinations out of 1000 (max. 500000)
+ 386 words of extra memory for PDF output out of 10000 (max. 10000000)
+

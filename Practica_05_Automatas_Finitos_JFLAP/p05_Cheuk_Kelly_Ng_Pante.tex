@@ -625,4 +625,48 @@ El DFA ya está minimizado.
   \caption{DFA mínimo equivalente al NFA}
 \end{figure}
 
+\newpage
+
+\chapter{Modificación.}
+\section{DFA mínimo sobre el alfabeto $\Sigma = \{0, 1\}$ que reconozca cadenas que no empiezan y terminan por el mismo símbolo o tienen longitud impar.}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.2]{img/nfa_mod.png}
+  \caption{NFA Modificación}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.2]{img/Mod_test.png}
+  \caption{Cadenas de prueba para el NFA}
+\end{figure}
+
+\newpage
+
+Captura de la conversión de NFA a DFA
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.2]{img/mod_nfa_to_dfa.png}
+  \caption{NFA a DFA}
+\end{figure}
+
+Algoritmo de minimización de DFA
+\begin{itemize}
+  \item $\{q_1, q_4, q_7, q_8, q_2, q_5, q_9, q_{10}\} \{q_0, q_3, q_6\}$
+  \item $\{q_1, q_4, q_7, q_8, q_2, q_5, q_9, q_10\} \{q_0\} \{q_3\} \{q_6\}$
+  \item $\{q_1, q_4, q_7, q_8, q_5\} \{q_2, q_9, q_10\} \{q_0\} \{q_3\} \{q_6\}$
+  \item $\{q_4, q_5\} \{q_1, q_7, q_8\} \{q_2, q_9, q_10\} \{q_0\} \{q_3\} \{q_6\}$
+  \item $\{q_4\} \{q_5\} \{q_1, q_7, q_8\} \{q_2, q_9, q_10\} \{q_0\} \{q_3\} \{q_6\}$
+\end{itemize}
+
+\newpage
+
+Resultado de DFA mínimo:
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.2]{img/mod_minimized.png}
+  \caption{DFA mínimo}
+\end{figure}
+
 \end{document}
