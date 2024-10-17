@@ -46,6 +46,10 @@ class Symbol {
     return is;
   }
 
+  bool operator==(const Symbol& other) const {
+    return this->symbol_ == other.symbol_;
+  }
+
  private:
   char symbol_;
 };

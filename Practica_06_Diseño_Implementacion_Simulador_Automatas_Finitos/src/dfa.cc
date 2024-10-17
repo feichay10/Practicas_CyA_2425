@@ -60,7 +60,7 @@ DFA::DFA(std::vector<std::string> automaton_data) {
   std::cout << "Estado inicial: q" << initial_state_ << std::endl;
 
   // Leer los estados
-  for (int i = 3; i < automaton_data.size(); i++) {
+  for (int i = 3; i < automaton_data.size() - 1; i++) {
     std::stringstream ss(automaton_data[i]);
     int state_id;
     bool aceptation_state;
@@ -76,5 +76,17 @@ DFA::DFA(std::vector<std::string> automaton_data) {
       std::cout << "no aceptación";
     }
     std::cout << std::endl;
+
+    // Leer las transiciones
+    for (int j = 0; j < transitions_number; j++) {
+      std::string symbol;
+      int to_state;
+      ss >> symbol >> to_state;
+      Transition transition(state, Symbol(symbol[0]), State("q" + std::to_string(to_state), false, false));
+      transitions_.insert(transition);
+      std::cout << "  Transición: " << state_id_string << " -> " << symbol << " -> q" << to_state << std::endl;
+    }
   }
+
+  
 }

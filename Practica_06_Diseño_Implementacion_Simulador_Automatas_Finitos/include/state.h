@@ -30,6 +30,14 @@ class State {
   State(std::string name, bool start_state, bool aceptation_state);
   ~State() = default;
 
+  bool operator<(const State& state) const {
+    return state_id_ < state.state_id_;
+  }
+
+  bool operator==(const State& state) const {
+    return this->state_id_ == state.state_id_;
+  }
+
  private:
   bool start_state_;
   bool aceptation_state_;

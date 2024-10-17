@@ -24,7 +24,7 @@ State::State() {
   trasitions_number_ = 0;
 }
 
-State::State(std::string state_id_, bool start_state, bool aceptation_state) {
+State::State(std::string state_id, bool start_state, bool aceptation_state) {
   state_id_ = state_id;
   start_state_ = start_state;
   aceptation_state_ = aceptation_state;

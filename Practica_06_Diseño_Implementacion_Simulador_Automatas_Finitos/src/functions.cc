@@ -147,13 +147,12 @@ bool check_automata(std::vector<std::string> data_automata) {
 }
 
 void check_strings_automata(Automaton& automaton, std::vector<std::string> strings_data) {
-  // while (!strings_data.empty()) {
-  //   String string = strings_data.back();
-  //   strings_data.pop_back();
-  //   if (automaton.ReadStrings(string)) {
-  //     std::cout << string << " -> " << GREEN_BOLD << "Accepted" << RESET << std::endl;
-  //   } else {
-  //     std::cout << string << " -> " << RED_BOLD << "Rejected" << RESET << std::endl;
-  //   }
-  // }
+  for (size_t i = 0; i < strings_data.size(); ++i) {
+    std::cout << "Reading string: " << strings_data[i] << std::flush;
+    if (automaton.ReadStrings(strings_data[i])) {
+      std::cout << " -> Accepted" << std::endl;
+    } else {
+      std::cout << " -> Rejected" << std::endl;
+    }
+  }
 }

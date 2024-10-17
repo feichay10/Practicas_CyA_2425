@@ -36,11 +36,12 @@ class Language;
 class String {
  public:
   String();
-  String(std::string string);
+  String(const std::string& string);
   ~String() = default;
 
   std::vector<Symbol> GetString() const;
-  void SetString(std::string string);
+  void SetString(const std::string& string);
+  std::string GetString();
 
   void InsertSymbol(Symbol& symbol);
 

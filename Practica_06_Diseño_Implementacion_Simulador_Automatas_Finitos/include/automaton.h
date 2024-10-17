@@ -35,43 +35,10 @@ class Automaton {
   std::set<State> GetStates() const;
   Alphabet GetAlphabet() const;
   std::set<Transition> GetTransitions() const;
-  State GetInitialState() const;
+  int GetInitialState() const;
   std::set<State> GetFinalStates() const;
 
-  bool ReadStrings(String string);
-
-  // friend std::ostream& operator<<(std::ostream& os, const Automaton& automaton) {
-  //   os << "States: {";
-  //   for (auto it = automaton.states_.begin(); it != automaton.states_.end(); ++it) {
-  //     if (it != automaton.states_.begin()) {
-  //       os << ", ";
-  //     }
-  //     os << *it;
-  //   }
-  //   os << "}\n";
-
-  //   os << "Alphabet: " << automaton.alphabet_ << "\
-  //   \nTransitions: {";
-  //   for (auto it = automaton.transitions_.begin(); it != automaton.transitions_.end(); ++it) {
-  //     if (it != automaton.transitions_.begin()) {
-  //       os << ", ";
-  //     }
-  //     os << *it;
-  //   }
-  //   os << "}\n";
-
-  //   os << "Initial state: " << automaton.initial_state_ << "\n";
-  //   os << "Final states: {";
-  //   for (auto it = automaton.final_states_.begin(); it != automaton.final_states_.end(); ++it) {
-  //     if (it != automaton.final_states_.begin()) {
-  //       os << ", ";
-  //     }
-  //     os << *it;
-  //   }
-  //   os << "}\n";
-
-  //   return os;
-  // }
+  bool ReadStrings(const std::string& string);
 
  protected:
   Alphabet alphabet_;

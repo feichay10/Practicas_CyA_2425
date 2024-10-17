@@ -29,7 +29,7 @@ String::String() {}
  * 
  * @param String 
  */
-String::String(std::string string) {
+String::String(const std::string& string) {
   for (int i = 0; i < string.size(); i++) {
     string_.push_back(Symbol(string[i]));
   }
@@ -49,11 +49,19 @@ std::vector<Symbol> String::GetString() const {
  * 
  * @param String 
  */
-void String::SetString(std::string string) {
+void String::SetString(const std::string& string) {
   string_.clear();
   for (int i = 0; i < string.size(); i++) {
     string_.push_back(Symbol(string[i]));
   }
+}
+
+std::string String::GetString() {
+  std::string string;
+  for (int i = 0; i < string_.size(); i++) {
+    string += string_[i].GetSymbol();
+  }
+  return string;
 }
 
 /**

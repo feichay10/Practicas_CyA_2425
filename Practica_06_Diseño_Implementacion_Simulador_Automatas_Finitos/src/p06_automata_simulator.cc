@@ -40,6 +40,7 @@ int main(int argc, char* argv[]) {
         std::cout << "Es un NFA" << std::endl;
         automaton = new NFA(automaton_data);
       }
+      check_strings_automata(*automaton, strings_data);
     } else {
       exit(EXIT_FAILURE);
     }
