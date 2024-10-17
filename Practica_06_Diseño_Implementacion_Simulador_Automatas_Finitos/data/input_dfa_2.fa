@@ -1,0 +1,9 @@
+a b c
+4
+0
+0 1 3 a 1 b 0 c 0
+1 1 3 a 1 b 2 c 0
+2 1 3 a 1 b 1 c 3
+3 0 3 a 3 b 3 c 3
+
+id estado, aceptacion o no, num transiciones, transiciones (simbolo, estado al que va)
