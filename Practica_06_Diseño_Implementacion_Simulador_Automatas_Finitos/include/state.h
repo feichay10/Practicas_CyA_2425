@@ -22,7 +22,7 @@
 #include <string>
 #include <vector>
 
-#include "transition.h"
+// #include "transition.h"
 
 class State {
  public:
@@ -33,9 +33,9 @@ class State {
  private:
   bool start_state_;
   bool aceptation_state_;
-  std::string name_;
+  std::string state_id_;
   int trasitions_number_;
-  std::vector<Transition> transitions_;
+  // std::vector<Transition> transitions_;
 };
 
 #endif  // STATE_H

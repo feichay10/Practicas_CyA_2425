@@ -5,7 +5,7 @@
  * Asignatura: Computabilidad y Algoritmia
  * Curso: 2º
  * Práctica 6: Diseño e implementación de un simulador de autómatas finitos
- * @file state.c
+ * @file nfa.cc
  * @author Cheuk Kelly Ng Pante (alu0101364544@ull.edu.es)
  * @brief
  * @version 0.1
@@ -15,18 +15,10 @@
  *
  */
 
-#include "../include/state.h"
+#include "../include/nfa.h"
 
-State::State() {
-  state_id_ = "";
-  start_state_ = false;
-  aceptation_state_ = false;
-  trasitions_number_ = 0;
-}
-
-State::State(std::string state_id_, bool start_state, bool aceptation_state) {
-  state_id_ = state_id;
-  start_state_ = start_state;
-  aceptation_state_ = aceptation_state;
-  trasitions_number_ = 0;
+NFA::NFA(std::vector<std::string> automaton_data) {
+  for (int i = 0; i < automaton_data.size(); i++) {
+    std::cout << automaton_data[i] << std::endl;
+  }
 }

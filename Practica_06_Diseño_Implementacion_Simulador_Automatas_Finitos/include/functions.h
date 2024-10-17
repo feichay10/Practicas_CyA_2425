@@ -26,10 +26,12 @@
 #include <unordered_map>
 #include <set>
 
+#include "colors.h"
 #include "alphabet.h"
 #include "string.h"
 #include "colors.h"
 #include "language.h"
+#include "automaton.h"
 
 const char SPACE = ' ';
 
@@ -59,6 +61,6 @@ std::vector<std::string> read_file(std::string file_name);
 template <typename T>
 void write_file(std::string file_name, T& data);
 bool check_automata(std::vector<std::string> automaton_data);
-void set_strings_automata(Automaton& automata, std::vector<std::string> strings_data);
+void check_strings_automata(Automaton& automata, std::vector<std::string> strings_data);
 
 #endif  // FUNCTIONS_H

@@ -41,6 +41,11 @@ class Symbol {
     return os;
   }
 
+  friend std::istream& operator>>(std::istream& is, Symbol& symbol) {
+    is >> symbol.symbol_;
+    return is;
+  }
+
  private:
   char symbol_;
 };

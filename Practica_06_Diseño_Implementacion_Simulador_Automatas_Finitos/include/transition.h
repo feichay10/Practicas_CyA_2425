@@ -25,10 +25,12 @@
 #include "symbol.h"
 #include "state.h"
 
+// class State;
+
 class Transition {
  public:
-  Transition();
-  Transition(State from, Symbol symbol_, State to);
+  Transition() = default;
+  Transition(State from, Symbol symbol, State to);
   ~Transition() = default;
 
   State GetFrom() const;

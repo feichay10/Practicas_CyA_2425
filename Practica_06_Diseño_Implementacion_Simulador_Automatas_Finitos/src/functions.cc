@@ -146,3 +146,14 @@ bool check_automata(std::vector<std::string> data_automata) {
   return true;  // Si pasó todas las verificaciones, es un DFA
 }
 
+void check_strings_automata(Automaton& automaton, std::vector<std::string> strings_data) {
+  // while (!strings_data.empty()) {
+  //   String string = strings_data.back();
+  //   strings_data.pop_back();
+  //   if (automaton.ReadStrings(string)) {
+  //     std::cout << string << " -> " << GREEN_BOLD << "Accepted" << RESET << std::endl;
+  //   } else {
+  //     std::cout << string << " -> " << RED_BOLD << "Rejected" << RESET << std::endl;
+  //   }
+  // }
+}
