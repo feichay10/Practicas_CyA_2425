@@ -15,15 +15,14 @@
  *
  */
 
-#ifndef TRANSITION_H
-#define TRANSITION_H
+#pragma once
 
 #include <iostream>
 #include <string>
 #include <vector>
 
-#include "symbol.h"
 #include "state.h"
+#include "symbol.h"
 
 // class State;
 
@@ -55,5 +54,3 @@ class Transition {
   Symbol symbol_;
   State to_;
 };
-
-#endif  // TRANSITION_H

@@ -15,20 +15,27 @@
  *
  */
 
-#ifndef STATE_H
-#define STATE_H
+#pragma once
 
 #include <iostream>
 #include <string>
-#include <vector>
+#include <set>
 
-// #include "transition.h"
+#include "symbol.h"
+
+class Transition;
 
 class State {
  public:
   State();
+  State(int state_id);
   State(std::string name, bool start_state, bool aceptation_state);
   ~State() = default;
+
+  bool IsAceptationState() const;
+  bool IsStartState() const;
+  std::string GetStateId() const;
+  std::set<Transition> GetTransitions(Symbol symbol);
 
   bool operator<(const State& state) const {
     return state_id_ < state.state_id_;
@@ -43,7 +50,5 @@ class State {
   bool aceptation_state_;
   std::string state_id_;
   int trasitions_number_;
-  // std::vector<Transition> transitions_;
+  std::set<Transition> transitions_;
 };
-
-#endif  // STATE_H

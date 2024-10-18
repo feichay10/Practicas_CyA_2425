@@ -16,9 +16,18 @@
  */
 
 #include "../include/state.h"
+#include "../include/transition.h"
 
 State::State() {
   state_id_ = "";
+  start_state_ = false;
+  aceptation_state_ = false;
+  trasitions_number_ = 0;
+
+}
+
+State::State(int state_id) {
+  state_id_ = std::to_string(state_id);
   start_state_ = false;
   aceptation_state_ = false;
   trasitions_number_ = 0;
@@ -30,3 +39,26 @@ State::State(std::string state_id, bool start_state, bool aceptation_state) {
   aceptation_state_ = aceptation_state;
   trasitions_number_ = 0;
 }
+
+bool State::IsAceptationState() const {
+  return aceptation_state_;
+}
+
+bool State::IsStartState() const {
+  return start_state_;
+}
+
+std::string State::GetStateId() const {
+  return state_id_;
+}
+
+std::set<Transition> State::GetTransitions(Symbol symbol) {
+  std::set<Transition> transitions;
+  for (auto it = transitions_.begin(); it != transitions_.end(); it++) {
+    if (it->GetSymbol() == symbol) {
+      transitions.insert(*it);
+    }
+  }
+  return transitions;
+}
+

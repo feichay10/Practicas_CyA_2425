@@ -67,7 +67,7 @@ DFA::DFA(std::vector<std::string> automaton_data) {
     int transitions_number;
     ss >> state_id >> aceptation_state >> transitions_number;
     std::string state_id_string = "q" + std::to_string(state_id);
-    State state(state_id_string, state_id == initial_state_, aceptation_state);
+    State state(state_id_string, state_id == initial_state_, aceptation_state); // TODO: Insertar todas las transiciones - MODIFICAR CONSTRUCTOR
     states_.insert(state);
     std::cout << "Estado q" << state_id << ": ";
     if (aceptation_state) {

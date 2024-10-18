@@ -38,7 +38,9 @@ class Automaton {
   int GetInitialState() const;
   std::set<State> GetFinalStates() const;
 
-  bool ReadStrings(const std::string& string);
+  bool AlphabetComprobation(const Symbol& symbol);
+  // bool ReadStrings(const std::string& string);
+  void ReadStrings(const std::string& string);
 
  protected:
   Alphabet alphabet_;

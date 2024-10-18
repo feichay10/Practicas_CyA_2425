@@ -37,8 +37,35 @@ std::set<State> Automaton::GetFinalStates() const {
   return final_states_;
 }
 
-bool Automaton::ReadStrings(const std::string& string) {
-  // std::cout << "Reading string: " << string << std::endl;
-  return false;
+bool Automaton::AlphabetComprobation(const Symbol& symbol) {
+  if (alphabet_.GetAlphabet().find(symbol) == alphabet_.GetAlphabet().end()) {
+    return false;
+  }
+  return true;
 }
 
+void Automaton::ReadStrings(const std::string& string) {
+  bool is_accepted = false;
+
+  if (string.at(0) == '&') {
+    is_accepted = true;
+  }
+
+  auto it = states_.find(State(initial_state_));
+  if (it == states_.end()) {
+    std::cerr << "ERROR: Initial state not found in the set of states" << std::endl;
+    exit(EXIT_FAILURE);
+  }
+  State current_state = *it;
+  Transition next;
+  Symbol symbol;
+
+  for (int i = 0; i < string.size(); i++) {
+    symbol = string.at(i);
+    if (!AlphabetComprobation(symbol)) {
+      std::cerr << "ERROR: The symbol " << symbol.GetSymbol() << " is not in the alphabet" << std::endl;
+      exit(EXIT_FAILURE);
+    }
+    // next = current_state.GetTransitions(symbol);
+  }
+}
