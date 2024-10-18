@@ -17,6 +17,7 @@
 
 #include "../include/state.h"
 #include "../include/transition.h"
+// #include "state.h"
 
 State::State() {
   state_id_ = "";
@@ -40,9 +41,16 @@ State::State(std::string state_id, bool start_state, bool aceptation_state) {
   trasitions_number_ = 0;
 }
 
-bool State::IsAceptationState() const {
-  return aceptation_state_;
+State::State(std::string name, bool start_state, bool aceptation_state, std::set<Transition>& transitions) {
+  state_id_ = name;
+  start_state_ = start_state;
+  aceptation_state_ = aceptation_state;
+  transitions_ = transitions;
+  trasitions_number_ = transitions.size();
 }
+
+
+bool State::IsAceptationState() const { return aceptation_state_; }
 
 bool State::IsStartState() const {
   return start_state_;

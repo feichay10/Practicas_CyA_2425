@@ -30,6 +30,7 @@ class State {
   State();
   State(int state_id);
   State(std::string name, bool start_state, bool aceptation_state);
+  State(std::string name, bool start_state, bool aceptation_state, std::set<Transition>& transitions);
   ~State() = default;
 
   bool IsAceptationState() const;

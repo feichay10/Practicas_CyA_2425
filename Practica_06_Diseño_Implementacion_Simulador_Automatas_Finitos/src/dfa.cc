@@ -67,8 +67,6 @@ DFA::DFA(std::vector<std::string> automaton_data) {
     int transitions_number;
     ss >> state_id >> aceptation_state >> transitions_number;
     std::string state_id_string = "q" + std::to_string(state_id);
-    State state(state_id_string, state_id == initial_state_, aceptation_state); // TODO: Insertar todas las transiciones - MODIFICAR CONSTRUCTOR
-    states_.insert(state);
     std::cout << "Estado q" << state_id << ": ";
     if (aceptation_state) {
       std::cout << "aceptación";
@@ -77,6 +75,9 @@ DFA::DFA(std::vector<std::string> automaton_data) {
     }
     std::cout << std::endl;
 
+
+    State state(state_id_string, state_id == initial_state_, aceptation_state, transitions_);
+    
     // Leer las transiciones
     for (int j = 0; j < transitions_number; j++) {
       std::string symbol;
@@ -84,9 +85,14 @@ DFA::DFA(std::vector<std::string> automaton_data) {
       ss >> symbol >> to_state;
       Transition transition(state, Symbol(symbol[0]), State("q" + std::to_string(to_state), false, false));
       transitions_.insert(transition);
-      std::cout << "  Transición: " << state_id_string << " -> " << symbol << " -> q" << to_state << std::endl;
+      // std::cout << "  Transición: " << state_id_string << " -> " << symbol << " -> q" << to_state << std::endl;
     }
+    
+    states_.insert(state);
   }
+
+    // State state(state_id_string, state_id == initial_state_, aceptation_state); // TODO: Insertar todas las transiciones - MODIFICAR CONSTRUCTOR
+    // states_.insert(state);
 
   
 }
