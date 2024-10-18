@@ -45,10 +45,11 @@ int main(int argc, char* argv[]) {
       // }
 
       // Obtener los estados del autómata
+      std::cout << "========================================" << std::endl;
       std::set<State> states = automaton->GetStates();
       std::cout << "Estados: ";
       for (auto it = states.begin(); it != states.end(); it++) {
-        std::cout << "El estado " << it->GetStateId() << ": " << std::endl;
+        std::cout << "\nEl estado " << it->GetStateId() << ": " << std::endl;
         std::cout << "  - Es estado de arranque: " << it->IsStartState() << std::endl;
         std::cout << "  - Es estado de aceptación: " << it->IsAceptationState() << std::endl;
         // Imprimir solo las transiciones asociadas a este estado

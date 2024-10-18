@@ -85,7 +85,7 @@ DFA::DFA(std::vector<std::string> automaton_data) {
       ss >> symbol >> to_state;
       Transition transition(state, Symbol(symbol[0]), State("q" + std::to_string(to_state), false, false));
       transitions_.insert(transition);
-      // std::cout << "  Transición: " << state_id_string << " -> " << symbol << " -> q" << to_state << std::endl;
+      std::cout << "  Transición: " << state_id_string << " -> " << symbol << " -> q" << to_state << std::endl;
     }
     
     states_.insert(state);
