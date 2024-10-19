@@ -34,7 +34,7 @@ class Automaton {
  public:
   std::set<State> GetStates() const;
   Alphabet GetAlphabet() const;
-  std::set<Transition> GetTransitions() const;
+  const std::set<Transition>& GetTransitions() const;
   int GetInitialState() const;
   std::set<State> GetFinalStates() const;
 

@@ -42,9 +42,10 @@ class State {
     return state_id_ < state.state_id_;
   }
 
-  bool operator==(const State& state) const {
-    return this->state_id_ == state.state_id_;
+  bool operator==(const State& other) const {
+    return this->state_id_ == other.state_id_; // O el campo relevante que defina a State.
   }
+
 
  private:
   bool start_state_;

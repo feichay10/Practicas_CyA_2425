@@ -25,7 +25,7 @@ Alphabet Automaton::GetAlphabet() const {
   return alphabet_;
 }
 
-std::set<Transition> Automaton::GetTransitions() const {
+const std::set<Transition>& Automaton::GetTransitions() const {
   return transitions_;
 }
 

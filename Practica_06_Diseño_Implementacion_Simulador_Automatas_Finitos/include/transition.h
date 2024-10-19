@@ -32,9 +32,9 @@ class Transition {
   Transition(State from, Symbol symbol, State to);
   ~Transition() = default;
 
-  State GetFrom() const;
-  Symbol GetSymbol() const;
-  State GetTo() const;
+  const State& GetFrom() const;
+  const Symbol& GetSymbol() const;
+  const State& GetTo() const;
 
   bool operator<(const Transition& transition) const {
     if (from_ < transition.from_) {
