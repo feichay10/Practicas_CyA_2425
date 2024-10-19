@@ -24,13 +24,13 @@ Transition::Transition(State from, Symbol symbol, State to) {
 }
 
 const State& Transition::GetFrom() const {
-    return from_;
+  return from_;
 }
 
 const Symbol& Transition::GetSymbol() const {
-    return symbol_;
+  return symbol_;
 }
 
 const State& Transition::GetTo() const {
-    return to_;
+  return to_;
 }

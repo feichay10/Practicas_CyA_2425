@@ -43,56 +43,33 @@
 // 2 0 2 0 1 1 3
 // 3 0 2 0 2 1 3
 DFA::DFA(std::vector<std::string> automaton_data) {
-  // Leer el alfabeto
-  std::stringstream ss(automaton_data[0]);
+  std::stringstream ss(automaton_data[0]); // Leer el alfabeto
   Symbol symbol;
   while (ss >> symbol) {
     alphabet_.insert(Symbol(symbol));
   }
-  std::cout << "Alfabeto: " << alphabet_ << std::endl;
-  
-  // Leer el número de estados
-  num_states_ = std::stoi(automaton_data[1]);
-  std::cout << "Número de estados: " << num_states_ << std::endl;
 
-  // Leer el estado inicial
-  initial_state_ = std::stoi(automaton_data[2]);
-  std::cout << "Estado inicial: q" << initial_state_ << std::endl;
+  num_states_ = std::stoi(automaton_data[1]); // Número de estados
+  initial_state_ = automaton_data[2];         // Estado de arranque
 
   // Leer los estados
-  for (int i = 3; i < automaton_data.size() - 1; i++) {
+  for (int i = 3; i < automaton_data.size(); i++) {
+    std::cout << "Linea: " << automaton_data[i] << std::endl;
     std::stringstream ss(automaton_data[i]);
-    int state_id;
+    std::string state_id;
     bool aceptation_state;
     int transitions_number;
     ss >> state_id >> aceptation_state >> transitions_number;
-    std::string state_id_string = "q" + std::to_string(state_id);
-    std::cout << "Estado q" << state_id << ": ";
-    if (aceptation_state) {
-      std::cout << "aceptación";
-    } else {
-      std::cout << "no aceptación";
-    }
-    std::cout << std::endl;
-
-
-    State state(state_id_string, state_id == initial_state_, aceptation_state, transitions_);
+    State state(state_id, state_id == initial_state_, aceptation_state, transitions_);
     
     // Leer las transiciones
     for (int j = 0; j < transitions_number; j++) {
       std::string symbol;
-      int to_state;
+      std::string to_state;
       ss >> symbol >> to_state;
-      Transition transition(state, Symbol(symbol[0]), State("q" + std::to_string(to_state), false, false));
+      Transition transition(state, Symbol(symbol[0]), State(to_state, false, false));
       transitions_.insert(transition);
-      std::cout << "  Transición: " << state_id_string << " -> " << symbol << " -> q" << to_state << std::endl;
     }
-    
     states_.insert(state);
   }
-
-    // State state(state_id_string, state_id == initial_state_, aceptation_state); // TODO: Insertar todas las transiciones - MODIFICAR CONSTRUCTOR
-    // states_.insert(state);
-
-  
 }

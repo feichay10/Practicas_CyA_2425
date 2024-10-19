@@ -19,9 +19,9 @@
 
 /**
  * @brief Check if the file exists and can be opened
- * 
- * @param file_name 
- * @return True if the file exists and can be opened 
+ *
+ * @param file_name
+ * @return True if the file exists and can be opened
  */
 bool check_file(std::string file_name) {
   std::ifstream file(file_name);
@@ -35,9 +35,9 @@ bool check_file(std::string file_name) {
 
 /**
  * @brief Check if the parameters are correct
- * 
- * @param argc 
- * @param argv 
+ *
+ * @param argc
+ * @param argv
  * @return True if the parameters are correct
  */
 bool check_parameters(int argc, char* argv[]) {
@@ -70,8 +70,8 @@ bool check_parameters(int argc, char* argv[]) {
 
 /**
  * @brief Read the file and store the lines in a vector
- * 
- * @param file_name 
+ *
+ * @param file_name
  * @return A vector with the lines of the file
  */
 std::vector<std::string> read_file(std::string file_name) {
@@ -88,10 +88,10 @@ std::vector<std::string> read_file(std::string file_name) {
 
 /**
  * @brief Write the data in a file
- * 
- * @tparam T 
+ *
+ * @tparam T
  * @param file_name The name of the file
- * @param data The data to be written 
+ * @param data The data to be written
  */
 template <typename T>
 void write_file(std::string file_name, T& data) {
@@ -103,46 +103,69 @@ void write_file(std::string file_name, T& data) {
 }
 
 // Comprobar si es un DFA o un NFA
-bool check_automata(std::vector<std::string> data_automata) {
-  // Leer el alfabeto
-  std::stringstream ss(data_automata[0]);
-  std::vector<std::string> alfabeto;
-  std::string simbolo;
-  while (ss >> simbolo) {
-    alfabeto.push_back(simbolo);
+bool check_automaton(const std::vector<std::string>& automaton_data) {
+  std::stringstream ss(automaton_data[0]);
+  Alphabet alphabet;
+  Symbol symbol;
+  while (ss >> symbol) {
+    alphabet.insert(Symbol(symbol));
   }
 
-  int num_estados = std::stoi(data_automata[1]);     // Número de estados
-  int estado_inicial = std::stoi(data_automata[2]);  // Estado inicial
+  int num_states = std::stoi(automaton_data[1]);  // Number of states
+  std::string initial_state = automaton_data[2];  // Initial state
 
-  // Procesar los estados
-  for (int i = 3; i < data_automata.size(); ++i) {
-    std::stringstream ss_estado(data_automata[i]);
-    int estado_id, es_aceptacion, num_transiciones;
-    ss_estado >> estado_id >> es_aceptacion >> num_transiciones;
+  // Process the states
+  for (int i = 3; i < automaton_data.size(); ++i) {
+    std::stringstream ss_state(automaton_data[i]);
+    int state_id, is_acceptance, num_transitions;
+    ss_state >> state_id >> is_acceptance >> num_transitions;
 
-    std::unordered_map<std::string, std::set<int>> transiciones;  // Para cada simbolo, el set de estados destino
+    std::unordered_map<std::string, std::set<int>> transitions;  // For each symbol, the set of destination states
 
-    for (int t = 0; t < num_transiciones; ++t) {
-      std::string simbolo;
-      int estado_destino;
-      ss_estado >> simbolo >> estado_destino;
+    for (int t = 0; t < num_transitions; ++t) {
+      std::string symbol;
+      int destination_state;
+      ss_state >> symbol >> destination_state;
 
-      // Si la transición es epsilon (&), ya es un NFA
-      if (simbolo == "&") {
-        return false;  // Es un NFA
+      // If the transition is epsilon (&), it is already an NFA
+      if (symbol == "&") {
+        return false;  // It is an NFA
       }
 
-      // Añadir la transición al mapa de transiciones
-      transiciones[simbolo].insert(estado_destino);
+      // Add the transition to the map of transitions
+      transitions[symbol].insert(destination_state);
 
-      // Si encontramos más de una transición para el mismo símbolo, es un NFA
-      if (transiciones[simbolo].size() > 1) {
-        return false;  // Es un NFA
+      // If we find more than one transition for the same symbol, it is an NFA
+      if (transitions[symbol].size() > 1) {
+        return false;  // It is an NFA
       }
     }
   }
 
-  return true;  // Si pasó todas las verificaciones, es un DFA
+  return true;  // If it passed all checks, it is a DFA
 }
 
+void print_automaton_data(Automaton* automaton) {
+  if (automaton != nullptr) {
+    std::cout << "Alfabeto: ";
+    // for (auto it = automaton->GetAlphabet().GetAlphabet().begin();
+    //      it != automaton->GetAlphabet().GetAlphabet().end(); it++) {
+    //   std::cout << *it << " ";
+    // }
+    std::cout << std::endl;
+    std::cout << "Numero de estados: " << automaton->GetNumStates() << std::endl;
+    std::set<State> states = automaton->GetStates();
+    std::cout << "Estados: ";
+    for (auto it = states.begin(); it != states.end(); it++) {
+      std::cout << "\nEl estado " << it->GetStateId() << ": " << std::endl;
+      std::cout << "  - Es estado de arranque: " << (it->IsStartState() ? "si" : "no") << std::endl;
+      std::cout << "  - Es estado de aceptación: " << (it->IsAceptationState() ? "si" : "no") << std::endl;
+      std::cout << "  - Transiciones: " << std::endl;
+      for (auto it2 = automaton->GetTransitions().begin(); it2 != automaton->GetTransitions().end(); it2++) {
+        if (it2->GetFrom() == *it) {
+          std::cout << "    - " << it2->GetFrom().GetStateId() << " -> " << it2->GetSymbol() << " -> " << it2->GetTo().GetStateId() << std::endl;
+        }
+      }
+    }
+  }
+}

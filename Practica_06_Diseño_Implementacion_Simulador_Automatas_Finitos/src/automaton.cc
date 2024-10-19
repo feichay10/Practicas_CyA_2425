@@ -29,12 +29,16 @@ const std::set<Transition>& Automaton::GetTransitions() const {
   return transitions_;
 }
 
-int Automaton::GetInitialState() const {
+std::string Automaton::GetInitialState() const {
   return initial_state_;
 }
 
 std::set<State> Automaton::GetFinalStates() const {
   return final_states_;
+}
+
+int Automaton::GetNumStates() const {
+  return num_states_;
 }
 
 bool Automaton::AlphabetComprobation(const Symbol& symbol) {
@@ -44,28 +48,8 @@ bool Automaton::AlphabetComprobation(const Symbol& symbol) {
   return true;
 }
 
+// Funcion que lee las cadenas y comprueba si son aceptadas o no por el automata
+// Ir simbolo a simbolo y comprobar si la transición existe
 void Automaton::ReadStrings(const std::string& string) {
-  bool is_accepted = false;
 
-  if (string.at(0) == '&') {
-    is_accepted = true;
-  }
-
-  auto it = states_.find(State(initial_state_));
-  if (it == states_.end()) {
-    std::cerr << "ERROR: Initial state not found in the set of states" << std::endl;
-    exit(EXIT_FAILURE);
-  }
-  State current_state = *it;
-  Transition next;
-  Symbol symbol;
-
-  for (int i = 0; i < string.size(); i++) {
-    symbol = string.at(i);
-    if (!AlphabetComprobation(symbol)) {
-      std::cerr << "ERROR: The symbol " << symbol.GetSymbol() << " is not in the alphabet" << std::endl;
-      exit(EXIT_FAILURE);
-    }
-    // next = current_state.GetTransitions(symbol);
-  }
 }

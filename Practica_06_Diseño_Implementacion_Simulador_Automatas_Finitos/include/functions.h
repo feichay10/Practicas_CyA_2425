@@ -58,7 +58,8 @@ bool check_file(std::string file_name);
 std::vector<std::string> read_file(std::string file_name);
 template <typename T>
 void write_file(std::string file_name, T& data);
-bool check_automata(std::vector<std::string> automaton_data);
+bool check_automaton(const std::vector<std::string>& automaton_data);
 void check_strings_automata(Automaton& automata, std::vector<std::string> strings_data);
+void print_automaton_data(Automaton* automaton);
 
 #endif  // FUNCTIONS_H

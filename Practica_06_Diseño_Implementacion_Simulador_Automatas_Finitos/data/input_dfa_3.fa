@@ -1,0 +1,8 @@
+a b
+5
+C
+A 1 2 a A b A
+B 1 2 a E b B
+C 0 2 a A b D
+D 0 2 a E b B
+E 0 2 a E b D
