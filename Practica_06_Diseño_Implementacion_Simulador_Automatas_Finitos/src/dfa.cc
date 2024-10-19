@@ -46,7 +46,7 @@ DFA::DFA(std::vector<std::string> automaton_data) {
   std::stringstream ss(automaton_data[0]); // Leer el alfabeto
   Symbol symbol;
   while (ss >> symbol) {
-    alphabet_.insert(Symbol(symbol));
+    alphabet_.insert(Symbol(symbol)); 
   }
 
   num_states_ = std::stoi(automaton_data[1]); // Número de estados
@@ -54,7 +54,6 @@ DFA::DFA(std::vector<std::string> automaton_data) {
 
   // Leer los estados
   for (int i = 3; i < automaton_data.size(); i++) {
-    std::cout << "Linea: " << automaton_data[i] << std::endl;
     std::stringstream ss(automaton_data[i]);
     std::string state_id;
     bool aceptation_state;
@@ -63,6 +62,7 @@ DFA::DFA(std::vector<std::string> automaton_data) {
     State state(state_id, state_id == initial_state_, aceptation_state, transitions_);
     
     // Leer las transiciones
+    // TODO: Comprobar que si en una transicion hay un simbolo que no esta en el alfabeto, lanzar excepcion
     for (int j = 0; j < transitions_number; j++) {
       std::string symbol;
       std::string to_state;

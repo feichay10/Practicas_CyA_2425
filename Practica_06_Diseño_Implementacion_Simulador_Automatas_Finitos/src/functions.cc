@@ -147,12 +147,7 @@ bool check_automaton(const std::vector<std::string>& automaton_data) {
 
 void print_automaton_data(Automaton* automaton) {
   if (automaton != nullptr) {
-    std::cout << "Alfabeto: ";
-    // for (auto it = automaton->GetAlphabet().GetAlphabet().begin();
-    //      it != automaton->GetAlphabet().GetAlphabet().end(); it++) {
-    //   std::cout << *it << " ";
-    // }
-    std::cout << std::endl;
+    std::cout << "Alfabeto: " << automaton->GetAlphabet() << std::endl;
     std::cout << "Numero de estados: " << automaton->GetNumStates() << std::endl;
     std::set<State> states = automaton->GetStates();
     std::cout << "Estados: ";
