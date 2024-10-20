@@ -74,13 +74,14 @@ bool check_parameters(int argc, char* argv[]) {
  * @param file_name
  * @return A vector with the lines of the file
  */
-std::vector<std::string> read_file(std::string file_name) {
-  std::vector<std::string> lines;
+template <typename T>
+std::vector<T> read_file(const std::string& file_name) {
+  std::vector<T> lines;
   std::ifstream file(file_name);
 
   std::string line;
   while (std::getline(file, line)) {
-    lines.push_back(line);
+    lines.push_back(T(line));
   }
   file.close();
   return lines;
@@ -164,3 +165,14 @@ void print_automaton_data(Automaton* automaton) {
     }
   }
 }
+
+void print_strings_on_automata(Automaton* automaton, std::vector<String> strings_data) {
+  for (int i = 0; i < strings_data.size(); i++) {
+    std::cout << strings_data[i] << std::endl;
+    automaton->ReadStrings(strings_data[i]);
+    std::cout << std::endl;
+  }
+}
+
+template std::vector<std::string> read_file<std::string>(const std::string&);
+template std::vector<String> read_file<String>(const std::string&);

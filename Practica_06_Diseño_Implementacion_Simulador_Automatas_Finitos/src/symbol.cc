@@ -33,6 +33,15 @@ Symbol::Symbol(char symbol) {
 }
 
 /**
+ * @brief Construct a new Symbol:: Symbol object
+ * 
+ * @param symbol 
+ */
+Symbol::Symbol(std::string symbol) {
+  symbol_ = symbol[0];
+}
+
+/**
  * @brief Get the Symbol object
  * 
  * @return char 

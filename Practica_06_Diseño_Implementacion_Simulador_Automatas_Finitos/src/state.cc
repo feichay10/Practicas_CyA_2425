@@ -50,7 +50,9 @@ State::State(std::string name, bool start_state, bool aceptation_state, std::set
 }
 
 
-bool State::IsAceptationState() const { return aceptation_state_; }
+bool State::IsAceptationState() const { 
+  return aceptation_state_; 
+}
 
 bool State::IsStartState() const {
   return start_state_;

@@ -26,13 +26,13 @@
 
 int main(int argc, char* argv[]) {
   std::vector<std::string> automaton_data;
-  std::vector<std::string> strings_data;
+  std::vector<String> strings_data;
   Automaton* automaton = nullptr;
 
   try {
     if (check_parameters(argc, argv)) {
-      automaton_data = read_file(argv[1]);
-      strings_data = read_file(argv[2]);
+      automaton_data = read_file<std::string>(argv[1]);
+      strings_data = read_file<String>(argv[2]);
       if (check_automaton(automaton_data)) {
         std::cout << " ==== Es un DFA ==== " << std::endl;
         automaton = new DFA(automaton_data);
@@ -41,10 +41,8 @@ int main(int argc, char* argv[]) {
         automaton = new NFA(automaton_data);
       }
       print_automaton_data(automaton);
-      std::cout << "\n ==== Strings to check ==== " << std::endl;
-      // for (int i = 0; i < strings_data.size(); i++) {
-      //   automaton->ReadStrings(strings_data[i]);
-      // }
+      std::cout << "\n ==== Strings to check ==== " << strings_data.size() << std::endl;
+      print_strings_on_automata(automaton, strings_data);
     } else {
       exit(EXIT_FAILURE);
     }

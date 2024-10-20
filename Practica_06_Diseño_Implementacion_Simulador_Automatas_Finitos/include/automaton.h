@@ -41,7 +41,7 @@ class Automaton {
 
   bool AlphabetComprobation(const Symbol& symbol);
   // bool ReadStrings(const std::string& string);
-  void ReadStrings(const std::string& string);
+  void ReadStrings(const String& string);
 
  protected:
   Alphabet alphabet_;

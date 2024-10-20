@@ -28,6 +28,7 @@ class Symbol {
  public:
   Symbol();
   Symbol(char symbol);
+  Symbol(std::string symbol);
   ~Symbol() = default;
 
   char GetSymbol() const;

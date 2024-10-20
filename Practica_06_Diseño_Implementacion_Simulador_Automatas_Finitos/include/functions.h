@@ -55,11 +55,13 @@ const std::string kHelp = "help";
 
 bool check_parameters(int argc, char* argv[]);
 bool check_file(std::string file_name);
-std::vector<std::string> read_file(std::string file_name);
+template <typename T>
+std::vector<T> read_file(const std::string& file_name);
 template <typename T>
 void write_file(std::string file_name, T& data);
 bool check_automaton(const std::vector<std::string>& automaton_data);
 void check_strings_automata(Automaton& automata, std::vector<std::string> strings_data);
 void print_automaton_data(Automaton* automaton);
+void print_strings_on_automata(Automaton* automaton, std::vector<String> strings_data);
 
 #endif  // FUNCTIONS_H
