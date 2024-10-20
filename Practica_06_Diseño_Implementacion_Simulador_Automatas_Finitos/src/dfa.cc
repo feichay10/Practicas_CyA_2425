@@ -51,15 +51,20 @@ DFA::DFA(std::vector<std::string> automaton_data) {
 
   num_states_ = std::stoi(automaton_data[1]); // Número de estados
   initial_state_ = automaton_data[2];         // Estado de arranque
+  initial_state_.resize(initial_state_.size() - 1); // Eliminar el salto de linea
 
   // Leer los estados
   for (int i = 3; i < automaton_data.size(); i++) {
     std::stringstream ss(automaton_data[i]);
     std::string state_id;
     bool aceptation_state;
+    bool start_state = false;
     int transitions_number;
     ss >> state_id >> aceptation_state >> transitions_number;
-    State state(state_id, state_id == initial_state_, aceptation_state, transitions_);
+    if (state_id == initial_state_) {
+      start_state = true;
+    }
+    State state(state_id, start_state, aceptation_state, transitions_);
     
     // Leer las transiciones
     // TODO: Comprobar que si en una transicion hay un simbolo que no esta en el alfabeto, lanzar excepcion
