@@ -9,7 +9,7 @@
  * @author Cheuk Kelly Ng Pante (alu0101364544@ull.edu.es)
  * @brief
  * @version 0.1
- * @date 2024-09-24
+ * @date 2024-10-22
  *
  * @copyright Copyright (c) 2024
  *
@@ -20,6 +20,10 @@
 
 #include "automaton.h"
 
+/**
+ * @brief Class that represents a Deterministic Finite Automaton
+ * 
+ */
 class DFA : public Automaton {
  public:
   DFA(const std::vector<std::string>& automaton_data);

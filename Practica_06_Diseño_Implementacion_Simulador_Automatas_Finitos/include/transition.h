@@ -9,7 +9,7 @@
  * @author Cheuk Kelly Ng Pante (alu0101364544@ull.edu.es)
  * @brief
  * @version 0.1
- * @date 2024-09-24
+ * @date 2024-10-22
  *
  * @copyright Copyright (c) 2024
  *
@@ -24,8 +24,10 @@
 #include "state.h"
 #include "symbol.h"
 
-// class State;
-
+/**
+ * @brief Class that represents a Transition
+ * 
+ */
 class Transition {
  public:
   Transition() = default;

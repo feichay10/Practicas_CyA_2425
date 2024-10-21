@@ -9,7 +9,7 @@
  * @author Cheuk Kelly Ng Pante (alu0101364544@ull.edu.es)
  * @brief
  * @version 0.1
- * @date 2024-09-24
+ * @date 2024-10-22
  *
  * @copyright Copyright (c) 2024
  *
@@ -30,6 +30,10 @@
 #include "transition.h"
 #include "string.h"
 
+/**
+ * @brief Class that represents an Automaton
+ * 
+ */
 class Automaton {
  public:
   std::set<State> GetStates() const;

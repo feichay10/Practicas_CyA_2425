@@ -9,7 +9,7 @@
  * @author Cheuk Kelly Ng Pante (alu0101364544@ull.edu.es)
  * @brief
  * @version 0.1
- * @date 2024-09-24
+ * @date 2024-10-22
  *
  * @copyright Copyright (c) 2024
  *
@@ -25,10 +25,13 @@
 
 class Transition;
 
+/**
+ * @brief Class that represents a State
+ * 
+ */
 class State {
  public:
   State();
-  State(int state_id);
   State(std::string name, bool start_state, bool aceptation_state);
   State(std::string name, bool start_state, bool aceptation_state, std::set<Transition>& transitions);
   ~State() = default;
