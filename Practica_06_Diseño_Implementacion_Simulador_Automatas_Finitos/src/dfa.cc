@@ -76,16 +76,19 @@ bool DFA::ReadStrings(const String& string) {
   }
 
   if (!initial_state_found) {
-    std::cout << "ERROR: Estado inicial no encontrado" << std::endl;
-    return false;
+    throw std::runtime_error("ERROR: Estado inicial no encontrado");
   }
   
   for (int i = 0; i < string.GetString().size() - 1; i++) {
     Symbol symbol = Symbol(string.GetString()[i]);
-    std::cout << "Current symbol: " << symbol << " - ";
-    std::cout << "Current state: " << current_state.GetStateId() << std::endl;
+    #ifdef TRACE
+      std::cout << "Current symbol: " << symbol << " - ";
+      std::cout << "Current state: " << current_state.GetStateId() << std::endl;
+    #endif
     if (!AlphabetComprobation(symbol)) {
-      std::cout << "ERROR: El simbolo " << symbol.GetSymbol() << " no pertenece al alfabeto" << std::endl;
+      #ifdef TRACE
+        std::cout << "ERROR: El simbolo " << symbol.GetSymbol() << " no pertenece al alfabeto" << std::endl;
+      #endif
       return false;
     }
     
@@ -108,7 +111,9 @@ bool DFA::ReadStrings(const String& string) {
     }
     
     if (!found) {
-      std::cout << "ERROR: No se ha encontrado la transición " << current_state.GetStateId() << " -> " << symbol.GetSymbol() << std::endl;
+      #ifdef TRACE
+        std::cout << "ERROR: No se ha encontrado la transición " << current_state.GetStateId() << " -> " << symbol.GetSymbol() << std::endl;
+      #endif
       return false;
     }
   }

@@ -1,19 +1,20 @@
 CXX		 := g++
-CXXFLAGS=-std=c++17 -g #-fsanitize=address #-Wall #-Wextra
+CXXFLAGS := -std=c++17 -g #-fsanitize=address #-Wall #-Wextra
 
-BIN     := bin
-SRC     := src
-BUILD	:= build
-INCLUDE := include
-LIB     := lib
-DATA    := data
-LIBRARIES   := 
-EXECUTABLE  := p06_automata_simulator
-PARAMS	:= 
-SOURCES := $(wildcard $(SRC)/*.cc)
-OBJS	:= $(patsubst $(SRC)/%.cc, $(BUILD)/%.o,$(SOURCES))
+BIN      := bin
+SRC      := src
+BUILD	 := build
+INCLUDE  := include
+LIB      := lib
+DATA     := data
+LIBRARIES:= 
+EXECUTABLE := p06_automata_simulator
+EXECUTABLE_TRACE := p06_automata_simulator_trace
+PARAMS	  := 
+SOURCES   := $(wildcard $(SRC)/*.cc)
+OBJS	  := $(patsubst $(SRC)/%.cc, $(BUILD)/%.o,$(SOURCES))
 
-.PHONY: all project run clean
+.PHONY: all project run clean trace
 
 all: $(BIN)/$(EXECUTABLE)
 
@@ -38,6 +39,11 @@ clean:
 	@echo "🧹 Clearing..."
 	rm -f $(BIN)/* $(BUILD)/*
 
+# New trace rule
+trace: CXXFLAGS += -D TRACE
+trace: clean all
+	@echo "🛠️  Built with TRACE mode"
+
 tar:
 	@echo "📦 Compressing..."
-	tar -czvf p06_Cheuk_Kelly_Ng_Pante.tgz $(SRC) $(INCLUDE) $(BIN) $(BUILD) $(DATA) makefile 
+	tar -czvf p06_Cheuk_Kelly_Ng_Pante.tgz $(SRC) $(INCLUDE) $(BIN) $(BUILD) $(DATA) makefile

@@ -93,10 +93,14 @@ bool NFA::ReadStrings(const String& string) {
   // Procesar la cadena de entrada
   for (int i = 0; i < string.GetString().size() - 1; i++) {
     Symbol symbol = Symbol(string.GetString()[i]);
-    std::cout << "Current symbol: " << symbol << std::endl;
-
+    #ifdef TRAZA
+      std::cout << "Current symbol: " << symbol << " - ";
+      std::cout << "Current state: " << current_state.GetStateId() << std::endl;
+    #endif
     if (!AlphabetComprobation(symbol)) {
-      std::cout << "ERROR: El símbolo " << symbol.GetSymbol() << " no pertenece al alfabeto" << std::endl;
+      #ifdef TRACE
+        std::cout << "ERROR: El simbolo " << symbol.GetSymbol() << " no pertenece al alfabeto" << std::endl;
+      #endif
       return false;
     }
 
@@ -119,7 +123,9 @@ bool NFA::ReadStrings(const String& string) {
     }
 
     if (next_states.empty()) {
-      std::cout << "ERROR: No se ha encontrado una transición para el símbolo " << symbol.GetSymbol() << std::endl;
+      #ifdef TRACE
+        std::cout << "ERROR: No se ha encontrado una transición para el símbolo " << symbol.GetSymbol() << std::endl;
+      #endif
       return false;
     }
 
