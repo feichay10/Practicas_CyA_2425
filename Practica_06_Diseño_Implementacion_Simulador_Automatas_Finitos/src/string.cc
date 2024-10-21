@@ -151,6 +151,11 @@ Language String::Substrings() {
   return Language(substrings);
 }
 
+/**
+ * @brief Get the size object
+ * 
+ * @return int 
+ */
 int String::size() const {
   return string_.size() - 1;
 }

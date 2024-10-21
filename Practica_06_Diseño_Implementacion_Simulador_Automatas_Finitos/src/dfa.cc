@@ -17,7 +17,12 @@
 
 #include "../include/dfa.h"
 
-DFA::DFA(std::vector<std::string> automaton_data) {
+/**
+ * @brief Construct a new DFA::DFA object from a vector of strings
+ * 
+ * @param automaton_data 
+ */
+DFA::DFA(const std::vector<std::string>& automaton_data) {
   std::stringstream ss(automaton_data[0]); // Leer el alfabeto
   Symbol symbol;
   while (ss >> symbol) {
@@ -56,6 +61,13 @@ DFA::DFA(std::vector<std::string> automaton_data) {
   }
 }
 
+/**
+ * @brief Read the strings on the automaton
+ * 
+ * @param string 
+ * @return true 
+ * @return false 
+ */
 bool DFA::ReadStrings(const String& string) {
   State current_state;
   bool initial_state_found = false;

@@ -19,7 +19,12 @@
 #include <set>
 #include <queue>
 
-NFA::NFA(std::vector<std::string> automaton_data) {
+/**
+ * @brief Construct a new NFA::NFA object from a vector of strings
+ * 
+ * @param automaton_data 
+ */
+NFA::NFA(const std::vector<std::string>& automaton_data) {
   std::stringstream ss(automaton_data[0]); // Leer el alfabeto
   Symbol symbol;
   while (ss >> symbol) {
@@ -48,9 +53,9 @@ NFA::NFA(std::vector<std::string> automaton_data) {
       std::string symbol;
       std::string to_state;
       ss >> symbol >> to_state;
-      // if (!alphabet_.find(Symbol(symbol))) {
-      //   throw std::runtime_error("Hay una transición con un símbolo que no está en el alfabeto");
-      // }
+      if (!alphabet_.find(Symbol(symbol))) {
+        throw std::runtime_error("Hay una transición con un símbolo que no está en el alfabeto");
+      }
       Transition transition(state, Symbol(symbol[0]), State(to_state, false, false));
       transitions_.insert(transition);
     }
@@ -58,6 +63,13 @@ NFA::NFA(std::vector<std::string> automaton_data) {
   }
 }
 
+/**
+ * @brief Read the strings on the automaton
+ * 
+ * @param string 
+ * @return true 
+ * @return false 
+ */
 bool NFA::ReadStrings(const String& string) {
   // Conjunto de estados actuales, comenzamos con el estado inicial
   std::set<State> current_states;
@@ -93,10 +105,6 @@ bool NFA::ReadStrings(const String& string) {
   // Procesar la cadena de entrada
   for (int i = 0; i < string.GetString().size() - 1; i++) {
     Symbol symbol = Symbol(string.GetString()[i]);
-    #ifdef TRAZA
-      std::cout << "Current symbol: " << symbol << " - ";
-      std::cout << "Current state: " << current_state.GetStateId() << std::endl;
-    #endif
     if (!AlphabetComprobation(symbol)) {
       #ifdef TRACE
         std::cout << "ERROR: El simbolo " << symbol.GetSymbol() << " no pertenece al alfabeto" << std::endl;
@@ -108,6 +116,10 @@ bool NFA::ReadStrings(const String& string) {
 
     // Para cada estado actual, buscar transiciones posibles
     for (const auto& current_state : current_states) {
+      #ifdef TRACE
+        std::cout << "Current symbol: " << symbol << " - ";
+        std::cout << "Current state: " << current_state.GetStateId() << std::endl;
+      #endif
       for (const auto& transition : transitions_) {
         // Si la transición parte del estado actual y el símbolo coincide
         if (transition.GetFrom().GetStateId() == current_state.GetStateId() && 
@@ -144,7 +156,12 @@ bool NFA::ReadStrings(const String& string) {
   return false;
 }
 
-// Función para calcular el cierre epsilon (Epsilon Closure)
+/**
+ * @brief Expandir las transiciones epsilon desde un conjunto de estados
+ * 
+ * @param states 
+ * @return std::set<State> 
+ */
 std::set<State> NFA::EpsilonClosure(const std::set<State>& states) {
   std::set<State> closure = states;  // El cierre contiene inicialmente los estados originales
   std::queue<State> to_process;      // Estados que procesaremos

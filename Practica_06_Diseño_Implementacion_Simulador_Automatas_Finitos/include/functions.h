@@ -30,7 +30,6 @@
 #include "automaton.h"
 #include "colors.h"
 #include "dfa.h"
-#include "language.h"
 #include "string.h"
 
 const char SPACE = ' ';
@@ -56,6 +55,10 @@ const std::string kHelp =
         "Arguments:\n"
         "  automaton_file    File containing the automaton data\n"
         "  strings_file      File containing the strings to check\n"
+        "\n"
+        "Trace Mode:\n"
+        "  If compiled with 'make trace', the program will run in trace mode, providing detailed\n"
+        "  step-by-step output of the automaton's state transitions and processing of input strings.\n"
         "\n"
         "Description:\n"
         "  This program allows you to simulate any finite automaton specified by an input file.\n"
@@ -94,10 +97,7 @@ std::vector<T> read_file(const std::string& file_name);
 template <typename T>
 void write_file(std::string file_name, T& data);
 bool check_automaton(const std::vector<std::string>& automaton_data);
-void check_strings_automata(Automaton& automata,
-                            std::vector<std::string> strings_data);
-void print_automaton_data(Automaton* automaton);
-void check_strings_on_automata(Automaton* automaton,
-                               std::vector<String> strings_data);
+void check_strings_automata(Automaton& automata, std::vector<std::string> strings_data);
+void check_strings_on_automata(Automaton* automaton, std::vector<String> strings_data);
 
 #endif  // FUNCTIONS_H

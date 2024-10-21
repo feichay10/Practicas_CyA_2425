@@ -39,8 +39,10 @@ class Automaton {
   std::set<State> GetFinalStates() const;
   int GetNumStates() const;
 
-  bool AlphabetComprobation(const Symbol& symbol); // TODO: FIX
+  bool AlphabetComprobation(const Symbol& symbol);
   virtual bool ReadStrings(const String& string) = 0;
+
+  friend std::ostream& operator<<(std::ostream& os, const Automaton& automaton);
 
  protected:
   Alphabet alphabet_;

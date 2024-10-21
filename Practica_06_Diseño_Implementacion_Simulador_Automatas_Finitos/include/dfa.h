@@ -22,8 +22,9 @@
 
 class DFA : public Automaton {
  public:
-  DFA(std::vector<std::string> automaton_data);
+  DFA(const std::vector<std::string>& automaton_data);
   ~DFA() = default;
+  
   bool ReadStrings(const String& string) override;
 };
 

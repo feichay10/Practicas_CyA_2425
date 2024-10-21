@@ -97,77 +97,52 @@ void write_file(std::string file_name, T& data) {
   file.close();
 }
 
-// Comprobar si es un DFA o un NFA
+/**
+ * @brief Check if the automaton is a DFA or a NFA
+ * 
+ * @param automaton_data 
+ * @return true 
+ * @return false 
+ */
 bool check_automaton(const std::vector<std::string>& automaton_data) {
-  std::stringstream ss(automaton_data[0]);
-  Alphabet alphabet;
-  Symbol symbol;
-  while (ss >> symbol) {
-    alphabet.insert(Symbol(symbol));
-  }
-
-  int num_states = std::stoi(automaton_data[1]);  // Number of states
-  std::string initial_state = automaton_data[2];  // Initial state
-
-  // Process the states
   for (int i = 3; i < automaton_data.size(); ++i) {
     std::stringstream ss_state(automaton_data[i]);
     int state_id, is_acceptance, num_transitions;
     ss_state >> state_id >> is_acceptance >> num_transitions;
 
-    std::unordered_map<std::string, std::set<int>> transitions;  // For each symbol, the set of destination states
+    std::unordered_map<std::string, std::set<int>> transitions;  // Para cada símbolo, el conjunto de estados de destino
 
     for (int t = 0; t < num_transitions; ++t) {
       std::string symbol;
       int destination_state;
       ss_state >> symbol >> destination_state;
 
-      // If the transition is epsilon (&), it is already an NFA
+      //  Si la transición es épsilon (&), ya es un NFA
       if (symbol == "&") {
-        return false;  // It is an NFA
+        return false; // Es un NFA
       }
 
-      // Add the transition to the map of transitions
+      // Añadir la transición al mapa de transiciones
       transitions[symbol].insert(destination_state);
 
-      // If we find more than one transition for the same symbol, it is an NFA
+      // Si encontramos más de una transición para el mismo símbolo, se trata de un NFA
       if (transitions[symbol].size() > 1) {
-        return false;  // It is an NFA
+        return false;  // Es un NFA
       }
     }
   }
 
-  return true;  // If it passed all checks, it is a DFA
+  return true;  // Si pasa todas las comprobaciones, es un DFA
 }
 
-void print_automaton_data(Automaton* automaton) {
-  if (automaton != nullptr) {
-    // Imprimir si el automata es un DFA o un NFA, comprobar el tipo de objeto automata
-    if (dynamic_cast<DFA*>(automaton)) {
-      std::cout << " ==== Es un DFA ==== " << std::endl;
-    } else {
-      std::cout << " ==== Es un NFA ==== " << std::endl;
-    }
-    std::cout << "Alfabeto: " << automaton->GetAlphabet() << std::endl;
-    std::cout << "Numero de estados: " << automaton->GetNumStates() << std::endl;
-    std::set<State> states = automaton->GetStates();
-    std::cout << "Estados: ";
-    for (auto it = states.begin(); it != states.end(); it++) {
-      std::cout << "\nEl estado " << it->GetStateId() << ": " << std::endl;
-      std::cout << "  - Es estado de arranque: " << (it->IsStartState() ? "si" : "no") << std::endl;
-      std::cout << "  - Es estado de aceptación: " << (it->IsAceptationState() ? "si" : "no") << std::endl;
-      std::cout << "  - Transiciones: " << std::endl;
-      for (auto it2 = automaton->GetTransitions().begin(); it2 != automaton->GetTransitions().end(); it2++) {
-        if (it2->GetFrom() == *it) {
-          std::cout << "    - " << it2->GetFrom().GetStateId() << " -> " << it2->GetSymbol() << " -> " << it2->GetTo().GetStateId() << std::endl;
-        }
-      }
-    }
-  }
-}
-
+/**
+ * @brief Check the strings on the automaton
+ * 
+ * @param automaton 
+ * @param strings_data 
+ */
 void check_strings_on_automata(Automaton* automaton, std::vector<String> strings_data) {
-  std::cout << "\n ==== Strings to check ==== " << std::endl;
+  std::cout << BOLD << "\n ==== Strings to check ==== " << RESET << std::endl;
   for (int i = 0; i < strings_data.size(); i++) {
     std::cout << BOLD << strings_data[i] << RESET << std::endl;
     if (automaton->ReadStrings(strings_data[i])) {
@@ -179,5 +154,6 @@ void check_strings_on_automata(Automaton* automaton, std::vector<String> strings
   }
 }
 
-template std::vector<std::string> read_file<std::string>(const std::string&);
+// Instanciación explícita de las funciones de plantilla
+template std::vector<std::string> read_file<std::string>(const std::string&); 
 template std::vector<String> read_file<String>(const std::string&);

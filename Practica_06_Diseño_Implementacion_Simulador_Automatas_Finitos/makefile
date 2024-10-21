@@ -1,18 +1,19 @@
-CXX		 := g++
-CXXFLAGS := -std=c++17 -g #-fsanitize=address #-Wall #-Wextra
+CXX         := g++
+CXXFLAGS    := -std=c++17 -g #-fsanitize=address #-Wall #-Wextra
 
-BIN      := bin
-SRC      := src
-BUILD	 := build
-INCLUDE  := include
-LIB      := lib
-DATA     := data
-LIBRARIES:= 
-EXECUTABLE := p06_automata_simulator
+BIN         := bin
+SRC         := src
+BUILD       := build
+INCLUDE     := include
+LIB         := lib
+DATA        := data
+LIBRARIES   := 
+EXECUTABLE  := p06_automata_simulator
 EXECUTABLE_TRACE := p06_automata_simulator_trace
-PARAMS	  := 
-SOURCES   := $(wildcard $(SRC)/*.cc)
-OBJS	  := $(patsubst $(SRC)/%.cc, $(BUILD)/%.o,$(SOURCES))
+PARAMS      := 
+SOURCES     := $(wildcard $(SRC)/*.cc)
+OBJS        := $(patsubst $(SRC)/%.cc, $(BUILD)/%.o,$(SOURCES))
+OBJS_TRACE  := $(patsubst $(SRC)/%.cc, $(BUILD)/%_trace.o,$(SOURCES))
 
 .PHONY: all project run clean trace
 
@@ -26,6 +27,10 @@ $(BUILD)/%.o: $(SRC)/%.cc
 	@echo "🚧 Building..."
 	$(CXX) -c -o $@ $(CXXFLAGS) $<
 
+trace: CXXFLAGS += -D TRACE
+trace: clean all
+	@echo "🛠️  Built with TRACE mode"
+
 project:
 	clear
 	@echo "📁 Creating Project Structure..."
@@ -38,11 +43,6 @@ run:
 clean:
 	@echo "🧹 Clearing..."
 	rm -f $(BIN)/* $(BUILD)/*
-
-# New trace rule
-trace: CXXFLAGS += -D TRACE
-trace: clean all
-	@echo "🛠️  Built with TRACE mode"
 
 tar:
 	@echo "📦 Compressing..."

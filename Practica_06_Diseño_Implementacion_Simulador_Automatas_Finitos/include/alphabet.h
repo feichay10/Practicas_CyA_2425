@@ -39,7 +39,6 @@ class Alphabet {
 
   std::set<Symbol> GetAlphabet() const;
   void insert(Symbol symbol);
-
   bool find(Symbol symbol) const;
   std::set<Symbol>::const_iterator end() const;
 
