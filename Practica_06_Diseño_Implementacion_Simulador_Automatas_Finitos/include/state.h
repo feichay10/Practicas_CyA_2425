@@ -48,6 +48,7 @@ class State {
   bool operator==(const State& other) const {
     return this->state_id_ == other.state_id_; // O el campo relevante que defina a State.
   }
+  
  private:
   bool start_state_;
   bool aceptation_state_;

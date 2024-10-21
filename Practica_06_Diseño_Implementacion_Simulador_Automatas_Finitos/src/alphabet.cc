@@ -36,6 +36,11 @@ Alphabet::Alphabet(std::string alphabet) {
   alphabet_ = alphabet_set;
 }
 
+/**
+ * @brief Construct a new Alphabet:: Alphabet object
+ * 
+ * @param alphabet 
+ */
 Alphabet::Alphabet(std::set<Symbol> alphabet) {
   alphabet_ = alphabet;
 }
@@ -64,7 +69,6 @@ bool Alphabet::find(Symbol symbol) const {
   return alphabet_.find(symbol) != alphabet_.end();
 }
 
-
 /**
  * @brief Overload the << operator
  * 
@@ -76,6 +80,13 @@ std::set<Symbol>::const_iterator Alphabet::end() const {
   return std::set<Symbol>::const_iterator();
 }
 
+/**
+ * @brief Overload the << operator
+ * 
+ * @param os 
+ * @param alphabet 
+ * @return std::ostream& 
+ */
 std::ostream& operator<<(std::ostream& os, const Alphabet& alphabet) {
   os << "{" << std::flush;
   bool first = true;
