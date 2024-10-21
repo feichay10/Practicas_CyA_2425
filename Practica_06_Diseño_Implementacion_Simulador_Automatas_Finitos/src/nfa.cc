@@ -58,6 +58,84 @@ NFA::NFA(std::vector<std::string> automaton_data) {
   }
 }
 
+// bool NFA::ReadStrings(const String& string) {
+//   // Conjunto de estados actuales, comenzamos con el estado inicial
+//   std::set<State> current_states;
+//   bool initial_state_found = false;
+  
+//   // Encuentra el estado inicial y añádelo a los estados actuales
+//   for (const auto& state : states_) {
+//     if (state.GetStateId() == initial_state_) {
+//       current_states.insert(state);
+//       initial_state_found = true;
+//       break;
+//     }
+//   }
+
+//   if (!initial_state_found) {
+//     std::cout << "ERROR: Estado inicial no encontrado" << std::endl;
+//     return false;
+//   }
+
+//   // Manejar la cadena vacía
+//   if (string.GetString().size() == 1 && string.GetString()[0].GetSymbol() == '&') {
+//     for (const auto& state : current_states) {
+//       if (state.IsAceptationState()) {
+//         return true;
+//       }
+//     }
+//     return false;
+//   }
+
+//   // Procesar la cadena de entrada
+//   for (int i = 0; i < string.GetString().size() - 1; i++) {
+//     Symbol symbol = Symbol(string.GetString()[i]);
+//     std::cout << "Current symbol: " << symbol << std::endl;
+
+//     if (!AlphabetComprobation(symbol)) {
+//       std::cout << "ERROR: El símbolo " << symbol.GetSymbol() << " no pertenece al alfabeto" << std::endl;
+//       return false;
+//     }
+
+//     std::set<State> next_states;
+    
+//     // Para cada estado actual, buscar transiciones posibles
+//     for (const auto& current_state : current_states) {
+//       for (const auto& transition : transitions_) {
+//         // Si la transición parte del estado actual y el símbolo coincide
+//         if (transition.GetFrom().GetStateId() == current_state.GetStateId() && 
+//             transition.GetSymbol().GetSymbol() == symbol.GetSymbol()) {
+//           // Encontrar el estado de destino
+//           for (const auto& state : states_) {
+//             if (state.GetStateId() == transition.GetTo().GetStateId()) {
+//               next_states.insert(state);
+//             }
+//           }
+//         }
+//       }
+//     }
+
+//     if (next_states.empty()) {
+//       std::cout << "ERROR: No se ha encontrado una transición para el símbolo " << symbol.GetSymbol() << std::endl;
+//       return false;
+//     }
+
+//     current_states = next_states;  // Actualiza los estados actuales con los nuevos posibles
+//   }
+
+//   // Verifica si alguno de los estados actuales es de aceptación
+//   for (const auto& state : current_states) {
+//     if (state.IsAceptationState()) {
+//       return true;
+//     }
+//   }
+
+//   return false;
+// }
+
+#include <set>
+#include <queue>
+
 bool NFA::ReadStrings(const String& string) {
   // Conjunto de estados actuales, comenzamos con el estado inicial
   std::set<State> current_states;
@@ -77,7 +155,10 @@ bool NFA::ReadStrings(const String& string) {
     return false;
   }
 
-  // Manejar la cadena vacía
+  // Expandir las epsilon-transiciones desde los estados iniciales
+  current_states = EpsilonClosure(current_states);
+
+  // Manejar la cadena vacía (solo epsilon)
   if (string.GetString().size() == 1 && string.GetString()[0].GetSymbol() == '&') {
     for (const auto& state : current_states) {
       if (state.IsAceptationState()) {
@@ -98,7 +179,7 @@ bool NFA::ReadStrings(const String& string) {
     }
 
     std::set<State> next_states;
-    
+
     // Para cada estado actual, buscar transiciones posibles
     for (const auto& current_state : current_states) {
       for (const auto& transition : transitions_) {
@@ -120,6 +201,9 @@ bool NFA::ReadStrings(const String& string) {
       return false;
     }
 
+    // Expandir las epsilon-transiciones desde los nuevos estados
+    next_states = EpsilonClosure(next_states);
+
     current_states = next_states;  // Actualiza los estados actuales con los nuevos posibles
   }
 
@@ -132,3 +216,37 @@ bool NFA::ReadStrings(const String& string) {
 
   return false;
 }
+
+// Función para calcular el cierre epsilon (Epsilon Closure)
+std::set<State> NFA::EpsilonClosure(const std::set<State>& states) {
+  std::set<State> closure = states;  // El cierre contiene inicialmente los estados originales
+  std::queue<State> to_process;      // Estados que procesaremos
+
+  // Añadimos los estados iniciales a la cola
+  for (const auto& state : states) {
+    to_process.push(state);
+  }
+
+  // Mientras haya estados por procesar
+  while (!to_process.empty()) {
+    State current_state = to_process.front();
+    to_process.pop();
+
+    // Buscar transiciones epsilon (símbolo '&') desde el estado actual
+    for (const auto& transition : transitions_) {
+      if (transition.GetFrom().GetStateId() == current_state.GetStateId() && 
+          transition.GetSymbol().GetSymbol() == '&') {
+        // Encontrar el estado de destino
+        for (const auto& state : states_) {
+          if (state.GetStateId() == transition.GetTo().GetStateId() && closure.find(state) == closure.end()) {
+            closure.insert(state);  // Añadimos al cierre
+            to_process.push(state); // Lo procesaremos después para expandir su cierre
+          }
+        }
+      }
+    }
+  }
+
+  return closure;
+}
+

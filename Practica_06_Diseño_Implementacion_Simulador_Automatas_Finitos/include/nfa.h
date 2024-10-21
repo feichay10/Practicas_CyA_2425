@@ -25,6 +25,7 @@ class NFA : public Automaton {
   NFA(std::vector<std::string> automaton_data);
   ~NFA() = default;
   bool ReadStrings(const String& string) override;
+  std::set<State> EpsilonClosure(const std::set<State>& states);
 };
 
 #endif  // NFA_H
