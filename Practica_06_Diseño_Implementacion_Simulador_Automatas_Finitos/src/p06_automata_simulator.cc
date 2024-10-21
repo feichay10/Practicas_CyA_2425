@@ -41,7 +41,6 @@ int main(int argc, char* argv[]) {
         automaton = new NFA(automaton_data);
       }
       print_automaton_data(automaton);
-      std::cout << "\n ==== Strings to check ==== " << strings_data.size() << std::endl;
       print_strings_on_automata(automaton, strings_data);
     } else {
       exit(EXIT_FAILURE);

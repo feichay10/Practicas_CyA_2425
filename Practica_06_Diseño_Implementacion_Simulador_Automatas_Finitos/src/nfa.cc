@@ -16,45 +16,119 @@
  */
 
 #include "../include/nfa.h"
+#include <set>
+#include <queue>
 
 NFA::NFA(std::vector<std::string> automaton_data) {
-  // std::stringstream ss(automaton_data[0]); // Leer el alfabeto
-  // Symbol symbol;
-  // while (ss >> symbol) {
-  //   alphabet_.insert(Symbol(symbol));
-  // }
+  std::stringstream ss(automaton_data[0]); // Leer el alfabeto
+  Symbol symbol;
+  while (ss >> symbol) {
+    alphabet_.insert(Symbol(symbol)); 
+  }
+
+  num_states_ = std::stoi(automaton_data[1]); // Número de estados
+  initial_state_ = automaton_data[2];         // Estado de arranque
+  initial_state_.resize(initial_state_.size() - 1); // Eliminar el salto de linea
+
+  // Leer los estados
+  for (int i = 3; i < automaton_data.size(); i++) {
+    std::stringstream ss(automaton_data[i]);
+    std::string state_id;
+    bool aceptation_state;
+    bool start_state = false;
+    int transitions_number;
+    ss >> state_id >> aceptation_state >> transitions_number;
+    if (state_id == initial_state_) {
+      start_state = true;
+    }
+    State state(state_id, start_state, aceptation_state, transitions_);
+    
+    // Leer las transiciones
+    for (int j = 0; j < transitions_number; j++) {
+      std::string symbol;
+      std::string to_state;
+      ss >> symbol >> to_state;
+      // if (!alphabet_.find(Symbol(symbol))) {
+      //   throw std::runtime_error("Hay una transición con un símbolo que no está en el alfabeto");
+      // }
+      Transition transition(state, Symbol(symbol[0]), State(to_state, false, false));
+      transitions_.insert(transition);
+    }
+    states_.insert(state);
+  }
+}
+
+bool NFA::ReadStrings(const String& string) {
+  // Conjunto de estados actuales, comenzamos con el estado inicial
+  std::set<State> current_states;
+  bool initial_state_found = false;
   
-  // alphabet_.insert(Symbol('&')); // Añadir símbolo epsilon al alfabeto
+  // Encuentra el estado inicial y añádelo a los estados actuales
+  for (const auto& state : states_) {
+    if (state.GetStateId() == initial_state_) {
+      current_states.insert(state);
+      initial_state_found = true;
+      break;
+    }
+  }
 
-  // num_states_ = std::stoi(automaton_data[1]); // Número de estados
-  // initial_state_ = automaton_data[2];         // Estado inicial
+  if (!initial_state_found) {
+    std::cout << "ERROR: Estado inicial no encontrado" << std::endl;
+    return false;
+  }
 
-  // // Leer los estados
-  // for (int i = 3; i < automaton_data.size(); i++) {
-  //   std::cout << "Linea: " << automaton_data[i] << std::endl;
-  //   std::stringstream ss(automaton_data[i]);
-  //   std::string state_id;
-  //   bool aceptation_state;
-  //   int transitions_number;
-  //   ss >> state_id >> aceptation_state >> transitions_number;
+  // Manejar la cadena vacía
+  if (string.GetString().size() == 1 && string.GetString()[0].GetSymbol() == '&') {
+    for (const auto& state : current_states) {
+      if (state.IsAceptationState()) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  // Procesar la cadena de entrada
+  for (int i = 0; i < string.GetString().size() - 1; i++) {
+    Symbol symbol = Symbol(string.GetString()[i]);
+    std::cout << "Current symbol: " << symbol << std::endl;
+
+    if (!AlphabetComprobation(symbol)) {
+      std::cout << "ERROR: El símbolo " << symbol.GetSymbol() << " no pertenece al alfabeto" << std::endl;
+      return false;
+    }
+
+    std::set<State> next_states;
     
-  //   State state(state_id, state_id == initial_state_, aceptation_state);
-    
-  //   // Leer las transiciones
-  //   for (int j = 0; j < transitions_number; j++) {
-  //     std::string symbol;
-  //     std::string to_state;
-  //     ss >> symbol >> to_state;
-      
-  //     if (symbol == "&") { // Epsilon transiciones
-  //       Transition transition(state, Symbol('&'), State(to_state, false, false));
-  //       epsilon_transitions_[state_id].insert(to_state);
-  //     } else {
-  //       Transition transition(state, Symbol(symbol[0]), State(to_state, false, false));
-  //       transitions_[state_id][Symbol(symbol)].insert(to_state);
-  //     }
-  //   }
-    
-  //   states_.insert(state);
-  // }
+    // Para cada estado actual, buscar transiciones posibles
+    for (const auto& current_state : current_states) {
+      for (const auto& transition : transitions_) {
+        // Si la transición parte del estado actual y el símbolo coincide
+        if (transition.GetFrom().GetStateId() == current_state.GetStateId() && 
+            transition.GetSymbol().GetSymbol() == symbol.GetSymbol()) {
+          // Encontrar el estado de destino
+          for (const auto& state : states_) {
+            if (state.GetStateId() == transition.GetTo().GetStateId()) {
+              next_states.insert(state);
+            }
+          }
+        }
+      }
+    }
+
+    if (next_states.empty()) {
+      std::cout << "ERROR: No se ha encontrado una transición para el símbolo " << symbol.GetSymbol() << std::endl;
+      return false;
+    }
+
+    current_states = next_states;  // Actualiza los estados actuales con los nuevos posibles
+  }
+
+  // Verifica si alguno de los estados actuales es de aceptación
+  for (const auto& state : current_states) {
+    if (state.IsAceptationState()) {
+      return true;
+    }
+  }
+
+  return false;
 }

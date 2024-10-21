@@ -51,6 +51,8 @@ class String {
   Language Suffixes();
   Language Substrings();
 
+  int size() const;
+
   friend std::ostream& operator<<(std::ostream& os, const String& string) {
     for (Symbol symbol : string.GetString()) {
       os << symbol.GetSymbol();
@@ -60,6 +62,10 @@ class String {
 
   friend bool operator<(const String& string1, const String& string2) {
     return string1.GetString().size() < string2.GetString().size();
+  }
+
+  bool operator==(const String& other) const {
+    return this->string_ == other.string_;
   }
 
  private:

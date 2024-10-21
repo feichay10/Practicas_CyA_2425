@@ -29,7 +29,7 @@
 class Transition {
  public:
   Transition() = default;
-  Transition(State from, Symbol symbol, State to);
+  Transition(const State& from, const Symbol& symbol, const State& to);
   ~Transition() = default;
 
   const State& GetFrom() const;

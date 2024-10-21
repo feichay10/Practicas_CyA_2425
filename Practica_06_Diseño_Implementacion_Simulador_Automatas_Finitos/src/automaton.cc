@@ -42,40 +42,9 @@ int Automaton::GetNumStates() const {
 }
 
 bool Automaton::AlphabetComprobation(const Symbol& symbol) {
-  if (alphabet_.GetAlphabet().find(symbol) == alphabet_.GetAlphabet().end()) {
+  if (!alphabet_.find(Symbol(symbol))) {
     return false;
-  }
-  return true;
-}
-
-// Funcion que lee las cadenas y comprueba si son aceptadas o no por el automata
-// Ir simbolo a simbolo y comprobar si la transición existe
-void Automaton::ReadStrings(const String& string) {
-  State current_state = State(initial_state_, false, true);
-  std::cout << "Estado actual: " << current_state.GetStateId() << std::endl;
-  for (int i = 0; i < string.GetString().size(); i++) {
-    Symbol symbol = Symbol(string.GetString()[i]);
-    if (!AlphabetComprobation(symbol)) {
-      std::cout << "ERROR: El simbolo " << symbol.GetSymbol() << " no pertenece al alfabeto" << std::endl;
-      return;
-    }
-    bool found = false;
-    for (auto it = transitions_.begin(); it != transitions_.end(); it++) {
-      if (it->GetFrom().GetStateId() == current_state.GetStateId() && it->GetSymbol().GetSymbol() == symbol.GetSymbol()) {
-        current_state = it->GetTo();
-        found = true;
-        break;
-      }
-    }
-    if (!found) {
-      std::cout << "ERROR: No se ha encontrado la transición " << current_state.GetStateId() << " -> " << symbol.GetSymbol() << std::endl;
-      return;
-    }
-    std::cout << "Estado actual: " << current_state.GetStateId() << std::endl;
-  }
-  if (current_state.IsAceptationState()) {
-    std::cout << "Accepted" << std::endl;
   } else {
-    std::cout << "Rejected" << std::endl;
+    return true;
   }
 }

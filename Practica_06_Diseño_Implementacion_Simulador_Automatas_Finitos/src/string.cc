@@ -17,6 +17,7 @@
 
 #include "../include/string.h"
 #include "../include/language.h"
+#include "string.h"
 
 /**
  * @brief Construct a new String:: String object
@@ -148,4 +149,8 @@ Language String::Substrings() {
     }
   }
   return Language(substrings);
+}
+
+int String::size() const {
+  return string_.size() - 1;
 }

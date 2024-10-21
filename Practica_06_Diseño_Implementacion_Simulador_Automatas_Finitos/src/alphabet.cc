@@ -54,15 +54,16 @@ void Alphabet::insert(Symbol symbol) {
 }
 
 /**
- * @brief Check if a symbol is in the alphabet
+ * @brief Find a symbol in the alphabet
  * 
  * @param symbol 
  * @return true 
  * @return false 
  */
-bool Alphabet::IsSymbolInAlphabet(Symbol symbol) const {
+bool Alphabet::find(Symbol symbol) const {
   return alphabet_.find(symbol) != alphabet_.end();
 }
+
 
 /**
  * @brief Overload the << operator
@@ -71,6 +72,10 @@ bool Alphabet::IsSymbolInAlphabet(Symbol symbol) const {
  * @param alphabet 
  * @return std::ostream& 
  */
+std::set<Symbol>::const_iterator Alphabet::end() const {
+  return std::set<Symbol>::const_iterator();
+}
+
 std::ostream& operator<<(std::ostream& os, const Alphabet& alphabet) {
   os << "{" << std::flush;
   bool first = true;

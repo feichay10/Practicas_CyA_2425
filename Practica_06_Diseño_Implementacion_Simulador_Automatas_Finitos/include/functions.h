@@ -30,6 +30,7 @@
 #include "string.h"
 #include "language.h"
 #include "automaton.h"
+#include "colors.h"
 
 const char SPACE = ' ';
 

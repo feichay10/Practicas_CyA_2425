@@ -67,14 +67,80 @@ DFA::DFA(std::vector<std::string> automaton_data) {
     State state(state_id, start_state, aceptation_state, transitions_);
     
     // Leer las transiciones
-    // TODO: Comprobar que si en una transicion hay un simbolo que no esta en el alfabeto, lanzar excepcion
     for (int j = 0; j < transitions_number; j++) {
       std::string symbol;
       std::string to_state;
       ss >> symbol >> to_state;
+      if (!alphabet_.find(Symbol(symbol))) {
+        throw std::runtime_error("Hay una transición con un símbolo que no está en el alfabeto");
+      }
       Transition transition(state, Symbol(symbol[0]), State(to_state, false, false));
       transitions_.insert(transition);
     }
     states_.insert(state);
+  }
+}
+
+bool DFA::ReadStrings(const String& string) {
+  State current_state;
+  bool initial_state_found = false;
+  for (const auto& state : states_) {
+    if (state.GetStateId() == initial_state_) {
+      current_state = state;
+      initial_state_found = true;
+      break;
+    }
+  }
+
+  if (string.GetString().size() - 1 == 1 && string.GetString()[0].GetSymbol() == '&') {
+    if (current_state.IsAceptationState()) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  if (!initial_state_found) {
+    std::cout << "ERROR: Estado inicial no encontrado" << std::endl;
+    return false;
+  }
+  
+  for (int i = 0; i < string.GetString().size() - 1; i++) {
+    Symbol symbol = Symbol(string.GetString()[i]);
+    std::cout << "Current symbol: " << symbol << " - ";
+    std::cout << "Current state: " << current_state.GetStateId() << std::endl;
+    if (!AlphabetComprobation(symbol)) {
+      std::cout << "ERROR: El simbolo " << symbol.GetSymbol() << " no pertenece al alfabeto" << std::endl;
+      return false;
+    }
+    
+    bool found = false;
+    for (auto it = transitions_.begin(); it != transitions_.end(); it++) {
+      if (it->GetFrom().GetStateId() == current_state.GetStateId() && it->GetSymbol().GetSymbol() == symbol.GetSymbol()) {
+        auto next_state_it = states_.end();
+        for (auto state_it = states_.begin(); state_it != states_.end(); ++state_it) {
+          if (state_it->GetStateId() == it->GetTo().GetStateId()) {
+            next_state_it = state_it;
+            break;
+          }
+        }
+        if (next_state_it != states_.end()) {
+          current_state = *next_state_it;
+          found = true;
+          break;
+        }
+      }
+    }
+    
+    if (!found) {
+      std::cout << "ERROR: No se ha encontrado la transición " << current_state.GetStateId() << " -> " << symbol.GetSymbol() << std::endl;
+      return false;
+    }
+  }
+  
+  if (current_state.IsAceptationState()) {
+    return true;
+  } else {
+    return false;
   }
 }

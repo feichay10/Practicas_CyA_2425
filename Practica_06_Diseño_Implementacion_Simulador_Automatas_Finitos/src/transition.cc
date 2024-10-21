@@ -17,7 +17,7 @@
 
 #include "../include/transition.h"
 
-Transition::Transition(State from, Symbol symbol, State to) {
+Transition::Transition(const State& from, const Symbol& symbol, const State& to) {
   from_ = from;
   symbol_ = symbol;
   to_ = to;

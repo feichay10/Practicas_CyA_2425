@@ -24,6 +24,7 @@ class NFA : public Automaton {
  public:
   NFA(std::vector<std::string> automaton_data);
   ~NFA() = default;
+  bool ReadStrings(const String& string) override;
 };
 
 #endif  // NFA_H
