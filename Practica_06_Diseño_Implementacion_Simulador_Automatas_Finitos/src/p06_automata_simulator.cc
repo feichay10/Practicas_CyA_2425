@@ -41,7 +41,7 @@ int main(int argc, char* argv[]) {
         automaton = new NFA(automaton_data);
       }
       print_automaton_data(automaton);
-      print_strings_on_automata(automaton, strings_data);
+      check_strings_on_automata(automaton, strings_data);
     } else {
       exit(EXIT_FAILURE);
     }

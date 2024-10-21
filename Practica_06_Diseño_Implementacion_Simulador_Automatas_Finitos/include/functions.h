@@ -63,6 +63,6 @@ void write_file(std::string file_name, T& data);
 bool check_automaton(const std::vector<std::string>& automaton_data);
 void check_strings_automata(Automaton& automata, std::vector<std::string> strings_data);
 void print_automaton_data(Automaton* automaton);
-void print_strings_on_automata(Automaton* automaton, std::vector<String> strings_data);
+void check_strings_on_automata(Automaton* automaton, std::vector<String> strings_data);
 
 #endif  // FUNCTIONS_H

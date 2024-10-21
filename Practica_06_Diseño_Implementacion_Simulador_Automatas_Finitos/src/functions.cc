@@ -166,7 +166,7 @@ void print_automaton_data(Automaton* automaton) {
   }
 }
 
-void print_strings_on_automata(Automaton* automaton, std::vector<String> strings_data) {
+void check_strings_on_automata(Automaton* automaton, std::vector<String> strings_data) {
   std::cout << "\n ==== Strings to check ==== " << std::endl;
   for (int i = 0; i < strings_data.size(); i++) {
     std::cout << strings_data[i] << std::endl;

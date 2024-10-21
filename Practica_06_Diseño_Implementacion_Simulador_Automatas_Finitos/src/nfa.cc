@@ -133,9 +133,6 @@ NFA::NFA(std::vector<std::string> automaton_data) {
 //   return false;
 // }
 
-#include <set>
-#include <queue>
-
 bool NFA::ReadStrings(const String& string) {
   // Conjunto de estados actuales, comenzamos con el estado inicial
   std::set<State> current_states;
@@ -203,7 +200,6 @@ bool NFA::ReadStrings(const String& string) {
 
     // Expandir las epsilon-transiciones desde los nuevos estados
     next_states = EpsilonClosure(next_states);
-
     current_states = next_states;  // Actualiza los estados actuales con los nuevos posibles
   }
 
