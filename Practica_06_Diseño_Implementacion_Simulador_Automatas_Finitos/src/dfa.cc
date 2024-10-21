@@ -17,31 +17,6 @@
 
 #include "../include/dfa.h"
 
-// Constructor, contruye un DFA a partir de los datos del fichero
-// Linea 1: Simbolos del alfabeto separados por espacios
-// Linea 2: Numero total de estados del automata
-// Linea 3: Estado de arranque
-// A continuación figurará una línea para cada uno de los estados. Cada linea 
-// contendra los siguientes numeros, separados entre si por espacios en blanco:
-//    - Numero identificador del estado. Los estados del automata se representaran
-//      mediante numeros naturales. La numeracion de los estados corresponderan
-//      a los primeros numeros naturales empezando por 0.
-//    - Un 1 si se trata de un estado de aceptacion y un 0 en caso contrario.
-//    - Numero de transiciones que posee el estado.
-//    - A continuación, para cada una de las transiciones, y utilizando espacios
-//      en blanco como separador, se detallará la información siguiente:
-//        - Simbolo de entrada necesario que se produzca la transición. Para 
-//          representar la cadena vacia (el no consumir simbolo de la entrada) se
-//          utilizará el simbolo &.
-//        - Estado destino de la transición.
-// Ejemplo de fichero que se especifica un DFA:
-// 0  1  -> Alfabeto
-// 4     -> Numero total de estados
-// 0     -> Estado de arranque (inicial)
-// 0 0 2 0 2 1 1
-// 1 1 2 0 1 1 1
-// 2 0 2 0 1 1 3
-// 3 0 2 0 2 1 3
 DFA::DFA(std::vector<std::string> automaton_data) {
   std::stringstream ss(automaton_data[0]); // Leer el alfabeto
   Symbol symbol;

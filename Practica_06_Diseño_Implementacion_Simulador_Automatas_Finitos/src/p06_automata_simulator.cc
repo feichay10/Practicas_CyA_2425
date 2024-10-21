@@ -24,6 +24,8 @@
 #include "../include/dfa.h"
 #include "../include/nfa.h"
 
+// TODO: Modo traza
+
 int main(int argc, char* argv[]) {
   std::vector<std::string> automaton_data;
   std::vector<String> strings_data;
@@ -33,13 +35,7 @@ int main(int argc, char* argv[]) {
     if (check_parameters(argc, argv)) {
       automaton_data = read_file<std::string>(argv[1]);
       strings_data = read_file<String>(argv[2]);
-      if (check_automaton(automaton_data)) {
-        std::cout << " ==== Es un DFA ==== " << std::endl;
-        automaton = new DFA(automaton_data);
-      } else {
-        std::cout << " ==== Es un NFA ==== " << std::endl;
-        automaton = new NFA(automaton_data);
-      }
+      check_automaton(automaton_data) ? automaton = new DFA(automaton_data) : automaton = new NFA(automaton_data);
       print_automaton_data(automaton);
       check_strings_on_automata(automaton, strings_data);
     } else {

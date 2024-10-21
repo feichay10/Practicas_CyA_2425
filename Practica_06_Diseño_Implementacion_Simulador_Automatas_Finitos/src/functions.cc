@@ -41,29 +41,23 @@ bool check_file(std::string file_name) {
  * @return True if the parameters are correct
  */
 bool check_parameters(int argc, char* argv[]) {
-  // if (argc == 1 || (std::string(argv[1]) == "--help" && argc == 2)) {
-  //   std::cerr << (argc == 1 ? kHowUse : kHelp) << std::endl;
-  //   return false;
-  // }
+  if (argc == 1 || (std::string(argv[1]) == "--help" && argc == 2) || (std::string(argv[1]) == "-h" && argc == 2)) {
+    std::cerr << (argc == 1 ? kHowUse : kHelp) << std::endl;
+    return false;
+  }
 
-  // if (argc < 4) {
-  //   std::cerr << kHowUse << std::endl;
-  //   return false;
-  // }
+  if (argc < 3 || argc > 3) {
+    std::cerr << kHowUse << std::endl;
+    return false;
+  }
 
-  // int opcode = atoi(argv[3]);
-  // if (opcode < 1 || opcode > 5) {
-  //   std::cerr << RED_BOLD << "Invalid opcode" << RESET << std::endl;
-  //   return false;
-  // }
-
-  // try {
-  //   check_file(argv[1]);
-  //   check_file(argv[2]);
-  // } catch (const std::runtime_error& e) {
-  //   std::cerr << e.what() << std::endl;
-  //   return false;
-  // }
+  try {
+    check_file(argv[1]);
+    check_file(argv[2]);
+  } catch (const std::runtime_error& e) {
+    std::cerr << e.what() << std::endl;
+    return false;
+  }
 
   return true;
 }
@@ -148,6 +142,12 @@ bool check_automaton(const std::vector<std::string>& automaton_data) {
 
 void print_automaton_data(Automaton* automaton) {
   if (automaton != nullptr) {
+    // Imprimir si el automata es un DFA o un NFA, comprobar el tipo de objeto automata
+    if (dynamic_cast<DFA*>(automaton)) {
+      std::cout << " ==== Es un DFA ==== " << std::endl;
+    } else {
+      std::cout << " ==== Es un NFA ==== " << std::endl;
+    }
     std::cout << "Alfabeto: " << automaton->GetAlphabet() << std::endl;
     std::cout << "Numero de estados: " << automaton->GetNumStates() << std::endl;
     std::set<State> states = automaton->GetStates();
