@@ -39,7 +39,7 @@ class Automaton {
   std::set<State> GetStates() const;
   Alphabet GetAlphabet() const;
   const std::set<Transition>& GetTransitions() const;
-  std::string GetInitialState() const;
+  State GetInitialState() const;
   std::set<State> GetFinalStates() const;
   int GetNumStates() const;
 
@@ -51,7 +51,7 @@ class Automaton {
  protected:
   Alphabet alphabet_;
   std::set<State> states_;
-  std::string initial_state_;
+  State initial_state_;
   std::set<State> final_states_;
   std::set<Transition> transitions_;
   int num_states_;

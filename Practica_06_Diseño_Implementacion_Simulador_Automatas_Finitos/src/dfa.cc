@@ -30,8 +30,9 @@ DFA::DFA(const std::vector<std::string>& automaton_data) {
   }
 
   num_states_ = std::stoi(automaton_data[1]); // Número de estados
-  initial_state_ = automaton_data[2];         // Estado de arranque
-  initial_state_.resize(initial_state_.size() - 1); // Eliminar el salto de linea
+  std::string initial_state_id = automaton_data[2]; // Estado de arranque
+  initial_state_id.resize(initial_state_id.size() - 1); // Eliminar el salto de linea
+  initial_state_ = State(initial_state_id, true, false); // Inicializar el estado inicial
 
   // Leer los estados
   for (int i = 3; i < automaton_data.size(); i++) {
@@ -41,7 +42,7 @@ DFA::DFA(const std::vector<std::string>& automaton_data) {
     bool start_state = false;
     int transitions_number;
     ss >> state_id >> aceptation_state >> transitions_number;
-    if (state_id == initial_state_) {
+    if (state_id == initial_state_.GetStateId()) {
       start_state = true;
     }
     State state(state_id, start_state, aceptation_state, transitions_);
@@ -72,7 +73,7 @@ bool DFA::ReadStrings(const String& string) {
   State current_state;
   bool initial_state_found = false;
   for (const auto& state : states_) {
-    if (state.GetStateId() == initial_state_) {
+    if (state == initial_state_) {
       current_state = state;
       initial_state_found = true;
       break;

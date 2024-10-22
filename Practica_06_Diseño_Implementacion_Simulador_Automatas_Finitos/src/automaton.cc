@@ -47,9 +47,9 @@ const std::set<Transition>& Automaton::GetTransitions() const {
 /**
  * @brief Get the Initial State object
  * 
- * @return std::string 
+ * @return State 
  */
-std::string Automaton::GetInitialState() const {
+ State Automaton::GetInitialState() const {
   return initial_state_;
 }
 
