@@ -143,8 +143,7 @@ bool NFA::ReadStrings(const String& string) {
     }
 
     // Expandir las epsilon-transiciones desde los nuevos estados
-    next_states = EpsilonClosure(next_states);
-    current_states = next_states;  // Actualiza los estados actuales con los nuevos posibles
+    current_states = EpsilonClosure(next_states);  // Actualiza los estados actuales con los nuevos posibles
   }
 
   // Verifica si alguno de los estados actuales es de aceptación
@@ -179,8 +178,7 @@ std::set<State> NFA::EpsilonClosure(const std::set<State>& states) {
 
     // Buscar transiciones epsilon (símbolo '&') desde el estado actual
     for (const auto& transition : transitions_) {
-      if (transition.GetFrom().GetStateId() == current_state.GetStateId() && 
-          transition.GetSymbol().GetSymbol() == '&') {
+      if (transition.GetFrom().GetStateId() == current_state.GetStateId() && transition.GetSymbol().GetSymbol() == '&') {
         // Encontrar el estado de destino
         for (const auto& state : states_) {
           if (state.GetStateId() == transition.GetTo().GetStateId() && closure.find(state) == closure.end()) {
