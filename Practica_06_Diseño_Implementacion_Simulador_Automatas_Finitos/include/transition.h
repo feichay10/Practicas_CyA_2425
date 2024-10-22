@@ -38,18 +38,7 @@ class Transition {
   const Symbol& GetSymbol() const;
   const State& GetTo() const;
 
-  bool operator<(const Transition& transition) const {
-    if (from_ < transition.from_) {
-      return true;
-    } else if (from_ == transition.from_) {
-      if (symbol_ < transition.symbol_) {
-        return true;
-      } else if (symbol_ == transition.symbol_) {
-        return to_ < transition.to_;
-      }
-    }
-    return false;
-  }
+  bool operator<(const Transition& transition) const;
 
  private:
   State from_;

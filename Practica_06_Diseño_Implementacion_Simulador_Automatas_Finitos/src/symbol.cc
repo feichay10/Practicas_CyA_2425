@@ -49,3 +49,49 @@ Symbol::Symbol(std::string symbol) {
 char Symbol::GetSymbol() const {
   return symbol_;
 }
+
+/**
+ * @brief Insert a String object
+ * 
+ * @param other 
+ * @return true 
+ * @return false 
+ */
+bool Symbol::operator<(const Symbol& other) const {
+  return symbol_ < other.symbol_;
+}
+
+/**
+ * @brief Insert a Symbol object
+ * 
+ * @param os 
+ * @param symbol 
+ * @return std::ostream& 
+ */
+std::ostream& operator<<(std::ostream& os, const Symbol& symbol) {
+  os << symbol.symbol_;
+  return os;
+}
+
+/**
+ * @brief Extract a Symbol object
+ * 
+ * @param is 
+ * @param symbol 
+ * @return std::istream& 
+ */
+std::istream& operator>>(std::istream& is, Symbol& symbol) {
+  is >> symbol.symbol_;
+  return is;
+}
+
+/**
+ * @brief Compare two Symbol objects
+ * 
+ * @param other 
+ * @return true 
+ * @return false 
+ */
+bool Symbol::operator==(const Symbol& other) const {
+  return this->symbol_ == other.symbol_;
+}

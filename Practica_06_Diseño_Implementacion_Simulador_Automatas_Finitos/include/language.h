@@ -37,20 +37,7 @@ class Language {
   std::set<String> GetLanguage() const;
   void SetLanguage(std::set<String> language);
 
-  friend std::ostream& operator<<(std::ostream& os, const Language& language) {
-    os << "{&, ";
-    bool first = true;
-    for (const String& string : language.GetLanguage()) {
-      if (!first) {
-        os << ", ";
-      }
-      os << string;
-      first = false;
-    }
-    os << "}";
-
-    return os;
-  }
+  friend std::ostream& operator<<(std::ostream& os, const Language& language);
 
  private:
   std::set<String> language_;

@@ -104,3 +104,24 @@ std::set<Transition> State::GetTransitions(Symbol symbol) {
   return transitions;
 }
 
+/**
+ * @brief Overload of the operator <
+ * 
+ * @param state 
+ * @return true 
+ * @return false 
+ */
+bool State::operator<(const State& state) const {
+  return state_id_ < state.state_id_;
+}
+
+/**
+ * @brief Overload of the operator ==
+ * 
+ * @param other 
+ * @return true 
+ * @return false 
+ */
+bool State::operator==(const State& other) const {
+  return this->state_id_ == other.state_id_; 
+}

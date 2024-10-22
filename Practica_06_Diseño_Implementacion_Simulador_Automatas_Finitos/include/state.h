@@ -41,13 +41,8 @@ class State {
   std::string GetStateId() const;
   std::set<Transition> GetTransitions(Symbol symbol);
 
-  bool operator<(const State& state) const {
-    return state_id_ < state.state_id_;
-  }
-
-  bool operator==(const State& other) const {
-    return this->state_id_ == other.state_id_; // O el campo relevante que defina a State.
-  }
+  bool operator<(const State& state) const;
+  bool operator==(const State& other) const;
   
  private:
   bool start_state_;

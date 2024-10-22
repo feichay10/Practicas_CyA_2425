@@ -159,3 +159,40 @@ Language String::Substrings() {
 int String::size() const {
   return string_.size() - 1;
 }
+
+/**
+ * @brief Overload the << operator
+ * 
+ * @param os 
+ * @param string 
+ * @return std::ostream& 
+ */
+std::ostream& operator<<(std::ostream& os, const String& string) {
+  for (Symbol symbol : string.GetString()) {
+    os << symbol.GetSymbol();
+  }
+  return os;
+}
+
+/**
+ * @brief 
+ * 
+ * @param other 
+ * @return true 
+ * @return false 
+ */
+bool String::operator==(const String& other) const {
+  return this->string_ == other.string_;
+}
+
+/**
+ * @brief Overload the < operator
+ * 
+ * @param string1 
+ * @param string2 
+ * @return true 
+ * @return false 
+ */
+bool operator<(const String& string1, const String& string2) {
+  return string1.GetString().size() < string2.GetString().size();
+}

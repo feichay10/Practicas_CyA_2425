@@ -49,3 +49,25 @@ std::set<String> Language::GetLanguage() const {
 void Language::SetLanguage(std::set<String> language) {
   language_ = language;
 }
+
+/**
+ * @brief Overloaded operator<< to output the language
+ * 
+ * @param os 
+ * @param language 
+ * @return std::ostream& 
+ */
+std::ostream& operator<<(std::ostream& os, const Language& language) {
+  os << "{&, ";
+  bool first = true;
+  for (const String& string : language.GetLanguage()) {
+    if (!first) {
+      os << ", ";
+    }
+    os << string;
+    first = false;
+  }
+  os << "}";
+
+  return os;
+}

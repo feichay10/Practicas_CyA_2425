@@ -33,23 +33,10 @@ class Symbol {
 
   char GetSymbol() const;
 
-  bool operator<(const Symbol& other) const {
-    return symbol_ < other.symbol_;
-  }
-
-  friend std::ostream& operator<<(std::ostream& os, const Symbol& symbol) {
-    os << symbol.symbol_;
-    return os;
-  }
-
-  friend std::istream& operator>>(std::istream& is, Symbol& symbol) {
-    is >> symbol.symbol_;
-    return is;
-  }
-
-  bool operator==(const Symbol& other) const {
-    return this->symbol_ == other.symbol_;
-  }
+  bool operator<(const Symbol& other) const;
+  friend std::ostream& operator<<(std::ostream& os, const Symbol& symbol);
+  friend std::istream& operator>>(std::istream& is, Symbol& symbol);
+  bool operator==(const Symbol& other) const;
 
  private:
   char symbol_;

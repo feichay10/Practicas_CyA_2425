@@ -42,10 +42,10 @@ class Alphabet {
   bool find(Symbol symbol) const;
   std::set<Symbol>::const_iterator end() const;
 
+  friend std::ostream &operator<<(std::ostream &os, const Alphabet &alphabet);
+
  private:
   std::set<Symbol> alphabet_;
 };
-
-std::ostream &operator<<(std::ostream &os, const Alphabet &alphabet);
 
 #endif  // ALPHABET_H

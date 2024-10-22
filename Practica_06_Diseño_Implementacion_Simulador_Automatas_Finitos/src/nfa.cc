@@ -193,4 +193,3 @@ std::set<State> NFA::EpsilonClosure(const std::set<State>& states) {
 
   return closure;
 }
-

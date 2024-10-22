@@ -53,20 +53,9 @@ class String {
 
   int size() const;
 
-  friend std::ostream& operator<<(std::ostream& os, const String& string) {
-    for (Symbol symbol : string.GetString()) {
-      os << symbol.GetSymbol();
-    }
-    return os;
-  }
-
-  friend bool operator<(const String& string1, const String& string2) {
-    return string1.GetString().size() < string2.GetString().size();
-  }
-
-  bool operator==(const String& other) const {
-    return this->string_ == other.string_;
-  }
+  friend std::ostream& operator<<(std::ostream& os, const String& string);
+  bool operator==(const String& other) const;
+  friend bool operator<(const String& string1, const String& string2);
 
  private:
   std::vector<Symbol> string_;
