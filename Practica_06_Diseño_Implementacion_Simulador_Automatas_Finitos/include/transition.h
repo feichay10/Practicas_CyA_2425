@@ -30,7 +30,6 @@
  */
 class Transition {
  public:
-  Transition() = default;
   Transition(const State& from, const Symbol& symbol, const State& to);
   ~Transition() = default;
 
