@@ -7,3 +7,4 @@
 \contentsline {section}{\numberline {1.5}Diseñar una gramática independiente del contexto que genere el lenguaje $L = \{a^n b^m c^m d^n \mid n, m \geq 1\}$}{13}{section.1.5}%
 \contentsline {section}{\numberline {1.6}Diseñar una gramática independiente del contexto que genere el lenguaje $L = \{a^n b^m \mid n > m \geq 0\}$}{16}{section.1.6}%
 \contentsline {section}{\numberline {1.7}Diseñar una gramática independiente del contexto que genere el lenguaje $L = \{a^i b^j c^{i+j} \mid i, \ j \geq 1, \ i + j \ par\}$}{19}{section.1.7}%
+\contentsline {section}{\numberline {1.8}Diseñaar una gramática independiente del contexto que genere el lenguaje de las expresiones booleanas con los operadores AND, OR, y NOT, usando paréntesis para agrupar. Ejemplos: “(true AND false)”, “NOT (true OR false)”, “true AND (false OR true)”.}{22}{section.1.8}%

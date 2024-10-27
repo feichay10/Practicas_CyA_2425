@@ -624,70 +624,18 @@
   \end{itemize}
   \item \textbf{Imagen de la gramática simplificada en JFLAP:} La gramática simplificada en JFLAP se muestra en la siguiente figura:
   \begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.55]{img/grammar_07_simplified.png}
+    \begin{subfigure}{0.5\textwidth}
+      \centering
+      \includegraphics[scale=0.5]{img/grammar_07_simplified_remove_unit_productions.png}
+      \caption{Eliminación de producciones unitarias}
+    \end{subfigure}%
+    \begin{subfigure}{0.5\textwidth}
+      \centering
+      \includegraphics[scale=0.5]{img/grammar_07_simplified.png}
+      \caption{Gramática simplificada}
+    \end{subfigure}
     \caption{Gramática simplificada en JFLAP para el lenguaje $L = \{a^i b^j c^{i+j} \mid i, \ j \geq 1, \ i + j \ par\}$}
-    \label{fig:gramatica7_simplified}
   \end{figure}
 \end{itemize}
-
-\newpage
-
-% Ejericio 8
-\section{Diseñaar una gramática independiente del contexto que genere el lenguaje de las expresiones booleanas con los operadores AND, OR, y NOT, usando paréntesis
-para agrupar. Ejemplos: “(true AND false)”, “NOT (true OR false)”, “true AND (false OR true)”.}
-\begin{itemize}
-  \item \textbf{Explicación de la gramática:} El lenguaje de las expresiones booleanas con los operadores AND, OR, y NOT, usando paréntesis para agrupar, acepta todas las cadenas que siguen la siguiente estructura:
-  \begin{itemize}
-    \item $S \rightarrow \text{true} \mid \text{false} \mid \text{NOT} \ S \mid S \ \text{AND} \ S \mid S \ \text{OR} \ S \mid (\ S \ )$
-  \end{itemize}
-  \item \textbf{Imagen de la gramática en JFLAP:} La gramática diseñada en JFLAP se muestra en la siguiente figura:
-  \begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{img/grammar_08.png}
-    \caption{Gramática diseñada en JFLAP para el lenguaje de las expresiones booleanas con los operadores AND, OR, y NOT, usando paréntesis para agrupar}
-  \end{figure}
-  \item \textbf{Ejemplos de cadenas generadas:}
-  \begin{itemize}
-    \item \textbf{Cadena 1:} $(\text{true AND false})$
-    \begin{itemize}
-      \item \textbf{Árbol de análisis sintáctico:} El árbol de análisis sintáctico para la cadena $(\text{true AND false})$ se muestra en la siguiente figura:
-      \begin{figure}[H]
-        \centering
-        \includegraphics[scale=0.5]{img/grammar_08_tree_1.png}
-        \caption{Árbol de análisis sintáctico para la cadena $(\text{true AND false})$}
-        \label{fig:arbol22}
-      \end{figure}
-    \end{itemize}
-    \item \textbf{Cadena 2:} $\text{NOT (true OR false)}$
-    \begin{itemize}
-      \item \textbf{Árbol de análisis sintáctico:} El árbol de análisis sintáctico para la cadena $\text{NOT (true OR false)}$ se muestra en la siguiente figura:
-      \begin{figure}[H]
-        \centering
-        \includegraphics[scale=0.5]{img/grammar_08_tree_2.png}
-        \caption{Árbol de análisis sintáctico para la cadena $\text{NOT (true OR false)}$}
-        \label{fig:arbol23}
-      \end{figure}
-    \end{itemize}
-    \item \textbf{Cadena 3:} $\text{true AND (false OR true)}$
-    \begin{itemize}
-      \item \textbf{Árbol de análisis sintáctico:} El árbol de análisis sintáctico para la cadena $\text{true AND (false OR true)}$ se muestra en la siguiente figura:
-      \begin{figure}[H]
-        \centering
-        \includegraphics[scale=0.5]{img/grammar_08_tree_3.png}
-        \caption{Árbol de análisis sintáctico para la cadena $\text{true AND (false OR true)}$}
-        \label{fig:arbol24}
-      \end{figure}
-    \end{itemize}
-  \end{itemize}
-  \item \textbf{Imagen de la gramática simplificada en JFLAP:} La gramática simplificada en JFLAP se muestra en la siguiente figura:
-  \begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{img/grammar_08_simplified.png}
-    \caption{Gramática simplificada en JFLAP para el lenguaje de las expresiones booleanas con los operadores AND, OR, y NOT, usando paréntesis para agrupar}
-    \label{fig:gramatica8_simplified}
-  \end{figure}
-\end{itemize}
-
 
 \end{document}
