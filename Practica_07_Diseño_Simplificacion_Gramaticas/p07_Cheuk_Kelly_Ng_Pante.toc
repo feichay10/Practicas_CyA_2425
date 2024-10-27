@@ -1,0 +1,4 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{\numberline {1}Ejercicios de diseño de gramáticas}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Diseñar una gramática independiente del contexto que genere el lenguaje $L = \{a^n b^n \mid n \geq 0\}$}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Diseñar una gramática independiente del contexto que genere el lenguaje $L = \{a^n b^m \mid n, m \geq 0, n \neq m\}$}{4}{section.1.2}%
