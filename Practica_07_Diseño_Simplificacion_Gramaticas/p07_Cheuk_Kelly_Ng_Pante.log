@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.10)  27 OCT 2024 14:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.10)  27 OCT 2024 23:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -751,29 +751,29 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
 l.179 \cleardoublepage
                        [1]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 198.
+(Font)              <14.4> on input line 199.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 198.
+(Font)              <7> on input line 199.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 198.
+(hyperref)                removing `superscript' on input line 199.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 198.
+(hyperref)                removing `superscript' on input line 199.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 200.
+(Font)              <10.95> on input line 201.
 <img/grammar_01.png, id=18, 441.14813pt x 173.89969pt>
 File: img/grammar_01.png Graphic file (type png)
 <use img/grammar_01.png>
-Package pdftex.def Info: img/grammar_01.png  used on input line 207.
+Package pdftex.def Info: img/grammar_01.png  used on input line 209.
 (pdftex.def)             Requested size: 242.63222pt x 95.64511pt.
 <img/grammar_01_tree_1.png, id=20, 439.6425pt x 411.03563pt>
 File: img/grammar_01_tree_1.png Graphic file (type png)
 <use img/grammar_01_tree_1.png>
-Package pdftex.def Info: img/grammar_01_tree_1.png  used on input line 217.
+Package pdftex.def Info: img/grammar_01_tree_1.png  used on input line 219.
 (pdftex.def)             Requested size: 219.82071pt x 205.5173pt.
 
 
@@ -781,24 +781,24 @@ Package pdftex.def Info: img/grammar_01_tree_1.png  used on input line 217.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.224       \item \textbf
+l.226       \item \textbf
                          {Árbol de análisis sintáctico:} El árbol de an�... [1
 
  <./img/grammar_01.png> <./img/grammar_01_tree_1.png>]
 <img/grammar_01_tree_2.png, id=37, 439.6425pt x 409.53pt>
 File: img/grammar_01_tree_2.png Graphic file (type png)
 <use img/grammar_01_tree_2.png>
-Package pdftex.def Info: img/grammar_01_tree_2.png  used on input line 227.
+Package pdftex.def Info: img/grammar_01_tree_2.png  used on input line 229.
 (pdftex.def)             Requested size: 219.82071pt x 204.7645pt.
 <img/grammar_01_tree_3.png, id=38, 441.14813pt x 411.78844pt>
 File: img/grammar_01_tree_3.png Graphic file (type png)
 <use img/grammar_01_tree_3.png>
-Package pdftex.def Info: img/grammar_01_tree_3.png  used on input line 237.
+Package pdftex.def Info: img/grammar_01_tree_3.png  used on input line 239.
 (pdftex.def)             Requested size: 220.57352pt x 205.8937pt.
 <img/grammar_01_simplified.png, id=39, 438.8897pt x 264.99pt>
 File: img/grammar_01_simplified.png Graphic file (type png)
 <use img/grammar_01_simplified.png>
-Package pdftex.def Info: img/grammar_01_simplified.png  used on input line 246.
+Package pdftex.def Info: img/grammar_01_simplified.png  used on input line 248.
 (pdftex.def)             Requested size: 241.39008pt x 145.74495pt.
 
 
@@ -807,93 +807,377 @@ Package pdftex.def Info: img/grammar_01_simplified.png  used on input line 246.
 [3 <./img/grammar_01_simplified.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 254.
+(hyperref)                removing `superscript' on input line 257.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 254.
+(hyperref)                removing `superscript' on input line 257.
+
+<img/grammar_02.png, id=54, 441.14813pt x 290.58563pt>
+File: img/grammar_02.png Graphic file (type png)
+<use img/grammar_02.png>
+Package pdftex.def Info: img/grammar_02.png  used on input line 274.
+(pdftex.def)             Requested size: 242.63222pt x 159.82259pt.
 
 
-LaTeX Warning: File `img/grammar_02.png' not found on input line 265.
+[4 <./img/grammar_02.png>]
+<img/grammar_02_tree_1.png, id=62, 440.39531pt x 409.53pt>
+File: img/grammar_02_tree_1.png Graphic file (type png)
+<use img/grammar_02_tree_1.png>
+Package pdftex.def Info: img/grammar_02_tree_1.png  used on input line 287.
+(pdftex.def)             Requested size: 220.19711pt x 204.7645pt.
+<img/grammar_02_tree_2.png, id=63, 441.90094pt x 412.54124pt>
+File: img/grammar_02_tree_2.png Graphic file (type png)
+<use img/grammar_02_tree_2.png>
+Package pdftex.def Info: img/grammar_02_tree_2.png  used on input line 297.
+(pdftex.def)             Requested size: 220.94992pt x 206.27011pt.
 
 
-f:/Drive ULL/Ingenieria Informatica/2ºIng Informatica/Primer Cuatrimestre/Computabilidad Y Algoritmia/Curso 2024-2025/Practicas_CyA_2425/Practica_07_Diseño_Simplificacion_Gramaticas/p07_Cheuk_Kelly_Ng_Pante.tex:265: Package pdftex.def Error: File `img/grammar_02.png' not found: using draft setting.
+[5 <./img/grammar_02_tree_1.png> <./img/grammar_02_tree_2.png>]
+<img/grammar_02_tree_3.png, id=73, 452.4403pt x 453.19313pt>
+File: img/grammar_02_tree_3.png Graphic file (type png)
+<use img/grammar_02_tree_3.png>
+Package pdftex.def Info: img/grammar_02_tree_3.png  used on input line 307.
+(pdftex.def)             Requested size: 199.07436pt x 199.40558pt.
+<img/grammar_02_simplified_remove_unit_productions.png, id=74, 634.62094pt x 691.08188pt>
+File: img/grammar_02_simplified_remove_unit_productions.png Graphic file (type png)
+<use img/grammar_02_simplified_remove_unit_productions.png>
+Package pdftex.def Info: img/grammar_02_simplified_remove_unit_productions.png  used on input line 318.
+(pdftex.def)             Requested size: 222.12065pt x 241.88228pt.
+<img/grammar_02_simplified.png, id=75, 636.12656pt x 689.57625pt>
+File: img/grammar_02_simplified.png Graphic file (type png)
+<use img/grammar_02_simplified.png>
+Package pdftex.def Info: img/grammar_02_simplified.png  used on input line 323.
+(pdftex.def)             Requested size: 222.64763pt x 241.3553pt.
+
+
+[6 <./img/grammar_02_tree_3.png> <./img/grammar_02_simplified_remove_unit_productions.png> <./img/grammar_02_simplified.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 333.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 333.
+
+<img/grammar_03.png, id=85, 440.39531pt x 200.24812pt>
+File: img/grammar_03.png Graphic file (type png)
+<use img/grammar_03.png>
+Package pdftex.def Info: img/grammar_03.png  used on input line 342.
+(pdftex.def)             Requested size: 242.21815pt x 110.1368pt.
+<img/grammar_03_tree_1.png, id=86, 441.14813pt x 411.78844pt>
+File: img/grammar_03_tree_1.png Graphic file (type png)
+<use img/grammar_03_tree_1.png>
+Package pdftex.def Info: img/grammar_03_tree_1.png  used on input line 352.
+(pdftex.def)             Requested size: 220.57352pt x 205.8937pt.
+
+
+[7 <./img/grammar_03.png> <./img/grammar_03_tree_1.png>]
+<img/grammar_03_tree_2.png, id=97, 441.14813pt x 411.78844pt>
+File: img/grammar_03_tree_2.png Graphic file (type png)
+<use img/grammar_03_tree_2.png>
+Package pdftex.def Info: img/grammar_03_tree_2.png  used on input line 362.
+(pdftex.def)             Requested size: 220.57352pt x 205.8937pt.
+<img/grammar_03_tree_3.png, id=98, 440.39531pt x 410.2828pt>
+File: img/grammar_03_tree_3.png Graphic file (type png)
+<use img/grammar_03_tree_3.png>
+Package pdftex.def Info: img/grammar_03_tree_3.png  used on input line 371.
+(pdftex.def)             Requested size: 220.19711pt x 205.1409pt.
+<img/grammar_03_simplified.png, id=99, 440.39531pt x 412.54124pt>
+File: img/grammar_03_simplified.png Graphic file (type png)
+<use img/grammar_03_simplified.png>
+Package pdftex.def Info: img/grammar_03_simplified.png  used on input line 379.
+(pdftex.def)             Requested size: 242.21815pt x 226.89838pt.
+
+
+[8 <./img/grammar_03_tree_2.png> <./img/grammar_03_tree_3.png>]
+
+[9 <./img/grammar_03_simplified.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 388.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 388.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 388.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 388.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mid' on input line 388.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\geq' on input line 388.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 388.
+
+<img/grammar_04.png, id=114, 441.14813pt x 222.07968pt>
+File: img/grammar_04.png Graphic file (type png)
+<use img/grammar_04.png>
+Package pdftex.def Info: img/grammar_04.png  used on input line 399.
+(pdftex.def)             Requested size: 220.57352pt x 111.03957pt.
+<img/grammar_04_tree_1.png, id=115, 440.39531pt x 410.2828pt>
+File: img/grammar_04_tree_1.png Graphic file (type png)
+<use img/grammar_04_tree_1.png>
+Package pdftex.def Info: img/grammar_04_tree_1.png  used on input line 409.
+(pdftex.def)             Requested size: 198.17606pt x 184.62555pt.
+
+
+[10 <./img/grammar_04.png> <./img/grammar_04_tree_1.png>]
+<img/grammar_04_tree_2.png, id=125, 442.65375pt x 411.78844pt>
+File: img/grammar_04_tree_2.png Graphic file (type png)
+<use img/grammar_04_tree_2.png>
+Package pdftex.def Info: img/grammar_04_tree_2.png  used on input line 422.
+(pdftex.def)             Requested size: 221.32632pt x 205.8937pt.
+<img/grammar_04_tree_3.png, id=126, 440.39531pt x 421.575pt>
+File: img/grammar_04_tree_3.png Graphic file (type png)
+<use img/grammar_04_tree_3.png>
+Package pdftex.def Info: img/grammar_04_tree_3.png  used on input line 432.
+(pdftex.def)             Requested size: 220.19711pt x 210.78697pt.
+<img/grammar_04_simplified_remove_unit_productions.png, id=127, 440.39531pt x 560.8453pt>
+File: img/grammar_04_simplified_remove_unit_productions.png Graphic file (type png)
+<use img/grammar_04_simplified_remove_unit_productions.png>
+Package pdftex.def Info: img/grammar_04_simplified_remove_unit_productions.png  used on input line 442.
+(pdftex.def)             Requested size: 198.17606pt x 252.37805pt.
+<img/grammar_04_simplified.png, id=128, 440.39531pt x 563.10374pt>
+File: img/grammar_04_simplified.png Graphic file (type png)
+<use img/grammar_04_simplified.png>
+Package pdftex.def Info: img/grammar_04_simplified.png  used on input line 447.
+(pdftex.def)             Requested size: 198.17606pt x 253.39435pt.
+
+
+[11 <./img/grammar_04_tree_2.png> <./img/grammar_04_tree_3.png>]
+
+[12 <./img/grammar_04_simplified_remove_unit_productions.png> <./img/grammar_04_simplified.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 457.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 457.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 457.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 457.
+
+<img/grammar_05.png, id=145, 441.14813pt x 221.32687pt>
+File: img/grammar_05.png Graphic file (type png)
+<use img/grammar_05.png>
+Package pdftex.def Info: img/grammar_05.png  used on input line 467.
+(pdftex.def)             Requested size: 220.57352pt x 110.66315pt.
+<img/grammar_05_tree_1.png, id=146, 440.39531pt x 412.54124pt>
+File: img/grammar_05_tree_1.png Graphic file (type png)
+<use img/grammar_05_tree_1.png>
+Package pdftex.def Info: img/grammar_05_tree_1.png  used on input line 477.
+(pdftex.def)             Requested size: 198.17606pt x 185.64185pt.
+
+
+[13 <./img/grammar_05.png> <./img/grammar_05_tree_1.png>]
+<img/grammar_05_tree_2.png, id=156, 440.39531pt x 412.54124pt>
+File: img/grammar_05_tree_2.png Graphic file (type png)
+<use img/grammar_05_tree_2.png>
+Package pdftex.def Info: img/grammar_05_tree_2.png  used on input line 487.
+(pdftex.def)             Requested size: 220.19711pt x 206.27011pt.
+<img/grammar_05_tree_3.png, id=157, 442.65375pt x 409.53pt>
+File: img/grammar_05_tree_3.png Graphic file (type png)
+<use img/grammar_05_tree_3.png>
+Package pdftex.def Info: img/grammar_05_tree_3.png  used on input line 497.
+(pdftex.def)             Requested size: 221.32632pt x 204.7645pt.
+<img/grammar_05_simplified_remove_unit_productions.png, id=158, 440.39531pt x 510.40688pt>
+File: img/grammar_05_simplified_remove_unit_productions.png Graphic file (type png)
+<use img/grammar_05_simplified_remove_unit_productions.png>
+Package pdftex.def Info: img/grammar_05_simplified_remove_unit_productions.png  used on input line 507.
+(pdftex.def)             Requested size: 220.19711pt x 255.2028pt.
+<img/grammar_05_simplified.png, id=159, 438.8897pt x 511.9125pt>
+File: img/grammar_05_simplified.png Graphic file (type png)
+<use img/grammar_05_simplified.png>
+Package pdftex.def Info: img/grammar_05_simplified.png  used on input line 512.
+(pdftex.def)             Requested size: 219.4443pt x 255.95563pt.
+
+
+[14 <./img/grammar_05_tree_2.png> <./img/grammar_05_tree_3.png>]
+
+[15 <./img/grammar_05_simplified_remove_unit_productions.png> <./img/grammar_05_simplified.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 522.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 522.
+
+<img/grammar_06.png, id=175, 441.14813pt x 199.49532pt>
+File: img/grammar_06.png Graphic file (type png)
+<use img/grammar_06.png>
+Package pdftex.def Info: img/grammar_06.png  used on input line 531.
+(pdftex.def)             Requested size: 220.57352pt x 99.7474pt.
+<img/grammar_06_tree_1.png, id=176, 440.39531pt x 410.2828pt>
+File: img/grammar_06_tree_1.png Graphic file (type png)
+<use img/grammar_06_tree_1.png>
+Package pdftex.def Info: img/grammar_06_tree_1.png  used on input line 541.
+(pdftex.def)             Requested size: 220.19711pt x 205.1409pt.
+
+
+[16 <./img/grammar_06.png> <./img/grammar_06_tree_1.png>]
+<img/grammar_06_tree_2.png, id=186, 439.6425pt x 410.2828pt>
+File: img/grammar_06_tree_2.png Graphic file (type png)
+<use img/grammar_06_tree_2.png>
+Package pdftex.def Info: img/grammar_06_tree_2.png  used on input line 551.
+(pdftex.def)             Requested size: 219.82071pt x 205.1409pt.
+<img/grammar_06_tree_3.png, id=187, 440.39531pt x 410.2828pt>
+File: img/grammar_06_tree_3.png Graphic file (type png)
+<use img/grammar_06_tree_3.png>
+Package pdftex.def Info: img/grammar_06_tree_3.png  used on input line 561.
+(pdftex.def)             Requested size: 220.19711pt x 205.1409pt.
+<img/grammar_06_simplified.png, id=188, 438.8897pt x 304.13625pt>
+File: img/grammar_06_simplified.png Graphic file (type png)
+<use img/grammar_06_simplified.png>
+Package pdftex.def Info: img/grammar_06_simplified.png  used on input line 570.
+(pdftex.def)             Requested size: 263.33585pt x 182.48315pt.
+
+
+[17 <./img/grammar_06_tree_2.png> <./img/grammar_06_tree_3.png>]
+
+[18 <./img/grammar_06_simplified.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 579.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 579.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 579.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 579.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mid' on input line 579.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\geq' on input line 579.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 579.
+
+
+LaTeX Warning: File `img/grammar_07.png' not found on input line 589.
+
+
+f:/Drive ULL/Ingenieria Informatica/2ºIng Informatica/Primer Cuatrimestre/Computabilidad Y Algoritmia/Curso 2024-2025/Practicas_CyA_2425/Practica_07_Diseño_Simplificacion_Gramaticas/p07_Cheuk_Kelly_Ng_Pante.tex:589: Package pdftex.def Error: File `img/grammar_07.png' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.265 ...egraphics[scale=0.55]{img/grammar_02.png}
+l.589 ...degraphics[scale=0.5]{img/grammar_07.png}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-LaTeX Warning: File `img/grammar_02_tree_1.png' not found on input line 275.
+LaTeX Warning: File `img/grammar_07_tree_1.png' not found on input line 599.
 
 
-f:/Drive ULL/Ingenieria Informatica/2ºIng Informatica/Primer Cuatrimestre/Computabilidad Y Algoritmia/Curso 2024-2025/Practicas_CyA_2425/Practica_07_Diseño_Simplificacion_Gramaticas/p07_Cheuk_Kelly_Ng_Pante.tex:275: Package pdftex.def Error: File `img/grammar_02_tree_1.png' not found: using draft setting.
+f:/Drive ULL/Ingenieria Informatica/2ºIng Informatica/Primer Cuatrimestre/Computabilidad Y Algoritmia/Curso 2024-2025/Practicas_CyA_2425/Practica_07_Diseño_Simplificacion_Gramaticas/p07_Cheuk_Kelly_Ng_Pante.tex:599: Package pdftex.def Error: File `img/grammar_07_tree_1.png' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.275 ...ics[scale=0.5]{img/grammar_02_tree_1.png}
+l.599 ...ics[scale=0.5]{img/grammar_07_tree_1.png}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-LaTeX Warning: File `img/grammar_02_tree_2.png' not found on input line 285.
+LaTeX Warning: File `img/grammar_07_tree_2.png' not found on input line 609.
 
 
-f:/Drive ULL/Ingenieria Informatica/2ºIng Informatica/Primer Cuatrimestre/Computabilidad Y Algoritmia/Curso 2024-2025/Practicas_CyA_2425/Practica_07_Diseño_Simplificacion_Gramaticas/p07_Cheuk_Kelly_Ng_Pante.tex:285: Package pdftex.def Error: File `img/grammar_02_tree_2.png' not found: using draft setting.
+f:/Drive ULL/Ingenieria Informatica/2ºIng Informatica/Primer Cuatrimestre/Computabilidad Y Algoritmia/Curso 2024-2025/Practicas_CyA_2425/Practica_07_Diseño_Simplificacion_Gramaticas/p07_Cheuk_Kelly_Ng_Pante.tex:609: Package pdftex.def Error: File `img/grammar_07_tree_2.png' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.285 ...ics[scale=0.5]{img/grammar_02_tree_2.png}
+l.609 ...ics[scale=0.5]{img/grammar_07_tree_2.png}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-LaTeX Warning: File `img/grammar_02_tree_3.png' not found on input line 295.
+LaTeX Warning: File `img/grammar_07_tree_3.png' not found on input line 619.
 
 
-f:/Drive ULL/Ingenieria Informatica/2ºIng Informatica/Primer Cuatrimestre/Computabilidad Y Algoritmia/Curso 2024-2025/Practicas_CyA_2425/Practica_07_Diseño_Simplificacion_Gramaticas/p07_Cheuk_Kelly_Ng_Pante.tex:295: Package pdftex.def Error: File `img/grammar_02_tree_3.png' not found: using draft setting.
+f:/Drive ULL/Ingenieria Informatica/2ºIng Informatica/Primer Cuatrimestre/Computabilidad Y Algoritmia/Curso 2024-2025/Practicas_CyA_2425/Practica_07_Diseño_Simplificacion_Gramaticas/p07_Cheuk_Kelly_Ng_Pante.tex:619: Package pdftex.def Error: File `img/grammar_07_tree_3.png' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.295 ...ics[scale=0.5]{img/grammar_02_tree_3.png}
+l.619 ...ics[scale=0.5]{img/grammar_07_tree_3.png}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
 
-[4]
+[19]
 
-LaTeX Warning: File `img/grammar_02_simplified.png' not found on input line 304.
+LaTeX Warning: File `img/grammar_07_simplified_remove_unit_productions.png' not found on input line 629.
 
 
-f:/Drive ULL/Ingenieria Informatica/2ºIng Informatica/Primer Cuatrimestre/Computabilidad Y Algoritmia/Curso 2024-2025/Practicas_CyA_2425/Practica_07_Diseño_Simplificacion_Gramaticas/p07_Cheuk_Kelly_Ng_Pante.tex:304: Package pdftex.def Error: File `img/grammar_02_simplified.png' not found: using draft setting.
+f:/Drive ULL/Ingenieria Informatica/2ºIng Informatica/Primer Cuatrimestre/Computabilidad Y Algoritmia/Curso 2024-2025/Practicas_CyA_2425/Practica_07_Diseño_Simplificacion_Gramaticas/p07_Cheuk_Kelly_Ng_Pante.tex:629: Package pdftex.def Error: File `img/grammar_07_simplified_remove_unit_productions.png' not found: using draft setting.
 
 See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.304 ...cale=0.55]{img/grammar_02_simplified.png}
+l.629 ...7_simplified_remove_unit_productions.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `img/grammar_07_simplified.png' not found on input line 634.
+
+
+f:/Drive ULL/Ingenieria Informatica/2ºIng Informatica/Primer Cuatrimestre/Computabilidad Y Algoritmia/Curso 2024-2025/Practicas_CyA_2425/Practica_07_Diseño_Simplificacion_Gramaticas/p07_Cheuk_Kelly_Ng_Pante.tex:634: Package pdftex.def Error: File `img/grammar_07_simplified.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.634 ...scale=0.5]{img/grammar_07_simplified.png}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
 
-[5] (p07_Cheuk_Kelly_Ng_Pante.aux
+[20] (p07_Cheuk_Kelly_Ng_Pante.aux
 LaTeX Info: Redefining \. on input line 12.
 LaTeX Info: Redefining \% on input line 12.
 )
@@ -912,20 +1196,20 @@ Package rerunfilecheck Warning: File `p07_Cheuk_Kelly_Ng_Pante.out' has changed.
 
 Package rerunfilecheck Info: Checksums for `p07_Cheuk_Kelly_Ng_Pante.out':
 (rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  021D85B16C8BFA1B84C403CD38AB6723;1450.
+(rerunfilecheck)             After:  0A25EF287689BA33A192235195CE280C;4579.
  ) 
 Here is how much of TeX's memory you used:
- 27838 strings out of 473904
- 535288 string characters out of 5726600
+ 28141 strings out of 473904
+ 544997 string characters out of 5726600
  1937908 words of memory out of 5000000
- 50249 multiletter control sequences out of 15000+600000
+ 50507 multiletter control sequences out of 15000+600000
  565591 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,8n,117p,1399b,632s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\cheuk\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on p07_Cheuk_Kelly_Ng_Pante.pdf (7 pages, 239709 bytes).
+ 99i,10n,117p,1399b,665s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\cheuk\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on p07_Cheuk_Kelly_Ng_Pante.pdf (22 pages, 893291 bytes).
 PDF statistics:
- 122 PDF objects out of 1000 (max. 8388607)
- 20 named destinations out of 1000 (max. 500000)
- 38 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 289 PDF objects out of 1000 (max. 8388607)
+ 65 named destinations out of 1000 (max. 500000)
+ 178 words of extra memory for PDF output out of 10000 (max. 10000000)
 

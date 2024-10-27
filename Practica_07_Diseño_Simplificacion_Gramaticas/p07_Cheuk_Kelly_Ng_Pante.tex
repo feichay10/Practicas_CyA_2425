@@ -195,9 +195,11 @@
 % Secciones del informe
 % Capitulo 1
 \chapter{Ejercicios de diseño de gramáticas}
+% Ejericio 1
 \section{Diseñar una gramática independiente del contexto que genere el lenguaje \texorpdfstring{$L = \{a^n b^n \mid n \geq 0\}$}{L = \{a^n b^n | n >= 0\}}}
 \begin{itemize}
-  \item \textbf{Explicación de la gramática:} La gramática diseñada para el lenguaje $L = \{a^n b^n \mid n \geq 0\}$ sigue la siguiente estructura:
+  \item \textbf{Explicación de la gramática:} El lenguaje $L = \{a^n b^n \mid n \geq 0\}$ acepta todas las cadenas que tienen el mismo número de símbolos de
+  a's seguidos por el mismo número de b's. La gramática diseñada para el lenguaje $L$ sigue la siguiente estructura:
   \begin{itemize}
     \item $S \rightarrow aSb \mid \varepsilon$
   \end{itemize}
@@ -251,9 +253,16 @@
 
 \newpage
 
+% Ejericio 2
 \section{Diseñar una gramática independiente del contexto que genere el lenguaje \texorpdfstring{$L = \{a^n b^m \mid n, m \geq 0, n \neq m\}$}{L = \{a^n b^m | n, m >= 0, n ≠ m\}}}
 \begin{itemize}
-  \item \textbf{Explicación de la gramática:} La gramática diseñada para el lenguaje $L = \{a^n b^m \mid n, m \geq 0, n \neq m\}$ sigue la siguiente estructura:
+  \item \textbf{Explicación de la gramática:}  El lenguaje $L = \{a^n b^m \mid n, m \geq 0, n \neq m\}$ acepta todas las cadenas de a's seguidas de b's donde el número de a's es diferente del número de b's. Entonces se puede
+  dividir en dos casos:
+  \begin{itemize}
+    \item $n > m$: En este caso, el número de a's es mayor que el número de b's.
+    \item $n < m$: En este caso, el número de a's es menor que el número de b's.
+  \end{itemize} 
+  La gramática diseñada para el lenguaje $L$ sigue la siguiente estructura:
   \begin{itemize}
     \item $S \rightarrow aSb \mid A \mid B$
     \item $A \rightarrow aA \mid a$
@@ -265,6 +274,9 @@
     \includegraphics[scale=0.55]{img/grammar_02.png}
     \caption{Gramática diseñada en JFLAP para el lenguaje $L = \{a^n b^m \mid n, m \geq 0, n \neq m\}$}
   \end{figure}
+
+  \newpage
+
   \item \textbf{Ejemplos de cadenas generadas:}
   \begin{itemize}
     \item \textbf{Cadena 1:} $aab$
@@ -277,33 +289,352 @@
         \label{fig:arbol4}
       \end{figure}
     \end{itemize}
-    \item \textbf{Cadena 2:} $ab$
+    \item \textbf{Cadena 2:} $abbb$
     \begin{itemize}
-      \item \textbf{Árbol de análisis sintáctico:} El árbol de análisis sintáctico para la cadena $ab$ se muestra en la siguiente figura:
+      \item \textbf{Árbol de análisis sintáctico:} El árbol de análisis sintáctico para la cadena $abbb$ se muestra en la siguiente figura:
       \begin{figure}[H]
         \centering
         \includegraphics[scale=0.5]{img/grammar_02_tree_2.png}
-        \caption{Árbol de análisis sintáctico para la cadena $ab$}
+        \caption{Árbol de análisis sintáctico para la cadena $abbb$}
         \label{fig:arbol5}
       \end{figure}
     \end{itemize}
-    \item \textbf{Cadena 3:} $aabb$
+    \item \textbf{Cadena 3:} $aaaaaaab$
     \begin{itemize}
-      \item \textbf{Árbol de análisis sintáctico:} El árbol de análisis sintáctico para la cadena $aabb$ se muestra en la siguiente figura:
+      \item \textbf{Árbol de análisis sintáctico:} El árbol de análisis sintáctico para la cadena $aaaaaaab$ se muestra en la siguiente figura:
       \begin{figure}[H]
         \centering
-        \includegraphics[scale=0.5]{img/grammar_02_tree_3.png}
-        \caption{Árbol de análisis sintáctico para la cadena $aabb$}
+        \includegraphics[scale=0.44]{img/grammar_02_tree_3.png}
+        \caption{Árbol de análisis sintáctico para la cadena $aaaaaaab$}
         \label{fig:arbol6}
+      \end{figure}
+    \end{itemize}
+  \end{itemize}
+  \item \textbf{Imagen de la gramática simplificada en JFLAP:} La gramática simplificada en JFLAP se muestra en la siguiente figura:
+
+  \begin{figure}[H]
+    \begin{subfigure}{0.5\textwidth}
+      \centering
+      \includegraphics[scale=0.35]{img/grammar_02_simplified_remove_unit_productions.png}
+      \caption{Eliminación de producciones unitarias}
+    \end{subfigure}%
+    \begin{subfigure}{0.5\textwidth}
+      \centering
+      \includegraphics[scale=0.35]{img/grammar_02_simplified.png}
+      \caption{Gramática simplificada}
+    \end{subfigure}
+    \caption{Gramática simplificada en JFLAP para el lenguaje $L = \{a^n b^m \mid n, m \geq 0, n \neq m\}$}
+  \end{figure}
+\end{itemize}
+
+\newpage
+
+% Ejericio 3
+\section{Diseñar una gramática independiente del contexto que genere el lenguaje \texorpdfstring{$L = \{ww^I \mid w \in \{a, b\}^*\}$}{L = \{ww^I | w ∈ \{a, b\}^*\}}}
+\begin{itemize}
+  \item \textbf{Explicación de la gramática:} El lenguaje $L = \{ww^I \mid w \in \{a, b\}^*\}$ acepta todas las cadenas que son palíndromas sobre el alfabeto $\Sigma = \{a, b\}$. La gramática diseñada para el lenguaje $L$ sigue la siguiente estructura:
+  \begin{itemize}
+    \item $S \rightarrow aSa \mid bSb \mid \varepsilon$
+  \end{itemize}
+  \item \textbf{Imagen de la gramática en JFLAP:} La gramática diseñada en JFLAP se muestra en la siguiente figura:
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.55]{img/grammar_03.png}
+    \caption{Gramática diseñada en JFLAP para el lenguaje $L = \{ww^I \mid w \in \{a, b\}^*\}$}
+  \end{figure}
+  \item \textbf{Ejemplos de cadenas generadas:}
+  \begin{itemize}
+    \item \textbf{Cadena 1:} $aa$
+    \begin{itemize}
+      \item \textbf{Árbol de análisis sintáctico:} El árbol de análisis sintáctico para la cadena $aa$ se muestra en la siguiente figura:
+      \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{img/grammar_03_tree_1.png}
+        \caption{Árbol de análisis sintáctico para la cadena $aa$}
+        \label{fig:arbol7}
+      \end{figure}
+    \end{itemize}
+    \item \textbf{Cadena 2:} $abba$
+    \begin{itemize}
+      \item \textbf{Árbol de análisis sintáctico:} El árbol de análisis sintáctico para la cadena $abba$ se muestra en la siguiente figura:
+      \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{img/grammar_03_tree_2.png}
+        \caption{Árbol de análisis sintáctico para la cadena $abba$}
+        \label{fig:arbol8}
+      \end{figure}
+    \end{itemize}
+    \item \textbf{Cadena 3:} $abbaabba$
+    \item \textbf{Árbol de análisis sintáctico:} El árbol de análisis sintáctico para la cadena $abbaabba$ se muestra en la siguiente figura:
+    \begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.5]{img/grammar_03_tree_3.png}
+      \caption{Árbol de análisis sintáctico para la cadena $abbaabba$}
+      \label{fig:arbol9}
+    \end{figure}
+  \end{itemize}
+  \item \textbf{Imagen de la gramática simplificada en JFLAP:} La gramática simplificada en JFLAP se muestra en la siguiente figura:
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.55]{img/grammar_03_simplified.png}
+    \caption{Gramática simplificada en JFLAP para el lenguaje $L = \{ww^I \mid w \in \{a, b\}^*\}$}
+    \label{fig:gramatica3_simplified}
+  \end{figure}
+\end{itemize}
+
+\newpage
+
+% Ejericio 4
+\section{Diseñar una gramática independiente del contexto que genere el lenguaje $L = \{a^n b^m c^n \mid n \geq 0, m \ impar\}$}
+\begin{itemize}
+  \item \textbf{Explicación de la gramática:} El lenguaje $L = \{a^n b^m c^n \mid n \geq 0, m \ impar\}$ acepta todas las cadenas que empiezan con una cantidad $n$ de símbolos $a$, luego tienen una cantidad $m$ de símbolos $b$, y terminan con una cantidad 
+  $n$ de símbolos $c$. La gramática diseñada para el lenguaje $L$ sigue la siguiente estructura:
+  \begin{itemize}
+    \item $S \rightarrow aSc \mid A$
+    \item $A \rightarrow bAb \mid b$
+  \end{itemize}
+  \item \textbf{Imagen de la gramática en JFLAP:} La gramática diseñada en JFLAP se muestra en la siguiente figura:
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{img/grammar_04.png}
+    \caption{Gramática diseñada en JFLAP para el lenguaje $L = \{a^n b^m c^n \mid n \geq 0, m \ impar\}$}
+  \end{figure}
+  \item \textbf{Ejemplos de cadenas generadas:}
+  \begin{itemize}
+    \item \textbf{Cadena 1:} $b$
+    \begin{itemize}
+      \item \textbf{Árbol de análisis sintáctico:} El árbol de análisis sintáctico para la cadena $b$ se muestra en la siguiente figura:
+      \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.45]{img/grammar_04_tree_1.png}
+        \caption{Árbol de análisis sintáctico para la cadena $b$}
+        \label{fig:arbol10}
+      \end{figure}
+    \end{itemize}
+
+    \newpage
+
+    \item \textbf{Cadena 2:} $abc$
+    \begin{itemize}
+      \item \textbf{Árbol de análisis sintáctico:} El árbol de análisis sintáctico para la cadena $abc$ se muestra en la siguiente figura:
+      \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{img/grammar_04_tree_2.png}
+        \caption{Árbol de análisis sintáctico para la cadena $abc$}
+        \label{fig:arbol11}
+      \end{figure}
+    \end{itemize}
+    \item \textbf{Cadena 3:} $aaaabbbcccc$
+    \begin{itemize}
+      \item \textbf{Árbol de análisis sintáctico:} El árbol de análisis sintáctico para la cadena $aaaabbbcccc$ se muestra en la siguiente figura:
+      \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{img/grammar_04_tree_3.png}
+        \caption{Árbol de análisis sintáctico para la cadena $aaaabbbcccc$}
+        \label{fig:arbol12}
+      \end{figure}
+    \end{itemize}
+  \end{itemize}
+  \item \textbf{Imagen de la gramática simplificada en JFLAP:} La gramática simplificada en JFLAP se muestra en la siguiente figura:
+  \begin{figure}[H]
+    \begin{subfigure}{0.5\textwidth}
+      \centering
+      \includegraphics[scale=0.45]{img/grammar_04_simplified_remove_unit_productions.png}
+      \caption{Eliminación de producciones unitarias}
+    \end{subfigure}%
+    \begin{subfigure}{0.5\textwidth}
+      \centering
+      \includegraphics[scale=0.45]{img/grammar_04_simplified.png}
+      \caption{Gramática simplificada}
+    \end{subfigure}
+    \caption{Gramática simplificada en JFLAP para el lenguaje $L = \{a^n b^m \mid n, m \geq 0, n \neq m\}$}
+  \end{figure}
+\end{itemize}
+
+\newpage
+
+% Ejericio 5
+\section{Diseñar una gramática independiente del contexto que genere el lenguaje \texorpdfstring{$L = \{a^n b^m c^m d^n \mid n, m \geq 1\}$}{L = \{a^n b^m c^m d^n | n, m ≥ 1\}}}
+\begin{itemize}
+  \item \textbf{Explicación de la gramática:} El lenguaje $L = \{a^n b^m c^m d^n \mid n, m \geq 1\}$ acepta todas las cadenas que empiezan con una cantidad $n$ de símbolos $a$, seguido de una cantidad $m$ de símbolos $b$, luego una cantidad $m$ de símbolos $c$, y terminan con una cantidad $n$ de símbolos $d$. La gramática diseñada para el lenguaje $L$ sigue la siguiente estructura:
+  \begin{itemize}
+    \item $S \rightarrow aSd \mid A$
+    \item $A \rightarrow bAc \mid bc$
+  \end{itemize}
+  \item \textbf{Imagen de la gramática en JFLAP:} La gramática diseñada en JFLAP se muestra en la siguiente figura:
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{img/grammar_05.png}
+    \caption{Gramática diseñada en JFLAP para el lenguaje $L = \{a^n b^m c^m d^n \mid n, m \geq 1\}$}
+  \end{figure}
+  \item \textbf{Ejemplos de cadenas generadas:}
+  \begin{itemize}
+    \item \textbf{Cadena 1:} $abcd$
+    \begin{itemize}
+      \item \textbf{Árbol de análisis sintáctico:} El árbol de análisis sintáctico para la cadena $abcd$ se muestra en la siguiente figura:
+      \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.45]{img/grammar_05_tree_1.png}
+        \caption{Árbol de análisis sintáctico para la cadena $abcd$}
+        \label{fig:arbol13}
+      \end{figure}
+    \end{itemize}
+    \item \textbf{Cadena 2:} $aabbccdd$
+    \begin{itemize}
+      \item \textbf{Árbol de análisis sintáctico:} El árbol de análisis sintáctico para la cadena $aabbccdd$ se muestra en la siguiente figura:
+      \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{img/grammar_05_tree_2.png}
+        \caption{Árbol de análisis sintáctico para la cadena $aabbccdd$}
+        \label{fig:arbol14}
+      \end{figure}
+    \end{itemize}
+    \item \textbf{Cadena 3:} $abbbcccd$
+    \begin{itemize}
+      \item \textbf{Árbol de análisis sintáctico:} El árbol de análisis sintáctico para la cadena $abbbcccd$ se muestra en la siguiente figura:
+      \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{img/grammar_05_tree_3.png}
+        \caption{Árbol de análisis sintáctico para la cadena $abbbcccd$}
+        \label{fig:arbol15}
+      \end{figure}
+    \end{itemize}
+  \end{itemize}
+  \item \textbf{Imagen de la gramática simplificada en JFLAP:} La gramática simplificada en JFLAP se muestra en la siguiente figura:
+  \begin{figure}[H]
+    \begin{subfigure}{0.5\textwidth}
+      \centering
+      \includegraphics[scale=0.5]{img/grammar_05_simplified_remove_unit_productions.png}
+      \caption{Eliminación de producciones unitarias}
+    \end{subfigure}%
+    \begin{subfigure}{0.5\textwidth}
+      \centering
+      \includegraphics[scale=0.5]{img/grammar_05_simplified.png}
+      \caption{Gramática simplificada}
+    \end{subfigure}
+    \caption{Gramática simplificada en JFLAP para el lenguaje $L = \{a^n b^m c^m d^n \mid n, m \geq 1\}$}
+  \end{figure}
+\end{itemize}
+
+\newpage
+
+% Ejericio 6
+\section{Diseñar una gramática independiente del contexto que genere el lenguaje \texorpdfstring{$L = \{a^n b^m \mid n > m \geq 0\}$}{L = \{a^n b^m | n > m ≥ 0\}}}
+\begin{itemize}
+  \item \textbf{Explicación de la gramática:} El lenguaje $L = \{a^n b^m \mid n > m \geq 0\}$ acepta todas las cadenas que tienen más símbolos de a's que de b's. La gramática diseñada para el lenguaje $L$ sigue la siguiente estructura:
+  \begin{itemize}
+    \item $S \rightarrow aS \mid aSb \mid \varepsilon$
+  \end{itemize}
+  \item \textbf{Imagen de la gramática en JFLAP:} La gramática diseñada en JFLAP se muestra en la siguiente figura:
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{img/grammar_06.png}
+    \caption{Gramática diseñada en JFLAP para el lenguaje $L = \{a^n b^m \mid n > m \geq 0\}$}
+  \end{figure}
+  \item \textbf{Ejemplos de cadenas generadas:}
+  \begin{itemize}
+    \item \textbf{Cadena 1:} $aab$
+    \begin{itemize}
+      \item \textbf{Árbol de análisis sintáctico:} El árbol de análisis sintáctico para la cadena $aab$ se muestra en la siguiente figura:
+      \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{img/grammar_06_tree_1.png}
+        \caption{Árbol de análisis sintáctico para la cadena $aab$}
+        \label{fig:arbol16}
+      \end{figure}
+    \end{itemize}
+    \item \textbf{Cadena 2:} $aaaaabbb$
+    \begin{itemize}
+      \item \textbf{Árbol de análisis sintáctico:} El árbol de análisis sintáctico para la cadena $aaaaabbb$ se muestra en la siguiente figura:
+      \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{img/grammar_06_tree_2.png}
+        \caption{Árbol de análisis sintáctico para la cadena $aaaaabbb$}
+        \label{fig:arbol17}
+      \end{figure}
+    \end{itemize}
+    \item \textbf{Cadena 3:} $aaaaaaabbbbb$
+    \begin{itemize}
+      \item \textbf{Árbol de análisis sintáctico:} El árbol de análisis sintáctico para la cadena $aaaaaaabbbbb$ se muestra en la siguiente figura:
+      \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{img/grammar_06_tree_3.png}
+        \caption{Árbol de análisis sintáctico para la cadena $aaaaaaabbbbb$}
+        \label{fig:arbol18}
       \end{figure}
     \end{itemize}
   \end{itemize}
   \item \textbf{Imagen de la gramática simplificada en JFLAP:} La gramática simplificada en JFLAP se muestra en la siguiente figura:
   \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.55]{img/grammar_02_simplified.png}
-    \caption{Gramática simplificada en JFLAP para el lenguaje $L = \{a^n b^m \mid n, m \geq 0, n \neq m\}$}
-    \label{fig:gramatica2_simplified}
+    \includegraphics[scale=0.6]{img/grammar_06_simplified.png}
+    \caption{Gramática simplificada en JFLAP para el lenguaje $L = \{a^n b^m \mid n > m \geq 0\}$}
+    \label{fig:gramatica6_simplified}
+  \end{figure}
+\end{itemize}
+
+\newpage
+
+% Ejericio 7
+\section{Diseñar una gramática independiente del contexto que genere el lenguaje $L = \{a^i b^j c^{i+j} \mid i, \ j \geq 1, \ i + j \ par\}$}
+\begin{itemize}
+  \item \textbf{Explicación de la gramática:} El lenguaje $L = \{a^i b^j c^{i+j} \mid i, \ j \geq 1, \ i + j \ par\}$ acepta todas las cadenas que tienen una cantidad $i$ de a's, seguido de una cantidad $j$ de b's, y terminan con una cantidad $i + j$ de c's, donde la suma de $i$ y $j$ es un número par. La gramática diseñada para el lenguaje $L$ sigue la siguiente estructura:
+  \begin{itemize}
+    \item $S \rightarrow aSc \mid A$
+    \item $A \rightarrow bAc \mid bc$
+  \end{itemize}
+  \item \textbf{Imagen de la gramática en JFLAP:} La gramática diseñada en JFLAP se muestra en la siguiente figura:
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{img/grammar_07.png}
+    \caption{Gramática diseñada en JFLAP para el lenguaje $L = \{a^i b^j c^{i+j} \mid i, \ j \geq 1, \ i + j \ par\}$}
+  \end{figure}
+  \item \textbf{Ejemplos de cadenas generadas:}
+  \begin{itemize}
+    \item \textbf{Cadena 1:} $abc$
+    \begin{itemize}
+      \item \textbf{Árbol de análisis sintáctico:} El árbol de análisis sintáctico para la cadena $abc$ se muestra en la siguiente figura:
+      \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{img/grammar_07_tree_1.png}
+        \caption{Árbol de análisis sintáctico para la cadena $abc$}
+        \label{fig:arbol19}
+      \end{figure}
+    \end{itemize}
+    \item \textbf{Cadena 2:} $abbc$
+    \begin{itemize}
+      \item \textbf{Árbol de análisis sintáctico:} El árbol de análisis sintáctico para la cadena $abbc$ se muestra en la siguiente figura:
+      \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{img/grammar_07_tree_2.png}
+        \caption{Árbol de análisis sintáctico para la cadena $abbc$}
+        \label{fig:arbol20}
+      \end{figure}
+    \end{itemize}
+    \item \textbf{Cadena 3:} $aabcc$
+    \begin{itemize}
+      \item \textbf{Árbol de análisis sintáctico:} El árbol de análisis sintáctico para la cadena $aabcc$ se muestra en la siguiente figura:
+      \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{img/grammar_07_tree_3.png}
+        \caption{Árbol de análisis sintáctico para la cadena $aabcc$}
+        \label{fig:arbol21}
+      \end{figure}
+    \end{itemize}
+  \end{itemize}
+  \item \textbf{Imagen de la gramática simplificada en JFLAP:} La gramática simplificada en JFLAP se muestra en la siguiente figura:
+  \begin{figure}[H]
+    \begin{subfigure}{0.5\textwidth}
+      \centering
+      \includegraphics[scale=0.5]{img/grammar_07_simplified_remove_unit_productions.png}
+      \caption{Eliminación de producciones unitarias}
+    \end{subfigure}%
+    \begin{subfigure}{0.5\textwidth}
+      \centering
+      \includegraphics[scale=0.5]{img/grammar_07_simplified.png}
+      \caption{Gramática simplificada}
+    \end{subfigure}
+    \caption{Gramática simplificada en JFLAP para el lenguaje $L = \{a^i b^j c^{i+j} \mid i, \ j \geq 1, \ i + j \ par\}$}
   \end{figure}
 \end{itemize}
 
