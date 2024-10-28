@@ -639,7 +639,7 @@ para agrupar. Ejemplos: “(true AND false)”, “NOT (true OR false)”, “tr
 \begin{itemize}
   \item \textbf{Explicación de la gramática:} El lenguaje de las expresiones booleanas con los operadores AND, OR, y NOT, usando paréntesis para agrupar, acepta todas las cadenas que siguen la siguiente estructura:
   \begin{itemize}
-    \item $S \rightarrow \text{true} \mid \text{false} \mid \text{NOT} \ S \mid S \ \text{AND} \ S \mid S \ \text{OR} \ S \mid (\ S \ )$
+    \item $S \rightarrow \texttt{true} \mid \texttt{false} \mid \texttt{NOT} \ S \mid S \ \texttt{AND} \ S \mid S \ \texttt{OR} \ S \mid (\ S \ )$
   \end{itemize}
   \item \textbf{Imagen de la gramática en JFLAP:} La gramática diseñada en JFLAP se muestra en la siguiente figura:
   \begin{figure}[H]
@@ -649,44 +649,174 @@ para agrupar. Ejemplos: “(true AND false)”, “NOT (true OR false)”, “tr
   \end{figure}
   \item \textbf{Ejemplos de cadenas generadas:}
   \begin{itemize}
-    \item \textbf{Cadena 1:} $(\text{true AND false})$
+    \item \textbf{Cadena 1:} $(\texttt{true AND false})$
     \begin{itemize}
-      \item \textbf{Árbol de análisis sintáctico:} El árbol de análisis sintáctico para la cadena $(\text{true AND false})$ se muestra en la siguiente figura:
+      \item \textbf{Árbol de análisis sintáctico:} El árbol de análisis sintáctico para la cadena $(\texttt{true AND false})$ se muestra en la siguiente figura:
       \begin{figure}[H]
         \centering
         \includegraphics[scale=0.5]{img/grammar_08_tree_1.png}
-        \caption{Árbol de análisis sintáctico para la cadena $(\text{true AND false})$}
+        \caption{Árbol de análisis sintáctico para la cadena $(\texttt{true AND false})$}
         \label{fig:arbol22}
       \end{figure}
     \end{itemize}
-    \item \textbf{Cadena 2:} $\text{NOT (true OR false)}$
+    \item \textbf{Cadena 2:} $\texttt{NOT (true OR false)}$
     \begin{itemize}
-      \item \textbf{Árbol de análisis sintáctico:} El árbol de análisis sintáctico para la cadena $\text{NOT (true OR false)}$ se muestra en la siguiente figura:
+      \item \textbf{Árbol de análisis sintáctico:} El árbol de análisis sintáctico para la cadena $\texttt{NOT (true OR false)}$ se muestra en la siguiente figura:
       \begin{figure}[H]
         \centering
         \includegraphics[scale=0.5]{img/grammar_08_tree_2.png}
-        \caption{Árbol de análisis sintáctico para la cadena $\text{NOT (true OR false)}$}
+        \caption{Árbol de análisis sintáctico para la cadena $\texttt{NOT (true OR false)}$}
         \label{fig:arbol23}
       \end{figure}
     \end{itemize}
-    \item \textbf{Cadena 3:} $\text{true AND (false OR true)}$
+
+    \newpage
+
+    \item \textbf{Cadena 3:} $\texttt{true AND (false OR true)}$
     \begin{itemize}
-      \item \textbf{Árbol de análisis sintáctico:} El árbol de análisis sintáctico para la cadena $\text{true AND (false OR true)}$ se muestra en la siguiente figura:
+      \item \textbf{Árbol de análisis sintáctico:} El árbol de análisis sintáctico para la cadena $\texttt{true AND}$ $\texttt{(false OR true)}$ se muestra en la siguiente figura:
       \begin{figure}[H]
         \centering
         \includegraphics[scale=0.5]{img/grammar_08_tree_3.png}
-        \caption{Árbol de análisis sintáctico para la cadena $\text{true AND (false OR true)}$}
+        \caption{Árbol de análisis sintáctico para la cadena $\texttt{true AND (false OR true)}$}
         \label{fig:arbol24}
       \end{figure}
     \end{itemize}
   \end{itemize}
-  \item \textbf{Imagen de la gramática simplificada en JFLAP:} La gramática simplificada en JFLAP se muestra en la siguiente figura:
+  % \item \textbf{Imagen de la gramática simplificada en JFLAP:} La gramática simplificada en JFLAP se muestra en la siguiente figura:
+  % \begin{figure}[H]
+  %   \centering
+  %   \includegraphics[scale=0.5]{img/grammar_08_simplified.png}
+  %   \caption{Gramática simplificada en JFLAP para el lenguaje de las expresiones booleanas con los operadores AND, OR, y NOT, usando paréntesis para agrupar}
+  %   \label{fig:gramatica8_simplified}
+  % \end{figure}
+\end{itemize}
+
+\newpage
+
+\section{Diseñar una gramática independiente del contexto que genere expresiones aritméticas simples con suma y multiplicación, utilizando los símbolos $+$, $*$, $(, )$ y los números 0, 1, etc. Ejemplos: “1+2”, “(1+2)*3”, “4*(5+6)”.}
+\begin{itemize}
+  \item \textbf{Explicación de la gramática:} El lenguaje de las expresiones aritméticas simples con suma y multiplicación, utilizando los símbolos $+$, $*$, $(, )$ y los números 0, 1, etc., acepta todas las cadenas que siguen la siguiente estructura:
+  \begin{itemize}
+    \item $S \rightarrow S + S \mid S * S \mid (S) \mid 0 \mid 1 \mid 2 \mid 3 \mid 4 \mid 5 \mid 6 \mid 7 \mid 8 \mid 9 $
+  \end{itemize}
+  \item \textbf{Imagen de la gramática en JFLAP:} La gramática diseñada en JFLAP se muestra en la siguiente figura:
   \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.5]{img/grammar_08_simplified.png}
-    \caption{Gramática simplificada en JFLAP para el lenguaje de las expresiones booleanas con los operadores AND, OR, y NOT, usando paréntesis para agrupar}
-    \label{fig:gramatica8_simplified}
+    \includegraphics[scale=0.5]{img/grammar_09.png}
+    \caption{Gramática diseñada en JFLAP para el lenguaje de las expresiones aritméticas simples con suma y multiplicación}
   \end{figure}
+
+  \newpage
+
+  \item \textbf{Ejemplos de cadenas generadas:}
+  \begin{itemize}
+    \item \textbf{Cadena 1:} $1+2$
+    \begin{itemize}
+      \item \textbf{Árbol de análisis sintáctico:} El árbol de análisis sintáctico para la cadena $1+2$ se muestra en la siguiente figura:
+      \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{img/grammar_09_tree_1.png}
+        \caption{Árbol de análisis sintáctico para la cadena $1+2$}
+        \label{fig:arbol25}
+      \end{figure}
+    \end{itemize}
+
+    \newpage
+
+    \item \textbf{Cadena 2:} $(1+2)*3$
+    \begin{itemize}
+      \item \textbf{Árbol de análisis sintáctico:} El árbol de análisis sintáctico para la cadena $(1+2)*3$ se muestra en la siguiente figura:
+      \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{img/grammar_09_tree_2.png}
+        \caption{Árbol de análisis sintáctico para la cadena $(1+2)*3$}
+        \label{fig:arbol26}
+      \end{figure}
+    \end{itemize}
+
+    \newpage
+
+    \item \textbf{Cadena 3:} $4*(5+6)$
+    \begin{itemize}
+      \item \textbf{Árbol de análisis sintáctico:} El árbol de análisis sintáctico para la cadena $4*(5+6)$ se muestra en la siguiente figura:
+      \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{img/grammar_09_tree_3.png}
+        \caption{Árbol de análisis sintáctico para la cadena $4*(5+6)$}
+        \label{fig:arbol27}
+      \end{figure}
+    \end{itemize}
+  \end{itemize}
+  % \item \textbf{Imagen de la gramática simplificada en JFLAP:} La gramática simplificada en JFLAP se muestra en la siguiente figura:
+  % \begin{figure}[H]
+  %   \centering
+  %   \includegraphics[scale=0.5]{img/grammar_09_simplified.png}
+  %   \caption{Gramática simplificada en JFLAP para el lenguaje de las expresiones aritméticas simples con suma y multiplicación}
+  %   \label{fig:gramatica9_simplified}
+  % \end{figure}
+\end{itemize}
+
+\newpage
+
+\section{Diseñar una gramática independiente del contexto que genere el lenguaje de listas anidadas usando corchetes, como en los lenguajes de programación. Ejemplos: [], [[]], [[[]]], [[1,2],[3,4]].}
+\begin{itemize}
+  \item \textbf{Explicación de la gramática:} El lenguaje de listas anidadas usando corchetes, como en los lenguajes de programación, acepta todas las cadenas que siguen la siguiente estructura:
+  \begin{itemize}
+    \item $S \rightarrow [S] \mid [S, S] \mid \varepsilon$
+  \end{itemize}
+  \item \textbf{Imagen de la gramática en JFLAP:} La gramática diseñada en JFLAP se muestra en la siguiente figura:
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{img/grammar_10.png}
+    \caption{Gramática diseñada en JFLAP para el lenguaje de listas anidadas usando corchetes}
+  \end{figure}
+  \item \textbf{Ejemplos de cadenas generadas:}
+  \begin{itemize}
+    \item \textbf{Cadena 1:} $[]$
+    \begin{itemize}
+      \item \textbf{Árbol de análisis sintáctico:} El árbol de análisis sintáctico para la cadena $[]$ se muestra en la siguiente figura:
+      \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{img/grammar_10_tree_1.png}
+        \caption{Árbol de análisis sintáctico para la cadena $[]$}
+        \label{fig:arbol28}
+      \end{figure}
+    \end{itemize}
+
+    \newpage
+
+    \item \textbf{Cadena 2:} $[[]]$
+    \begin{itemize}
+      \item \textbf{Árbol de análisis sintáctico:} El árbol de análisis sintáctico para la cadena $[[]]$ se muestra en la siguiente figura:
+      \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{img/grammar_10_tree_2.png}
+        \caption{Árbol de análisis sintáctico para la cadena $[[]]$}
+        \label{fig:arbol29}
+      \end{figure}
+    \end{itemize}
+
+    \newpage
+
+    \item \textbf{Cadena 3:} $[[[]]]$
+    \begin{itemize}
+      \item \textbf{Árbol de análisis sintáctico:} El árbol de análisis sintáctico para la cadena $[[[]]]$ se muestra en la siguiente figura:
+      \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{img/grammar_10_tree_3.png}
+        \caption{Árbol de análisis sintáctico para la cadena $[[[]]]$}
+        \label{fig:arbol30}
+      \end{figure}
+    \end{itemize}
+  \end{itemize}
+  % \item \textbf{Imagen de la gramática simplificada en JFLAP:} La gramática simplificada en JFLAP se muestra en la siguiente figura:
+  % \begin{figure}[H]
+  %   \centering
+  %   \includegraphics[scale=0.5]{img/grammar_10_simplified.png}
+  %   \caption{Gramática simplificada en JFLAP para el lenguaje de listas anidadas usando corchetes}
+  %   \label{fig:gramatica10_simplified}
+  % \end{figure}
 \end{itemize}
 
 
