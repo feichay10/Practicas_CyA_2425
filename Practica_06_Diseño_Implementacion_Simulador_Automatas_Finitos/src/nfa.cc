@@ -93,7 +93,7 @@ bool NFA::ReadStrings(const String& string) {
   // Expandir las epsilon-transiciones desde los estados iniciales
   current_states = EpsilonClosure(current_states);
 
-  // Manejar la cadena vacía (solo epsilon)
+  // Manejar la cadena vacía (solo un símbolo '&')
   if (string.GetString().size() == 1 && string.GetString()[0].GetSymbol() == '&') {
     for (const auto& state : current_states) {
       if (state.IsAceptationState()) {
