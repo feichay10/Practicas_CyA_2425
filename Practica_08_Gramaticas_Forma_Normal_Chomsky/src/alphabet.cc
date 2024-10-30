@@ -80,6 +80,17 @@ std::set<Symbol>::const_iterator Alphabet::end() const {
   return std::set<Symbol>::const_iterator();
 }
 
+Symbol Alphabet::GetNextSymbol() const { 
+  Symbol symbol;
+  for (int i = 0; i < 26; i++) {
+    symbol = Symbol('A' + i);
+    if (!find(symbol)) {
+      return symbol;
+    }
+  }
+  return symbol;
+}
+
 /**
  * @brief Overload the << operator
  * 

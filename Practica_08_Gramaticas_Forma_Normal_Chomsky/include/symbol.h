@@ -28,7 +28,7 @@ class Symbol {
  public:
   Symbol();
   Symbol(char symbol);
-  Symbol(std::string symbol);
+  Symbol(const std::string& symbol);
   ~Symbol() = default;
 
   char GetSymbol() const;
@@ -36,7 +36,12 @@ class Symbol {
   bool operator<(const Symbol& other) const;
   friend std::ostream& operator<<(std::ostream& os, const Symbol& symbol);
   friend std::istream& operator>>(std::istream& is, Symbol& symbol);
-  bool operator==(const Symbol& other) const;
+  bool operator==(const Symbol& other) const {
+      return symbol_ == other.symbol_;
+  }
+  bool operator!=(const Symbol& other) const {
+    return !(*this == other);
+  }
 
  private:
   char symbol_;

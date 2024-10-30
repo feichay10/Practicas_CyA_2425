@@ -27,6 +27,8 @@
 #include <sstream>
 #include <string>
 #include <vector>
+#include <utility>
+#include <unordered_map>
 
 #include "alphabet.h"
 #include "symbol.h"
@@ -39,7 +41,6 @@ class Grammar {
   bool isTerminal(const Symbol& symbol) const;
   bool isNonTerminal(const Symbol& symbol) const;
   Grammar Convert2CNF() const;
-
   bool hasUnitaryProductions() const;
   bool hasEmptyProductions() const;
   friend std::ostream& operator<<(std::ostream& os, const Grammar& grammar);
@@ -48,8 +49,7 @@ class Grammar {
   Alphabet terminals_;
   Alphabet non_terminals_;
   Symbol start_symbol_;
-  // Las producciones son una secuencia de símbolos terminales y no terminales
-  std::map<Symbol, std::vector<std::string>> productions_;
+  std::multimap<Symbol, std::vector<Symbol>> productions_;
 };
 
 #endif  // GRAMMAR_H

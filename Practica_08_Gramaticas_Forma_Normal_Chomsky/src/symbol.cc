@@ -37,7 +37,7 @@ Symbol::Symbol(char symbol) {
  * 
  * @param symbol 
  */
-Symbol::Symbol(std::string symbol) {
+Symbol::Symbol(const std::string& symbol) {
   symbol_ = symbol[0];
 }
 
@@ -92,6 +92,6 @@ std::istream& operator>>(std::istream& is, Symbol& symbol) {
  * @return true 
  * @return false 
  */
-bool Symbol::operator==(const Symbol& other) const {
-  return this->symbol_ == other.symbol_;
-}
+// bool Symbol::operator==(const Symbol& other) const {
+//   return this->symbol_ == other.symbol_;
+// }
