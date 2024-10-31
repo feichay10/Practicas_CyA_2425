@@ -39,9 +39,9 @@ class Alphabet {
 
   std::set<Symbol> GetAlphabet() const;
   void insert(Symbol symbol);
+  void insert(const std::string& value);
   bool find(Symbol symbol) const;
   std::set<Symbol>::const_iterator end() const;
-  Symbol GetNextSymbol() const;
 
   friend std::ostream &operator<<(std::ostream &os, const Alphabet &alphabet);
 

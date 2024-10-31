@@ -67,29 +67,27 @@ Grammar::Grammar(const std::string& file_name) {
   for (int i = 0; i < number_of_non_terminals; i++) {
     std::string non_terminal;
     file >> non_terminal;
-    Symbol symbol(non_terminal);
-    non_terminals_.insert(symbol);
+    // Symbol symbol(non_terminal);
+    std::string symbol = non_terminal;
+    non_terminals_.push_back(symbol);
     if (i == 0) {
       start_symbol_ = symbol;
     }
   }
 
+  // Leer producciones
   int number_of_productions;
   file >> number_of_productions;
-  for (int i = 0; i < number_of_productions; i++) {  // Leemos las producciones
-    std::string left_symbol;
-    file >> left_symbol;
-    Symbol left(left_symbol);
-
-    std::string right_symbols;
-    file >> right_symbols;
-
-    std::vector<Symbol> production;
-    for (size_t j = 0; j < right_symbols.length(); j++) {  // Leemos los símbolos de la derecha de la producción
-      std::string symbol = std::string(1, right_symbols[j]);
-      production.push_back(Symbol(symbol));
+  for (int i = 0; i < number_of_productions; i++) {
+    std::string left_side;
+    std::string right_side;
+    file >> left_side >> right_side;
+    Symbol left_symbol(left_side);
+    std::vector<std::string> right_symbols;
+    for (char c : right_side) {
+      right_symbols.push_back(std::string(1, c));
     }
-    productions_.insert(std::pair<Symbol, std::vector<Symbol>>(left, production));  // Insertamos la producción en el mapa
+    productions_.insert(std::pair<Symbol, std::vector<std::string>>(left_symbol, right_symbols));
   }
 
   file.close();
@@ -99,8 +97,14 @@ bool Grammar::isTerminal(const Symbol& symbol) const {
   return terminals_.find(symbol);
 }
 
+
 bool Grammar::isNonTerminal(const Symbol& symbol) const {
-  return non_terminals_.find(symbol);
+  for (const auto& non_terminal : non_terminals_) {
+    if (non_terminal == symbol) {
+      return true;
+    }
+  }
+  return false;
 }
 
 // El algoritmo de conversión a forma normal de Chomsky es el siguiente:
@@ -128,7 +132,7 @@ Grammar Grammar::Convert2CNF() const {
   }
 
   Grammar cnf_grammar = *this;
-  std::map<Symbol, Symbol> auxiliar_symbols_f1; // Mapa de símbolos auxiliares para la primera fase de la conversión
+  std::map<Symbol, std::string> auxiliar_symbols_f1; // Mapa de símbolos auxiliares para la primera fase de la conversión
 
   // Primera parte del algoritmo:
   // la primera fase agrega símbolos auxiliares para las producciones con símbolos terminales
@@ -151,11 +155,11 @@ Grammar Grammar::Convert2CNF() const {
         // Si el símbolo es terminal
         if (cnf_grammar.isTerminal(s)) {
           if (auxiliar_symbols_f1.find(s) == auxiliar_symbols_f1.end()) {
-            std::vector<Symbol> new_production;
+            std::vector<std::string> new_production;
             new_production.push_back(s);
-            std::string auxiliar_symbol = "C" + std::to_string(s.GetSymbol());
-            std::cout << "Auxiliar symbol: " << auxiliar_symbol << std::endl;
-            cnf_grammar.productions_.insert(std::pair<Symbol, std::vector<Symbol>>(auxiliar_symbol, new_production));
+            std::string auxiliar_symbol = "C_" + s;
+            cnf_grammar.productions_.insert(std::pair<Symbol, std::vector<std::string>>(auxiliar_symbol, new_production));
+            cnf_grammar.non_terminals_.push_back(auxiliar_symbol);
             auxiliar_symbols_f1[s] = auxiliar_symbol;
           }
           // Reemplazar el símbolo terminal por el símbolo auxiliar
@@ -193,14 +197,14 @@ std::ostream& operator<<(std::ostream& os, const Grammar& grammar) {
   }
   os << std::endl;
   os << "No terminales: ";
-  for (auto& nt : grammar.non_terminals_.GetAlphabet()) {
+  for (auto& nt : grammar.non_terminals_) {
     os << nt << " ";
   }
   os << std::endl;
   os << "Símbolo inicial: " << grammar.start_symbol_ << std::endl;
   os << "Producciones: " << std::endl;
   for (auto& p : grammar.productions_) {
-    os << p.first << " -> ";
+    os << " " << p.first << " -> ";
     for (auto& s : p.second) {
       os << s;
     }

@@ -37,8 +37,15 @@ class Symbol {
   friend std::ostream& operator<<(std::ostream& os, const Symbol& symbol);
   friend std::istream& operator>>(std::istream& is, Symbol& symbol);
   bool operator==(const Symbol& other) const {
-      return symbol_ == other.symbol_;
+    return symbol_ == other.symbol_;
   }
+
+  // comparar un string con char
+  friend bool operator==(const std::string& other, const Symbol symbol) {
+    return symbol == other[0];
+  }
+
+
   bool operator!=(const Symbol& other) const {
     return !(*this == other);
   }

@@ -47,9 +47,9 @@ class Grammar {
 
  private:
   Alphabet terminals_;
-  Alphabet non_terminals_;
+  std::vector<std::string> non_terminals_; // Hacer un objeto non_terminal 
   Symbol start_symbol_;
-  std::multimap<Symbol, std::vector<Symbol>> productions_;
+  std::multimap<Symbol, std::vector<std::string>> productions_; // posibilidad de hacer que la produccion sea parte de la clase non_terminal
 };
 
 #endif  // GRAMMAR_H

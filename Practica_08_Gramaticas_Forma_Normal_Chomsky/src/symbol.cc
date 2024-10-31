@@ -84,14 +84,3 @@ std::istream& operator>>(std::istream& is, Symbol& symbol) {
   is >> symbol.symbol_;
   return is;
 }
-
-/**
- * @brief Compare two Symbol objects
- * 
- * @param other 
- * @return true 
- * @return false 
- */
-// bool Symbol::operator==(const Symbol& other) const {
-//   return this->symbol_ == other.symbol_;
-// }

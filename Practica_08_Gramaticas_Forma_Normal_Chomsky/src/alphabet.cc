@@ -58,6 +58,14 @@ void Alphabet::insert(Symbol symbol) {
   alphabet_.insert(symbol);
 }
 
+void Alphabet::insert(const std::string& value) {
+  for (int i = 0; i < value.size(); i++) {
+    alphabet_.insert(Symbol(value[i]));
+  }
+
+  std::cout << "Alphabet: " << *this << std::endl;
+}
+
 /**
  * @brief Find a symbol in the alphabet
  * 
@@ -78,17 +86,6 @@ bool Alphabet::find(Symbol symbol) const {
  */
 std::set<Symbol>::const_iterator Alphabet::end() const {
   return std::set<Symbol>::const_iterator();
-}
-
-Symbol Alphabet::GetNextSymbol() const { 
-  Symbol symbol;
-  for (int i = 0; i < 26; i++) {
-    symbol = Symbol('A' + i);
-    if (!find(symbol)) {
-      return symbol;
-    }
-  }
-  return symbol;
 }
 
 /**
