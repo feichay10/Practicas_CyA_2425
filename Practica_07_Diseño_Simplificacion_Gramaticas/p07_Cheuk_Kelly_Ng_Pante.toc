@@ -10,3 +10,5 @@
 \contentsline {section}{\numberline {1.8}Diseñaar una gramática independiente del contexto que genere el lenguaje de las expresiones booleanas con los operadores AND, OR, y NOT, usando paréntesis para agrupar. Ejemplos: “(true AND false)”, “NOT (true OR false)”, “true AND (false OR true)”.}{22}{section.1.8}%
 \contentsline {section}{\numberline {1.9}Diseñar una gramática independiente del contexto que genere expresiones aritméticas simples con suma y multiplicación, utilizando los símbolos $+$, $*$, $(, )$ y los números 0, 1, etc. Ejemplos: “1+2”, “(1+2)*3”, “4*(5+6)”.}{25}{section.1.9}%
 \contentsline {section}{\numberline {1.10}Diseñar una gramática independiente del contexto que genere el lenguaje de listas anidadas usando corchetes, como en los lenguajes de programación. Ejemplos: [], [[]], [[[]]], [[1,2],[3,4]].}{29}{section.1.10}%
+\contentsline {chapter}{\numberline {2}Modificación}{34}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Diseñar una gramática independiente del contexto que genere el lenguaje $L = \{a^n b^{2n} \mid n \ es \ impar\}$}{34}{section.2.1}%

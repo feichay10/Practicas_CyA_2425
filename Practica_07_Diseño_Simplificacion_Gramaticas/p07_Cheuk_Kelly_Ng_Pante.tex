@@ -774,7 +774,7 @@ para agrupar. Ejemplos: “(true AND false)”, “NOT (true OR false)”, “tr
     \caption{Gramática diseñada en JFLAP para el lenguaje de listas anidadas usando corchetes}
   \end{figure}
 
-  \newpage
+    \new
 
   \item \textbf{Ejemplos de cadenas generadas:}
   \begin{itemize}
@@ -827,5 +827,73 @@ para agrupar. Ejemplos: “(true AND false)”, “NOT (true OR false)”, “tr
   \end{figure}
 \end{itemize}
 
+\newpage
+
+\chapter{Modificación}
+\section{Diseñar una gramática independiente del contexto que genere el lenguaje $L = \{a^n b^{2n} \mid n \ es \ impar\}$}
+
+\begin{itemize}
+  \item \textbf{Explicación de la gramática:} El lenguaje $L = \{a^n b^{2n} \mid n \ es \ impar\}$ acepta cadenas que consisten en una cantidad impar de a's seguidos de exactamente el doble de b's. La gramática diseñada para el lenguaje $L$ sigue la siguiente estructura:
+  \begin{itemize}
+    \item $S \rightarrow aSbb \mid aabbbbb \mid \varepsilon$
+  \end{itemize}
+  \item \textbf{Imagen de la gramática en JFLAP:} La gramática diseñada en JFLAP se muestra en la siguiente figura:
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{img/grammar_mod.png}
+    \caption{Gramática diseñada en JFLAP para el lenguaje $L = \{a^n b^{2n} \mid n \ es \ impar\}$}
+  \end{figure}
+
+    \newpage
+  
+  \item \textbf{Ejemplos de cadenas generadas:}
+  \begin{itemize}
+    \item \textbf{Cadena 1:} $abb$
+    \begin{itemize}
+      \item \textbf{Árbol de análisis sintáctico:} El árbol de análisis sintáctico para la cadena $abb$ se muestra en la siguiente figura:
+      \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.45]{img/grammar_mod_tree_1.png}
+        \caption{Árbol de análisis sintáctico para la cadena $abb$}
+        \label{fig:arbol10_mod}
+      \end{figure}
+    \end{itemize}
+
+    \newpage
+
+    \item \textbf{Cadena 2:} $aaabbbbbb$
+    \begin{itemize}
+      \item \textbf{Árbol de análisis sintáctico:} El árbol de análisis sintáctico para la cadena $aaabbbbbb$ se muestra en la siguiente figura:
+      \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{img/grammar_mod_tree_2.png}
+        \caption{Árbol de análisis sintáctico para la cadena $aaabbbbbb$}
+        \label{fig:arbol11_mod}
+      \end{figure}
+    \end{itemize}
+
+    \newpage
+    
+    \item \textbf{Cadena 3:} $aaaaabbbbbbbbbb$
+    \begin{itemize}
+      \item \textbf{Árbol de análisis sintáctico:} El árbol de análisis sintáctico para la cadena $aaaaabbbbbbbbbb$ se muestra en la siguiente figura:
+      \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.5]{img/grammar_mod_tree_3.png}
+        \caption{Árbol de análisis sintáctico para la cadena $aaaaabbbbbbbbbb$}
+        \label{fig:arbol12}
+      \end{figure}
+    \end{itemize}
+  \end{itemize}
+
+    \newpage
+  
+  \item \textbf{Imagen de la gramática simplificada en JFLAP:} La gramática simplificada en JFLAP se muestra en la siguiente figura:
+  \begin{figure}[H]
+    \centering
+      \includegraphics[scale=0.45]{img/grammar_mod_simplified.png}
+    \caption{Gramática simplificada en JFLAP para el lenguaje $L = \{a^n b^{2n} \mid n \ es \ impar\}$}
+  \end{figure}
+\end{itemize}
 
 \end{document}
