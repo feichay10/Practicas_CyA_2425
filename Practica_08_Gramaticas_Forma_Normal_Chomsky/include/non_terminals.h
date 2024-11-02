@@ -34,6 +34,7 @@ class NonTerminals {
   // Getters and setters
   std::multimap<Symbol, std::vector<std::string>> GetProductions() const;
   void SetProductions(const std::multimap<Symbol, std::vector<std::string>>& productions);
+  void AddProduction(const Symbol& left_symbol, const std::vector<std::string>& right_symbols);  // New method
   std::vector<std::string> GetNonTerminals() const;
   void SetNonTerminals(const std::vector<std::string>& non_terminals);
 
@@ -43,7 +44,7 @@ class NonTerminals {
 
  private:
   std::vector<std::string> non_terminals_;
-  std::multimap<Symbol, std::vector<std::string>> productions_;  // Las producciones de del simbolo no terminal
+  std::multimap<Symbol, std::vector<std::string>> productions_;
 };
 
 #endif  // NON_PRODUCTIONS_H

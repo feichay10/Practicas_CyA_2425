@@ -47,6 +47,24 @@
 // Y a
 // Y b
 // Y c
+/**
+ * @brief Constructs a Grammar object by reading grammar rules from a file.
+ * 
+ * This constructor reads a grammar definition from a specified file and initializes
+ * the grammar's terminals, non-terminals, start symbol, and production rules.
+ * 
+ * @param file_name The name of the file containing the grammar definition.
+ * 
+ * @throws std::runtime_error If the file cannot be opened.
+ * 
+ * The file should have the following format:
+ * - The first line contains the number of terminals.
+ * - The next lines contain the terminal symbols.
+ * - The next line contains the number of non-terminals.
+ * - The next lines contain the non-terminal symbols.
+ * - The next line contains the number of production rules.
+ * - The next lines contain the production rules in the format "left_side right_side".
+ */
 Grammar::Grammar(const std::string& file_name) {
   std::ifstream file(file_name);
   if (!file.is_open()) {
@@ -87,7 +105,7 @@ Grammar::Grammar(const std::string& file_name) {
     for (char c : right_side) {
       right_symbols.push_back(std::string(1, c));
     }
-    productions_.insert(std::pair<Symbol, std::vector<std::string>>(left_symbol, right_symbols));
+    non_terminals_.AddProduction(left_symbol, right_symbols);
   }
 
   file.close();
@@ -98,14 +116,14 @@ bool Grammar::isTerminal(const Symbol& symbol) const {
 }
 
 
-bool Grammar::isNonTerminal(const Symbol& symbol) const {
-  for (const auto& non_terminal : non_terminals_) {
-    if (non_terminal == symbol) {
-      return true;
-    }
-  }
-  return false;
-}
+// bool Grammar::isNonTerminal(const Symbol& symbol) const {
+//   for (const auto& non_terminal : non_terminals_) {
+//     if (non_terminal == symbol) {
+//       return true;
+//     }
+//   }
+//   return false;
+// }
 
 // El algoritmo de conversión a forma normal de Chomsky es el siguiente:
 // for all (A →X1X2 ...Xn (con n ≥2, Xi ∈(Σ ∪V )) do
@@ -126,10 +144,10 @@ bool Grammar::isNonTerminal(const Symbol& symbol) const {
 // end for
 Grammar Grammar::Convert2CNF() const {
   // Usar hasUnitaryProductions() y hasEmptyProductions() para comprobar si la gramática esta optimizada para la conversión a CNF
-  if (hasUnitaryProductions() || hasEmptyProductions()) {
-    std::cout << "La gramática no está optimizada para la conversión a CNF. No se puede continuar." << std::endl;
-    exit(EXIT_FAILURE);
-  }
+  // if (hasUnitaryProductions() || hasEmptyProductions()) {
+  //   std::cout << "La gramática no está optimizada para la conversión a CNF. No se puede continuar." << std::endl;
+  //   exit(EXIT_FAILURE);
+  // }
 
   Grammar cnf_grammar = *this;
   std::map<Symbol, std::string> auxiliar_symbols_f1; // Mapa de símbolos auxiliares para la primera fase de la conversión
@@ -147,7 +165,7 @@ Grammar Grammar::Convert2CNF() const {
 
   // Recorrer todas las producciones de la gramática original
   // Para cada produccion de p:
-  for (auto& p : cnf_grammar.productions_) {
+  for (auto& p : cnf_grammar.non_terminals_.GetProductions()) {
     // Si p tiene dos o más símbolos
     if (p.second.size() >= 2) {
       // Para cada símbolo de la producción
@@ -158,7 +176,8 @@ Grammar Grammar::Convert2CNF() const {
             std::vector<std::string> new_production;
             new_production.push_back(s);
             std::string auxiliar_symbol = "C_" + s;
-            cnf_grammar.productions_.insert(std::pair<Symbol, std::vector<std::string>>(auxiliar_symbol, new_production));
+            // cnf_grammar.productions_.insert(std::pair<Symbol, std::vector<std::string>>(auxiliar_symbol, new_production));
+            cnf_grammar.non_terminals_.AddProduction(Symbol(auxiliar_symbol), new_production);
             cnf_grammar.non_terminals_.push_back(auxiliar_symbol);
             auxiliar_symbols_f1[s] = auxiliar_symbol;
           }
@@ -173,21 +192,21 @@ Grammar Grammar::Convert2CNF() const {
 }
 
 bool Grammar::hasUnitaryProductions() const {
-  for (auto& p : productions_) {
-    if (p.second.size() == 1 && isNonTerminal(p.second[0])) {
-      return true;
-    }
-  }
-  return false;
+  // for (auto& p : productions_) {
+    // if (p.second.size() == 1 && isNonTerminal(p.second[0])) {
+      // return true;
+    // }
+  // }
+  // return false;
 }
 
 bool Grammar::hasEmptyProductions() const {
-  for (auto& p : productions_) {
-    if (p.second.size() == 0) {
-      return true;
-    }
-  }
-  return false;
+  // for (auto& p : productions_) {
+    // if (p.second.size() == 0) {
+      // return true;
+    // }
+  // }
+  // return false;
 }
 
 std::ostream& operator<<(std::ostream& os, const Grammar& grammar) {
@@ -197,18 +216,19 @@ std::ostream& operator<<(std::ostream& os, const Grammar& grammar) {
   }
   os << std::endl;
   os << "No terminales: ";
-  for (auto& nt : grammar.non_terminals_) {
-    os << nt << " ";
-  }
-  os << std::endl;
-  os << "Símbolo inicial: " << grammar.start_symbol_ << std::endl;
-  os << "Producciones: " << std::endl;
-  for (auto& p : grammar.productions_) {
-    os << " " << p.first << " -> ";
-    for (auto& s : p.second) {
-      os << s;
-    }
-    os << std::endl;
-  }
+  os << grammar.non_terminals_ << std::endl;
+  // for (auto& nt : grammar.non_terminals_.GetNonTerminals()) {
+  //   os << nt << " ";
+  // }
+  // os << std::endl;
+  // os << "Símbolo inicial: " << grammar.start_symbol_ << std::endl;
+  // os << "Producciones: " << std::endl;
+  // for (auto& p : grammar.non_terminals_.GetProductions()) {
+  //   os << " " << p.first << " -> ";
+  //   for (auto& s : p.second) {
+  //     os << s;
+  //   }
+  //   os << std::endl;
+  // }
   return os;
 }
