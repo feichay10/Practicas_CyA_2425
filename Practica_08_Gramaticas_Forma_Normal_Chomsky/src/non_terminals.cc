@@ -23,20 +23,24 @@ NonTerminals::NonTerminals(const std::vector<std::string>& non_terminals) {
   non_terminals_ = non_terminals;
 }
 
-NonTerminals::NonTerminals(const std::vector<std::string>& non_terminals, const std::multimap<Symbol, std::vector<std::string>>& productions) {
+NonTerminals::NonTerminals(const std::vector<std::string>& non_terminals, const std::multimap<std::string, std::vector<std::string>>& productions) {
   non_terminals_ = non_terminals;
   productions_ = productions;
 }
 
-std::multimap<Symbol, std::vector<std::string>> NonTerminals::GetProductions() const {
+std::multimap<std::string, std::vector<std::string>> NonTerminals::GetProductions() const {
   return productions_;
 }
 
-void NonTerminals::SetProductions(const std::multimap<Symbol, std::vector<std::string>>& productions) {
+void NonTerminals::SetProductions(const std::multimap<std::string, std::vector<std::string>>& productions) {
   productions_ = productions;
 }
 
-void NonTerminals::AddProduction(const Symbol& left_symbol, const std::vector<std::string>& right_symbols) {
+void NonTerminals::AddProduction(const std::string& left_symbol, const std::vector<std::string>& right_symbols) {
+  std::cout << "Adding production: " << left_symbol << " -> ";
+  for (const auto& s : right_symbols) {
+    std::cout << s;
+  }
   productions_.emplace(left_symbol, right_symbols);
 }
 

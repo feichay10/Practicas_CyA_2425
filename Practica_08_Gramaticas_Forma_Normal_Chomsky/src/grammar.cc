@@ -100,7 +100,8 @@ Grammar::Grammar(const std::string& file_name) {
     std::string left_side;
     std::string right_side;
     file >> left_side >> right_side;
-    Symbol left_symbol(left_side);
+    // Symbol left_symbol(left_side);
+    std::string left_symbol = left_side;
     std::vector<std::string> right_symbols;
     for (char c : right_side) {
       right_symbols.push_back(std::string(1, c));
@@ -177,9 +178,11 @@ Grammar Grammar::Convert2CNF() const {
             new_production.push_back(s);
             std::string auxiliar_symbol = "C_" + s;
             // cnf_grammar.productions_.insert(std::pair<Symbol, std::vector<std::string>>(auxiliar_symbol, new_production));
-            cnf_grammar.non_terminals_.AddProduction(Symbol(auxiliar_symbol), new_production);
+            cnf_grammar.non_terminals_.AddProduction(auxiliar_symbol, new_production);
+            std::cout << "aux_symbol:  " << auxiliar_symbol << std::endl;
             cnf_grammar.non_terminals_.push_back(auxiliar_symbol);
             auxiliar_symbols_f1[s] = auxiliar_symbol;
+            std::cout << "aux_symbol_2: " << auxiliar_symbols_f1[s] << std::endl;
           }
           // Reemplazar el símbolo terminal por el símbolo auxiliar
           s = auxiliar_symbols_f1[s];

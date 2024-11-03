@@ -29,12 +29,12 @@ class NonTerminals {
  public:
   NonTerminals() = default;
   NonTerminals(const std::vector<std::string>& non_terminals);
-  NonTerminals(const std::vector<std::string>& non_terminals, const std::multimap<Symbol, std::vector<std::string>>& productions);
+  NonTerminals(const std::vector<std::string>& non_terminals, const std::multimap<std::string, std::vector<std::string>>& productions);
 
   // Getters and setters
-  std::multimap<Symbol, std::vector<std::string>> GetProductions() const;
-  void SetProductions(const std::multimap<Symbol, std::vector<std::string>>& productions);
-  void AddProduction(const Symbol& left_symbol, const std::vector<std::string>& right_symbols);  // New method
+  std::multimap<std::string, std::vector<std::string>> GetProductions() const;
+  void SetProductions(const std::multimap<std::string, std::vector<std::string>>& productions);
+  void AddProduction(const std::string& left_symbol, const std::vector<std::string>& right_symbols);  // New method
   std::vector<std::string> GetNonTerminals() const;
   void SetNonTerminals(const std::vector<std::string>& non_terminals);
 
@@ -44,7 +44,7 @@ class NonTerminals {
 
  private:
   std::vector<std::string> non_terminals_;
-  std::multimap<Symbol, std::vector<std::string>> productions_;
+  std::multimap<std::string, std::vector<std::string>> productions_;
 };
 
 #endif  // NON_PRODUCTIONS_H
