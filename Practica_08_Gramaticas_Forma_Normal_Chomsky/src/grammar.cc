@@ -151,7 +151,7 @@ Grammar Grammar::Convert2CNF() const {
   // }
 
   Grammar cnf_grammar = *this;
-  std::map<Symbol, std::string> auxiliar_symbols_f1; // Mapa de símbolos auxiliares para la primera fase de la conversión
+  std::map<std::string, std::string> auxiliar_symbols_f1; // Mapa de símbolos auxiliares para la primera fase de la conversión
 
   // Primera parte del algoritmo:
   // la primera fase agrega símbolos auxiliares para las producciones con símbolos terminales
