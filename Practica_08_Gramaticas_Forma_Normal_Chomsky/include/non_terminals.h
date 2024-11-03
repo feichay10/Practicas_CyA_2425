@@ -32,9 +32,9 @@ class NonTerminals {
   NonTerminals(const std::vector<std::string>& non_terminals, const std::multimap<std::string, std::vector<std::string>>& productions);
 
   // Getters and setters
-  std::multimap<std::string, std::vector<std::string>> GetProductions() const;
+  std::multimap<std::string, std::vector<std::string>> GetProductions();
   void SetProductions(const std::multimap<std::string, std::vector<std::string>>& productions);
-  void AddProduction(const std::string& left_symbol, const std::vector<std::string>& right_symbols);  // New method
+  void AddProduction(const std::string& left_symbol, const std::vector<std::string>& right_symbols);
   std::vector<std::string> GetNonTerminals() const;
   void SetNonTerminals(const std::vector<std::string>& non_terminals);
 

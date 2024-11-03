@@ -28,7 +28,7 @@ NonTerminals::NonTerminals(const std::vector<std::string>& non_terminals, const 
   productions_ = productions;
 }
 
-std::multimap<std::string, std::vector<std::string>> NonTerminals::GetProductions() const {
+std::multimap<std::string, std::vector<std::string>> NonTerminals::GetProductions() {
   return productions_;
 }
 
@@ -37,11 +37,7 @@ void NonTerminals::SetProductions(const std::multimap<std::string, std::vector<s
 }
 
 void NonTerminals::AddProduction(const std::string& left_symbol, const std::vector<std::string>& right_symbols) {
-  std::cout << "Adding production: " << left_symbol << " -> ";
-  for (const auto& s : right_symbols) {
-    std::cout << s;
-  }
-  productions_.emplace(left_symbol, right_symbols);
+  productions_.insert(std::pair<std::string, std::vector<std::string>>(left_symbol, right_symbols));
 }
 
 std::vector<std::string> NonTerminals::GetNonTerminals() const {

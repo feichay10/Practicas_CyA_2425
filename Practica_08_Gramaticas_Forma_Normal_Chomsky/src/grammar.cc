@@ -85,7 +85,6 @@ Grammar::Grammar(const std::string& file_name) {
   for (int i = 0; i < number_of_non_terminals; i++) {
     std::string non_terminal;
     file >> non_terminal;
-    // Symbol symbol(non_terminal);
     std::string symbol = non_terminal;
     non_terminals_.push_back(symbol);
     if (i == 0) {
@@ -100,7 +99,6 @@ Grammar::Grammar(const std::string& file_name) {
     std::string left_side;
     std::string right_side;
     file >> left_side >> right_side;
-    // Symbol left_symbol(left_side);
     std::string left_symbol = left_side;
     std::vector<std::string> right_symbols;
     for (char c : right_side) {
@@ -152,6 +150,8 @@ Grammar Grammar::Convert2CNF() const {
 
   Grammar cnf_grammar = *this;
   std::map<std::string, std::string> auxiliar_symbols_f1; // Mapa de símbolos auxiliares para la primera fase de la conversión
+  std::multimap<std::string, std::vector<std::string>> aux_productions = cnf_grammar.non_terminals_.GetProductions();
+  std::pair<std::string, std::vector<std::string>> aux_production;
 
   // Primera parte del algoritmo:
   // la primera fase agrega símbolos auxiliares para las producciones con símbolos terminales
@@ -166,7 +166,7 @@ Grammar Grammar::Convert2CNF() const {
 
   // Recorrer todas las producciones de la gramática original
   // Para cada produccion de p:
-  for (auto& p : cnf_grammar.non_terminals_.GetProductions()) {
+  for (auto& p : aux_productions) {
     // Si p tiene dos o más símbolos
     if (p.second.size() >= 2) {
       // Para cada símbolo de la producción
@@ -177,12 +177,9 @@ Grammar Grammar::Convert2CNF() const {
             std::vector<std::string> new_production;
             new_production.push_back(s);
             std::string auxiliar_symbol = "C_" + s;
-            // cnf_grammar.productions_.insert(std::pair<Symbol, std::vector<std::string>>(auxiliar_symbol, new_production));
-            cnf_grammar.non_terminals_.AddProduction(auxiliar_symbol, new_production);
-            std::cout << "aux_symbol:  " << auxiliar_symbol << std::endl;
             cnf_grammar.non_terminals_.push_back(auxiliar_symbol);
+            aux_productions.insert(std::pair<std::string, std::vector<std::string>>(auxiliar_symbol, new_production));
             auxiliar_symbols_f1[s] = auxiliar_symbol;
-            std::cout << "aux_symbol_2: " << auxiliar_symbols_f1[s] << std::endl;
           }
           // Reemplazar el símbolo terminal por el símbolo auxiliar
           s = auxiliar_symbols_f1[s];
@@ -190,6 +187,8 @@ Grammar Grammar::Convert2CNF() const {
       }
     }
   }
+
+  cnf_grammar.non_terminals_.SetProductions(aux_productions);
 
   return cnf_grammar;
 }
@@ -220,18 +219,5 @@ std::ostream& operator<<(std::ostream& os, const Grammar& grammar) {
   os << std::endl;
   os << "No terminales: ";
   os << grammar.non_terminals_ << std::endl;
-  // for (auto& nt : grammar.non_terminals_.GetNonTerminals()) {
-  //   os << nt << " ";
-  // }
-  // os << std::endl;
-  // os << "Símbolo inicial: " << grammar.start_symbol_ << std::endl;
-  // os << "Producciones: " << std::endl;
-  // for (auto& p : grammar.non_terminals_.GetProductions()) {
-  //   os << " " << p.first << " -> ";
-  //   for (auto& s : p.second) {
-  //     os << s;
-  //   }
-  //   os << std::endl;
-  // }
   return os;
 }
