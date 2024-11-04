@@ -32,7 +32,7 @@ class NonTerminals {
   NonTerminals(const std::vector<std::string>& non_terminals, const std::multimap<std::string, std::vector<std::string>>& productions);
 
   // Getters and setters
-  std::multimap<std::string, std::vector<std::string>> GetProductions();
+  std::multimap<std::string, std::vector<std::string>> GetProductions() const;
   void SetProductions(const std::multimap<std::string, std::vector<std::string>>& productions);
   void AddProduction(const std::string& left_symbol, const std::vector<std::string>& right_symbols);
   std::vector<std::string> GetNonTerminals() const;
@@ -56,6 +56,9 @@ class NonTerminals {
   std::vector<std::string>::const_iterator end() const {
     return non_terminals_.end();
   }
+
+  bool HasProduction(const std::string& left_symbol) const;
+  void AddToExistingProduction(const std::string& left_symbol, const std::vector<std::string>& right_symbols);
 
   friend std::ostream& operator<<(std::ostream& os, const NonTerminals& non_terminals);
 

@@ -104,7 +104,13 @@ Grammar::Grammar(const std::string& file_name) {
     for (char c : right_side) {
       right_symbols.push_back(std::string(1, c));
     }
-    non_terminals_.AddProduction(left_symbol, right_symbols);
+    if (non_terminals_.HasProduction(left_symbol)) {
+      std::cout << "\nAdding production to existing: " << left_symbol << " -> ";
+      non_terminals_.AddToExistingProduction(left_symbol, right_symbols);
+    } else {
+      std::cout << "\nAdding production: " << left_symbol << " -> ";
+      non_terminals_.AddProduction(left_symbol, right_symbols);
+    }
   }
 
   file.close();
@@ -245,6 +251,24 @@ std::ostream& operator<<(std::ostream& os, const Grammar& grammar) {
   }
   os << std::endl;
   os << "No terminales: ";
-  os << grammar.non_terminals_ << std::endl;
+  for (const auto& nt : grammar.non_terminals_.GetNonTerminals()) {
+    os << nt << " ";
+  }
+  os << std::endl;
+  os << "Producciones: " << std::endl;
+  for (const auto& non_terminal : grammar.non_terminals_.GetNonTerminals()) {
+    os << " " << non_terminal << " -> ";
+    for (const auto& p : grammar.non_terminals_.GetProductions()) {
+      if (p.first == non_terminal) {
+        for (const auto& s : p.second) {
+            os << s;
+            if (&s != &p.second.back()) {
+              os << " | ";
+            }
+        }
+      }
+    }
+    os << std::endl;
+  }
   return os;
 }

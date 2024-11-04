@@ -26,7 +26,7 @@ int main(int argc, char* argv[]) {
   try {
     if (check_parameters(argc, argv)) {
       Grammar grammar(argv[1]);
-      std::cout << "Original Grammar: \n" << grammar << std::endl;
+      std::cout << "\nOriginal Grammar: \n" << grammar << std::endl;
       Grammar cnf_grammar = grammar.Convert2CNF();
       std::cout << "Grammar in Chomsky Normal Form: \n" << cnf_grammar << std::endl;
     } else {

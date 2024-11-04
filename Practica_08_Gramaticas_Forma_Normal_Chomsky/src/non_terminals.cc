@@ -28,7 +28,7 @@ NonTerminals::NonTerminals(const std::vector<std::string>& non_terminals, const 
   productions_ = productions;
 }
 
-std::multimap<std::string, std::vector<std::string>> NonTerminals::GetProductions() {
+std::multimap<std::string, std::vector<std::string>> NonTerminals::GetProductions() const {
   return productions_;
 }
 
@@ -36,7 +36,7 @@ void NonTerminals::SetProductions(const std::multimap<std::string, std::vector<s
   productions_ = productions;
 }
 
-void NonTerminals::AddProduction(const std::string& left_symbol, const std::vector<std::string>& right_symbols) {
+void NonTerminals::AddProduction(const std::string& left_symbol, const std::vector<std::string>& right_symbols) {  
   productions_.insert(std::pair<std::string, std::vector<std::string>>(left_symbol, right_symbols));
 }
 
@@ -61,15 +61,40 @@ void NonTerminals::push_back(const std::string& non_terminal) {
   non_terminals_.push_back(non_terminal);
 }
 
-std::ostream& operator<<(std::ostream& os, const NonTerminals& non_terminals) {
-  for (const auto& nt : non_terminals.non_terminals_) {
-    os << nt << " ";
+bool NonTerminals::HasProduction(const std::string& left_symbol) const {
+  for (const auto& p : productions_) {
+    if (p.first == left_symbol) {
+      return true;
+    }
   }
-  os << std::endl;
-  for (const auto& p : non_terminals.productions_) {
-    os << " " << p.first << " -> ";
-    for (const auto& s : p.second) {
-      os << s;
+  return false;
+}
+
+void NonTerminals::AddToExistingProduction(const std::string& left_symbol, const std::vector<std::string>& right_symbols) {
+  std::string right_symbols_str;
+  for (const auto& s : right_symbols) {
+    right_symbols_str += s;
+  }
+
+  for (auto& p : productions_) {
+    if (p.first == left_symbol) {
+      p.second.push_back(right_symbols_str);
+    }
+  }
+}
+
+std::ostream& operator<<(std::ostream& os, const NonTerminals& non_terminals) {
+  for (const auto& non_terminal : non_terminals.non_terminals_) {
+    os << non_terminal << " -> ";
+    for (const auto& p : non_terminals.productions_) {
+      if (p.first == non_terminal) {
+        for (const auto& s : p.second) {
+            os << s;
+            if (&s != &p.second.back()) {
+              os << " | ";
+            }
+        }
+      }
     }
     os << std::endl;
   }
