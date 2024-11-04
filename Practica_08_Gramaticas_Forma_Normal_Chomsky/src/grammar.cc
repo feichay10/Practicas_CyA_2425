@@ -124,23 +124,7 @@ bool Grammar::isTerminal(const Symbol& symbol) const {
 //   return false;
 // }
 
-// El algoritmo de conversión a forma normal de Chomsky es el siguiente:
-// for all (A →X1X2 ...Xn (con n ≥2, Xi ∈(Σ ∪V )) do
-//   for all (Xi) do
-//     if (Xi = a ∈Σ) then
-//       Add the production Ca →a;
-//       Replace Xi with Ca in A →X1X2 ...Xn;
-//     end if
-//   end for
-// end for
-// for all (A →B1B2 ...Bm (con m ≥3, Bi ∈V ) do
-//   Add m −2 non-terminal symbols D1D2 ...Dm−2;
-//   Replace the production A →B1B2 ...Bm with productions:
-//     A →B1D1
-//     D1 →B2D2
-//     ...
-//     Dm−2 →Bm−1Bm
-// end for
+
 Grammar Grammar::Convert2CNF() const {
   // Usar hasUnitaryProductions() y hasEmptyProductions() para comprobar si la gramática esta optimizada para la conversión a CNF
   // if (hasUnitaryProductions() || hasEmptyProductions()) {
@@ -148,6 +132,7 @@ Grammar Grammar::Convert2CNF() const {
   //   exit(EXIT_FAILURE);
   // }
 
+  std::string no_terminal_symbols_aux = "SABCDEFGHIJKLMNOPQRSTUVWXYZ";
   Grammar cnf_grammar = *this;
   std::map<std::string, std::string> auxiliar_symbols_f1; // Mapa de símbolos auxiliares para la primera fase de la conversión
   std::multimap<std::string, std::vector<std::string>> aux_productions_1 = cnf_grammar.non_terminals_.GetProductions();
@@ -175,7 +160,9 @@ Grammar Grammar::Convert2CNF() const {
           if (auxiliar_symbols_f1.find(s) == auxiliar_symbols_f1.end()) {
             std::vector<std::string> new_production;
             new_production.push_back(s);
-            std::string auxiliar_symbol = "C_" + s;
+            std::string auxiliar_symbol = "C_" + s;            
+            // std::string auxiliar_symbol = std::string(1, no_terminal_symbols_aux.front()) + "_" + s;
+            // no_terminal_symbols_aux.pop_back();
             cnf_grammar.non_terminals_.push_back(auxiliar_symbol);
             aux_productions_1.insert(std::pair<std::string, std::vector<std::string>>(auxiliar_symbol, new_production));
             auxiliar_symbols_f1[s] = auxiliar_symbol;
@@ -189,6 +176,11 @@ Grammar Grammar::Convert2CNF() const {
 
   cnf_grammar.non_terminals_.SetProductions(aux_productions_1);
 
+  // Quitar del string no_terminal_symbols_aux los símbolos no terminales de la gramática
+  for (auto& nt : cnf_grammar.non_terminals_) {
+    no_terminal_symbols_aux.erase(std::remove(no_terminal_symbols_aux.begin(), no_terminal_symbols_aux.end(), nt[0]), no_terminal_symbols_aux.end());
+  }
+
   // Segunda parte del algoritmo:
   // la segunda fase agrega símbolos auxiliares para las producciones con más de dos símbolos no terminales
   // for all (A →B1B2 ...Bm (con m ≥3, Bi ∈V ) do
@@ -201,7 +193,7 @@ Grammar Grammar::Convert2CNF() const {
   // end for
   std::map<std::vector<std::string>, std::string> auxiliar_productions_f2; // Mapa de producciones auxiliares para la segunda fase de la conversión
   std::multimap<std::string, std::vector<std::string>> aux_productions_2 = cnf_grammar.non_terminals_.GetProductions();
-  int identifier = 0;
+  int identifier = 1;
 
   // La segunda fase descompone las producciones con más de dos símbolos en producciones más pequeñas con solo dos símbolos.
   for (auto& p: aux_productions_2) { // Para cada produccion de p:
@@ -210,8 +202,9 @@ Grammar Grammar::Convert2CNF() const {
       new_production.push_back(p.second[p.second.size() - 2]); // Añado los dos últimos símbolos de p a la nueva producción
       new_production.push_back(p.second[p.second.size() - 1]); 
       if (auxiliar_productions_f2.find(p.second) == auxiliar_productions_f2.end()) { // Si la nueva producción no existe
-        std::string new_symbol = "D_" + std::to_string(identifier); // Creo nuevo símbolo
-        identifier++;
+        std::string new_symbol = std::string(1, no_terminal_symbols_aux.front()) + "_" + std::to_string(identifier); // Creo nuevo símbolo
+        no_terminal_symbols_aux.erase(std::remove(no_terminal_symbols_aux.begin(), no_terminal_symbols_aux.end(), new_symbol[0]), no_terminal_symbols_aux.end()); // Elimino el símbolo de la lista de símbolos no terminales auxiliares
+        // identifier++;
         aux_productions_2.insert(std::pair<std::string, std::vector<std::string>>(new_symbol, new_production)); // Inserto la nueva producción en el mapa
         cnf_grammar.non_terminals_.push_back(new_symbol); // Añado el nuevo símbolo a los símbolos no terminales
         auxiliar_productions_f2[new_production] = new_symbol; // Añado la nueva producción al mapa de producciones auxiliares

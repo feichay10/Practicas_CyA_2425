@@ -40,6 +40,23 @@ class NonTerminals {
 
   bool find(const Symbol& symbol) const;
   void push_back(const std::string& non_terminal);
+
+  std::vector<std::string>::iterator begin() {
+    return non_terminals_.begin();
+  }
+
+  std::vector<std::string>::iterator end() {
+    return non_terminals_.end();
+  }
+
+  std::vector<std::string>::const_iterator begin() const {
+    return non_terminals_.begin();
+  }
+
+  std::vector<std::string>::const_iterator end() const {
+    return non_terminals_.end();
+  }
+
   friend std::ostream& operator<<(std::ostream& os, const NonTerminals& non_terminals);
 
  private:
