@@ -98,30 +98,27 @@ Grammar::Grammar(const std::string& file_name) {
   for (int i = 0; i < number_of_productions; i++) {
     std::string left_side;
     std::string right_side;
-    file >> left_side >> right_side;
-    std::string left_symbol = left_side;
     std::vector<std::string> right_symbols;
-    for (char c : right_side) {
-      right_symbols.push_back(std::string(1, c));
-    }
-    if (non_terminals_.HasProduction(left_symbol)) {
-      std::cout << "\nAdding production to existing: " << left_symbol << " -> ";
-      non_terminals_.AddToExistingProduction(left_symbol, right_symbols);
+    file >> left_side >> right_side;
+    right_symbols.push_back(right_side);
+    if (non_terminals_.HasProduction(left_side)) {
+      // std::cout << "\nAdding production to existing: " << left_side << " -> ";
+      non_terminals_.AddToExistingProduction(left_side, right_symbols);
     } else {
-      std::cout << "\nAdding production: " << left_symbol << " -> ";
-      non_terminals_.AddProduction(left_symbol, right_symbols);
+      // std::cout << "\nAdding production: " << left_side << " -> ";
+      non_terminals_.AddProduction(left_side, right_symbols);
     }
   }
 
   file.close();
 }
 
-bool Grammar::isTerminal(const Symbol& symbol) const {
-  return terminals_.find(symbol);
+bool Grammar::isTerminal(const std::string& value) const {
+  return terminals_.find(value);
 }
 
 
-// bool Grammar::isNonTerminal(const Symbol& symbol) const {
+// bool Grammar::isNonTerminal(const std::string& value) const {
 //   for (const auto& non_terminal : non_terminals_) {
 //     if (non_terminal == symbol) {
 //       return true;
@@ -138,90 +135,51 @@ Grammar Grammar::Convert2CNF() const {
   //   exit(EXIT_FAILURE);
   // }
 
-  std::string no_terminal_symbols_aux = "SABCDEFGHIJKLMNOPQRSTUVWXYZ";
   Grammar cnf_grammar = *this;
   std::map<std::string, std::string> auxiliar_symbols_f1; // Mapa de símbolos auxiliares para la primera fase de la conversión
   std::multimap<std::string, std::vector<std::string>> aux_productions_1 = cnf_grammar.non_terminals_.GetProductions();
 
   // Primera parte del algoritmo:
   // la primera fase agrega símbolos auxiliares para las producciones con símbolos terminales
-  // for all (A →X1X2 ...Xn (con n ≥2, Xi ∈(Σ ∪V )) do
-  //   for all (Xi) do
-  //     if (Xi = a ∈Σ) then
-  //       Add the production Ca →a;
-  //       Replace Xi with Ca in A →X1X2 ...Xn;
+  // for all (A →X_1 X_2 ...X_n (con n ≥ 2, X_i ∈(Σ ∪ V)) do
+  //   for all (X_i) do
+  //     if (X_i = a ∈ Σ) then
+  //       Add the production C_a →a;
+  //       Replace Xi with C_a in A →X_1X_2 ...X_n;
   //     end if
   //   end for
   // end for
-
-  // Recorrer todas las producciones de la gramática original
-  // Para cada produccion de p:
   for (auto& p : aux_productions_1) {
     // Si p tiene dos o más símbolos
     if (p.second.size() >= 2) {
-      // Para cada símbolo de la producción
       for (auto& s: p.second) {
-        // Si el símbolo es terminal
-        if (cnf_grammar.isTerminal(s)) {
-          if (auxiliar_symbols_f1.find(s) == auxiliar_symbols_f1.end()) {
-            std::vector<std::string> new_production;
-            new_production.push_back(s);
-            std::string auxiliar_symbol = "C_" + s;            
-            // std::string auxiliar_symbol = std::string(1, no_terminal_symbols_aux.front()) + "_" + s;
-            // no_terminal_symbols_aux.pop_back();
-            cnf_grammar.non_terminals_.push_back(auxiliar_symbol);
-            aux_productions_1.insert(std::pair<std::string, std::vector<std::string>>(auxiliar_symbol, new_production));
-            auxiliar_symbols_f1[s] = auxiliar_symbol;
+        if (s.size() != 1){
+          std::string new_right_side;
+          for (char c : s) {
+            std::string symbol(1, c);
+            // Si el símbolo es terminal
+            if (cnf_grammar.isTerminal(symbol)) {
+              if (auxiliar_symbols_f1.find(symbol) == auxiliar_symbols_f1.end()) { // Si el símbolo no existe en el mapa
+                std::vector<std::string> new_production;
+                new_production.push_back(symbol);
+                std::string auxiliar_symbol = "C_" + symbol;
+                cnf_grammar.non_terminals_.push_back(auxiliar_symbol);
+                aux_productions_1.insert(std::pair<std::string, std::vector<std::string>>(auxiliar_symbol, new_production));
+                auxiliar_symbols_f1[symbol] = auxiliar_symbol;
+              }
+              // Reemplazar el símbolo terminal por el símbolo auxiliar
+              new_right_side += auxiliar_symbols_f1[symbol];
+            } else {
+              new_right_side += symbol;
+            }
           }
-          // Reemplazar el símbolo terminal por el símbolo auxiliar
-          s = auxiliar_symbols_f1[s];
+          s = new_right_side;
         }
       }
     }
   }
 
   cnf_grammar.non_terminals_.SetProductions(aux_productions_1);
-
-  // Quitar del string no_terminal_symbols_aux los símbolos no terminales de la gramática
-  for (auto& nt : cnf_grammar.non_terminals_) {
-    no_terminal_symbols_aux.erase(std::remove(no_terminal_symbols_aux.begin(), no_terminal_symbols_aux.end(), nt[0]), no_terminal_symbols_aux.end());
-  }
-
-  // Segunda parte del algoritmo:
-  // la segunda fase agrega símbolos auxiliares para las producciones con más de dos símbolos no terminales
-  // for all (A →B1B2 ...Bm (con m ≥3, Bi ∈V ) do
-  //   Add m −2 non-terminal symbols D1D2 ...Dm−2;
-  //   Replace the production A →B1B2 ...Bm with productions:
-  //     A →B1D1
-  //     D1 →B2D2
-  //     ...
-  //     Dm−2 →Bm−1Bm
-  // end for
-  std::map<std::vector<std::string>, std::string> auxiliar_productions_f2; // Mapa de producciones auxiliares para la segunda fase de la conversión
-  std::multimap<std::string, std::vector<std::string>> aux_productions_2 = cnf_grammar.non_terminals_.GetProductions();
-  int identifier = 1;
-
-  // La segunda fase descompone las producciones con más de dos símbolos en producciones más pequeñas con solo dos símbolos.
-  for (auto& p: aux_productions_2) { // Para cada produccion de p:
-    while (p.second.size() > 2) { // Mientras p tenga más de dos símbolos
-      std::vector<std::string> new_production; // Creo nueva produccion
-      new_production.push_back(p.second[p.second.size() - 2]); // Añado los dos últimos símbolos de p a la nueva producción
-      new_production.push_back(p.second[p.second.size() - 1]); 
-      if (auxiliar_productions_f2.find(p.second) == auxiliar_productions_f2.end()) { // Si la nueva producción no existe
-        std::string new_symbol = std::string(1, no_terminal_symbols_aux.front()) + "_" + std::to_string(identifier); // Creo nuevo símbolo
-        no_terminal_symbols_aux.erase(std::remove(no_terminal_symbols_aux.begin(), no_terminal_symbols_aux.end(), new_symbol[0]), no_terminal_symbols_aux.end()); // Elimino el símbolo de la lista de símbolos no terminales auxiliares
-        // identifier++;
-        aux_productions_2.insert(std::pair<std::string, std::vector<std::string>>(new_symbol, new_production)); // Inserto la nueva producción en el mapa
-        cnf_grammar.non_terminals_.push_back(new_symbol); // Añado el nuevo símbolo a los símbolos no terminales
-        auxiliar_productions_f2[new_production] = new_symbol; // Añado la nueva producción al mapa de producciones auxiliares
-      }
-      p.second.pop_back(); 
-      p.second.pop_back();
-      p.second.push_back(auxiliar_productions_f2[new_production]);
-    }
-  }
-
-  cnf_grammar.non_terminals_.SetProductions(aux_productions_2);
 
   return cnf_grammar;
 }
@@ -233,6 +191,7 @@ bool Grammar::hasUnitaryProductions() const {
     // }
   // }
   // return false;
+  return false;
 }
 
 bool Grammar::hasEmptyProductions() const {
@@ -242,6 +201,7 @@ bool Grammar::hasEmptyProductions() const {
     // }
   // }
   // return false;
+  return false;
 }
 
 std::ostream& operator<<(std::ostream& os, const Grammar& grammar) {
@@ -261,10 +221,10 @@ std::ostream& operator<<(std::ostream& os, const Grammar& grammar) {
     for (const auto& p : grammar.non_terminals_.GetProductions()) {
       if (p.first == non_terminal) {
         for (const auto& s : p.second) {
-            os << s;
-            if (&s != &p.second.back()) {
-              os << " | ";
-            }
+          os << s;
+          if (&s != &p.second.back()) {
+            os << " | ";
+          }
         }
       }
     }

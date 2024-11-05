@@ -37,6 +37,11 @@ void NonTerminals::SetProductions(const std::multimap<std::string, std::vector<s
 }
 
 void NonTerminals::AddProduction(const std::string& left_symbol, const std::vector<std::string>& right_symbols) {  
+  std::string right_symbols_str;
+  for (const auto& s : right_symbols) {
+    right_symbols_str += s;
+  }
+
   productions_.insert(std::pair<std::string, std::vector<std::string>>(left_symbol, right_symbols));
 }
 

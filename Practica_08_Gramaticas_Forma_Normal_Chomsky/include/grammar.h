@@ -39,8 +39,8 @@ class Grammar {
   Grammar() = default;
   Grammar(const std::string& file_name);
 
-  bool isTerminal(const Symbol& symbol) const;
-  bool isNonTerminal(const Symbol& symbol) const;
+  bool isTerminal(const std::string& value) const;
+  bool isNonTerminal(const std::string& value) const;
   Grammar Convert2CNF() const;
   bool hasUnitaryProductions() const;
   bool hasEmptyProductions() const;
