@@ -25,43 +25,25 @@
 
 #include "symbol.h"
 
+/**
+ * @class NonTerminals
+ * @brief This class represents a collection of non-terminal symbols and their associated productions in a context-free grammar.
+ * 
+ * The NonTerminals class provides methods to manage non-terminal symbols and their productions.
+ */
 class NonTerminals {
  public:
   NonTerminals() = default;
-  NonTerminals(const std::vector<std::string>& non_terminals);
   NonTerminals(const std::vector<std::string>& non_terminals, const std::multimap<std::string, std::vector<std::string>>& productions);
 
-  // Getters and setters
   std::multimap<std::string, std::vector<std::string>> GetProductions() const;
   void SetProductions(const std::multimap<std::string, std::vector<std::string>>& productions);
   void AddProduction(const std::string& left_symbol, const std::vector<std::string>& right_symbols);
   std::vector<std::string> GetNonTerminals() const;
   void SetNonTerminals(const std::vector<std::string>& non_terminals);
 
-  bool find(const Symbol& symbol) const;
   void push_back(const std::string& non_terminal);
-
-  std::vector<std::string>::iterator begin() {
-    return non_terminals_.begin();
-  }
-
-  std::vector<std::string>::iterator end() {
-    return non_terminals_.end();
-  }
-
-  std::vector<std::string>::const_iterator begin() const {
-    return non_terminals_.begin();
-  }
-
-  std::vector<std::string>::const_iterator end() const {
-    return non_terminals_.end();
-  }
-
-  bool HasProduction(const std::string& left_symbol) const;
-  void AddToExistingProduction(const std::string& left_symbol, const std::vector<std::string>& right_symbols);
-
-  friend std::ostream& operator<<(std::ostream& os, const NonTerminals& non_terminals);
-
+  
  private:
   std::vector<std::string> non_terminals_;
   std::multimap<std::string, std::vector<std::string>> productions_;

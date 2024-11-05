@@ -82,21 +82,16 @@ std::vector<T> read_file(const std::string& file_name) {
 }
 
 /**
- * @brief Write the data in a file
+ * @brief Writes the given grammar to a file.
  *
- * @tparam T
- * @param file_name The name of the file
- * @param data The data to be written
+ * This function opens a file with the specified name and writes the contents
+ * of the provided Grammar object to it. The file is closed after writing.
+ *
+ * @param file_name The name of the file to write to.
+ * @param grammar The Grammar object to be written to the file.
  */
-template <typename T>
-void write_file(std::string file_name, T& data) {
+void write_file(const std::string& file_name, const Grammar& grammar) {
   std::ofstream file(file_name);
-  for (int i = 0; i < data.size(); i++) {
-    file << data[i] << std::endl;
-  }
+  file << grammar;
   file.close();
 }
-
-// Instanciación explícita de las funciones de plantilla
-template std::vector<std::string> read_file<std::string>(const std::string&); 
-template std::vector<String> read_file<String>(const std::string&);

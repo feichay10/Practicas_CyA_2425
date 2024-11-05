@@ -29,6 +29,7 @@
 #include "alphabet.h"
 #include "colors.h"
 #include "string.h"
+#include "grammar.h"
 
 const char SPACE = ' ';
 
@@ -92,10 +93,6 @@ bool check_parameters(int argc, char* argv[]);
 bool check_file(std::string file_name);
 template <typename T>
 std::vector<T> read_file(const std::string& file_name);
-template <typename T>
-void write_file(std::string file_name, T& data);
-// bool check_automaton(const std::vector<std::string>& automaton_data);
-// void check_strings_automata(Automaton& automata, std::vector<std::string> strings_data);
-// void check_strings_on_automata(Automaton* automaton, std::vector<String> strings_data);
+void write_file(std::string file_name, Grammar cnf_grammar);
 
 #endif  // FUNCTIONS_H

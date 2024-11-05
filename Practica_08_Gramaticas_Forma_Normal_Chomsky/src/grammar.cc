@@ -16,37 +16,7 @@
  */
 
 #include "../include/grammar.h"
-#include <unordered_map>
 
-// Los ficheros de especificación de gramáticas son ficheros de texto plano con extensión  .gra que contienen los elementos definitorios de la gramática G ≡ (Σ, V, S, P) en este orden: símbolos terminales, símbolos no terminales, símbolo de arranque y producciones. El formato de cada uno de estos elementos en el fichero es el siguiente: 
-// Símbolos terminales (alfabeto): una línea que contiene N, el número de símbolos  en el alfabeto seguida de N líneas, cada una de las cuales contiene un símbolo del alfabeto. Cada símbolo del alfabeto debe ser un único caracter imprimible.
-// Símbolos no terminales: una línea que contiene V, el número de símbolos no  terminales, seguida de V líneas, cada una de las cuales contiene una cadena alfanumérica sin espacios. Se asumirá que el primero de los símbolos no terminales de esta lista será el símbolo de arranque.
-// Producciones: una línea que contiene P, el número de producciones de la gramática, seguida por P líneas cada una de las cuales contiene una producción en el formato:
-// A α
-// siendo α ∈ (Σ ∪ V )^∗, es decir una secuencia de símbolos terminales y no terminales.  La cadena vacía, ϵ se representa mediante el carácter &. 
-// Teniendo en cuenta la gramática utilizada para el ejemplo de conversión a forma normal  de Chomsky, la especificación en un formato .gra sería la siguiente: 
-// 3
-// a
-// b
-// c
-// 3
-// S
-// X
-// Y
-// 13
-// S aXbX
-// S abX
-// S aXb
-// S ab
-// X aY
-// X bY
-// X a
-// X b
-// Y aY
-// Y bY
-// Y a
-// Y b
-// Y c
 /**
  * @brief Constructs a Grammar object by reading grammar rules from a file.
  * 
@@ -92,88 +62,104 @@ Grammar::Grammar(const std::string& file_name) {
     }
   }
 
-  // Leer producciones
   int number_of_productions;
   file >> number_of_productions;
   for (int i = 0; i < number_of_productions; i++) {
     std::string left_side;
     std::string right_side;
-    std::vector<std::string> right_symbols;
     file >> left_side >> right_side;
-    right_symbols.push_back(right_side);
-    if (non_terminals_.HasProduction(left_side)) {
-      // std::cout << "\nAdding production to existing: " << left_side << " -> ";
-      non_terminals_.AddToExistingProduction(left_side, right_symbols);
-    } else {
-      // std::cout << "\nAdding production: " << left_side << " -> ";
-      non_terminals_.AddProduction(left_side, right_symbols);
+    std::string left_symbol = left_side;
+    std::vector<std::string> right_symbols;
+    for (char c : right_side) {
+      right_symbols.push_back(std::string(1, c));
     }
+    non_terminals_.AddProduction(left_symbol, right_symbols);
   }
 
   file.close();
 }
 
-bool Grammar::isTerminal(const std::string& value) const {
-  return terminals_.find(value);
+
+/**
+ * @brief Checks if a given symbol is a terminal.
+ *
+ * This function determines whether the provided symbol is part of the set of terminal symbols.
+ *
+ * @param symbol The symbol to be checked.
+ * @return True if the symbol is a terminal, false otherwise.
+ */
+bool Grammar::isTerminal(const Symbol& symbol) const {
+  return terminals_.find(symbol);
 }
 
 
-// bool Grammar::isNonTerminal(const std::string& value) const {
-//   for (const auto& non_terminal : non_terminals_) {
-//     if (non_terminal == symbol) {
-//       return true;
-//     }
-//   }
-//   return false;
-// }
+/**
+ * @brief Checks if a given symbol is a non-terminal.
+ *
+ * This function iterates through the list of non-terminal symbols
+ * and checks if the provided symbol matches any of the non-terminals.
+ *
+ * @param symbol The symbol to be checked.
+ * @return true if the symbol is a non-terminal, false otherwise.
+ */
+bool Grammar::isNonTerminal(const Symbol& symbol) const {
+  for (const auto& non_terminal : non_terminals_.GetNonTerminals()) {
+    if (non_terminal == symbol) {
+      return true;
+    }
+  }
+  return false;
+}
 
-
+/**
+ * @brief Converts the current grammar to Chomsky Normal Form (CNF).
+ * 
+ * This function converts the current grammar to its equivalent Chomsky Normal Form (CNF).
+ * The conversion process involves two main phases:
+ * 
+ * 1. Replacing terminal symbols in productions with auxiliary non-terminal symbols.
+ * 2. Decomposing productions with more than two symbols into smaller productions with only two symbols.
+ * 
+ * The function first checks if the grammar has unitary or empty productions using the 
+ * hasUnitaryProductions() and hasEmptyProductions() methods. If the grammar is not optimized 
+ * for conversion to CNF, the function will print an error message and terminate the program.
+ * 
+ * @return Grammar The grammar converted to Chomsky Normal Form (CNF).
+ */
 Grammar Grammar::Convert2CNF() const {
   // Usar hasUnitaryProductions() y hasEmptyProductions() para comprobar si la gramática esta optimizada para la conversión a CNF
-  // if (hasUnitaryProductions() || hasEmptyProductions()) {
-  //   std::cout << "La gramática no está optimizada para la conversión a CNF. No se puede continuar." << std::endl;
-  //   exit(EXIT_FAILURE);
-  // }
+  if (hasUnitaryProductions() || hasEmptyProductions()) {
+    throw std::runtime_error("The grammar is not optimized for conversion to CNF.");
+  }
 
+  std::string no_terminal_symbols_aux = "SABCDEFGHIJKLMNOPQRSTUVWXYZ"; // Símbolos no terminales auxiliares
   Grammar cnf_grammar = *this;
   std::map<std::string, std::string> auxiliar_symbols_f1; // Mapa de símbolos auxiliares para la primera fase de la conversión
   std::multimap<std::string, std::vector<std::string>> aux_productions_1 = cnf_grammar.non_terminals_.GetProductions();
 
   // Primera parte del algoritmo:
-  // la primera fase agrega símbolos auxiliares para las producciones con símbolos terminales
-  // for all (A →X_1 X_2 ...X_n (con n ≥ 2, X_i ∈(Σ ∪ V)) do
-  //   for all (X_i) do
-  //     if (X_i = a ∈ Σ) then
-  //       Add the production C_a →a;
-  //       Replace Xi with C_a in A →X_1X_2 ...X_n;
-  //     end if
-  //   end for
-  // end for
+  // La primera fase agrega símbolos auxiliares para las producciones con símbolos terminales
+  // Recorrer todas las producciones de la gramática original
+  // Para cada produccion de p:
   for (auto& p : aux_productions_1) {
     // Si p tiene dos o más símbolos
     if (p.second.size() >= 2) {
+      // Para cada símbolo de la producción
       for (auto& s: p.second) {
-        if (s.size() != 1){
-          std::string new_right_side;
-          for (char c : s) {
-            std::string symbol(1, c);
-            // Si el símbolo es terminal
-            if (cnf_grammar.isTerminal(symbol)) {
-              if (auxiliar_symbols_f1.find(symbol) == auxiliar_symbols_f1.end()) { // Si el símbolo no existe en el mapa
-                std::vector<std::string> new_production;
-                new_production.push_back(symbol);
-                std::string auxiliar_symbol = "C_" + symbol;
-                cnf_grammar.non_terminals_.push_back(auxiliar_symbol);
-                aux_productions_1.insert(std::pair<std::string, std::vector<std::string>>(auxiliar_symbol, new_production));
-                auxiliar_symbols_f1[symbol] = auxiliar_symbol;
-              }
-              // Reemplazar el símbolo terminal por el símbolo auxiliar
-              new_right_side += auxiliar_symbols_f1[symbol];
-            } else {
-              new_right_side += symbol;
-            }
+        // Si el símbolo es terminal
+        if (cnf_grammar.isTerminal(s)) {
+          if (auxiliar_symbols_f1.find(s) == auxiliar_symbols_f1.end()) {
+            std::vector<std::string> new_production;
+            new_production.push_back(s);
+            std::string auxiliar_symbol = "C_" + s;            
+            // std::string auxiliar_symbol = std::string(1, no_terminal_symbols_aux.front()) + "_" + s;
+            // no_terminal_symbols_aux.pop_back();
+            cnf_grammar.non_terminals_.push_back(auxiliar_symbol);
+            aux_productions_1.insert(std::pair<std::string, std::vector<std::string>>(auxiliar_symbol, new_production));
+            auxiliar_symbols_f1[s] = auxiliar_symbol;
           }
-          s = new_right_side;
+          // Reemplazar el símbolo terminal por el símbolo auxiliar
+          s = auxiliar_symbols_f1[s];
         }
       }
     }
@@ -181,29 +167,85 @@ Grammar Grammar::Convert2CNF() const {
 
   cnf_grammar.non_terminals_.SetProductions(aux_productions_1);
 
+  // Segunda parte del algoritmo:
+  // La segunda fase descompone las producciones con más de dos símbolos en producciones más pequeñas con solo dos símbolos.
+  std::map<std::vector<std::string>, std::string> auxiliar_productions_f2; // Mapa de producciones auxiliares para la segunda fase de la conversión
+  std::multimap<std::string, std::vector<std::string>> aux_productions_2 = cnf_grammar.non_terminals_.GetProductions();
+  int identifier = 1;
+
+  for (auto& p: aux_productions_2) { // Para cada produccion de p:
+    while (p.second.size() > 2) { // Mientras p tenga más de dos símbolos
+      std::vector<std::string> new_production; // Creo nueva produccion
+      new_production.push_back(p.second[p.second.size() - 2]); // Añado los dos últimos símbolos de p a la nueva producción
+      new_production.push_back(p.second[p.second.size() - 1]); 
+      if (auxiliar_productions_f2.find(p.second) == auxiliar_productions_f2.end()) { // Si la nueva producción no existe
+        std::string new_symbol = std::string(1, no_terminal_symbols_aux.front()) + "_" + std::to_string(identifier); // Creo nuevo símbolo
+        no_terminal_symbols_aux.erase(std::remove(no_terminal_symbols_aux.begin(), no_terminal_symbols_aux.end(), new_symbol[0]), no_terminal_symbols_aux.end()); // Elimino el símbolo de la lista de símbolos no terminales auxiliares
+        identifier++;
+        aux_productions_2.insert(std::pair<std::string, std::vector<std::string>>(new_symbol, new_production)); // Inserto la nueva producción en el mapa
+        cnf_grammar.non_terminals_.push_back(new_symbol); // Añado el nuevo símbolo a los símbolos no terminales
+        auxiliar_productions_f2[new_production] = new_symbol; // Añado la nueva producción al mapa de producciones auxiliares
+      }
+      p.second.pop_back(); 
+      p.second.pop_back();
+      p.second.push_back(auxiliar_productions_f2[new_production]);
+    }
+  }
+
+  cnf_grammar.non_terminals_.SetProductions(aux_productions_2);
+
   return cnf_grammar;
 }
 
+/**
+ * @brief Checks if the grammar has any unitary productions.
+ * 
+ * A unitary production is a production where a non-terminal produces exactly one non-terminal.
+ * This function iterates through all the productions of the non-terminals and checks if there
+ * exists any production that is unitary.
+ * Example of a unitary production: A -> B
+ * 
+ * @return true if there is at least one unitary production, false otherwise.
+ */
 bool Grammar::hasUnitaryProductions() const {
-  // for (auto& p : productions_) {
-    // if (p.second.size() == 1 && isNonTerminal(p.second[0])) {
-      // return true;
-    // }
-  // }
-  // return false;
+  for (auto& p : non_terminals_.GetProductions()) {
+    if (p.second.size() == 1 && isNonTerminal(p.second[0])) {
+      return true;
+    }
+  }
   return false;
 }
 
+/**
+ * @brief Checks if the grammar has any empty productions.
+ *
+ * This function iterates through all the productions of the non-terminals
+ * in the grammar and checks if any of them have an empty right-hand side.
+ * Example of an empty production: A -> ε
+ *
+ * @return true if there is at least one empty production, false otherwise.
+ */
 bool Grammar::hasEmptyProductions() const {
-  // for (auto& p : productions_) {
-    // if (p.second.size() == 0) {
-      // return true;
-    // }
-  // }
-  // return false;
+  for (auto& p : non_terminals_.GetProductions()) {
+    for (const auto& symbol : p.second) {
+      if (symbol == "&") {
+        return true;
+      }
+    }
+  }
   return false;
 }
 
+/**
+ * @brief Overloads the output stream operator to print the details of a Grammar object.
+ *
+ * This function prints the terminals, non-terminals, and productions of the given Grammar object
+ * to the provided output stream.
+ *
+ * @param os The output stream to which the Grammar details will be printed.
+ * @param grammar The Grammar object whose details are to be printed.
+ * @return A reference to the output stream.
+ */
 std::ostream& operator<<(std::ostream& os, const Grammar& grammar) {
   os << "Terminales: ";
   for (auto& t : grammar.terminals_.GetAlphabet()) {
@@ -215,18 +257,11 @@ std::ostream& operator<<(std::ostream& os, const Grammar& grammar) {
     os << nt << " ";
   }
   os << std::endl;
-  os << "Producciones: " << std::endl;
-  for (const auto& non_terminal : grammar.non_terminals_.GetNonTerminals()) {
-    os << " " << non_terminal << " -> ";
-    for (const auto& p : grammar.non_terminals_.GetProductions()) {
-      if (p.first == non_terminal) {
-        for (const auto& s : p.second) {
-          os << s;
-          if (&s != &p.second.back()) {
-            os << " | ";
-          }
-        }
-      }
+  os << "Producciones:" << std::endl;
+  for (const auto& p : grammar.non_terminals_.GetProductions()) {
+    os << " " << p.first << " -> ";
+    for (const auto& s : p.second) {
+      os << s;
     }
     os << std::endl;
   }
