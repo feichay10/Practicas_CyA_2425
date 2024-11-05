@@ -152,8 +152,6 @@ Grammar Grammar::Convert2CNF() const {
             std::vector<std::string> new_production;
             new_production.push_back(s);
             std::string auxiliar_symbol = "C_" + s;            
-            // std::string auxiliar_symbol = std::string(1, no_terminal_symbols_aux.front()) + "_" + s;
-            // no_terminal_symbols_aux.pop_back();
             cnf_grammar.non_terminals_.push_back(auxiliar_symbol);
             aux_productions_1.insert(std::pair<std::string, std::vector<std::string>>(auxiliar_symbol, new_production));
             auxiliar_symbols_f1[s] = auxiliar_symbol;
@@ -183,7 +181,7 @@ Grammar Grammar::Convert2CNF() const {
         no_terminal_symbols_aux.erase(std::remove(no_terminal_symbols_aux.begin(), no_terminal_symbols_aux.end(), new_symbol[0]), no_terminal_symbols_aux.end()); // Elimino el símbolo de la lista de símbolos no terminales auxiliares
         identifier++;
         aux_productions_2.insert(std::pair<std::string, std::vector<std::string>>(new_symbol, new_production)); // Inserto la nueva producción en el mapa
-        cnf_grammar.non_terminals_.push_back(new_symbol); // Añado el nuevo símbolo a los símbolos no terminales
+        cnf_grammar.non_terminals_.push_back(new_symbol);     // Añado el nuevo símbolo a los símbolos no terminales
         auxiliar_productions_f2[new_production] = new_symbol; // Añado la nueva producción al mapa de producciones auxiliares
       }
       p.second.pop_back(); 

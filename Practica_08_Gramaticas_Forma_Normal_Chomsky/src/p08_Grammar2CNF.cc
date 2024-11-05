@@ -25,12 +25,10 @@
 int main(int argc, char* argv[]) {
   try {
     if (check_parameters(argc, argv)) {
-      std::cout << "Original Grammar: \n";
       Grammar grammar(argv[1]);
-      std::cout << grammar << std::endl;
-      std::cout << "Grammar in Chomsky Normal Form: \n";
+      std::cout << "Original Grammar: \n" << grammar << std::endl;
       Grammar cnf_grammar = grammar.Convert2CNF();
-      std::cout << cnf_grammar << std::endl;
+      std::cout << "Grammar in Chomsky Normal Form: \n" << cnf_grammar << std::endl;
       write_file(argv[2], cnf_grammar);
     } else {
       exit(EXIT_FAILURE);

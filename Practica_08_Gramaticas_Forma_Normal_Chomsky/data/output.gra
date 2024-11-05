@@ -1,0 +1,18 @@
+Terminales: a b c 
+No terminales: S X Y 
+Producciones:
+ A_b -> b
+ S -> S_aXA_bX
+ S -> S_aA_bX
+ S -> S_aXA_b
+ S -> S_aA_b
+ S_a -> a
+ X -> S_aY
+ X -> A_bY
+ X -> a
+ X -> b
+ Y -> S_aY
+ Y -> A_bY
+ Y -> a
+ Y -> b
+ Y -> c

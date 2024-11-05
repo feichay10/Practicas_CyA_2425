@@ -93,6 +93,6 @@ bool check_parameters(int argc, char* argv[]);
 bool check_file(std::string file_name);
 template <typename T>
 std::vector<T> read_file(const std::string& file_name);
-void write_file(std::string file_name, Grammar cnf_grammar);
+void write_file(const std::string& file_name, const Grammar& grammar);
 
 #endif  // FUNCTIONS_H
