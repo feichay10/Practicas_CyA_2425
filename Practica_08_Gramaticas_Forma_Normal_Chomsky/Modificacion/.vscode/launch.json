@@ -1,0 +1,24 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "f:/Drive ULL/Ingenieria Informatica/2ºIng Informatica/Primer Cuatrimestre/Computabilidad Y Algoritmia/Curso 2024-2025/Practicas_CyA_2425/Practica_08_Gramaticas_Forma_Normal_Chomsky/Modificacion",
+      "program": "f:/Drive ULL/Ingenieria Informatica/2ºIng Informatica/Primer Cuatrimestre/Computabilidad Y Algoritmia/Curso 2024-2025/Practicas_CyA_2425/Practica_08_Gramaticas_Forma_Normal_Chomsky/Modificacion/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+Me puedes crear una clase en C++ que representa una gramatica independiente del contexto. Lo que tengo que hacer es pasarle un fichero con una gramatica independiente del contexto y pasarla a forma normal de chomsky. El formato de la gramatica es el siguiente:
+Los ficheros de especificación de gramáticas son ficheros de texto plano con extensión
+.gra que contienen los elementos definitorios de la gramática G ≡ (Σ, V, S, P) en este
+orden: símbolos terminales, símbolos no terminales, símbolo de arranque y producciones.
+El formato de cada uno de estos elementos en el fichero es el siguiente:
+1. Símbolos terminales (alfabeto): una línea que contiene N, el número de símbolos
+en el alfabeto seguida de N líneas, cada una de las cuales contiene un símbolo del
+alfabeto. Cada símbolo del alfabeto debe ser un único caracter imprimible.
+2. Símbolos no terminales: una línea que contiene V, el número de símbolos no
+terminales, seguida de V líneas, cada una de las cuales contiene una cadena alfanumérica sin espacios. Se asumirá que el primero de los símbolos no terminales de
+esta lista será el símbolo de arranque.
+3. Producciones: una línea que contiene P, el número de producciones de la gramática, seguida por P líneas cada una de las cuales contiene una producción en el formato:
+A α
+siendo α ∈ (Σ ∪ V )^∗, es decir una secuencia de símbolos terminales y no terminales.
+La cadena vacía, ϵ se representa mediante el carácter &.
+
+Teniendo en cuenta la gramática utilizada para el ejemplo de conversión a forma normal
+de Chomsky, la especificación en un formato .gra sería la siguiente:
+3
+a
+b
+c
+3
+S
+X
+Y
+13
+S aXbX
+S abX
+S aXb
+S ab
+X aY
+X bY
+X a
+X b
+Y aY
+Y bY
+Y a
+Y b
+Y c

@@ -1,0 +1,34 @@
+9
+S
+X
+Y
+C_a
+C_b
+S_1
+A_2
+B_3
+C_4
+3
+a
+b
+c
+19
+A_2 XS_1
+B_3 C_bX
+C_4 XC_b
+C_a a
+C_b b
+S C_aA_2
+S C_aB_3
+S C_aC_4
+S C_aC_b
+S_1 C_bX
+X C_aY
+X C_bY
+X a
+X b
+Y C_aY
+Y C_bY
+Y a
+Y b
+Y c
