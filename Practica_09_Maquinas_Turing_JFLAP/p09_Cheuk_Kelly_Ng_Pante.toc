@@ -9,3 +9,7 @@
 \contentsline {section}{\numberline {1.3}Diseñar y simular en JFLAP máquinas de Turing que acepten el lenguaje $L = \{a^nb^mc^{n*m} \mid n \geq 1, m \geq 1\}$}{9}{section.1.3}%
 \contentsline {section}{\numberline {1.4}Diseñar y simular en JFLAP máquinas de Turing que acepten el lenguaje \(L = \{w \mid w = w^{-1}\}\) sobre el alfabeto \(\Sigma = \{0, 1\}\)}{10}{section.1.4}%
 \contentsline {subsection}{\numberline {1.4.1}Diseño de una cinta}{10}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Diseño de multiples cintas}{12}{subsection.1.4.2}%
+\contentsline {section}{\numberline {1.5}Diseñar y simular en JFLAP máquinas de Turing que acepten el lenguaje formado por todas las cadenas binarias que tienen igual número de ceros que de unos (en cualquier orden de aparición).}{14}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Diseño de una cinta}{14}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}Diseño de multiples cintas}{16}{subsection.1.5.2}%

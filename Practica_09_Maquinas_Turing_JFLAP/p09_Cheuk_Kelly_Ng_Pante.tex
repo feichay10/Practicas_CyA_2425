@@ -201,7 +201,7 @@
           \label{fig:maquina de turing que acepta el lenguaje L = {a^nb^nc^n | n >= 0}}
         \end{figure}
 
-  \newpage
+        \newpage
 
   \item \textbf{Simulación:} La simulación de la máquina de Turing con algunas cadenas:
         \begin{figure}[H]
@@ -225,7 +225,7 @@
           \label{fig:maquina de turing que acepta el lenguaje L = {a^nb^nc^n | n >= 0}}
         \end{figure}
 
-  \newpage
+        \newpage
 
   \item \textbf{Simulación:} La simulación de la máquina de Turing con algunas cadenas:
         \begin{figure}[H]
@@ -251,7 +251,7 @@
           \label{fig:maquina de turing que acepta el lenguaje L = {a^nb^mc^{n+m} | n >= 0, m >= 0}}
         \end{figure}
 
-  \newpage
+        \newpage
 
   \item \textbf{Simulación:} La simulación de la máquina de Turing con algunas cadenas:
         \begin{figure}[H]
@@ -275,7 +275,7 @@
           \label{fig:maquina de turing que acepta el lenguaje L = {a^nb^mc^{n+m} | n >= 0, m >= 0}}
         \end{figure}
 
-  \newpage
+        \newpage
 
   \item \textbf{Simulación:} La simulación de la máquina de Turing con algunas cadenas:
         \begin{figure}[H]
@@ -285,7 +285,9 @@
           \label{fig:simulacion de la maquina de turing que acepta el lenguaje L = {a^nb^mc^{n+m} | n >= 0, m >= 0}}
         \end{figure}
 
-        Al ejecutar la máquina de Turing con la cadena $abcc$ en la simulacion múltiple rechaza la cadena, pero si la ejecutamos con la cadena de forma individual, la acepta. 
+        Al ejecutar la máquina de Turing con la cadena $abcc$ en la simulacion múltiple
+        rechaza la cadena, pero si la ejecutamos con la cadena de forma individual, la
+        acepta.
         \begin{figure}[H]
           \centering
           \includegraphics[scale=0.3]{img/MT_02_multiple_ribbon_simulation_2.png}
@@ -348,5 +350,87 @@
 % Ejercicio 4
 \section{Diseñar y simular en JFLAP máquinas de Turing que acepten el lenguaje \(L = \{w \mid w = w^{-1}\}\) sobre el alfabeto \(\Sigma = \{0, 1\}\)}
 \subsection{Diseño de una cinta}
+\begin{itemize}
+  \item \textbf{Descripción y diseño:} Esta máquina de Turing de una cinta se encarga de aceptar cadenas que son palindromas para el alfabeto \(\Sigma = \{0, 1\}\). Funciona marcando los extremos de la cadena y moviéndose progresivamente hacia el centro, comparando los símbolos de ambos lados. Inicia en el extremo izquierdo, marcando el primer símbolo y desplazándose hacia la derecha hasta encontrar el último símbolo, que también marca. Luego, vuelve hacia la izquierda para repetir este proceso con los símbolos internos, avanzando hacia el centro de la cadena. Si todos los símbolos coinciden simétricamente desde ambos extremos y la máquina llega al centro sin encontrar inconsistencias, acepta la cadena como palíndromo y se detiene.
+
+        \begin{figure}[H]
+          \centering
+          \includegraphics[scale=0.33]{img/MT_04_one_ribbon.png}
+          \caption{Máquina de Turing que acepta el lenguaje \(L = \{w \mid w = w^{-1}\}\) de una cinta.}
+          \label{fig:maquina de turing que acepta el lenguaje L = {w | w = w^{-1}} de una cinta}
+        \end{figure}
+
+        \newpage
+
+  \item \textbf{Simulación:} La simulación de la máquina de Turing con algunas cadenas:
+        \begin{figure}[H]
+          \centering
+          \includegraphics[scale=0.33]{img/MT_04_one_ribbon_simulation.png}
+          \caption{Simulación de la máquina de Turing que acepta el lenguaje \(L = \{w \mid w = w^{-1}\}\) de una cinta.}
+          \label{fig:simulacion de la maquina de turing que acepta el lenguaje L = {w | w = w^{-1}} de una cinta}
+        \end{figure}
+\end{itemize}
+
+\newpage
+
+\subsection{Diseño de multiples cintas}
+\begin{itemize}
+  \item \textbf{Descripción y diseño:} Esta máquina de Turing de dos cintas se encarga de aceptar cadenas que son palíndromas para el alfabeto \(\Sigma = \{0, 1\}\). 
+  La primera cinta se encarga de procesar la cadena y la segunda estará vacía. En ‘q0’ nos pondremos al final de la primera
+  cinta. Una vez en ‘q1’ se copiara la cadena del revés en la segunda cinta y se transitará a
+  ‘q4’. Una vez ahí, situaremos los dos punteros en el principio de la cadena. De aquí
+  pasamos a ‘q2’, en este estado comprobaremos que las dos cadenas coinciden, si se
+  cumple esta condición, al llegar al blanco (final de la cadena), se pasa al estado de
+  aceptación.
+  
+
+        \begin{figure}[H]
+          \centering
+          \includegraphics[scale=0.3]{img/MT_04_multiple_ribbon.png}
+          \caption{Máquina de Turing que acepta el lenguaje \(L = \{w \mid w = w^{-1}\}\) de dos cintas.}
+          \label{fig:maquina de turing que acepta el lenguaje L = {w | w = w^{-1}} de dos cintas}
+        \end{figure}
+
+        \newpage
+
+  \item \textbf{Simulación:} La simulación de la máquina de Turing con algunas cadenas:
+        \begin{figure}[H]
+          \centering
+          \includegraphics[scale=0.3]{img/MT_04_multiple_ribbon_simulation.png}
+          \caption{Simulación de la máquina de Turing que acepta el lenguaje \(L = \{w \mid w = w^{-1}\}\) de dos cintas.}
+          \label{fig:simulacion de la maquina de turing que acepta el lenguaje L = {w | w = w^{-1}} de dos cintas}
+        \end{figure}
+\end{itemize}
+
+\newpage
+
+% Ejercicio 5
+\section{Diseñar y simular en JFLAP máquinas de Turing que acepten el lenguaje formado por todas las cadenas binarias que tienen igual número de ceros que de unos (en cualquier orden de aparición).}
+\subsection{Diseño de una cinta}
+\begin{itemize}
+  \item \textbf{Descripción y diseño:} Esta máquina de Turing de una cinta se encarga de aceptar cadenas binarias que tienen igual número de ceros que de unos, sin importar el orden de aparición. Funciona empezando por el estado ‘q0’ y con los estados ‘q1’, ‘q2’ y ‘q3’ se encargaran que si se encuentra un 0 ira a buscar un 1 en la cadena. Luego, vuelve al simbolo en blanco que está justo antes de empezar la cadena. Después, 
+  partiendo otra vez del estado ‘q0’ y con los estados ‘q4’, ‘q5’ y ‘q6’ se encargaran que si se encuentra un 1 ira a buscar un 0 en la cadena. Finalmente, en el estado ‘q7’ se verifica que no haya simbolos sin leer y con el estado ‘q8’ se acepta la cadena.
+
+        \begin{figure}[H]
+          \centering
+          \includegraphics[scale=0.33]{img/MT_05_one_ribbon.png}
+          \caption{Máquina de Turing que acepta el lenguaje formado por todas las cadenas binarias que tienen igual número de ceros que de unos de una cinta.}
+          \label{fig:maquina de turing que acepta el lenguaje formado por todas las cadenas binarias que tienen igual número de ceros que de unos de una cinta}
+        \end{figure}
+
+        \newpage
+
+  \item \textbf{Simulación:} La simulación de la máquina de Turing con algunas cadenas:
+        \begin{figure}[H]
+          \centering
+          \includegraphics[scale=0.33]{img/MT_05_one_ribbon_simulation.png}
+          \caption{Simulación de la máquina de Turing que acepta el lenguaje formado por todas las cadenas binarias que tienen igual número de ceros que de unos de una cinta.}
+          \label{fig:simulacion de la maquina de turing que acepta el lenguaje formado por todas las cadenas binarias que tienen igual número de ceros que de unos de una cinta}
+        \end{figure}
+\end{itemize}
+
+\newpage
+
+\subsection{Diseño de multiples cintas}
 
 \end{document}
