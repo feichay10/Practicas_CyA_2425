@@ -1,0 +1,11 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{\numberline {1}Ejercicios de diseño de máquinas de Turing}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Diseñar y simular en JFLAP máquinas de Turing que acepten el lenguaje $L = \{a^nb^nc^n \mid n \geq 0\}.$}{1}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Diseño de una cinta}{1}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Diseño de multiples cintas}{3}{subsection.1.1.2}%
+\contentsline {section}{\numberline {1.2}Diseñar y simular en JFLAP máquinas de Turing que acepten el lenguaje $L = \{a^nb^mc^{n+m} \mid n \geq 0, m \geq 0\}$}{5}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Diseño de una cinta}{5}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Diseño de multiples cintas}{7}{subsection.1.2.2}%
+\contentsline {section}{\numberline {1.3}Diseñar y simular en JFLAP máquinas de Turing que acepten el lenguaje $L = \{a^nb^mc^{n*m} \mid n \geq 1, m \geq 1\}$}{9}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Diseñar y simular en JFLAP máquinas de Turing que acepten el lenguaje \(L = \{w \mid w = w^{-1}\}\) sobre el alfabeto \(\Sigma = \{0, 1\}\)}{10}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Diseño de una cinta}{10}{subsection.1.4.1}%
