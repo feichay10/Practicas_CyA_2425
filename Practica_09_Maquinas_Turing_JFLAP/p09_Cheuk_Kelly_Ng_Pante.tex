@@ -432,5 +432,25 @@
 \newpage
 
 \subsection{Diseño de multiples cintas}
+\begin{itemize}
+  \item \textbf{Descripción y diseño:} Esta máquina de Turing de tres cintas y en la primera cinta se encarga de procesar la cadena y las demas cintas se encargan de hacer una copia de los ceros y unos. Entonces, se copian los 0's y 1's en las cintas 3 y 2 respectivamente. Luego, se verifica que el número de 0's y 1's sea el mismo empezando de derecha a izquierda. El diseño de la máquina de Turing es el siguiente:
+
+        \begin{figure}[H]
+          \centering
+          \includegraphics[scale=0.3]{img/MT_05_multiple_ribbon.png}
+          \caption{Máquina de Turing que acepta el lenguaje formado por todas las cadenas binarias que tienen igual número de ceros que de unos de dos cintas.}
+          \label{fig:maquina de turing que acepta el lenguaje formado por todas las cadenas binarias que tienen igual número de ceros que de unos de dos cintas}
+        \end{figure}
+
+        \newpage
+
+  \item \textbf{Simulación:} La simulación de la máquina de Turing con algunas cadenas:
+        \begin{figure}[H]
+          \centering
+          \includegraphics[scale=0.3]{img/MT_05_multiple_ribbon_simulation.png}
+          \caption{Simulación de la máquina de Turing que acepta el lenguaje formado por todas las cadenas binarias que tienen igual número de ceros que de unos de dos cintas.}
+          \label{fig:simulacion de la maquina de turing que acepta el lenguaje formado por todas las cadenas binarias que tienen igual número de ceros que de unos de dos cintas}
+        \end{figure}
+\end{itemize}
 
 \end{document}
