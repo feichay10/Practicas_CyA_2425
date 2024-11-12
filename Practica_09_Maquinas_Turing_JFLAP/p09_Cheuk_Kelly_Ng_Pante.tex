@@ -163,7 +163,7 @@
 \begin{document}
 
 % Portada del informe
-\title{Diseño y simulación de máquinas de Turing en JFLAP}
+\title{Práctica 09: Diseño y simulación de máquinas de Turing en JFLAP}
 \subtitle{Computabilidad y Algoritmia}
 \author{Cheuk Kelly Ng Pante (alu0101364544@ull.edu.es)}
 \date{12/11/2024}
@@ -452,5 +452,38 @@
           \label{fig:simulacion de la maquina de turing que acepta el lenguaje formado por todas las cadenas binarias que tienen igual número de ceros que de unos de dos cintas}
         \end{figure}
 \end{itemize}
+
+\newpage
+
+\chapter{Modificación}
+\section{Diseñar y simular en JFLAP máquinas de Turing que acepten el lenguaje $L = \{a^nb^{2n}c^n \mid n \geq 0\}$}
+Esta máquina de Turing de dos cintas lo que hace es procesar en la primera cinta la cadena y en la segunda hacer copias de a's y c's que hay en la cadena. Una vez llega al final de la cadena, en la primera cinta el puntero se mueve hasta encontrar la primera b y una vez encontrada la primera b, en la segunda cinta el puntero se mueve una posicion a la izquierda y empieza a contabilizar a ver si hay el mismo numero de b's que de copias de a's y c's se hicieron anteriormente. Si los hay, acepta la cadena; en caso contrario la rechaza.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.25]{img/MT_modification.png}
+  \caption{Máquina de Turing que acepta el lenguaje $L = \{a^nb^{2n}c^n \mid n \geq 0\}$}
+\end{figure}
+
+\newpage
+
+\subsection{Simulación con algunas cadenas}
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.25]{img/MT_modification_test_1.png }
+  \caption{Cadena aceptada por la máquina de Turing para el lenguaje $L = \{a^nb^{2n}c^n \mid n \geq 0\}$}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.25]{img/MT_modification_test_2.png }
+  \caption{Cadena aceptada por la máquina de Turing para el lenguaje $L = \{a^nb^{2n}c^n \mid n \geq 0\}$}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.25]{img/MT_modification_test_3.png }
+  \caption{Cadena rechazada por la máquina de Turing para el lenguaje $L = \{a^nb^{2n}c^n \mid n \geq 0\}$}
+\end{figure}
 
 \end{document}

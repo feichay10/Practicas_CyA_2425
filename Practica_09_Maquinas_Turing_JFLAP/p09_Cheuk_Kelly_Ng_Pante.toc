@@ -13,3 +13,6 @@
 \contentsline {section}{\numberline {1.5}Diseñar y simular en JFLAP máquinas de Turing que acepten el lenguaje formado por todas las cadenas binarias que tienen igual número de ceros que de unos (en cualquier orden de aparición).}{14}{section.1.5}%
 \contentsline {subsection}{\numberline {1.5.1}Diseño de una cinta}{14}{subsection.1.5.1}%
 \contentsline {subsection}{\numberline {1.5.2}Diseño de multiples cintas}{16}{subsection.1.5.2}%
+\contentsline {chapter}{\numberline {2}Modificación}{18}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Diseñar y simular en JFLAP máquinas de Turing que acepten el lenguaje $L = \{a^nb^{2n}c^n \mid n \geq 0\}$}{18}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Simulación con algunas cadenas}{19}{subsection.2.1.1}%

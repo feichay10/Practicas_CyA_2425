@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.10)  12 NOV 2024 13:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.7.10)  12 NOV 2024 23:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -630,23 +630,8 @@ Package babel Info: Making > an active character on input line 722.
 )) (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/es\babel-spanish.tex
 Package babel Info: Importing font and identification data for spanish
 (babel)             from babel-es.ini. Reported on input line 11.
-) (p09_Cheuk_Kelly_Ng_Pante.aux
-LaTeX Info: Redefining \. on input line 12.
-LaTeX Info: Redefining \% on input line 12.
-
-
-LaTeX Warning: Label `fig:maquina de turing que acepta el lenguaje L = {a^nb^nc^n | n >= 0}' multiply defined.
-
-
-LaTeX Warning: Label `fig:simulacion de la maquina de turing que acepta el lenguaje L = {a^nb^nc^n | n >= 0}' multiply defined.
-
-
-LaTeX Warning: Label `fig:maquina de turing que acepta el lenguaje L = {a^nb^mc^{n+m} | n >= 0, m >= 0}' multiply defined.
-
-
-LaTeX Warning: Label `fig:simulacion de la maquina de turing que acepta el lenguaje L = {a^nb^mc^{n+m} | n >= 0, m >= 0}' multiply defined.
-
 )
+No file p09_Cheuk_Kelly_Ng_Pante.aux.
 \openout1 = `p09_Cheuk_Kelly_Ng_Pante.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 163.
@@ -667,7 +652,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 163.
 LaTeX Font Info:    ... okay on input line 163.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 163.
 LaTeX Font Info:    ... okay on input line 163.
- (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+(C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count410
 \scratchdimen=\dimen303
@@ -733,7 +718,6 @@ Package caption Info: End \AtBeginDocument code.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring OFF on input line 163.
-(p09_Cheuk_Kelly_Ng_Pante.out) (p09_Cheuk_Kelly_Ng_Pante.out)
 \@outlinefile=\write5
 \openout5 = `p09_Cheuk_Kelly_Ng_Pante.out'.
 
@@ -747,18 +731,14 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 171.
 LaTeX Font Info:    Trying to load font information for U+wasy on input line 171.
- (C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/wasysym\uwasy.fd
+(C:\Users\cheuk\AppData\Local\Programs\MiKTeX\tex/latex/wasysym\uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
 
 [1
 
-{C:/Users/cheuk/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (p09_Cheuk_Kelly_Ng_Pante.toc
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 3.
-)
+{C:/Users/cheuk/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+No file p09_Cheuk_Kelly_Ng_Pante.toc.
 \tf@toc=\write6
 \openout6 = `p09_Cheuk_Kelly_Ng_Pante.toc'.
 
@@ -803,7 +783,9 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 188.
 
-<img/MT_01_one_ribbon.png, id=101, 1446.15282pt x 775.39688pt>
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 191.
+<img/MT_01_one_ribbon.png, id=18, 1446.15282pt x 775.39688pt>
 File: img/MT_01_one_ribbon.png Graphic file (type png)
 <use img/MT_01_one_ribbon.png>
 Package pdftex.def Info: img/MT_01_one_ribbon.png  used on input line 199.
@@ -818,7 +800,7 @@ l.204         \newpage
                        [1
 
  <./img/MT_01_one_ribbon.png>]
-<img/MT_01_one_ribbon_simulation.png, id=109, 1446.15282pt x 776.9025pt>
+<img/MT_01_one_ribbon_simulation.png, id=34, 1446.15282pt x 776.9025pt>
 File: img/MT_01_one_ribbon_simulation.png Graphic file (type png)
 <use img/MT_01_one_ribbon_simulation.png>
 Package pdftex.def Info: img/MT_01_one_ribbon_simulation.png  used on input line 209.
@@ -826,7 +808,7 @@ Package pdftex.def Info: img/MT_01_one_ribbon_simulation.png  used on input line
 
 
 [2 <./img/MT_01_one_ribbon_simulation.png>]
-<img/MT_01_multiple_ribbon.png, id=116, 1443.89438pt x 776.9025pt>
+<img/MT_01_multiple_ribbon.png, id=41, 1443.89438pt x 776.9025pt>
 File: img/MT_01_multiple_ribbon.png Graphic file (type png)
 <use img/MT_01_multiple_ribbon.png>
 Package pdftex.def Info: img/MT_01_multiple_ribbon.png  used on input line 223.
@@ -834,7 +816,7 @@ Package pdftex.def Info: img/MT_01_multiple_ribbon.png  used on input line 223.
 
 
 [3 <./img/MT_01_multiple_ribbon.png>]
-<img/MT_01_multiple_ribbon_simulation.png, id=123, 1441.63594pt x 774.64406pt>
+<img/MT_01_multiple_ribbon_simulation.png, id=49, 1441.63594pt x 774.64406pt>
 File: img/MT_01_multiple_ribbon_simulation.png Graphic file (type png)
 <use img/MT_01_multiple_ribbon_simulation.png>
 Package pdftex.def Info: img/MT_01_multiple_ribbon_simulation.png  used on input line 233.
@@ -874,7 +856,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 242.
 
-<img/MT_02_one_ribbon.png, id=130, 1442.38875pt x 779.91376pt>
+<img/MT_02_one_ribbon.png, id=56, 1442.38875pt x 779.91376pt>
 File: img/MT_02_one_ribbon.png Graphic file (type png)
 <use img/MT_02_one_ribbon.png>
 Package pdftex.def Info: img/MT_02_one_ribbon.png  used on input line 249.
@@ -882,7 +864,7 @@ Package pdftex.def Info: img/MT_02_one_ribbon.png  used on input line 249.
 
 
 [5 <./img/MT_02_one_ribbon.png>]
-<img/MT_02_one_ribbon_simulation.png, id=138, 1444.64719pt x 776.14969pt>
+<img/MT_02_one_ribbon_simulation.png, id=67, 1444.64719pt x 776.14969pt>
 File: img/MT_02_one_ribbon_simulation.png Graphic file (type png)
 <use img/MT_02_one_ribbon_simulation.png>
 Package pdftex.def Info: img/MT_02_one_ribbon_simulation.png  used on input line 259.
@@ -890,7 +872,7 @@ Package pdftex.def Info: img/MT_02_one_ribbon_simulation.png  used on input line
 
 
 [6 <./img/MT_02_one_ribbon_simulation.png>]
-<img/MT_02_multiple_ribbon.png, id=145, 1444.64719pt x 777.65532pt>
+<img/MT_02_multiple_ribbon.png, id=74, 1444.64719pt x 777.65532pt>
 File: img/MT_02_multiple_ribbon.png Graphic file (type png)
 <use img/MT_02_multiple_ribbon.png>
 Package pdftex.def Info: img/MT_02_multiple_ribbon.png  used on input line 273.
@@ -898,12 +880,12 @@ Package pdftex.def Info: img/MT_02_multiple_ribbon.png  used on input line 273.
 
 
 [7 <./img/MT_02_multiple_ribbon.png>]
-<img/MT_02_multiple_ribbon_simulation.png, id=152, 1444.64719pt x 776.9025pt>
+<img/MT_02_multiple_ribbon_simulation.png, id=82, 1444.64719pt x 776.9025pt>
 File: img/MT_02_multiple_ribbon_simulation.png Graphic file (type png)
 <use img/MT_02_multiple_ribbon_simulation.png>
 Package pdftex.def Info: img/MT_02_multiple_ribbon_simulation.png  used on input line 283.
 (pdftex.def)             Requested size: 433.3975pt x 233.07254pt.
-<img/MT_02_multiple_ribbon_simulation_2.png, id=153, 1443.89438pt x 572.1375pt>
+<img/MT_02_multiple_ribbon_simulation_2.png, id=83, 1443.89438pt x 572.1375pt>
 File: img/MT_02_multiple_ribbon_simulation_2.png Graphic file (type png)
 <use img/MT_02_multiple_ribbon_simulation_2.png>
 Package pdftex.def Info: img/MT_02_multiple_ribbon_simulation_2.png  used on input line 293.
@@ -966,7 +948,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\Sigma' on input line 351.
 
-<img/MT_04_one_ribbon.png, id=166, 1445.4pt x 776.14969pt>
+<img/MT_04_one_ribbon.png, id=97, 1445.4pt x 776.14969pt>
 File: img/MT_04_one_ribbon.png Graphic file (type png)
 <use img/MT_04_one_ribbon.png>
 Package pdftex.def Info: img/MT_04_one_ribbon.png  used on input line 358.
@@ -974,7 +956,7 @@ Package pdftex.def Info: img/MT_04_one_ribbon.png  used on input line 358.
 
 
 [10 <./img/MT_04_one_ribbon.png>]
-<img/MT_04_one_ribbon_simulation.png, id=173, 1446.15282pt x 774.64406pt>
+<img/MT_04_one_ribbon_simulation.png, id=107, 1446.15282pt x 774.64406pt>
 File: img/MT_04_one_ribbon_simulation.png Graphic file (type png)
 <use img/MT_04_one_ribbon_simulation.png>
 Package pdftex.def Info: img/MT_04_one_ribbon_simulation.png  used on input line 368.
@@ -982,7 +964,7 @@ Package pdftex.def Info: img/MT_04_one_ribbon_simulation.png  used on input line
 
 
 [11 <./img/MT_04_one_ribbon_simulation.png>]
-<img/MT_04_multiple_ribbon.png, id=181, 1445.4pt x 777.65532pt>
+<img/MT_04_multiple_ribbon.png, id=115, 1445.4pt x 777.65532pt>
 File: img/MT_04_multiple_ribbon.png Graphic file (type png)
 <use img/MT_04_multiple_ribbon.png>
 Package pdftex.def Info: img/MT_04_multiple_ribbon.png  used on input line 389.
@@ -990,7 +972,7 @@ Package pdftex.def Info: img/MT_04_multiple_ribbon.png  used on input line 389.
 
 
 [12 <./img/MT_04_multiple_ribbon.png>]
-<img/MT_04_multiple_ribbon_simulation.png, id=188, 1445.4pt x 777.65532pt>
+<img/MT_04_multiple_ribbon_simulation.png, id=123, 1445.4pt x 777.65532pt>
 File: img/MT_04_multiple_ribbon_simulation.png Graphic file (type png)
 <use img/MT_04_multiple_ribbon_simulation.png>
 Package pdftex.def Info: img/MT_04_multiple_ribbon_simulation.png  used on input line 399.
@@ -998,7 +980,7 @@ Package pdftex.def Info: img/MT_04_multiple_ribbon_simulation.png  used on input
 
 
 [13 <./img/MT_04_multiple_ribbon_simulation.png>]
-<img/MT_05_one_ribbon.png, id=195, 1445.4pt x 776.9025pt>
+<img/MT_05_one_ribbon.png, id=130, 1445.4pt x 776.9025pt>
 File: img/MT_05_one_ribbon.png Graphic file (type png)
 <use img/MT_05_one_ribbon.png>
 Package pdftex.def Info: img/MT_05_one_ribbon.png  used on input line 416.
@@ -1006,7 +988,7 @@ Package pdftex.def Info: img/MT_05_one_ribbon.png  used on input line 416.
 
 
 [14 <./img/MT_05_one_ribbon.png>]
-<img/MT_05_one_ribbon_simulation.png, id=202, 1444.64719pt x 775.39688pt>
+<img/MT_05_one_ribbon_simulation.png, id=139, 1444.64719pt x 775.39688pt>
 File: img/MT_05_one_ribbon_simulation.png Graphic file (type png)
 <use img/MT_05_one_ribbon_simulation.png>
 Package pdftex.def Info: img/MT_05_one_ribbon_simulation.png  used on input line 426.
@@ -1014,7 +996,7 @@ Package pdftex.def Info: img/MT_05_one_ribbon_simulation.png  used on input line
 
 
 [15 <./img/MT_05_one_ribbon_simulation.png>]
-<img/MT_05_multiple_ribbon.png, id=209, 1445.4pt x 777.65532pt>
+<img/MT_05_multiple_ribbon.png, id=146, 1445.4pt x 777.65532pt>
 File: img/MT_05_multiple_ribbon.png Graphic file (type png)
 <use img/MT_05_multiple_ribbon.png>
 Package pdftex.def Info: img/MT_05_multiple_ribbon.png  used on input line 440.
@@ -1022,14 +1004,70 @@ Package pdftex.def Info: img/MT_05_multiple_ribbon.png  used on input line 440.
 
 
 [16 <./img/MT_05_multiple_ribbon.png>]
-<img/MT_05_multiple_ribbon_simulation.png, id=216, 1445.4pt x 774.64406pt>
+<img/MT_05_multiple_ribbon_simulation.png, id=154, 1445.4pt x 774.64406pt>
 File: img/MT_05_multiple_ribbon_simulation.png Graphic file (type png)
 <use img/MT_05_multiple_ribbon_simulation.png>
 Package pdftex.def Info: img/MT_05_multiple_ribbon_simulation.png  used on input line 450.
 (pdftex.def)             Requested size: 433.62335pt x 232.395pt.
 
 
-[17 <./img/MT_05_multiple_ribbon_simulation.png>] (p09_Cheuk_Kelly_Ng_Pante.aux
+[17 <./img/MT_05_multiple_ribbon_simulation.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 459.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 459.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 459.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 459.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mid' on input line 459.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\geq' on input line 459.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 459.
+
+<img/MT_modification.png, id=162, 1856.9375pt x 1058.95625pt>
+File: img/MT_modification.png Graphic file (type png)
+<use img/MT_modification.png>
+Package pdftex.def Info: img/MT_modification.png  used on input line 464.
+(pdftex.def)             Requested size: 464.23325pt x 264.73842pt.
+
+
+[18 <./img/MT_modification.png>]
+<img/MT_modification_test_1.png, id=171, 1856.9375pt x 1058.95625pt>
+File: img/MT_modification_test_1.png Graphic file (type png)
+<use img/MT_modification_test_1.png>
+Package pdftex.def Info: img/MT_modification_test_1.png  used on input line 473.
+(pdftex.def)             Requested size: 464.23325pt x 264.73842pt.
+<img/MT_modification_test_2.png, id=172, 1856.9375pt x 1058.95625pt>
+File: img/MT_modification_test_2.png Graphic file (type png)
+<use img/MT_modification_test_2.png>
+Package pdftex.def Info: img/MT_modification_test_2.png  used on input line 479.
+(pdftex.def)             Requested size: 464.23325pt x 264.73842pt.
+<img/MT_modification_test_3.png, id=173, 1856.9375pt x 1058.95625pt>
+File: img/MT_modification_test_3.png Graphic file (type png)
+<use img/MT_modification_test_3.png>
+Package pdftex.def Info: img/MT_modification_test_3.png  used on input line 485.
+(pdftex.def)             Requested size: 464.23325pt x 264.73842pt.
+
+
+[19 <./img/MT_modification_test_1.png> <./img/MT_modification_test_2.png>]
+
+[20 <./img/MT_modification_test_3.png>] (p09_Cheuk_Kelly_Ng_Pante.aux
 LaTeX Info: Redefining \. on input line 12.
 LaTeX Info: Redefining \% on input line 12.
 )
@@ -1039,23 +1077,29 @@ L3 programming layer <2024-05-27>
  ***********
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package rerunfilecheck Info: File `p09_Cheuk_Kelly_Ng_Pante.out' has not changed.
-(rerunfilecheck)             Checksum: 909D892556C69863F3D7F5481AD1A6EF;5291.
+
+Package rerunfilecheck Warning: File `p09_Cheuk_Kelly_Ng_Pante.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `p09_Cheuk_Kelly_Ng_Pante.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  71EE87F8A479C53306A83957D1BB8F83;6172.
  ) 
 Here is how much of TeX's memory you used:
- 27832 strings out of 473904
- 536450 string characters out of 5726600
- 1936908 words of memory out of 5000000
- 50207 multiletter control sequences out of 15000+600000
+ 27847 strings out of 473904
+ 536430 string characters out of 5726600
+ 1931908 words of memory out of 5000000
+ 50220 multiletter control sequences out of 15000+600000
  565389 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,8n,117p,1387b,516s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/cheuk/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on p09_Cheuk_Kelly_Ng_Pante.pdf (19 pages, 1239200 bytes).
+Output written on p09_Cheuk_Kelly_Ng_Pante.pdf (22 pages, 1443523 bytes).
 PDF statistics:
- 284 PDF objects out of 1000 (max. 8388607)
- 50 named destinations out of 1000 (max. 500000)
- 210 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 249 PDF objects out of 1000 (max. 8388607)
+ 60 named destinations out of 1000 (max. 500000)
+ 118 words of extra memory for PDF output out of 10000 (max. 10000000)
 
