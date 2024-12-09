@@ -10,7 +10,10 @@ namespace EMST {
     
   }
 
-  sub_tree::~sub_tree(void) {}
+  sub_tree::~sub_tree(void) {
+    arcs_.clear();
+    points_.clear();
+  }
 
   void sub_tree::add_arc(const CyA::arc &a) {
     arcs_.push_back(a);
