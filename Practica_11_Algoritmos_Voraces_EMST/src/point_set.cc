@@ -85,15 +85,15 @@ void point_set::write(std::ostream &os) const {
 }
 
 void point_set::write_tree(std::ostream &os) const {
-  os << "Minimum Tree:" << std::endl;
+  os << "\nÁrbol mínimo:" << std::endl;
   for (const CyA::arc& arc : emst_) {
     auto it = std::find(begin(), end(), arc.first);
     int inx = it - begin();
     auto it2 = std::find(begin(), end(), arc.second);
     int inx2 = it2 - begin();
-    os << "from point " << inx << "(" << arc.first.first << ", " << arc.first.second << 
-    ") to point " << inx2 << "(" << arc.second.first << ", " << arc.second.second << ")"
-    << " with cost: " << euclidean_distance(arc) << "\n";
+    os << "desde el punto " << inx << "(" << arc.first.first << ", " << arc.first.second << 
+    ") --> al punto " << inx2 << "(" << arc.second.first << ", " << arc.second.second << ")"
+    << " con coste: " << euclidean_distance(arc) << "\n";
   }
   os << std::endl;
 }
