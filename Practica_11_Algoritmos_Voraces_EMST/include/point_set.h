@@ -15,13 +15,16 @@ class point_set : public CyA::point_vector {
   CyA::tree emst_;
 
  public:
+  point_set() = default;
   point_set(const CyA::point_vector& points);
   ~point_set(void);
 
   void EMST(void);
 
+  void add_edge(const CyA::point& p1, const CyA::point& p2);
   void write_tree(std::ostream& os) const;
   void write(std::ostream& os) const;
+  void write_dot(std::ostream& os) const;
 
   inline const CyA::tree& get_tree(void) const { return emst_; }
   inline const CyA::point_vector& get_points(void) const { return *this; }

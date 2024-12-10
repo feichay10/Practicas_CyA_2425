@@ -89,16 +89,46 @@ double point_set::euclidean_distance(const CyA::arc &a) const {
   return std::sqrt(dx * dx + dy * dy);
 }
 
-void point_set::write_tree(std::ostream &os) const {
-  os << std::endl;
-  for (const CyA::arc &a : emst_) {
-    os << "(" << std::setw(MAX_SZ) << std::fixed << std::setprecision(MAX_PREC) << a.first.first << ", " << std::setw(MAX_SZ) << std::fixed << std::setprecision(MAX_PREC) << a.first.second << ") - (" << std::setw(MAX_SZ) << std::fixed << std::setprecision(MAX_PREC) << a.second.first << ", " << std::setw(MAX_SZ) << std::fixed << std::setprecision(MAX_PREC) << a.second.second << ")" << std::endl;
-  }
+void point_set::add_edge(const CyA::point &p1, const CyA::point &p2) {
+  this->push_back(p1);
+  this->push_back(p2);
+}
 
-  os << std::endl;
-  os << std::setw(MAX_SZ) << std::fixed << std::setprecision(MAX_PREC+2) << get_cost() << std::endl;
+void point_set::write_tree(std::ostream &os) const {
+  os << "Minimum Tree:" << std::endl;
+  for (const CyA::arc& arc : emst_) {
+    auto it = std::find(begin(), end(), arc.first);
+    int inx = it - begin();
+    auto it2 = std::find(begin(), end(), arc.second);
+    int inx2 = it2 - begin();
+    os << "from point " << inx << "(" << arc.first.first << ", " << arc.first.second << 
+    ") to point " << inx2 << "(" << arc.second.first << ", " << arc.second.second << ")"
+    << " with cost: " << euclidean_distance(arc) << "\n";
+  }
 }
 
 void point_set::write(std::ostream &os) const {
-  os << (CyA::point_vector &)(*this) << std::endl;
+  os << "Points:" << "\n";
+  for (const CyA::point& point : *this) {
+    os << "(" << point.first << ", " << point.second << ")" << std::endl;
+  }
+}
+
+void point_set::write_dot(std::ostream &os) const {
+  os << "graph {\n";
+
+  for (int i{0}; i < size(); ++i) {
+    os << "    " <<  i << " [pos=\"" << at(i).first << "," << at(i).second << "!\"];\n";
+  }
+
+  for (const CyA::arc& arcs : emst_) {
+    auto it = std::find(begin(), end(), arcs.first);
+    int inx = it - begin();
+    os << "    " << inx << " -- "; 
+    auto it2 = std::find(begin(), end(), arcs.second);
+    int inx2 = it2 - begin();
+    os << inx2 << " " << "\n";
+  }
+
+  os << "  " << "}";
 }
