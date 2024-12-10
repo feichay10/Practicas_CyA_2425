@@ -2,9 +2,9 @@
 
 #include "../include/sub_tree.h"
 
-point_set::point_set(const CyA::point_vector &points) : CyA::point_vector(points), emst_() {}
-
-point_set::~point_set(void) {}
+point_set::point_set(const CyA::point_vector &points) : CyA::point_vector(points), emst_() {
+  EMST();
+}
 
 void point_set::EMST(void) {
   CyA::arc_vector av;
@@ -58,12 +58,7 @@ void point_set::find_incident_subtrees(const forest &st, const CyA::arc &a, int 
 }
 
 void point_set::merge_subtrees(forest &st, const CyA::arc &a, int i, int j) const {
-  EMST::sub_tree s1 = st[i];
-  EMST::sub_tree s2 = st[j];
-  CyA::weigthed_arc wa = std::make_pair(euclidean_distance(a), a);
-
-  s1.merge(s2, wa);
-
+  st[i].merge(st[j], std::make_pair(euclidean_distance(a), a));
   st.erase(st.begin() + j);
 }
 

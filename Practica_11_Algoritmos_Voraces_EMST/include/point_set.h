@@ -17,7 +17,7 @@ class point_set : public CyA::point_vector {
  public:
   point_set() = default;
   point_set(const CyA::point_vector& points);
-  ~point_set(void);
+  ~point_set(void) = default;
 
   void EMST(void);
 
