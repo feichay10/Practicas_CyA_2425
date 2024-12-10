@@ -16,30 +16,57 @@
  *
  */
 
+
+// Modificaion, hacer un algoritmo multi arranque (multi-start) que consiste en 
+// ejecutar el algoritmo EMST varias veces con diferentes ordenes aleatorios de 
+// las aristas.
+
 #include <iostream>
 #include <fstream>
 
-#include "../include/functions.h"
 #include "../include/point_set.h"
 #include "../include/point_types.h"
 #include "../include/sub_tree.h"
 
+void printMenu() {
+  std::cout << "Opciones:\n"
+            << "  0. Salir\n"
+            << "  1. Agregar punto (Formato: x y)\n"
+            << "  2. Insertar mediante fichero\n"
+            << "  3. Imprimir puntos\n"
+            << "  4. Imprimir árbol de expansión mínima\n"
+            << "  5. Imprimir el coste del árbol de expansión mínima\n"
+            << "  6. Guardar el grafo en formato DOT\n"
+            << "  7. Generar PDF del grafo\n"
+            << "  8. Algoritmo original (EMST)\n"
+            << "  9. Algoritmo multiarranque\n"
+            << "Seleccione una opción: ";
+}
+
 int main(int argc, char* argv[]) {
   point_set ps;
   CyA::point_vector points;
+  bool isFile = false;
+  bool isPoints = false;
 
   int option;
   do {
     printMenu();
     std::cin >> option;
     switch (option) {
+      case 0:
+        // Salir
+        std::cout << "Saliendo del programa." << std::endl;
+        exit(EXIT_SUCCESS);
+        break;
       case 1: {
         // Agregar arista
-        std::cout << "Introduce cuantos puntos quieres: " << std::endl;
+        std::cout << "Introduce cuantos puntos quieres: ";
         std::cin >> points;
         ps = point_set(points);
         std::cout << std::endl;
-        std::cout << "Puntos insertados correctamente." << std::endl << std::endl;
+        std::cout << "\nPuntos insertados correctamente." << std::endl << std::endl;
+        isPoints = true;
         break;
       }
       case 2: {
@@ -56,54 +83,78 @@ int main(int argc, char* argv[]) {
         file >> points;
         ps = point_set(points);
         file.close();
-        std::cout << "Puntos insertados correctamente." << std::endl << std::endl;
+        std::cout << "\nPuntos insertados correctamente." << std::endl << std::endl;
+        isFile = true;
         break;
       }
-      case 3:
-        // Calcular el árbol de expansión mínima
-        ps.EMST();
-        std::cout << "Árbol de expansión mínima calculado." << std::endl << std::endl;
-        break;
-      case 4:
-        // Imprimir puntos
-        ps.write(std::cout);
-        break;
-      case 5:
-        // Imprimir árbol de expansión mínima
-        ps.write_tree(std::cout);
-        break;
-      case 6:
-        // Imprimir el coste del árbol de expansión mínima
-        std::cout << "Coste del árbol de expansión mínima: " << ps.get_cost() << std::endl << std::endl;
-        break;
-      case 7: {
-        // Guardar el grafo en formato DOT
-        std::ofstream dotFile("graph.dot");
-        ps.write_dot(dotFile);
-        dotFile.close();
-        std::cout << "Grafo guardado en formato DOT en 'graph.dot'" << std::endl << std::endl;
-        break;
-      }
-      case 8: {
-        // Generar PDF del grafo
-        int result = system("neato graph.dot -Tpdf -o salida.pdf");
-        if (result == 0) {
-          std::cout << "PDF generado con éxito (ver 'salida.pdf')" << std::endl << std::endl;
+      case 3: // Imprimir puntos
+        if (!isPoints && !isFile) {
+          std::cerr << "Error: No hay puntos insertados." << std::endl << std::endl;
         } else {
-          std::cerr << "Error al generar el PDF"<< std::endl;
+          ps.write(std::cout);
+        }
+        break;
+      case 4: // Imprimir árbol de expansión mínima
+        if (!isPoints && !isFile) {
+          std::cerr << "Error: No hay puntos insertados." << std::endl << std::endl;
+        } else {
+          ps.write_tree(std::cout);
+        }
+        break;
+      case 5: // Imprimir el coste del árbol de expansión mínima
+        if (!isPoints && !isFile) {
+          std::cerr << "Error: No hay puntos insertados." << std::endl << std::endl;
+        } else {
+          std::cout << "\nCoste del árbol de expansión mínima: " << ps.get_cost() << std::endl << std::endl;
+        }
+      case 6: { // Guardar el grafo en formato DOT
+        if (!isPoints && !isFile) {
+          std::cerr << "Error: No hay puntos insertados." << std::endl << std::endl;
+        } else {
+          std::ofstream dotFile("graph.dot");
+          ps.write_dot(dotFile);
+          dotFile.close();
+          std::cout << "\nGrafo guardado en formato DOT en 'graph.dot'" << std::endl << std::endl;
         }
         break;
       }
-      case 9:
-        // Salir
-        std::cout << "Saliendo del programa." << std::endl;
-        exit(EXIT_SUCCESS);
+      case 7: { // Generar PDF del grafo
+        if (!isPoints && !isFile) {
+          std::cerr << "Error: No hay puntos insertados." << std::endl << std::endl;
+        } else {
+          int result = system("neato graph.dot -Tpdf -o salida.pdf");
+          if (result == 0) {
+            std::cout << "\nPDF generado con éxito (ver 'salida.pdf')" << std::endl << std::endl;
+          } else {
+            std::cerr << "\nError al generar el PDF"<< std::endl;
+          }
+        }
+        break;
+      }
+      case 8: // Algoritmo original (EMST)
+        if (!isPoints && !isFile) {
+          std::cerr << "Error: No hay puntos insertados." << std::endl << std::endl;
+        } else {
+          ps.EMST();
+          std::cout << "\nÁrbol de expansión mínima generado con éxito." << std::endl << std::endl;
+        }
+        break;
+      case 9: // Algoritmo multiarranque
+        if (!isPoints && !isFile) {
+          std::cerr << "Error: No hay puntos insertados." << std::endl << std::endl;
+        } else {
+          int n;
+          std::cout << "Introduce el número de veces que quieres ejecutar el algoritmo: ";
+          std::cin >> n;
+          ps.multi_start(n);
+          std::cout << "\nÁrbol de expansión mínima generado con éxito." << std::endl << std::endl;
+        }
         break;
       default:
         std::cerr << "Error: Opción no válida. Inténtelo de nuevo." << std::endl ;
     }
 
-  } while (option != 9);
+  } while (option != 0);
 
   return 0;
 }

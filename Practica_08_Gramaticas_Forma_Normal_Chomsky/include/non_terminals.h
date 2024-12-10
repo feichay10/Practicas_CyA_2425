@@ -43,6 +43,7 @@ class NonTerminals {
   void SetNonTerminals(const std::vector<std::string>& non_terminals);
 
   void push_back(const std::string& non_terminal);
+  int size() const;
   
  private:
   std::vector<std::string> non_terminals_;

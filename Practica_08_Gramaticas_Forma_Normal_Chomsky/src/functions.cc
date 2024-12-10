@@ -92,6 +92,23 @@ std::vector<T> read_file(const std::string& file_name) {
  */
 void write_file(const std::string& file_name, const Grammar& grammar) {
   std::ofstream file(file_name);
-  file << grammar;
+
+  file << grammar.GetNonTerminals().size() << std::endl;
+  for (const auto& non_terminal : grammar.GetNonTerminals().GetNonTerminals()) {
+    file << non_terminal << std::endl;
+  }
+  file << grammar.GetTerminals().size() << std::endl;
+  for (const auto& terminal : grammar.GetTerminals().GetAlphabet()) {
+    file << terminal.GetSymbol() << std::endl;
+  }
+  file << grammar.GetNonTerminals().GetProductions().size() << std::endl;
+  for (const auto& production : grammar.GetNonTerminals().GetProductions()) {
+    file << production.first << " ";
+    for (const auto& symbol : production.second) {
+      file << symbol;
+    }
+    file << std::endl;
+  }
+
   file.close();
 }

@@ -1,10 +1,25 @@
-#include "../include/point_set.h"
+/**
+ * Universidad de La Laguna
+ * Escuela Superior de Ingeniería y Tecnología
+ * Grado en Ingeniería Informática
+ * Asignatura: Computabilidad y Algoritmia
+ * Curso: 2º
+ * Práctica 11: Algoritmos Voraces (Greedy). Euclidean Minimum Spanning Tree
+ * @file point_set.cc
+ * @author Cheuk Kelly Ng Pante (alu0101364544@ull.edu.es)
+ * @brief
+ *
+ * @version 0.1
+ * @date 2024-12-09
+ *
+ * @copyright Copyright (c) 2024
+ *
+ */
 
+#include "../include/point_set.h"
 #include "../include/sub_tree.h"
 
-point_set::point_set(const CyA::point_vector &points) : CyA::point_vector(points), emst_() {
-  EMST();
-}
+point_set::point_set(const CyA::point_vector &points) : CyA::point_vector(points), emst_() {}
 
 void point_set::EMST(void) {
   CyA::arc_vector av;
@@ -24,6 +39,34 @@ void point_set::EMST(void) {
 
     if (i != j) {
       merge_subtrees(st, a.second, i, j);
+    }
+  }
+
+  emst_ = st[0].get_arcs();
+}
+
+// MODIFICACION
+void point_set::multi_start(int n) {
+  CyA::arc_vector av;
+  compute_arc_vector(av);
+
+  forest st;
+
+  for (const CyA::point &p : *this) {
+    EMST::sub_tree s;
+    s.add_point(p);
+    st.push_back(s);
+  }
+
+  for (int i = 0; i < n; ++i) {
+    std::random_shuffle(av.begin(), av.end());
+    for (const CyA::weigthed_arc &a : av) {
+      int i, j;
+      find_incident_subtrees(st, a.second, i, j);
+
+      if (i != j) {
+        merge_subtrees(st, a.second, i, j);
+      }
     }
   }
 
@@ -85,15 +128,15 @@ void point_set::write(std::ostream &os) const {
 }
 
 void point_set::write_tree(std::ostream &os) const {
-  os << "Minimum Tree:" << std::endl;
+  os << "\nÁrbol mínimo:" << std::endl;
   for (const CyA::arc& arc : emst_) {
     auto it = std::find(begin(), end(), arc.first);
     int inx = it - begin();
     auto it2 = std::find(begin(), end(), arc.second);
     int inx2 = it2 - begin();
-    os << "from point " << inx << "(" << arc.first.first << ", " << arc.first.second << 
-    ") to point " << inx2 << "(" << arc.second.first << ", " << arc.second.second << ")"
-    << " with cost: " << euclidean_distance(arc) << "\n";
+    os << "desde el punto " << inx << "(" << arc.first.first << ", " << arc.first.second << 
+    ") --> al punto " << inx2 << "(" << arc.second.first << ", " << arc.second.second << ")"
+    << " con coste: " << euclidean_distance(arc) << "\n";
   }
   os << std::endl;
 }

@@ -17,6 +17,7 @@
 
 #include "../include/non_terminals.h"
 
+
 /**
  * @brief Constructs a NonTerminals object.
  * 
@@ -103,4 +104,8 @@ void NonTerminals::SetNonTerminals(const std::vector<std::string>& non_terminals
  */
 void NonTerminals::push_back(const std::string& non_terminal) {
   non_terminals_.push_back(non_terminal);
+}
+
+int NonTerminals::size() const { 
+  return non_terminals_.size();
 }

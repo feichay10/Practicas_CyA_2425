@@ -50,6 +50,10 @@ class Symbol {
     return !(*this == other);
   }
 
+  std::string ToString() const {
+    return std::string(1, symbol_);
+  }
+
  private:
   char symbol_;
 };
