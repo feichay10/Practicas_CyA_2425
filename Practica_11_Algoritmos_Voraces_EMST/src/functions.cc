@@ -31,11 +31,11 @@ void printMenu() {
             << "1. Agregar punto (Formato: x y)\n"
             << "2. Insertar mediante fichero\n"
             << "3. Calcular el árbol de expansión mínima\n"
-            << "4. Imprimir el coste del árbol de expansión mínima\n"
-            << "5. Guardar el grafo en formato DOT (-d)\n"
-            << "6. Generar PDF del grafo (-pdf)\n"
-            << "7. Salir\n"
-            << "8. Imprimir puntos\n"
-            << "9. Imprimir árbol de expansión mínima\n"
+            << "4. Imprimir puntos\n"
+            << "5. Imprimir árbol de expansión mínima\n"
+            << "6. Imprimir el coste del árbol de expansión mínima\n"
+            << "7. Guardar el grafo en formato DOT (-d)\n"
+            << "8. Generar PDF del grafo (-pdf)\n"
+            << "9. Salir\n"
             << "Seleccione una opción: ";
 }

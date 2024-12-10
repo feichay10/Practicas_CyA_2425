@@ -24,34 +24,22 @@
 #include "../include/point_types.h"
 #include "../include/sub_tree.h"
 
-// Formato de fichero de lectura:
-// 10         -> Número de puntos
-//  68	-21   -> Coordenadas de los puntos
-//  57	 60
-//  82	-60
-// -33	 54
-// -44	 11
-//  -5	 26
-// -27	  3
-//  90	 83
-//  27	 43
-// -72	 21
 int main(int argc, char* argv[]) {
   point_set ps;
+  CyA::point_vector points;
 
   int option;
   do {
     printMenu();
     std::cin >> option;
-
     switch (option) {
       case 1: {
         // Agregar arista
-        double x, y;
-        std::cout << "Ingrese las coordenadas de los puntos (x y): ";
-        std::cin >> x >> y;
-        ps.push_back(std::make_pair(x, y));
-        std::cout << "Punto insertado correctamente." << std::endl << std::endl;
+        std::cout << "Introduce cuantos puntos quieres: " << std::endl;
+        std::cin >> points;
+        ps = point_set(points);
+        std::cout << std::endl;
+        std::cout << "Puntos insertados correctamente." << std::endl << std::endl;
         break;
       }
       case 2: {
@@ -65,8 +53,6 @@ int main(int argc, char* argv[]) {
           std::cerr << "Error: No se pudo abrir el fichero."<< std::endl << std::endl;
           break;
         }
-
-        CyA::point_vector points;
         file >> points;
         ps = point_set(points);
         file.close();
@@ -79,10 +65,18 @@ int main(int argc, char* argv[]) {
         std::cout << "Árbol de expansión mínima calculado." << std::endl << std::endl;
         break;
       case 4:
+        // Imprimir puntos
+        ps.write(std::cout);
+        break;
+      case 5:
+        // Imprimir árbol de expansión mínima
+        ps.write_tree(std::cout);
+        break;
+      case 6:
         // Imprimir el coste del árbol de expansión mínima
         std::cout << "Coste del árbol de expansión mínima: " << ps.get_cost() << std::endl << std::endl;
         break;
-      case 5: {
+      case 7: {
         // Guardar el grafo en formato DOT
         std::ofstream dotFile("graph.dot");
         ps.write_dot(dotFile);
@@ -90,7 +84,7 @@ int main(int argc, char* argv[]) {
         std::cout << "Grafo guardado en formato DOT en 'graph.dot'" << std::endl << std::endl;
         break;
       }
-      case 6: {
+      case 8: {
         // Generar PDF del grafo
         int result = system("neato graph.dot -Tpdf -o salida.pdf");
         if (result == 0) {
@@ -100,24 +94,16 @@ int main(int argc, char* argv[]) {
         }
         break;
       }
-      case 7:
+      case 9:
         // Salir
         std::cout << "Saliendo del programa." << std::endl;
         exit(EXIT_SUCCESS);
-        break;
-      case 8:
-        // Imprimir puntos
-        ps.write(std::cout);
-        break;
-      case 9:
-        // Imprimir árbol de expansión mínima
-        ps.write_tree(std::cout);
         break;
       default:
         std::cerr << "Error: Opción no válida. Inténtelo de nuevo." << std::endl ;
     }
 
-  } while (option != 6);
+  } while (option != 9);
 
   return 0;
 }

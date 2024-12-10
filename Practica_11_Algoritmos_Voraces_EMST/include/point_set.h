@@ -21,7 +21,6 @@ class point_set : public CyA::point_vector {
 
   void EMST(void);
 
-  void add_edge(const CyA::point& p1, const CyA::point& p2);
   void write_tree(std::ostream& os) const;
   void write(std::ostream& os) const;
   void write_dot(std::ostream& os) const;

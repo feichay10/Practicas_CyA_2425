@@ -15,7 +15,6 @@ void point_set::EMST(void) {
   for (const CyA::point &p : *this) {
     EMST::sub_tree s;
     s.add_point(p);
-
     st.push_back(s);
   }
 
@@ -38,9 +37,7 @@ void point_set::compute_arc_vector(CyA::arc_vector &av) const {
     const CyA::point &p_i = (*this)[i];
     for (int j = i + 1; j < n; ++j) {
       const CyA::point &p_j = (*this)[j];
-
       const double dist = euclidean_distance(std::make_pair(p_i, p_j));
-
       av.push_back(std::make_pair(dist, std::make_pair(p_i, p_j)));
     }
   }
@@ -49,13 +46,14 @@ void point_set::compute_arc_vector(CyA::arc_vector &av) const {
 
 void point_set::find_incident_subtrees(const forest &st, const CyA::arc &a, int &i, int &j) const {
   i = j = -1;
-
-  for (int k = 0; k < st.size(); ++k) {
-    const EMST::sub_tree &s = st[k];
-
-    if (s.contains(a.first)) i = k;
-
-    if (s.contains(a.second)) j = k;
+  for (int tag{0}; tag < st.size(); ++tag) {
+    if (st[tag].contains(a.first)) {
+      i = tag;
+    } if (st[tag].contains(a.second)) {
+      j = tag;
+    } if (i != -1 && j != -1) {
+      break;
+    }
   }
 }
 
@@ -71,27 +69,24 @@ void point_set::merge_subtrees(forest &st, const CyA::arc &a, int i, int j) cons
 
 double point_set::compute_cost(void) const {
   double cost = 0.0;
-
-  for (const CyA::arc &a : emst_) {
-    cost += euclidean_distance(a);
+  for (const CyA::arc &arcs : emst_) {
+    cost += euclidean_distance(arcs);
   }
-
   return cost;
 }
 
 double point_set::euclidean_distance(const CyA::arc &a) const {
   const CyA::point &p1 = a.first;
   const CyA::point &p2 = a.second;
-
-  const double dx = p1.first - p2.first;
-  const double dy = p1.second - p2.second;
-
-  return std::sqrt(dx * dx + dy * dy);
+  return std::sqrt(std::pow(p1.first - p2.first, 2) + std::pow(p1.second - p2.second, 2));
 }
 
-void point_set::add_edge(const CyA::point &p1, const CyA::point &p2) {
-  this->push_back(p1);
-  this->push_back(p2);
+void point_set::write(std::ostream &os) const {
+  os << "Points:" << "\n";
+  for (const CyA::point& point : *this) {
+    os << "(" << point.first << ", " << point.second << ")" << std::endl;
+  }
+  os << std::endl;
 }
 
 void point_set::write_tree(std::ostream &os) const {
@@ -105,13 +100,7 @@ void point_set::write_tree(std::ostream &os) const {
     ") to point " << inx2 << "(" << arc.second.first << ", " << arc.second.second << ")"
     << " with cost: " << euclidean_distance(arc) << "\n";
   }
-}
-
-void point_set::write(std::ostream &os) const {
-  os << "Points:" << "\n";
-  for (const CyA::point& point : *this) {
-    os << "(" << point.first << ", " << point.second << ")" << std::endl;
-  }
+  os << std::endl;
 }
 
 void point_set::write_dot(std::ostream &os) const {
