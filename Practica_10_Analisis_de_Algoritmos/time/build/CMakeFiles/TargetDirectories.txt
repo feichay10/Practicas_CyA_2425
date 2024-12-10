@@ -1,0 +1,11 @@
+/home/alumnos.ull.es/cd/alu0101364544/Escritorio/Practicas_CyA_2425/Practica_10_Analisis_de_Algoritmos/time/build/CMakeFiles/edit_cache.dir
+/home/alumnos.ull.es/cd/alu0101364544/Escritorio/Practicas_CyA_2425/Practica_10_Analisis_de_Algoritmos/time/build/CMakeFiles/rebuild_cache.dir
+/home/alumnos.ull.es/cd/alu0101364544/Escritorio/Practicas_CyA_2425/Practica_10_Analisis_de_Algoritmos/time/build/sorting/CMakeFiles/sorting_library.dir
+/home/alumnos.ull.es/cd/alu0101364544/Escritorio/Practicas_CyA_2425/Practica_10_Analisis_de_Algoritmos/time/build/sorting/CMakeFiles/edit_cache.dir
+/home/alumnos.ull.es/cd/alu0101364544/Escritorio/Practicas_CyA_2425/Practica_10_Analisis_de_Algoritmos/time/build/sorting/CMakeFiles/rebuild_cache.dir
+/home/alumnos.ull.es/cd/alu0101364544/Escritorio/Practicas_CyA_2425/Practica_10_Analisis_de_Algoritmos/time/build/test/CMakeFiles/test_bench.dir
+/home/alumnos.ull.es/cd/alu0101364544/Escritorio/Practicas_CyA_2425/Practica_10_Analisis_de_Algoritmos/time/build/test/CMakeFiles/edit_cache.dir
+/home/alumnos.ull.es/cd/alu0101364544/Escritorio/Practicas_CyA_2425/Practica_10_Analisis_de_Algoritmos/time/build/test/CMakeFiles/rebuild_cache.dir
+/home/alumnos.ull.es/cd/alu0101364544/Escritorio/Practicas_CyA_2425/Practica_10_Analisis_de_Algoritmos/time/build/main/CMakeFiles/test_sorting.dir
+/home/alumnos.ull.es/cd/alu0101364544/Escritorio/Practicas_CyA_2425/Practica_10_Analisis_de_Algoritmos/time/build/main/CMakeFiles/edit_cache.dir
+/home/alumnos.ull.es/cd/alu0101364544/Escritorio/Practicas_CyA_2425/Practica_10_Analisis_de_Algoritmos/time/build/main/CMakeFiles/rebuild_cache.dir
