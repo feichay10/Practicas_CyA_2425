@@ -1,18 +1,24 @@
-Terminales: a b c 
-No terminales: S X Y 
-Producciones:
- A_b -> b
- S -> S_aXA_bX
- S -> S_aA_bX
- S -> S_aXA_b
- S -> S_aA_b
- S_a -> a
- X -> S_aY
- X -> A_bY
- X -> a
- X -> b
- Y -> S_aY
- Y -> A_bY
- Y -> a
- Y -> b
- Y -> c
+7
+S
+A
+B
+C_b
+C_a
+S_1
+A_2
+2
+a
+b
+12
+A C_bS_1
+A C_aS
+A a
+A_2 BB
+B C_aA_2
+B C_bS
+B b
+C_a a
+C_b b
+S C_bA
+S C_aB
+S_1 AA

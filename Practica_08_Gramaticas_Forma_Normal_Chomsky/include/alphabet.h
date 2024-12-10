@@ -43,6 +43,8 @@ class Alphabet {
   bool find(Symbol symbol) const;
   std::set<Symbol>::const_iterator end() const;
 
+  int size() const;
+
   friend std::ostream &operator<<(std::ostream &os, const Alphabet &alphabet);
 
  private:

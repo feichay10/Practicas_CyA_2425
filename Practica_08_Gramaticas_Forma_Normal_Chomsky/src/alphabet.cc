@@ -88,6 +88,10 @@ std::set<Symbol>::const_iterator Alphabet::end() const {
   return std::set<Symbol>::const_iterator();
 }
 
+int Alphabet::size() const { 
+  return alphabet_.size();
+}
+
 /**
  * @brief Overload the << operator
  * 

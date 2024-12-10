@@ -40,4 +40,4 @@ clean:
 
 tar:
 	@echo "📦 Compressing..."
-	tar -czvf p08_Cheuk_Kelly_Ng_Pante.tgz $(SRC) $(INCLUDE) $(BIN) $(BUILD) $(DATA) makefile
+	tar -czvf p11_Cheuk_Kelly_Ng_Pante.tgz $(SRC) $(INCLUDE) $(BIN) $(BUILD) $(DATA) makefile

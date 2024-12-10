@@ -45,12 +45,22 @@ class Grammar {
   Grammar() = default;
   Grammar(const std::string& file_name);
 
+  Alphabet GetTerminals() const { return terminals_; }
+  Symbol GetStartSymbol() const { return start_symbol_; }
+  NonTerminals GetNonTerminals() const { return non_terminals_; }
+  void SetTerminals(const Alphabet& terminals) { terminals_ = terminals; }
+  void SetStartSymbol(const Symbol& start_symbol) { start_symbol_ = start_symbol; }
+  void SetNonTerminals(const NonTerminals& non_terminals) { non_terminals_ = non_terminals; }
+
   bool isTerminal(const Symbol& symbol) const;
   bool isNonTerminal(const Symbol& symbol) const;
   Grammar Convert2CNF() const;
   bool hasUnitaryProductions() const;
   bool hasEmptyProductions() const;
   friend std::ostream& operator<<(std::ostream& os, const Grammar& grammar);
+
+  // Modificacion: Guardas todos los no terminales desde el estado de arranque
+  void ReachableNonTerminals() const;
 
  private:
   Alphabet terminals_;

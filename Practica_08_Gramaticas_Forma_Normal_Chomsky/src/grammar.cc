@@ -230,7 +230,7 @@ bool Grammar::hasEmptyProductions() const {
         return true;
       }
     }
-  }
+  }  // file << grammar;
   return false;
 }
 
@@ -264,4 +264,35 @@ std::ostream& operator<<(std::ostream& os, const Grammar& grammar) {
     os << std::endl;
   }
   return os;
+}
+
+// Modificacion: Guardas todos los simbolos no terminales alcanzables desde el estado de arranque
+void Grammar::ReachableNonTerminals() const {
+  std::set<std::string> reachable_non_terminals;
+  std::vector<std::string> non_terminals = non_terminals_.GetNonTerminals();
+  std::multimap<std::string, std::vector<std::string>> productions = non_terminals_.GetProductions();
+  std::vector<std::string> non_terminals_to_check;
+  non_terminals_to_check.push_back(start_symbol_.ToString());
+
+  while (!non_terminals_to_check.empty()) {
+    std::string current_non_terminal = non_terminals_to_check.back();
+    non_terminals_to_check.pop_back();
+    reachable_non_terminals.insert(cu_rrent_non_terminal);
+
+    for (auto& p : productions) {
+      if (p.first == current_non_terminal) {
+        for (auto& s : p.second) {
+          if (isNonTerminal(Symbol(s[0])) && reachable_non_terminals.find(s) == reachable_non_terminals.end()) {
+            non_terminals_to_check.push_back(s);
+          }
+        }
+      }
+    }
+  }
+
+  std::cout << "No terminales alcanzables desde el estado de arranque: ";
+  for (const auto& nt : reachable_non_terminals) {
+    std::cout << nt << " ";
+  }
+  std::cout << std::endl;
 }
