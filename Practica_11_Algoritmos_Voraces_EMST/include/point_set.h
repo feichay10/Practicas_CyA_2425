@@ -38,6 +38,8 @@ class point_set : public CyA::point_vector {
   ~point_set(void) = default;
 
   void EMST(void);
+
+  // MODIFICACION
   void multi_start(int n);
 
   void write_tree(std::ostream& os) const;

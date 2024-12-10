@@ -45,6 +45,7 @@ void point_set::EMST(void) {
   emst_ = st[0].get_arcs();
 }
 
+// MODIFICACION
 void point_set::multi_start(int n) {
   CyA::arc_vector av;
   compute_arc_vector(av);
