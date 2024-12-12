@@ -24,6 +24,7 @@
 #include <vector>
 #include <algorithm>
 #include <cmath>
+#include <map>
 
 namespace CyA {
   typedef std::pair<double, double> point;
@@ -49,6 +50,7 @@ namespace CyA {
 
     void write_hull(std::ostream &os) const;
     void write(std::ostream &os) const;
+    void write_dot(std::ostream &os) const;
 
     inline const point_vector &get_hull(void) const { return hull_; }
     inline const point_vector &get_points(void) const { return *this; }

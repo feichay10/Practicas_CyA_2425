@@ -4,7 +4,8 @@
  * Grado en Ingeniería Informática
  * Asignatura: Computabilidad y Algoritmia
  * Curso: 2º
- * Práctica 11: Algoritmos Voraces (Greedy). Euclidean Minimum Spanning Tree
+ * Práctica 12: Algoritmos Divide y Vencerás (Divide & Conquer). Cálculo de la
+ * envoltura convexa.
  * @file main.cc
  * @author Cheuk Kelly Ng Pante (alu0101364544@ull.edu.es)
  * @brief
@@ -21,6 +22,7 @@
 #include <fstream>
 
 #include "../include/point_set.h"
+#include "../include/point_types.h"
 
 using namespace CyA;
 
@@ -30,11 +32,10 @@ void printMenu() {
             << "  1. Agregar punto (Formato: x y)\n"
             << "  2. Insertar mediante fichero\n"
             << "  3. Imprimir puntos\n"
-            << "  4. Imprimir árbol de expansión mínima\n"
-            << "  5. Imprimir el coste del árbol de expansión mínima\n"
-            << "  6. Guardar el grafo en formato DOT\n"
-            << "  7. Generar PDF del grafo\n"
-            << "  8. Algoritmo original (EMST)\n"
+            << "  4. Imprimir envoltura convexa\n"
+            << "  5. Guardar el grafo en formato DOT\n"
+            << "  6. Generar PDF del grafo\n"
+            // << "  7. Algoritmo original (EMST)\n"
             << "Seleccione una opción: ";
 }
 
@@ -89,20 +90,14 @@ int main(int argc, char* argv[]) {
           ps.write(std::cout);
         }
         break;
-      case 4: // Imprimir árbol de expansión mínima
+      case 4: // Imprimir 
         if (!isPoints && !isFile) {
           std::cerr << "Error: No hay puntos insertados." << std::endl << std::endl;
         } else {
-          ps.write_tree(std::cout);
+          ps.write_hull(std::cout);
         }
         break;
-      case 5: // Imprimir el coste del árbol de expansión mínima
-        if (!isPoints && !isFile) {
-          std::cerr << "Error: No hay puntos insertados." << std::endl << std::endl;
-        } else {
-          std::cout << "\nCoste del árbol de expansión mínima: " << ps.get_cost() << std::endl << std::endl;
-        }
-      case 6: { // Guardar el grafo en formato DOT
+      case 5: { // Guardar el grafo en formato DOT
         if (!isPoints && !isFile) {
           std::cerr << "Error: No hay puntos insertados." << std::endl << std::endl;
         } else {
@@ -113,7 +108,7 @@ int main(int argc, char* argv[]) {
         }
         break;
       }
-      case 7: { // Generar PDF del grafo
+      case 6: { // Generar PDF del grafo
         if (!isPoints && !isFile) {
           std::cerr << "Error: No hay puntos insertados." << std::endl << std::endl;
         } else {
@@ -121,21 +116,21 @@ int main(int argc, char* argv[]) {
           if (result == 0) {
             std::cout << "\nPDF generado con éxito (ver 'salida.pdf')" << std::endl << std::endl;
           } else {
-            std::cerr << "\nError al generar el PDF"<< std::endl;
+            std::cerr << "\nError al generar el PDF" << std::endl << std::endl;
           }
         }
         break;
       }
-      case 8: // Algoritmo original (EMST)
-        if (!isPoints && !isFile) {
-          std::cerr << "Error: No hay puntos insertados." << std::endl << std::endl;
-        } else {
-          ps.EMST();
-          std::cout << "\nÁrbol de expansión mínima generado con éxito." << std::endl << std::endl;
-        }
-        break;
+      // case 7: 
+      //   if (!isPoints && !isFile) {
+      //     std::cerr << "Error: No hay puntos insertados." << std::endl << std::endl;
+      //   } else {
+      //     ps.quickHull();
+      //     std::cout << "\nÁrbol de expansión mínima generado con éxito." << std::endl << std::endl;
+      //   }
+      //   break;
       default:
-        std::cerr << "Error: Opción no válida. Inténtelo de nuevo." << std::endl ;
+        std::cerr << "\nError: Opción no válida. Inténtelo de nuevo." << std::endl << std::endl;
     }
 
   } while (option != 0);

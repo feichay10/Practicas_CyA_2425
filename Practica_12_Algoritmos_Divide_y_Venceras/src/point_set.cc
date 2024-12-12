@@ -21,7 +21,9 @@
 
 using namespace CyA;
 
-point_set::point_set(const vector<point> &points) : point_vector(points) {}
+point_set::point_set(const vector<point> &points) : point_vector(points) {
+  quickHull();
+}
 
 point_set::~point_set(void) {}
 
@@ -51,6 +53,37 @@ void point_set::write(std::ostream & os) const {
   for (const point &p : *this) {
     os << "(" << p.first << ",  " << p.second << ")" << std::endl;
   }
+}
+
+// La salida tiene que ser en formato DOT, parecido a esto:
+// graph {
+//     a [pos="0,0!"]
+//     b [pos="0,1!"]
+//     c [pos="2,2!"]
+//     d [pos="-1,0!"]
+//     a -- b
+//     a -- c
+//     a -- d
+//   }
+// Donde a, b, c y d son los vértices y a -- b, a -- c y a -- d son las aristas.
+// Aplicarlo a la envoltura convexa.
+void point_set::write_dot(std::ostream & os) const {
+  char letter = 'a';
+  os << "graph {" << std::endl;
+  std::map<point, char> point_to_letter;
+  for (const point &p : *this) {
+    os << "    " << letter << " [pos=\"" << p.first << "," << p.second << "!\"" << "]" << std::endl;
+    point_to_letter[p] = letter;
+    ++letter;
+  }
+
+  // Write the edges making up the convex hull
+  for (size_t i = 0; i < hull_.size(); ++i) {
+    os << "    " << point_to_letter[hull_[i]] << " -- " << point_to_letter[hull_[(i + 1) % hull_.size()]] << std::endl;
+  }
+
+  os << "}" << std::endl;
+
 }
 
 void point_set::quickHull(const CyA::line &l, int side) {
