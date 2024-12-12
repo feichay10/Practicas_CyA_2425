@@ -6,7 +6,7 @@
  * Curso: 2º
  * Práctica 12: Algoritmos Divide y Vencerás (Divide & Conquer). Cálculo de la
  * envoltura convexa.
- * @file point_set.cc
+ * @file point_set.h
  * @author Cheuk Kelly Ng Pante (alu0101364544@ull.edu.es)
  * @brief
  *
@@ -22,6 +22,8 @@
 #include <iostream>
 #include <utility>
 #include <vector>
+#include <algorithm>
+#include <cmath>
 
 namespace CyA {
   typedef std::pair<double, double> point;
@@ -39,6 +41,7 @@ namespace CyA {
     point_vector hull_;
 
    public:
+    point_set() = default;
     point_set(const vector<point> &points);
     ~point_set(void);
 
