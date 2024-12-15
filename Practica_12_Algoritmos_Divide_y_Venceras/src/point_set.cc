@@ -55,24 +55,12 @@ void point_set::write(std::ostream & os) const {
   }
 }
 
-// La salida tiene que ser en formato DOT, parecido a esto:
-// graph {
-//     a [pos="0,0!"]
-//     b [pos="0,1!"]
-//     c [pos="2,2!"]
-//     d [pos="-1,0!"]
-//     a -- b
-//     a -- c
-//     a -- d
-//   }
-// Donde a, b, c y d son los vértices y a -- b, a -- c y a -- d son las aristas.
-// Aplicarlo a la envoltura convexa.
 void point_set::write_dot(std::ostream & os) const {
   char letter = 'a';
   os << "graph {" << std::endl;
   std::map<point, char> point_to_letter;
   for (const point &p : *this) {
-    os << "    " << letter << " [pos=\"" << p.first << "," << p.second << "!\"" << "]" << std::endl;
+    os << "    " << letter << " [pos=\"" << p.first << "," << p.second << "!\", fontsize=300]" << std::endl;
     point_to_letter[p] = letter;
     ++letter;
   }
@@ -83,7 +71,6 @@ void point_set::write_dot(std::ostream & os) const {
   }
 
   os << "}" << std::endl;
-
 }
 
 void point_set::quickHull(const CyA::line &l, int side) {
@@ -149,3 +136,16 @@ bool point_set::farthest_point(const CyA::line &l, int side, CyA::point &farthes
 
   return found;
 }
+
+// // Modificacion: determinar el punto medio de los puntos mas altos y mas bajos del eje x
+// void point_set::mid_point(std::ostream& os) const {
+//   point min_x_point;
+//   point max_x_point;
+
+//   x_bounds(min_x_point, max_x_point);
+
+//   double mid_x = (min_x_point.first + max_x_point.first) / 2;
+//   double mid_y = (min_x_point.second + max_x_point.second) / 2;
+
+//   os << "Punto medio: (" << mid_x << ", " << mid_y << ")" << std::endl;
+// }
