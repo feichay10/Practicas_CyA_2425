@@ -26,6 +26,9 @@
 #include <cmath>
 #include <map>
 
+/**
+ * @brief Espacio de nombres para el módulo CyA (Computabilidad y Algoritmos).
+ */
 namespace CyA {
   typedef std::pair<double, double> point;
   typedef std::pair<point, point> line;
@@ -37,6 +40,9 @@ namespace CyA {
     RIGHT 
   };
 
+  /**
+   * @brief Clase que representa un conjunto de puntos y su envoltura convexa.
+   */
   class point_set : public point_vector {
    private:
     point_vector hull_;

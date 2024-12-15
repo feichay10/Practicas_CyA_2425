@@ -4,7 +4,9 @@
  * Grado en Ingeniería Informática
  * Asignatura: Computabilidad y Algoritmia
  * Curso: 2º
- * Práctica 11: Algoritmos Voraces (Greedy). Euclidean Minimum Spanning Tree
+ * Práctica 12: Algoritmos Divide y Vencerás (Divide & Conquer). Cálculo de la
+ * envoltura convexa.
+ * 
  * @file point_types.h
  * @author Cheuk Kelly Ng Pante (alu0101364544@ull.edu.es)
  * @brief
@@ -26,6 +28,9 @@
 #define MAX_SZ 3
 #define MAX_PREC 0
 
+/**
+ * @brief Espacio de nombres para el módulo CyA (Computabilidad y Algoritmos).
+ */
 namespace CyA {
   typedef std::pair<double, double> point;
 
